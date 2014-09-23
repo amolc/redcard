@@ -221,6 +221,15 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Post Sponser', 'twentyfourteen' ),
+		'id'            => 'postsponser',
+		'description'   => __( '' ),
+		'before_widget' => '<div class="ad_1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
@@ -550,6 +559,7 @@ function pr($array,$isDie = 0)
  if($isDie > 0 ) 
  { die(); }
 }
+add_theme_support( 'post-thumbnails' );
 
 add_action( 'init', 'football_init' );
 /* Register a football post type. */
@@ -560,11 +570,11 @@ function football_init() {
 		'menu_name'          => _x( 'Footballs', 'admin menu', 'your-plugin-textdomain' ),
 		'name_admin_bar'     => _x( 'Football', 'add new on admin bar', 'your-plugin-textdomain' ),
 		'add_new'            => _x( 'Add New', 'football', 'your-plugin-textdomain' ),
-		'add_new_item'       => __( 'Add New Football', 'your-plugin-textdomain' ),
-		'new_item'           => __( 'New Football', 'your-plugin-textdomain' ),
-		'edit_item'          => __( 'Edit Football', 'your-plugin-textdomain' ),
+		'add_new_item'       => __( 'Add New Football Article', 'your-plugin-textdomain' ),
+		'new_item'           => __( 'New Football Article', 'your-plugin-textdomain' ),
+		'edit_item'          => __( 'Edit', 'your-plugin-textdomain' ),
 		'view_item'          => __( 'View', 'your-plugin-textdomain' ),
-		'all_items'          => __( 'All Footballs Posts', 'your-plugin-textdomain' ),
+		'all_items'          => __( 'All Football Articles', 'your-plugin-textdomain' ),
 		'search_items'       => __( 'Search Footballs', 'your-plugin-textdomain' ),
 		'parent_item_colon'  => __( 'Parent Footballs:', 'your-plugin-textdomain' ),
 		'not_found'          => __( 'No Post found.', 'your-plugin-textdomain' ),
@@ -587,4 +597,55 @@ function football_init() {
 	);
 
 	register_post_type( 'footballs', $args );
+}
+
+if ( function_exists( 'add_theme_support' ) ) {
+ add_theme_support('post-thumbnails');
+ set_post_thumbnail_size( 160, 100 );
+ }
+if ( function_exists( 'add_image_size' ) ) {
+ add_image_size( 'featImg', 350, 200, true );
+ add_image_size( 'realImg', 200, 120, true );
+
+ }
+ if ( function_exists('register_sidebar') )
+{    register_sidebar(); }
+
+
+add_action( 'init', 'tvideo_init' );
+/* Register a football post type. */
+function tvideo_init() {
+	$labels = array(
+		'name'               => _x( 'TV Videos', 'post type general name', 'your-plugin-textdomain' ),
+		'singular_name'      => _x( 'TV Video', 'post type singular name', 'your-plugin-textdomain' ),
+		'menu_name'          => _x( 'TV Videos', 'admin menu', 'your-plugin-textdomain' ),
+		'name_admin_bar'     => _x( 'TV Video', 'add new on admin bar', 'your-plugin-textdomain' ),
+		'add_new'            => _x( 'Add New', 'tvideo', 'your-plugin-textdomain' ),
+		'add_new_item'       => __( 'Add New Tv Video ', 'your-plugin-textdomain' ),
+		'new_item'           => __( 'New Tv Video ', 'your-plugin-textdomain' ),
+		'edit_item'          => __( 'Edit', 'your-plugin-textdomain' ),
+		'view_item'          => __( 'View', 'your-plugin-textdomain' ),
+		'all_items'          => __( 'All Tv Video ', 'your-plugin-textdomain' ),
+		'search_items'       => __( 'Search Tv Videos', 'your-plugin-textdomain' ),
+		'parent_item_colon'  => __( 'Parent Tv Videos:', 'your-plugin-textdomain' ),
+		'not_found'          => __( 'No Post found.', 'your-plugin-textdomain' ),
+		'not_found_in_trash' => __( 'No Posts found in Trash.', 'your-plugin-textdomain' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'tvideo' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+	);
+
+	register_post_type( 'tvideo', $args );
 }

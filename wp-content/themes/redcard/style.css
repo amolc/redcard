@@ -762,9 +762,9 @@
 	width: 48px;
 }
 
-#container .right .popular ul li a.p_t {
+#container .right .popular ul li a.wpp-post-title {
 	font-size:12px;
-	float:left;
+	
 	width:200px;
 	line-height:17px;
 	padding-left:5px;
@@ -781,3 +781,6 @@
 .menu_center{width: 900px;margin: 0 auto;display: block;overflow: hidden;}
 .seacrh-li{float: right !important;margin-top: 9px;}
 span.screen-reader-text {display: none;}
+.post-thumbnail .attachment-twentyfourteen-full-width{ height:135px;}
+.single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px;}
+.single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
