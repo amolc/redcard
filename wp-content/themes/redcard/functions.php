@@ -32,6 +32,9 @@
  *
  * @since Twenty Fourteen 1.0
  */
+
+require_once locate_template('/inc/radio_artciles.php');            // Utility functions
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
