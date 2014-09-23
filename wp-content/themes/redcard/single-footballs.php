@@ -2,55 +2,48 @@
 
 
 get_header(); ?>
+
 <div id="container">
-				<img src="assets/img/ad_1.jpg" class="ad_1"/>
-				<div class="left">
-					<h2>Football</h2>
-					<a href="<?php the_permalink() ?>"><h1><?php the_title(); ?></h1></a>
-					<div class="date">
-						<a href="#">Singapore</a>
-						<span><?php the_time('l, F j, Y'); ?></span>
-						
-						<div id="social_3">
-							<div class="facebook"></div>
-							<div class="twitter"></div>
-							<div class="message"></div>
-						</div>
-					</div>
-					
-					<img src="assets/img/d_post.jpg" class="post_img"/>
-					
-					<div class="post">
-<?php
+  <div class="left">
+    <h2>Football</h2>
+    <a href="">
+    <h1>
+      <?php the_title(); ?>
+    </h1>
+    </a>
+    <div class="date"> <a href="#">Singapore</a> <span>
+      <?php the_time('l, F j, Y'); ?>
+      </span>
+      <div id="social_3">
+        <div class="facebook"></div>
+        <div class="twitter"></div>
+        <div class="message"></div>
+      </div>
+    </div>
+    <div class="post">
+      <?php
 				while ( have_posts() ) : the_post();
-					get_template_part( 'content', get_post_format() );
-					
+				?>
+      <div class="single-post-image">
+        <?php 
+				twentyfourteen_post_thumbnail();
+					the_content();
+					?>
+      </div>
+      <?php
 				endwhile;
 			?>
-					</div>
-
-					<div class="tags">
-						<strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a>
-						<span>Comments</span>
-					</div>
-					
-					<h2>Related Articles</h2>
-					
-					<div class="related">
-						<ul>
-							<li>
-								<img src="assets/img/related.jpg"/>
-								<a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a>
-							</li>
-							<li>
-								<img src="assets/img/related.jpg"/>
-								<a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a>
-							</li>
-						</ul>
-					</div>
-					
-					<h2>Comments</h2>
-							
+    </div>
+    <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <span>Comments</span> </div>
+    <h2>Related Articles</h2>
+    <?php // wp_related_posts()?>
+    <div class="related">
+      <ul>
+        <li> <img src="<?php echo get_template_directory_uri(); ?>/img/related.jpg"/> <a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a> </li>
+        <li> <img src="<?php echo get_template_directory_uri(); ?>/img/related.jpg"/> <a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a> </li>
+      </ul>
+    </div>
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -63,15 +56,11 @@ get_header(); ?>
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-   
-
-							
-				</div>
-				
-							
-			</div>
-			
-<?php get_sidebar('football');?>
+    <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+  <?php get_sidebar('football');?>
+</div>
 </div>
 <?php get_footer();?>

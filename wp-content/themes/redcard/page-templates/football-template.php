@@ -12,6 +12,8 @@ get_header();
 
       
 		<?php 
+		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+		
 $args = array( 'post_type' => 'footballs');
 $loop = new WP_Query( $args ); $as =1;
 while ( $loop->have_posts() ) : $loop->the_post();
@@ -27,6 +29,7 @@ while ( $loop->have_posts() ) : $loop->the_post();
                           <div class="message"></div>
                         </div>
                       </div>
+
                       <img src="<?php echo get_template_directory_uri(); ?>/img/d_post.jpg" class="post_img"/>
                       <div class="f_text"><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a> </div>
                       
@@ -35,7 +38,10 @@ while ( $loop->have_posts() ) : $loop->the_post();
       
 			<?php }
 			 ?><li>
- 				<div class="img"> <img src="<?php echo get_template_directory_uri(); ?>/img/d_post.jpg"/> <span>Singapore</span> </div>
+             
+ 
+ 				<div class="img"> <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?> <span>Singapore</span> </div>
+
      			<div class="text">
                     <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                     <p><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a></p>
