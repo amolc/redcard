@@ -36,6 +36,14 @@ $options_array = array(
 			'LinkedIn Url'=> array(
 									'get_key' => 'tin_linkedin_url',
 									'get_type' => 'url'
+									),
+			'Line Icon'=> array(
+									'get_key' => 'tin_line_icon',
+									'get_type' => 'file'
+									),						
+			'Line Url'=> array(
+									'get_key' => 'tin_line_url',
+									'get_type' => 'url'
 									)
 			
 
