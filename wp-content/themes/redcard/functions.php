@@ -235,8 +235,8 @@ function twentyfourteen_widgets_init() {
 		'description'   => __( 'Add widgets to show on Radio Articles Archive page' ),
 		'before_widget' => '<div class="radioarchive">',
 		'after_widget'  => '</div>',
-		'before_title'  => '',
-		'after_title'   => '',
+		'before_title'  => '<h1>',
+		'after_title'   => '</h1>',
 	) );
 	
 }
