@@ -22,7 +22,7 @@ define('DB_NAME', 'redcard');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '10gXWOqeaf');
+define('DB_PASSWORD', 'toor');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

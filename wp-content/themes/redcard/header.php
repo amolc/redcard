@@ -33,7 +33,11 @@
 
 <body>
 <div id="header">
-  <div class="logo"><?php dynamic_sidebar( 'logo' ); ?></div>
+  <div class="logo">
+    <a href="/" title="Redcard">
+      <img alt="Redcard" src="<?php echo get_option('site_logo'); ?>" />
+    </a>
+  </div>
   <div id="social" class="right top">
   <?php dynamic_sidebar( 'header-social' ); ?>
   <!--  <a href="#">
