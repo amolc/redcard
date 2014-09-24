@@ -55,8 +55,7 @@ get_header(); ?>
 							)
 						);
 				    	$allarts = get_posts();
-				    	foreach ( $allarts as $article ) {
-						   print_r( $article );
+				    	foreach ( $allarts as $article ) {	
 						   echo '<div class="r-child">'. get_the_post_thumbnail( $article->ID ).'
 	   							<h3>'.$article->post_title.'</h3>
 	   							<a href="#">In Added Time</a>
@@ -66,7 +65,7 @@ get_header(); ?>
 	   								<a href="#"><div class="twitter"></div></a>
 	   								<a href="#"><div class="message"></div></a>
 	   							</div>
-	   							<span>1,200 views<span>
+	   							<span>1,290 views<span>
 	   						</span></span></div>';
 						}
 				    	echo '<div class="lastl"><a href="#">View all in'.$term->name.'</a></div>';
