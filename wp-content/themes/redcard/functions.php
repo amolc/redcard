@@ -34,6 +34,8 @@
  */
 
 require_once locate_template('/inc/theme_option.php');            // Theme Options 
+require_once locate_template('/inc/social_option.php');            // Social Theme Options 
+
 require_once locate_template('/inc/radio_artciles.php');            // Utility functions
 
 if ( ! isset( $content_width ) ) {
