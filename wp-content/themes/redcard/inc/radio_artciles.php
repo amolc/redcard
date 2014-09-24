@@ -40,11 +40,36 @@ function codex_radioarticle_init() {
 	);
 
 	register_post_type( 'radio-articles', $args );
+
+	$labels = array(
+		'name'                       => _x( 'Radio Categories', 'taxonomy general name' ),
+		'singular_name'              => _x( 'Radio Category', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search Radio Categories' ),
+		'popular_items'              => __( 'Popular Radio Categories' ),
+		'all_items'                  => __( 'All Radio Categories' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Radio Category' ),
+		'update_item'                => __( 'Update Radio Category' ),
+		'add_new_item'               => __( 'Add New Radio Category' ),
+		'new_item_name'              => __( 'New Radio Category Name' ),
+		'separate_items_with_commas' => __( 'Separate Radio Categories with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove Radio Categories' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Radio Categories' ),
+		'not_found'                  => __( 'No Radio Categories found.' ),
+		'menu_name'                  => __( 'Radio Categories' ),
+	);
+
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		//'rewrite'               => array( 'slug' => 'radio-categories' ),
+	);
+
+	register_taxonomy( 'radio-categories', 'radio-articles', $args );
 }
 
-/*add_filter( 'template_include', 'var_template_include', 1000 );
-function var_template_include( $t ){
-    echo $t;
-    exit();
-    return $t;
-}*/
