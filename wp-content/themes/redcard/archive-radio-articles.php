@@ -31,6 +31,31 @@ get_header(); ?>
 				<?php dynamic_sidebar( 'radioarchive' ); ?>	
 			</div>
 
+			<div class="box">
+				<h1>Radio Segments</h1>
+				<?php
+				$args = array( 'hide_empty=false' );
+
+				$terms = get_terms('radio-categories', $args);
+				print_r( $terms );
+				if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
+				    $count = count($terms);
+				    $i=0;
+				    echo '<p class="my_term-archive">';
+				    foreach ($terms as $term) {
+				        $i++;
+				    	echo '<a href="' . get_term_link( $term ) . '" title="' . sprintf(__('View all post filed under %s', 'my_localization_domain'), $term->name) . '">' . $term->name . '</a>';
+				    	if ($count != $i) {
+				            echo ' &middot; ';
+				        }
+				        else {
+				            echo '</p>';
+				        }
+				    }
+				  
+				}
+				?>
+			</div>
 			
 
 			<?php
