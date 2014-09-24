@@ -55,6 +55,7 @@ get_header(); ?>
 							)
 						);
 				    	$allarts = get_posts();
+				    	print_r( $allarts );
 				    	foreach ( $allarts as $article ) {	
 						   echo '<div class="r-child">'. get_the_post_thumbnail( $article->ID ).'
 	   							<h3>'.$article->post_title.'</h3>
