@@ -41,3 +41,10 @@ function codex_radioarticle_init() {
 
 	register_post_type( 'radio-articles', $args );
 }
+
+/*add_filter( 'template_include', 'var_template_include', 1000 );
+function var_template_include( $t ){
+    echo $t;
+    exit();
+    return $t;
+}*/
