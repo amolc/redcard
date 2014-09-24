@@ -13,9 +13,9 @@ get_header();
       
 		<?php 
 		
-$args = array( 'post_type' => 'footballs');
-$loop = new WP_Query( $args ); $as =1;
-while ( $loop->have_posts() ) : $loop->the_post();
+			$args = array( 'post_type' => 'footballs');
+			$loop = new WP_Query( $args ); $as =1;
+			while ( $loop->have_posts() ) : $loop->the_post();
 		
 			if($as ==1){?>
 				  <a href="<?php the_permalink() ?>">
@@ -50,5 +50,5 @@ while ( $loop->have_posts() ) : $loop->the_post();
   </div>
 </div>
 <?php get_sidebar('football');?>
-</div>
+
 <?php get_footer();?>

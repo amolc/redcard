@@ -32,7 +32,7 @@ get_header();
 						<h1>Sponsor</h1>
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
-				</div> <!-- end box -->
+				</div> 
 		
 <div class="box">
 					<h1>Video Segments</h1>
@@ -49,6 +49,6 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<?php endwhile;?>
 					
 				
-				</div> <!-- end box -->
-</div>
+				</div> 
+
 <?php get_footer();?>
