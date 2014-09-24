@@ -228,6 +228,16 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Radio Archive', 'twentyfourteen' ),
+		'id'            => 'radioarchive',
+		'description'   => __( 'Add widgets to show on Radio Articles Archive page' ),
+		'before_widget' => '<div class="radioarchive">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
