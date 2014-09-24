@@ -57,9 +57,8 @@ get_header(); ?>
 				    	$allarts = get_posts();
 				    	foreach ( $allarts as $article ) {
 						   //print_r( $article );
-						   echo '<div class="r-child">
-	   							<img src="assets/img/radio_segments/1.jpg">
-	   							<h3>Live transfer updates</h3>
+						   echo '<div class="r-child">'. get_the_post_thumbnail( $article->ID ).'
+	   							<h3>'.$article->post_title.'</h3>
 	   							<a href="#">In Added Time</a>
 	   							<button>Listen</button>
 	   							<div id="social_2">
@@ -70,7 +69,7 @@ get_header(); ?>
 	   							<span>1,200 views<span>
 	   						</span></span></div>';
 						}
-				    	echo '<a href="#">View all in'.$term->name.'</a>';
+				    	echo '<div class="lastl"><a href="#">View all in'.$term->name.'</a></div>';
 				        echo '</div>';
 				    }
 				  
