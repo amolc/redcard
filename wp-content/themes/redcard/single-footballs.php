@@ -36,11 +36,27 @@ get_header(); ?>
     </div>
     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <span>Comments</span> </div>
     <h2>Related Articles</h2>
-    <?php // wp_related_posts()?>
+    <?php $postid = get_the_ID(); ?> 
+   <?php 
+	$args = array(
+    'post__not_in '=> $postid,
+    'numberposts' => 2,
+    'orderby' => 'rand',          
+    'post_type' => 'footballs',
+    'post_status' => 'publish');
+
+    $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+   
+    ?>
     <div class="related">
       <ul>
-        <li> <img src="<?php echo get_template_directory_uri(); ?>/img/related.jpg"/> <a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a> </li>
-        <li> <img src="<?php echo get_template_directory_uri(); ?>/img/related.jpg"/> <a href="#">Gerard Pique lands in trouble after letting off a stink bomb</a> </li>
+          <?php if(!empty($recent_posts)){ 
+              foreach($recent_posts as $row){
+                  
+                   $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row['ID']) );
+              ?>
+        <li> <img src="<?php  echo $feat_image;?>"> <a href="<?php echo get_permalink( $row['ID']); ?>"><?php echo $row['post_title']; ?></a> </li>
+              <?php } } ?>
       </ul>
     </div>
     <h2>Comments</h2>

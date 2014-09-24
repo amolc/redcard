@@ -329,7 +329,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #container .box p {
 	color:#999999;
 	font-size:14px;
-	font-family:arial;
+	/*font-family:arial;*/
+	font-family:Helvetica;
 	margin-top:3px;
 }
 
