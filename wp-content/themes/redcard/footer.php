@@ -7,8 +7,8 @@
  * @since Twenty Fourteen 1.0
  */
 ?>
-</div> <!-- container closing -->
-<footer id="footer">
+</div>
+<div id="footer">
         <div class="box">
             <div class="col_150">
                 <h1>Shows</h1>
@@ -27,7 +27,7 @@
                 <div id="social"><?php dynamic_sidebar( 'header-social' ); ?></div>
             </div>
         </div>
-    </footer>
+    </div>
 	<?php wp_footer(); ?>
 </body>
 </html>

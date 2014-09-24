@@ -36,41 +36,18 @@ get_header();
 		
 <div class="box">
 					<h1>Video Segments</h1>
+                  <?php  $args = array( 'post_type' => 'tvideo');
+$loop = new WP_Query( $args ); $as =1;
+while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<div class="child">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/video_segments/1.jpg"/>
-						<a href="#">Casting Season 6</a>
-						<p>We need homecooks! Do you have what it takes to be the next MASTERCHEF?</p>
-						<span>Drivetime</span>
+						<?php // twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
+                        <?php the_content(); ?>
+						<a href="#"><?php the_title(); ?></a>
+						<p><?php echo get_the_excerpt(); ?></p>
+						<span></span>
 					</div>
+					<?php endwhile;?>
 					
-					<div class="child">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/video_segments/2.jpg"/>
-						<a href="#">So you think you can dance?</a>
-						<p>Your Top 10 Season 11 dancers are going on tour!</p>
-						<span>Crossbar Challenge</span>
-					</div>
-					
-					
-					<div class="child" id="no-margin">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/video_segments/3.jpg"/>
-						<a href="#">Gotham</a>
-						<p>Watch The Legend Reborn Preview Special, Series Premiere MON Sept 22 at 8/7c!</p>
-						<span>Two Guys, One Mic</span>
-					</div>
-					
-					<div class="child">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/video_segments/4.jpg"/>
-						<a href="#">Geylang International FC</a>
-						<p>Share your thoughts and help shape the future of Utopia.</p>
-						<span>Back of the Net</span>
-					</div>
-
-					<div class="child">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/video_segments/5.jpg"/>
-						<a href="#">So you think you can dance?</a>
-						<p>Your Top 10 Season 11 dancers are going on tour!</p>
-						<span>Hollywood pass</span>
-					</div>
 				
 				</div> <!-- end box -->
 </div>

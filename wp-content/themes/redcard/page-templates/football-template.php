@@ -12,7 +12,6 @@ get_header();
 
       
 		<?php 
-		$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 		
 $args = array( 'post_type' => 'footballs');
 $loop = new WP_Query( $args ); $as =1;
@@ -38,8 +37,6 @@ while ( $loop->have_posts() ) : $loop->the_post();
       
 			<?php }
 			 ?><li>
-             
- 
  				<div class="img"> <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?> <span>Singapore</span> </div>
 
      			<div class="text">
