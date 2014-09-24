@@ -22,7 +22,7 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<?php if ( have_posts() ) : ?>
+			
 
 			<header class="page-header">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/radio_slide.jpg" class="tv_slide" />
