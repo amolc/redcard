@@ -338,7 +338,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	min-height:10px;
 	overflow:hidden;
 	float:left;
-	margin-right:30px;
+	margin-right:20px;
 	display:block;
 	margin-bottom:15px;
 }
@@ -800,3 +800,4 @@ span.screen-reader-text {display: none;}
 .post-thumbnail .attachment-twentyfourteen-full-width{ height:135px;}
 .single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px;}
 .single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
+.video-feature-image{ height:158px;}
