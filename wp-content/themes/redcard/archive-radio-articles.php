@@ -56,7 +56,7 @@ get_header(); ?>
 						);
 				    	$allarts = get_posts();
 				    	foreach ( $allarts as $article ) {
-						   //print_r( $article );
+						   print_r( $article );
 						   echo '<div class="r-child">'. get_the_post_thumbnail( $article->ID ).'
 	   							<h3>'.$article->post_title.'</h3>
 	   							<a href="#">In Added Time</a>
