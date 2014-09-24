@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="footer">
+<footer id="footer">
         <div class="box">
             <div class="col_150">
                 <h1>Shows</h1>
@@ -27,7 +27,7 @@
                 <div id="social"><?php dynamic_sidebar( 'header-social' ); ?></div>
             </div>
         </div>
-    </div>
+    </footer>
 	<?php wp_footer(); ?>
 </body>
 </html>
