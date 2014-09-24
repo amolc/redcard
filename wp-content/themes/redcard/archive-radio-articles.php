@@ -34,23 +34,44 @@ get_header(); ?>
 			<div class="box">
 				<h1>Radio Segments</h1>
 				<?php
-				$args = array( 'hide_empty=false' );
+				$args = array( ' hide_empty = false ' );
 
 				$terms = get_terms('radio-categories', $args);
-				print_r( $terms );
+			
 				if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
-				    $count = count($terms);
-				    $i=0;
-				    echo '<p class="my_term-archive">';
 				    foreach ($terms as $term) {
-				        $i++;
-				    	echo '<a href="' . get_term_link( $term ) . '" title="' . sprintf(__('View all post filed under %s', 'my_localization_domain'), $term->name) . '">' . $term->name . '</a>';
-				    	if ($count != $i) {
-				            echo ' &middot; ';
-				        }
-				        else {
-				            echo '</p>';
-				        }
+				    	echo '<div class="box">';
+				    	echo '<h4>' . $term->name. '</h4>';
+				    	$args = array(
+						'posts_per_page'   => 5,
+						'post_type'        => 'radio-articles',
+						'post_status'      => 'publish',
+						'tax_query' => array(
+								array(
+									'taxonomy' => 'radio-categories',
+									'field' => 'slug',
+									'terms' => $term->slug
+								)
+							)
+						);
+				    	$allarts = get_posts();
+				    	foreach ( $allarts as $article ) {
+						   //print_r( $article );
+						   echo '<div class="r-child">
+	   							<img src="assets/img/radio_segments/1.jpg">
+	   							<h3>Live transfer updates</h3>
+	   							<a href="#">In Added Time</a>
+	   							<button>Listen</button>
+	   							<div id="social_2">
+	   								<a href="#"><div class="facebook"></div></a>
+	   								<a href="#"><div class="twitter"></div></a>
+	   								<a href="#"><div class="message"></div></a>
+	   							</div>
+	   							<span>1,200 views<span>
+	   						</span></span></div>';
+						}
+				    	echo '<a href="#">View all in'.$term->name.'</a>';
+				        echo '</div>';
 				    }
 				  
 				}
@@ -67,7 +88,7 @@ get_header(); ?>
 						 * use this in a child theme, then include a file called called content-___.php
 						 * (where ___ is the post format) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+					//	get_template_part( 'content', get_post_format() );
 
 					endwhile;
 					// Previous/next page navigation.
@@ -83,6 +104,6 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar( 'content' );
-get_sidebar();
+//get_sidebar( 'content' );
+//get_sidebar();
 get_footer();
