@@ -7,7 +7,7 @@
  * @since Twenty Fourteen 1.0
  */
 ?>
-
+</div> <!-- container closing -->
 <footer id="footer">
         <div class="box">
             <div class="col_150">
