@@ -24,28 +24,11 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'twentyfourteen' ), get_the_date() );
-
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyfourteen' ) ) );
-
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'Y', 'yearly archives date format', 'twentyfourteen' ) ) );
-
-						else :
-							_e( 'Archives', 'twentyfourteen' );
-
-						endif;
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
 			<?php
-					// Start the Loop.
+					echo '<div class="box">';
+					echo '<h1>RADIO SEGMENTS</h1>';
+				    //echo '<h4>' . $term->name. '</h4>';
+				    	// Start the Loop.
 					while ( have_posts() ) : the_post();
 
 						/*
@@ -54,9 +37,31 @@ get_header(); ?>
 						 * (where ___ is the post format) and that will be used instead.
 						 */
 						//get_template_part( 'content', get_post_format() );
-						print_r( $post);
+						global $post;
+						   $radtitle = $post->post_title;
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
+						   	 	
+	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
+								
+	   							<a href="#">In Added Time</a>
+	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
+	   							<div id="social_2">
+	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $post->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
+	   								<a href="#"><div class="twitter"></div></a>
+	   								<a href="#"><div class="message"></div></a>
+	   							</div>
+	   							<span>1,290 views<span>
+	   						</span></span></div>';
+	   						$i++;
+						
+				    	
+				        
+
 
 					endwhile;
+
+					echo '</div>';
 					// Previous/next page navigation.
 					twentyfourteen_paging_nav();
 
@@ -70,5 +75,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();?>
