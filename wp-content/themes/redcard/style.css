@@ -381,6 +381,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	min-height:150px;
 	overflow:hidden;
 	display:block;
+	text-align: center;
 }
 
 #container .box .r-child img {
@@ -409,7 +410,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 #container .box .r-child .llink {
-	display:block;
+	display:inline-block;
+	width: auto;
 	padding:5px 10px;
 	background:#333333;
 	color:#fff;
