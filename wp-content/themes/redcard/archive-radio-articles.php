@@ -34,7 +34,7 @@ get_header(); ?>
 			<div class="box">
 				<h1>Radio Segments</h1>
 				<?php
-				$args = array( ' hide_empty = false ' );
+				$args = array( ' hide_empty = true' );
 
 				$terms = get_terms('radio-categories', $args);
 			
@@ -74,7 +74,7 @@ get_header(); ?>
 	   						</span></span></div>';
 	   						$i++;
 						}
-				    	echo '<div class="lastl"><a href="#">View all in '.$term->name.'</a></div>';
+				    	echo '<div class="lastl"><a href="'.get_term_link( $term ).'">View all in '.$term->name.'</a></div>';
 				        echo '</div>';
 				    }
 				  
