@@ -72,6 +72,37 @@ function codex_radioarticle_init() {
 
 	register_taxonomy( 'radio-categories', 'radio-articles', $args );
 
+	$labels = array(
+		'name'                       => _x( 'Radio Tags', 'taxonomy general name' ),
+		'singular_name'              => _x( 'Radio Tag', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search Radio Tags' ),
+		'popular_items'              => __( 'Popular Radio Tags' ),
+		'all_items'                  => __( 'All Radio Tags' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Radio Tag' ),
+		'update_item'                => __( 'Update Radio Tag' ),
+		'add_new_item'               => __( 'Add New Radio Tag' ),
+		'new_item_name'              => __( 'New Radio Tag Name' ),
+		'separate_items_with_commas' => __( 'Separate Radio Tags with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove Radio Tags' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Radio Tags' ),
+		'not_found'                  => __( 'No Radio Tags found.' ),
+		'menu_name'                  => __( 'Radio Tags' ),
+	);
+
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var'             => true,
+		//'rewrite'               => array( 'slug' => 'radio-categories' ),
+	);
+
+	register_taxonomy( 'radio-tags', 'radio-articles', $args );
+
 
 	$labels = array(
 		'name'               => _x( 'Show Articles', 'post type general name', 'your-plugin-textdomain' ),
