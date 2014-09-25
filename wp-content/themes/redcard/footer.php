@@ -19,7 +19,7 @@
                 <h1>Home</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Mid' )); ?>
             </div>
-            
+              <div class="col_150">&nbsp;</div>
             <div class="col_300">
                 <?php dynamic_sidebar( 'footer-right' ); ?>
                 <div id="social"><?php dynamic_sidebar( 'header-social' ); ?></div>
