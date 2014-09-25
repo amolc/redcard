@@ -408,7 +408,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	text-align:center;
 }
 
-#container .box .r-child a {
+#container .box .r-child .llink {
 	display:block;
 	padding:5px 10px;
 	background:#333333;

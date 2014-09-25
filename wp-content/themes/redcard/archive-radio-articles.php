@@ -60,7 +60,7 @@ get_header(); ?>
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'
 	   							<h3>'.$article->post_title.'</h3>
 	   							<a href="#">In Added Time</a>
-	   							<a href="'.get_permalink( $article->ID).'">Listen</a>
+	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
 	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $article->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
 	   								<a href="#"><div class="twitter"></div></a>
