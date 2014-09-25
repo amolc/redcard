@@ -170,3 +170,34 @@ function codex_radioarticle_init() {
 	register_taxonomy( 'show-categories', 'show-articles', $args );
 }
 
+
+add_action( 'add_meta_boxes', 'radio_add_meta_box' );
+function radio_add_meta_box( $post_id ){
+	add_meta_box(
+			'radio_soundcloud',
+			__( 'Soundcloud', 'myplugin_textdomain' ),
+			'radio_soundcloud_meta_box_callback',
+			'radio-articles'
+			
+		);
+
+}
+
+function radio_soundcloud_meta_box_callback( $post ){
+	$field_value = get_post_meta( $post->ID, '_wp_editor_scloud', false );
+	wp_editor( $field_value[0], '_wp_editor_scloud' );
+}
+
+function tin_radio_save_data($post_id) {
+	global $meta_box_title,  $post;
+	 
+	//Check autosave
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return $post_id;
+	}
+	if( 'radio-articles' == $post->post_type ){
+			update_post_meta( $post_id, '_wp_editor_scloud', $_POST['_wp_editor_scloud'] );
+	}
+
+}
+add_action('save_post', 'tin_radio_save_data');
