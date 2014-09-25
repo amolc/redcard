@@ -34,7 +34,7 @@ get_header(); ?>
 			
 		?>
         
-        <div class="single-rad-vid"><?php echo $field_value[0]; ?></div>
+        <div class="single-rad-vid"><?php echo apply_filters('the_content', $field_value[0] ); ?></div>
 		<div class="single-post-image radio-single-image">
         <?php 
 				//twentyfourteen_post_thumbnail();
