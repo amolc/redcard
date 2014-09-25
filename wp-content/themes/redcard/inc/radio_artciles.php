@@ -61,7 +61,7 @@ function codex_radioarticle_init() {
 	);
 
 	$args = array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
