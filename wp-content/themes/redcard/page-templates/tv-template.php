@@ -36,14 +36,18 @@ get_header();
 		
 <div class="box">
 					<h1>Video Segments</h1>
-                  <?php  $args = array( 'post_type' => 'tvideo');
-$loop = new WP_Query( $args ); $as =1;
-while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                 <?php  $args = array( 'post_type' => 'tvideo');
+						  $loop = new WP_Query( $args ); $as =1;
+						  while ( $loop->have_posts() ) : $loop->the_post(); ?>
 					<div class="child">
 						<?php // twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
                         <?php the_content(); ?>
-						<a href="#"><?php the_title(); ?></a>
-						<p><?php echo get_the_excerpt(); ?></p>
+                      	<?php $trimtitle = get_the_title();
+							  $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
+						<a href="#"><?php echo $shorttitle; ?></a>
+                        <?php $trimexcerpt = get_the_excerpt();
+							  $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 10, $more = '…' ); ?>
+						<p><?php echo $shortexcerpt; ?></p>
 						<span></span>
 					</div>
 					<?php endwhile;?>

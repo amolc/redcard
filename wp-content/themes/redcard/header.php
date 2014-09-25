@@ -153,14 +153,17 @@
 			while ( $loop->have_posts() ) : $loop->the_post();
 ?>
     <div id="l_n" class="home-latest-image">
+    <?php $trimtitle = get_the_title();
+	
+		  $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span>Singapore</span> </div>
-      <div class="text"> <a href="<?php the_permalink() ?>">
-        <?php the_title(); ?>
-        </a>
-        <p><?php echo get_the_excerpt(); ?></p>
-        <div class="date" id="date2"> <span>120 views</span>
+      <div class="text"> <a href="<?php the_permalink() ?>"><?php echo $shorttitle; ?></a>
+      <?php $trimcontent = get_the_content();
+		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
+      <p><?php echo $shortcontent; ?></p>
+      <div class="date" id="date2"> <span>120 views</span>
           <div id="social_3">
             <div class="facebook"></div>
             <div class="twitter"></div>
