@@ -47,7 +47,7 @@ get_header();
 						<a href="#"><?php echo $shorttitle; ?></a>
                         <?php $trimexcerpt = get_the_excerpt();
 							  $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 10, $more = '…' ); ?>
-						<p><?php echo $shortexcerpt; ?></p>
+						<p class="tvpexcerpt"><?php echo $shortexcerpt; ?></p>
 						<span></span>
 					</div>
 					<?php endwhile;?>

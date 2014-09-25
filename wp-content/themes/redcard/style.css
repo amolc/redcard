@@ -881,11 +881,12 @@ color: #333333;
 	font-size:14px;
 	line-height:22px;
 	margin-top:5px;
+	height: 45px;
 }
 #container .left #date2 {
 background: #fff;
 color: #333333;
-margin-top: 30px;
+margin-top: 20px;
 float: right;
 }
 
@@ -906,3 +907,4 @@ span.screen-reader-text {display: none;}
 .home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;font-weight: bold;text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
 .home-latest-image .text p{color: #333333;font-size: 14px;line-height: 22px;margin-top: 5px;}
 .vid iframe{ width:240px; height:170px;}
+.tvpexcerpt{height:45px;}
