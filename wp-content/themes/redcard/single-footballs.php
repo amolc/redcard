@@ -6,11 +6,11 @@ get_header(); ?>
 <div id="container">
   <div class="left">
     <h2>Football</h2>
-    <a href="">
-    <h1>
+    
+   <div class="sigle-football-title"> <h1>
       <?php the_title(); ?>
-    </h1>
-    </a>
+    </h1></div>
+   
     <div class="date"> <a href="#">Singapore</a> <span>
       <?php the_time('l, F j, Y'); ?>
       </span>
