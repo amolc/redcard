@@ -3,25 +3,73 @@
  * Template Name: TV template Page
  */
 get_header(); 
+$m_tablename=$wpdb->prefix."programmes";
 
+function my_convert_date($date)
+{
+	$datearr=explode("-",$date);
+	
+	$newdate=strftime("%A, %d %B %Y",mktime(0,0,0,$datearr[1],$datearr[2],$datearr[0]));
+	return $newdate;
+}
+function my_convert_time($time)
+{
+	$timearr=explode(":",$time);
+	$mhour=$timearr[0];
+	$mmin=$timearr[1];	
+	if($mhour>12)
+	{
+		$newstr=($mhour-12).":".$mmin." pm";
+	}
+		else
+	{
+		$newstr=($mhour).":".$mmin." am";
+	}
+return $newstr;
+}
 ?>
 <img src="<?php echo get_template_directory_uri(); ?>/img/tv_slide.jpg" class="tv_slide"/>
+
 <div class="box">
 					<div class="s">
 						<h1>On Tonight</h1>
+                        <?php 
+						$programmequery="select * from $m_tablename where prgdate>=now() order by prgdate LIMIT 0,2";
+						$programmesql=$wpdb->get_results($programmequery);
+						if(sizeof($programmesql)>0)
+						{
+								?>
+						<ul>
+                        <?php foreach($programmesql as $my_sql)
+						{
+							?>
+							<li>	
+								<span class="date"><?php echo my_convert_date($my_sql->prgdate);?></span>
+								<h2><?php echo $my_sql->prgTitle;?></h2>
+								<p><?php echo my_convert_time($my_sql->prgfrom);?> to <?php echo my_convert_time($my_sql->prgto);?><br/><?php echo $my_sql->prgtagline;?></p>
+							</li>
+							<?php
+						}
+							?>
+						</ul>
+					<a href="#">View all schedule</a>
+                        <?php
+						}
+						else
+						{
+							?>
 						<ul>
 							<li>	
-								<span class="date">Monday, 15 September 2014</span>
-								<h2>David Chidgey (Chelsea Fancast)</h2>
-								<p>10.30 am to 11.30am<br/> Drivetime</p>
+								
+								<h2>No Programme Scheduled</h2>
+							
 							</li>
-							<li>	
-								<span class="date">Monday, 15 September 2014</span>
-								<h2>David Chidgey (Chelsea Fancast)</h2>
-								<p>10.30 am to 11.30am<br/> Drivetime</p>
-							</li>
+							
 						</ul>
-						<a href="#">View all schedule</a>
+					
+                        <?php
+						}
+						?>
 					</div>
 					
 					<div class="b">

@@ -258,6 +258,7 @@ global $wpdb;
 						foreach($allsql as $mysql)
 						{
 							?>
+                            <tr>
 							<td><?php echo $sno++;?></td>
                             	<td><?php echo $mysql->prgTitle;?></td>
                                 	<td><?php echo $mysql->prgdate;?></td>
@@ -266,6 +267,7 @@ global $wpdb;
                                                    	<td style="text-align:right;">
 
                                                   <a href="admin.php?page=today-programme&delId=<?php echo $mysql->prgId;?>"><i class="fa fa-ban mandatory"></i></a></td>
+                                                  </tr>
 							<?php
 						}
 						?>
