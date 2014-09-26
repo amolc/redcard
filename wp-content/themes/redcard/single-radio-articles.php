@@ -8,6 +8,7 @@
 get_header(); ?>
 <style>
 #container .left h1{ margin-top:30px; margin-bottom: 10px;}
+#container .left .related ul li img{ width:210px;}
 </style>
   <div class="left">
 		<?php
@@ -25,21 +26,15 @@ get_header(); ?>
         <div class="message"></div>
       </div>
     </div>
-        <?php $all_meta = get_post_meta($post->ID);
-			$rg=0;
-			$mybal="";
-			foreach($all_meta as $myall)
-			{
-				if($rg==3)
-				{
-					$mybal=$myall[0];
-				}
-				$rg++;
-			}
+        <?php
+		$field_value = get_post_meta( $post->ID, '_wp_editor_scloud' );
+	
+		
+		 
 			
 		?>
         
-        <div class="single-rad-vid"><?php echo $mybal; ?></div>
+        <div class="single-rad-vid"><?php echo $field_value[0]; ?></div>
 		<div class="single-post-image radio-single-image">
         <?php 
 				//twentyfourteen_post_thumbnail();
@@ -62,7 +57,7 @@ get_header(); ?>
     $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
    
     ?>
-    <div class="related">
+    <div class="related related-radio">
       <ul>
         <?php if(!empty($recent_posts)){ 
               foreach($recent_posts as $row){
