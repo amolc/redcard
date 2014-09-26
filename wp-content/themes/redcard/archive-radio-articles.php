@@ -17,8 +17,83 @@
  * @since Twenty Fourteen 1.0
  */
 
-get_header(); ?>
+get_header(); 
+$m_tablename=$wpdb->prefix."programmes";
 
+function my_convert_date($date)
+{
+	$datearr=explode("-",$date);
+	
+	$newdate=strftime("%A, %d %B %Y",mktime(0,0,0,$datearr[1],$datearr[2],$datearr[0]));
+	return $newdate;
+}
+function my_convert_time($time)
+{
+	$timearr=explode(":",$time);
+	$mhour=$timearr[0];
+	$mmin=$timearr[1];	
+	if($mhour>12)
+	{
+		$newstr=($mhour-12).":".$mmin." pm";
+	}
+		else
+	{
+		$newstr=($mhour).":".$mmin." am";
+	}
+return $newstr;
+}
+?>fasdfas
+<div class="box">
+					<div class="s">
+						<h1>On Tonight</h1>
+                        <?php 
+						$programmequery="select * from $m_tablename where prgdate>=now() order by prgdate";
+						$programmesql=$wpdb->get_results($programmequery);
+						if(sizeof($programmesql)>0)
+						{
+								?>
+						<ul style="overflow:scroll;height:250px; ">
+                        <?php foreach($programmesql as $my_sql)
+						{
+							?>
+							<li>	
+								<div class="date" style="width:180px;"><?php echo my_convert_date($my_sql->prgdate);?></div >
+								<h2><?php echo $my_sql->prgTitle;?></h2>
+								<p><?php echo my_convert_time($my_sql->prgfrom);?> to <?php echo my_convert_time($my_sql->prgto);?><br/><?php echo $my_sql->prgtagline;?></p>
+							</li>
+							<?php
+						}
+							?>
+						</ul>
+					
+                        <?php
+						}
+						else
+						{
+							?>
+						<ul style="overflow:scroll;height:250px; ">
+							<li>	
+								
+								<h2>No Programme Scheduled</h2>
+							
+							</li>
+							
+						</ul>
+					
+                        <?php
+						}
+						?>
+					</div>
+					
+					<div class="b">
+						<h1>Featured Video</h1>
+						<iframe width="340" height="255" src="http://www.youtube.com/embed/g5xT54X9mIM" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="b" id="no-border">
+						<h1>Sponsor</h1>
+						<?php dynamic_sidebar( 'postsponser' ); ?>
+					</div>
+				</div>
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 

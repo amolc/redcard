@@ -34,17 +34,17 @@ return $newstr;
 					<div class="s">
 						<h1>On Tonight</h1>
                         <?php 
-						$programmequery="select * from $m_tablename where prgdate>=now() order by prgdate LIMIT 0,2";
+						$programmequery="select * from $m_tablename where prgdate>=now() order by prgdate";
 						$programmesql=$wpdb->get_results($programmequery);
 						if(sizeof($programmesql)>0)
 						{
 								?>
-						<ul>
+						<ul style="overflow:scroll;height:250px; ">
                         <?php foreach($programmesql as $my_sql)
 						{
 							?>
 							<li>	
-								<span class="date"><?php echo my_convert_date($my_sql->prgdate);?></span>
+								<div class="date" style="width:180px;"><?php echo my_convert_date($my_sql->prgdate);?></div >
 								<h2><?php echo $my_sql->prgTitle;?></h2>
 								<p><?php echo my_convert_time($my_sql->prgfrom);?> to <?php echo my_convert_time($my_sql->prgto);?><br/><?php echo $my_sql->prgtagline;?></p>
 							</li>
@@ -52,13 +52,13 @@ return $newstr;
 						}
 							?>
 						</ul>
-					<a href="#">View all schedule</a>
+					
                         <?php
 						}
 						else
 						{
 							?>
-						<ul>
+						<ul style="overflow:scroll;height:250px; ">
 							<li>	
 								
 								<h2>No Programme Scheduled</h2>
