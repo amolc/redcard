@@ -25,8 +25,21 @@ get_header(); ?>
         <div class="message"></div>
       </div>
     </div>
-        <?php $all_meta = get_post_meta($post->ID);?>
-        <div class="single-rad-vid"><?php echo $all_meta['_oembed_f1323014c18094c603c874db4bb5064e'][0]; ?></div>
+        <?php $all_meta = get_post_meta($post->ID);
+			$rg=0;
+			$mybal="";
+			foreach($all_meta as $myall)
+			{
+				if($rg==3)
+				{
+					$mybal=$myall[0];
+				}
+				$rg++;
+			}
+			
+		?>
+        
+        <div class="single-rad-vid"><?php echo $mybal; ?></div>
 		<div class="single-post-image radio-single-image">
         <?php 
 				//twentyfourteen_post_thumbnail();
