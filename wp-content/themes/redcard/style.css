@@ -980,12 +980,37 @@ filter: none;}
 .sigle-football-title{ margin-top: 25px;}
 .sigle-football-title h1{ font-size: 26px !important;margin: 0 0 15px !important;c}
 .home-radio-post{margin-right: 13px !important;}
-.menu-orange :hover{
+.menu-orange:hover{
 	background-color:#f99235;
 	text-transform:uppercase;
 	text-decoration:none;
 	font-size:16px;
 	font-weight:bold;
 	display:block;
+
+	padding-bottom:10px;
+	
+}
+.menu-green:hover{
+	background-color:#00a69c;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+
+	padding-bottom:10px;
+	
+}
+
+.menu-blue:hover{
+	background-color:#116dbb;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+
+	padding-bottom:10px;
 	
 }
