@@ -6,6 +6,9 @@
  * @since Twenty Fourteen 1.0
  */
 get_header(); ?>
+<style>
+#container .left h1{ margin-top:30px;}
+</style>
   <div class="left">
 		<?php
 				while ( have_posts() ) : the_post();
