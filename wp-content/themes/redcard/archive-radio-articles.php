@@ -42,8 +42,16 @@ function my_convert_time($time)
 	}
 return $newstr;
 }
-?>fasdfas
-<div class="box">
+?>
+	<section id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+
+			<header class="page-header">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/radio_slide.jpg" class="tv_slide" />
+			</header><!-- .page-header -->
+            <div class="box">
 					<div class="s">
 						<h1>On Tonight</h1>
                         <?php 
@@ -57,7 +65,7 @@ return $newstr;
 						{
 							?>
 							<li>	
-								<div class="date" style="width:180px;"><?php echo my_convert_date($my_sql->prgdate);?></div >
+								<div class="date" style="width:180px;background-color:#f99235;"><?php echo my_convert_date($my_sql->prgdate);?></div >
 								<h2><?php echo $my_sql->prgTitle;?></h2>
 								<p><?php echo my_convert_time($my_sql->prgfrom);?> to <?php echo my_convert_time($my_sql->prgto);?><br/><?php echo $my_sql->prgtagline;?></p>
 							</li>
@@ -94,14 +102,6 @@ return $newstr;
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
 				</div>
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			
-
-			<header class="page-header">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/radio_slide.jpg" class="tv_slide" />
-			</header><!-- .page-header -->
 			<div class="box">
 				<?php dynamic_sidebar( 'radioarchive' ); ?>	
 			</div>
