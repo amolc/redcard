@@ -58,7 +58,7 @@ get_header(); ?>
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {	
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'
-	   							<h3>'.$article->post_title.'</h3>
+	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a">'.$article->post_title.'</a></h3>
 	   							<a href="#">In Added Time</a>
 	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
