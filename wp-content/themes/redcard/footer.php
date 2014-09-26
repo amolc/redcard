@@ -18,7 +18,7 @@
             </div>
             <div class="col_150"><?php dynamic_sidebar( 'footer-left-2' ); ?></div>
             <div class="col_150">
-                <h1>Home</h1>
+                <h1>About</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Mid' )); ?>
             </div>
             <div class="col_150">
