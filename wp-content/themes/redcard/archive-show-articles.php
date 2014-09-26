@@ -62,8 +62,8 @@ get_header(); ?>
 	   							<a href="#">In Added Time</a>
 	   							<button>Listen</button>
 	   							<div id="social_2">
-	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $article->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
-	   								<a href="http://twitter.com/intent/tweet?text=&url='.get_permalink( $article->ID).'" target="_blank"><div class="twitter"></div></a>
+	   								<a href="#"><div class="facebook"></div></a>
+	   								<a href="#"><div class="twitter"></div></a>
 	   								<a href="#"><div class="message"></div></a>
 	   							</div>
 	   							<span>1,290 views<span>

@@ -21,8 +21,8 @@ get_header(); ?>
       <?php the_time('l, F j, Y'); ?>
       </span>
       <div id="social_3">
-        <div class="facebook"></div>
-        <div class="twitter"></div>
+        <a href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article->ID);?>" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
+	   								<a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank"><div class="twitter"></div></a>
         <div class="message"></div>
       </div>
     </div>
