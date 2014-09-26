@@ -55,8 +55,8 @@ function today_programme()
 </style>
         <?php  $url = plugins_url();?>
         <link id="bs-css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-        <link id="bsdp-css" href="<?=$url;?>/todayprogramme/datepicker3.css" rel="stylesheet">
-        <script type="text/javascript" src="<?=$url;?>/todayprogramme/bootstrap-datepicker.js"></script>
+        <link id="bsdp-css" href="<?php echo $url;?>/todayprogramme/datepicker3.css" rel="stylesheet">
+        <script type="text/javascript" src="<?php echo $url;?>/todayprogramme/bootstrap-datepicker.js"></script>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="box box-body">
@@ -160,7 +160,7 @@ global $wpdb;
 							$i1=$i;
 						}
 						?>
-						<option value="<?=$i1;?>"><?=$i1;?></option>
+						<option value="<?php echo $i1;?>"><?php echo $i1;?></option>
 						<?php 
 					}
 					?>
@@ -178,7 +178,7 @@ global $wpdb;
 							$i1=$i;
 						}
 						?>
-						<option value="<?=$i1;?>"><?=$i1;?></option>
+						<option value="<?php echo $i1;?>"><?php echo $i1;?></option>
 						<?php 
 					}
 					?>
@@ -197,7 +197,7 @@ global $wpdb;
 							$i1=$i;
 						}
 						?>
-						<option value="<?=$i1;?>"><?=$i1;?></option>
+						<option value="<?php echo $i1;?>"><?php echo $i1;?></option>
 						<?php 
 					}
 					?>
@@ -215,7 +215,7 @@ global $wpdb;
 							$i1=$i;
 						}
 						?>
-						<option value="<?=$i1;?>"><?=$i1;?></option>
+						<option value="<?php echo $i1;?>"><?php echo $i1;?></option>
 						<?php 
 					}
 					?>
