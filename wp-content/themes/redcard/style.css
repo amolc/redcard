@@ -418,6 +418,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	color:#fff;
 	margin:0 auto;
 	border:0;
+	text-decoration: none;
 }
 
 #container .box .r-child span {
