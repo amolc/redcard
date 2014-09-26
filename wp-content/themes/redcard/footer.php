@@ -20,7 +20,7 @@
                 <?php wp_nav_menu( array('menu' => 'Footer Mid' )); ?>
             </div>
             <div class="col_150">
-                &nbsp;
+                &nbsp;&nbsp;
             </div>
             <div class="col_300">
                 <?php dynamic_sidebar( 'footer-right' ); ?>
