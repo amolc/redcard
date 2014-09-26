@@ -8,6 +8,8 @@
  */
 ?>
 </div>
+
+
 <div id="footer">
         <div class="box">
             <div class="col_150">
@@ -28,6 +30,11 @@
             </div>
         </div>
     </div>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$( ".widget_sp_image-image-link img" ).addClass( "desaturate" );
+</script>
 	<?php wp_footer(); ?>
+    
 </body>
 </html>
