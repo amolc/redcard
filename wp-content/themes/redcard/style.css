@@ -17,7 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 * {
 	margin:0;
 	padding:0;
-	font-family:arial;
+	font-family:Helvetica;
 }
 
 @font-face {
@@ -308,7 +308,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #container .box h4 { 
 	font-size:18px;
 	font-weight:bold;
-	font-family:arial;
+	font-family:Helvetica;
 	color:#f99235;
 	margin-bottom:20px;
 }
@@ -355,7 +355,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	font-size:18px;
 	padding:10px 0 5px 0;
 	display:block;
-	font-family:arial;
+	font-family:Helvetica;
 }
 
 #container .box .child span {
@@ -395,7 +395,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	display:block;
 	width:100%;
 	text-align:center;
-	font-family:arial !important;
+	font-family:Helvetica !important;
 }
 
 #container .box .r-child a {
@@ -497,7 +497,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	color:#c4c4c4;
 	text-decoration:none;
 	line-height:20px;
-	font-family:arial;
+	font-family:Helvetica;
 }
 
 #footer .box .col_150 h1 {
@@ -721,7 +721,7 @@ color: #333333;
 	margin-bottom:10px;
 	display:block;
 	font-weight:bold;
-	font-family:arial;
+	font-family:Helvetica;
 }
 
 #container .left .c_list ul li .text p {
@@ -908,7 +908,7 @@ span.screen-reader-text {display: none;}
 .home-latest-image .text p{color: #333333;font-size: 14px;line-height: 22px;margin-top: 5px;}
 .vid iframe{ width:240px; height:170px;}
 .tvpexcerpt{height:45px;}
-.r-child-h3-a{height: 68px; color: #fff !important;display: block !important;font-family: arial !important;font-size: 18px !important;text-align: center !important;width: 100% !important;text-decoration: none;}
+.r-child-h3-a{height: 68px; color: #fff !important;display: block !important;font-family: Helvetica !important;font-size: 18px !important;text-align: center !important;width: 100% !important;text-decoration: none;}
 .radio-single-image img{ height:170px !important;}
 .radio-single-image p{color: #333333;font-size: 14px;line-height: 23px;margin-bottom: 20px;}
 .single-rad-vid iframe{height: 250px;width: 582px;}
