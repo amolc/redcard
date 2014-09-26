@@ -13,10 +13,10 @@
 <div id="footer">
         <div class="box">
             <div class="col_150">
-                <h1>Shows</h1>
+                <h1>Radio Shows</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Left' )); ?>
             </div>
-            <div class="col_150"><?php dynamic_sidebar( 'footer-left-2' ); ?></div>
+            <div class="col_150" ><?php dynamic_sidebar( 'footer-left-2' ); ?></div>
             <div class="col_150">
                 <h1>About</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Mid' )); ?>
