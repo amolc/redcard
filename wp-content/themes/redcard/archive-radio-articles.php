@@ -140,11 +140,15 @@ return $newstr;
 								
 	   							<a href="#">In Added Time</a>
 	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
-	   							<div id="social_2">
-	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $article->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
-	   								<a href="http://twitter.com/intent/tweet?text=&url='.get_permalink( $article->ID).'" target="_blank"><div class="twitter"></div></a>
-	   								<a href=""><div class="message"></div></a>
-	   							</div>
+	   							<div id="social_2">';
+								?>
+								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
+        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        
+								<?php
+	   								
+	   							echo '</div>
 	   							<span>1,290 views<span>
 	   						</span></span></div>';
 	   						$i++;
