@@ -982,4 +982,11 @@ filter: none;}
 .home-radio-post{margin-right: 13px !important;}
 .menu-orange:hover{
 	background-color:#f99235;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:16px;
+	padding:0px 13px;
+	margin-top:15px;
+	font-weight:bold;
+	display:block;
 }
