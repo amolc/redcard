@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 <style>
-#container .left h1{ margin-top:30px;}
+#container .left h1{ margin-top:30px; margin-bottom: 10px;}
 </style>
   <div class="left">
 		<?php
