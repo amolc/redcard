@@ -17,7 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 * {
 	margin:0;
 	padding:0;
-	font-family:Helvetica;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 @font-face {
@@ -309,7 +309,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #container .box h4 { 
 	font-size:18px;
 	font-weight:bold;
-	font-family:Helvetica;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	color:#f99235;
 	margin-bottom:20px;
 }
@@ -332,7 +332,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	color:#999999;
 	font-size:14px;
 	/*font-family:arial;*/
-	font-family:Helvetica;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	margin-top:3px;
 }
 
@@ -356,7 +356,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	font-size:18px;
 	padding:10px 0 5px 0;
 	display:block;
-	font-family:Helvetica;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 #container .box .child span {
@@ -498,7 +498,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	color:#c4c4c4;
 	text-decoration:none;
 	line-height:20px;
-	font-family:Helvetica;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 #footer .box .col_150 h1 {
@@ -722,7 +722,7 @@ color: #333333;
 	margin-bottom:10px;
 	display:block;
 	font-weight:bold;
-	font-family:Helvetica;
+	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 #container .left .c_list ul li .text p {
