@@ -142,13 +142,16 @@ return $newstr;
 	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
 	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $article->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
-	   								<a href="#"><div class="twitter"></div></a>
+	   								<a href="http://twitter.com/intent/tweet?text=&url='.get_permalink( $article->ID).'" target="_blank"><div class="twitter"></div></a>
 	   								<a href="#"><div class="message"></div></a>
 	   							</div>
 	   							<span>1,290 views<span>
 	   						</span></span></div>';
 	   						$i++;
 						}
+						/*
+						<a class="twitter_link" href="http://twitter.com/share?text=&url=http%3A//redcard.fountaintechies.com/radio-articles/andrew-mangan-arseblog-on-drivetime/" target="_blank">INSERT LINK CONTENTS HERE</a>
+						*/
 				    	echo '<div class="lastl"><a href="'.get_term_link( $term ).'">View all in '.$term->name.'</a></div>';
 				        echo '</div>';
 				    }
