@@ -16,6 +16,15 @@ get_header(); ?>
 		?>
         <h2>Radio</h2>
         <h1><?php the_title(); ?></h1>
+        <div class="date"> <a href="#">Singapore</a> <span>
+      <?php the_time('l, F j, Y'); ?>
+      </span>
+      <div id="social_3">
+        <div class="facebook"></div>
+        <div class="twitter"></div>
+        <div class="message"></div>
+      </div>
+    </div>
         <?php $all_meta = get_post_meta($post->ID);?>
         <div class="single-rad-vid"><?php echo $all_meta['_oembed_f1323014c18094c603c874db4bb5064e'][0]; ?></div>
 		<div class="single-post-image radio-single-image">
