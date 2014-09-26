@@ -54,6 +54,7 @@ function today_programme()
 }
 </style>
         <?php  $url = plugins_url();?>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link id="bs-css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
         <link id="bsdp-css" href="<?php echo $url;?>/todayprogramme/datepicker3.css" rel="stylesheet">
         <script type="text/javascript" src="<?php echo $url;?>/todayprogramme/bootstrap-datepicker.js"></script>
