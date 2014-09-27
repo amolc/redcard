@@ -65,7 +65,7 @@ get_header(); ?>
                  
 				   $feat_image = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');
               ?>
-        <li> <img src="<?php  echo $feat_image;?>"> <a href="<?php echo get_permalink( $row['ID']); ?>"><?php echo $row['post_title']; ?></a> </li>
+        <li> <?php  echo $feat_image;?> <a href="<?php echo get_permalink( $row['ID']); ?>"><?php echo $row['post_title']; ?></a> </li>
         <?php } } ?>
       </ul>
     </div>
