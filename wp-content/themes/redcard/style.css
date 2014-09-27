@@ -969,12 +969,7 @@ span.screen-reader-text {display: none;}
 #social a{ padding-left:7px;}
 .social-bottom a{ padding-left: 0 !important;padding-right: 7px;}
 .social-bottom{ margin-top: -10px;}
-img.desaturate{
--webkit-filter: grayscale(100%);
-filter: grayscale(100%);
-filter: gray;
-filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.1111 0.1111 0.1111 0 0 0.1111 0.1111 0.1111 0 0 0.1111 0.1111 0.1111 0 0 0 0 0 1 0' /></filter></svg>#greyscale");}
-img.desaturate:hover{-webkit-filter: grayscale(0%);
+
 filter: grayscale(0%);
 filter: none;}
 .sigle-football-title{ margin-top: 25px;}
@@ -985,8 +980,32 @@ filter: none;}
 	text-transform:uppercase;
 	text-decoration:none;
 	font-size:16px;
-	
-
 	font-weight:bold;
 	display:block;
+
+	padding-bottom:10px;
+	
+}
+.menu-green:hover{
+	background-color:#00a69c;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+
+	padding-bottom:10px;
+	
+}
+
+.menu-blue:hover{
+	background-color:#116dbb;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	display:block;
+
+	padding-bottom:10px;
+	
 }
