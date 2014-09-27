@@ -69,13 +69,20 @@
   <div class="left">
     <h1 class="h1">Featured</h1>
     <ul class="bxslider">
-    <?php	//while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <?php // twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?><?php // echo get_the_title();?>
-      <li><img src="<?php echo get_template_directory_uri(); ?>/img/slider/2.jpg" title="<label>The long and winding road</label><div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
-      <li><img src="<?php echo get_template_directory_uri(); ?>/img/slider/1.jpg" title="Gerard Pique gets over Spain snub by watching basketball<div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
-      <li><img src="<?php echo get_template_directory_uri(); ?>/img/slider/2.jpg" title="<label>The long and winding road</label><div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
-       <li><img src="<?php echo get_template_directory_uri(); ?>/img/slider/2.jpg" title="<label>The long and winding road</label><div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
-       <?php //endwhile; ?>
+  
+      <?php 
+	  
+	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'";
+         $resultarray = $wpdb->get_results($selectsql) ;
+		if(!empty($resultarray)){
+			foreach($resultarray as $row)
+			{
+				
+			 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
+	  ?>
+      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
+    <?php } }?>
+       
     </ul>
   </div>
   <div class="right">

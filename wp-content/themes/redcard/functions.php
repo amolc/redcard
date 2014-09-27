@@ -737,8 +737,8 @@ add_filter( 'cmb_meta_boxes', 'be_tvideo_metaboxes_strength' );
 
 
 function be_footballs_metaboxes_strength( $meta_boxes ) {
-	$prefix = '_cmb_'; // Prefix for all fields
-	$posttype = 'footballs_';
+	$prefix = '_cmb_footballs_'; // Prefix for all fields
+	$posttype = 'footballs';
 	$meta_boxes[] = array(
 		'id' => 'footballs_metabox',
 		'title' => __( 'Additional Detail', 'cmb' ),
@@ -774,8 +774,8 @@ add_filter( 'cmb_meta_boxes', 'be_footballs_metaboxes_strength' );
 
 
 function be_radioarticles_metaboxes_strength( $meta_boxes ) {
-	$prefix = '_cmb_'; // Prefix for all fields
-	$posttype = 'radio-articles_';
+	$prefix = '_cmb_radio-articles_'; // Prefix for all fields
+	$posttype = 'radio-articles';
 	$meta_boxes[] = array(
 		'id' => 'radio-articles_metabox',
 		'title' => __( 'Additional Detail', 'cmb' ),
