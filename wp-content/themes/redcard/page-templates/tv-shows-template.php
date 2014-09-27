@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: TV template Page
+ * Template Name: TV Show template Page
  */
 get_header(); 
 $m_tablename=$wpdb->prefix."programmes";
@@ -63,13 +63,13 @@ return $newstr;
 					</div>
 					<div class="b">
 						<h1>Featured Video</h1>
-                        <?php 
-				 		 	$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_tvideo_featured_checkbox' ORDER BY RAND() LIMIT 0,1";
+						<?php 
+				 		 	$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_tvideo_show_featured_checkbox' ORDER BY RAND() LIMIT 0,1";
          					$resultarray = $wpdb->get_results($selectsql) ;
 							if(!empty($resultarray)){
 								foreach($resultarray as $row)
 									{
-				 						$youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
+				 						$youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_show_youtub_url', true ); 
 				 						$videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='320', $height='250');
 	  					?>
 						<div class="" style=" width:320px; height:250px; margin-left:10px;"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
@@ -82,11 +82,11 @@ return $newstr;
 				</div> 
 <div class="box">
 					<h1>Video Segments</h1>
-               <?php  $args = array( 'post_type' => 'tvideo');
+               <?php  $args = array( 'post_type' => 'tvideoshow');
 					  $loop = new WP_Query( $args ); $as =1;
 					  while ( $loop->have_posts() ) : $loop->the_post(); 
 							 $postID = get_the_ID();
-							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
+							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_show_youtub_url', true ); 
 			  ?>
 					<div class="child">
 						<?php $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
@@ -94,7 +94,7 @@ return $newstr;
                         <?php //$trimtitle = get_the_title();
 							  //$shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
 						<a style="text-decoration: none;" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                        <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true ); ?>
+                        <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_show_tagline_text', true ); ?>
                         <?php //$trimtag = $youtubetagline_value;
 							  //$shorttag = wp_trim_words( $trimtag, $num_words = 10, $more = '…' ); ?>
 						<p class="tvpexcerpt"><?php echo $youtubetagline_value; ?></p>

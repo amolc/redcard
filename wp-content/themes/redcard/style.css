@@ -326,7 +326,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	float:left;
 	width:340px;
 	min-height:10px;
-	border-bottom:5px solid #00a69c;
+/*	border-bottom:5px solid #00a69c;*/	
 }
 
 #container .box .b h2{

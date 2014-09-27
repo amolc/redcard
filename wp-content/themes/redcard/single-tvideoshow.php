@@ -15,9 +15,9 @@ get_header(); ?>
 				while ( have_posts() ) : the_post();
 				//get_template_part( 'content', get_post_format() );
 		?>
-        <h2>Video</h2>
+        <h2>TV Shows Video</h2>
         <?php $postID = get_the_ID();
-			  $youtubtagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true );  ?>
+			  $youtubtagline_value = get_post_meta( $postID, '_cmb_tvideo_show_tagline_text', true );  ?>
         <h1><?php the_title(); ?></h1>
         <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
         <div class="date"> <a href="#">Singapore</a> <span><?php the_time('l, F j, Y'); ?></span>
@@ -27,17 +27,12 @@ get_header(); ?>
         <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
       </div>
       </div>
-      <?php $youtubvid_value = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); ?>
+      <?php $youtubvid_value = get_post_meta( $postID, '_cmb_tvideo_show_youtub_url', true ); ?>
       <div style="margin-bottom: 10px;"><?php echo EmbedVideo($youtubvid_value,$width = 600,$height = 350); ?></div>
       <div style="margin-bottom: 10px;"><?php the_content(); ?></div>
         <?php $field_value = get_post_meta( $post->ID, '_wp_editor_scloud' ); ?>
         <div class="single-rad-vid"><?php echo apply_filters('the_content', $field_value[0] ); ?></div>
 		<div class="single-post-image radio-single-image">
-        <?php 
-				//twentyfourteen_post_thumbnail();
-				
-				//the_content();
-		?>
       	</div>
 		<?php endwhile; ?>
         
@@ -48,7 +43,7 @@ get_header(); ?>
     'post__not_in '=> $postid,
     'numberposts' => 2,
     'orderby' => 'rand',          
-    'post_type' => 'tvideo',
+    'post_type' => 'tvideoshow',
     'post_status' => 'publish');
 
     $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
@@ -59,10 +54,8 @@ get_header(); ?>
         <?php if(!empty($recent_posts)){ 
               foreach($recent_posts as $row){
 				  $postID = $row['ID'];
-				  $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
-                  
-                 
-				   $feat_image = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');
+				  $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_show_youtub_url', true ); 
+				  $feat_image = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');
               ?>
         <li> <?php  echo $feat_image;?> <a href="<?php echo get_permalink( $row['ID']); ?>"><?php echo $row['post_title']; ?></a> </li>
         <?php } } ?>
