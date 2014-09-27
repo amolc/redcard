@@ -119,7 +119,7 @@
 	   							<div id="social_2">';
 								?>
 	   							  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-           <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>via @RedCardConnect"  ><div class="twitter"></div></a>
+           <a href="http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $article->ID);?>"  ><div class="twitter"></div></a>
         <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><div class="message"></div></a>
         
 								<?php
@@ -149,7 +149,7 @@
       <div class="date" id="date2"> <span>120 views</span>
           <div id="social_3">
              <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>via @RedCardConnect"  ><div class="twitter"></div></a>
+        <a href="http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $article->ID);?>"  ><div class="twitter"></div></a>
         <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
         
           </div>
