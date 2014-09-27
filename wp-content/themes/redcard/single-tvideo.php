@@ -29,11 +29,7 @@ get_header(); ?>
       </div>
       <?php $youtubvid_value = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); ?>
       <div style="margin-bottom: 10px;"><?php echo EmbedVideo($youtubvid_value,$width = 600,$height = 350); ?></div>
-      
-	  <?php $youtubdetail_value = get_post_meta( $postID, '_tvideo_editor_detail', true ); ?>
-        <div style="margin-bottom: 10px;"><?php echo apply_filters('the_content', $youtubdetail_value ); ?></div>
-
-    
+      <div style="margin-bottom: 10px;"><?php the_content(); ?></div>
         <?php $field_value = get_post_meta( $post->ID, '_wp_editor_scloud' ); ?>
         
         <div class="single-rad-vid"><?php echo apply_filters('the_content', $field_value[0] ); ?></div>

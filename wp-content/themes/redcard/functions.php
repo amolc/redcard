@@ -642,7 +642,7 @@ function tvideo_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title' )
+		'supports'           => array( 'title','editor' )
 	);
 
 	register_post_type( 'tvideo', $args );
@@ -733,37 +733,6 @@ function be_tvideo_metaboxes_strength( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'be_tvideo_metaboxes_strength' );
 
-
-add_action( 'add_meta_boxes', 'tvideo_add_meta_box' );
-function tvideo_add_meta_box( $post_id ){
-	add_meta_box(
-			'tvideo_detail',
-			__( 'Detail', 'myplugin_textdomain' ),
-			'tvideo_detail_meta_box_callback',
-			'tvideo'
-			
-		);
-
-}
-
-function tvideo_detail_meta_box_callback( $post ){
-	$field_value = get_post_meta( $post->ID, '_tvideo_editor_detail', false );
-	wp_editor( $field_value[0], '_tvideo_editor_detail' );
-}
-
-function tin_tvideo_save_data($post_id) {
-	global $meta_box_title,  $post;
-	 
-	//Check autosave
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-		return $post_id;
-	}
-	if( 'tvideo' == $post->post_type ){
-			update_post_meta( $post_id, '_tvideo_editor_detail', $_POST['_tvideo_editor_detail'] );
-	}
-
-}
-add_action('save_post', 'tin_tvideo_save_data');
 
 
 
