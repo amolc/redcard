@@ -26,6 +26,51 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	font-weight: normal;
 	src: local('Klavika Bold Bold'), url('fonts/klavika/KlavikaBoldBold.woff') format('woff');
 }
+@font-face {
+    font-family: 'FF DIN';
+	font-style: normal;
+	font-weight: normal;
+    src: url('fonts/dicnbd__.eot') format('eot');
+	src: url('fonts/dicnbd__.svg') format('svg');
+	src: url('fonts/dicnbd__.ttf') format('ttf');
+	src: url('fonts/dicnbd__.woff') format('woff');
+}
+@font-face {
+	font-family: 'FF DIN 1';
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/dicnbk__.eot') format('eot');
+	src: url('fonts/dicnbk__.svg') format('svg');
+	src: url('fonts/dicnbk__.ttf') format('ttf');
+	src: url('fonts/dicnbk__.woff') format('woff');
+}
+@font-face {
+	font-family: 'FF DIN 2';
+	font-style: normal;
+	font-weight: normal;
+    src: url('fonts/dicnlt__.eot') format('eot');
+	src: url('fonts/dicnlt__.svg') format('svg');
+	src: url('fonts/dicnlt__.ttf') format('ttf');
+	src: url('fonts/dicnlt__.woff') format('woff');
+}
+@font-face {
+	font-family: 'FF DIN 3';
+	font-style: normal;
+	font-weight: normal;
+    src: url('fonts/dicnmd__.eot') format('eot');
+	src: url('fonts/dicnmd__.svg') format('svg');
+	src: url('fonts/dicnmd__.ttf') format('ttf');
+	src: url('fonts/dicnmd__.woff') format('woff');
+}
+@font-face {
+	font-family: 'FF DIN 4';
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/dicnrg__.eot') format('eot');
+	src: url('fonts/dicnrg__.svg') format('svg');
+	src: url('fonts/dicnrg__.ttf') format('ttf');
+	src: url('fonts/dicnrg__.woff') format('woff');
+}
 
 .right {
 	float:right;
@@ -289,6 +334,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin-top:25px;
 	line-height:23px;
 	margin-bottom:15px;
+	font-family:'FF DIN';
 }
 
 #container .box .b a {
@@ -299,7 +345,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 #container .box  h1 {
-	font-family:'Klavika Bold Bold';
+	font-family:'FF DIN';
 	font-size:22px;
 	color:#333333;
 	margin-bottom:30px;
@@ -309,7 +355,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #container .box h4 { 
 	font-size:18px;
 	font-weight:bold;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family:'FF DIN';
 	color:#f99235;
 	margin-bottom:20px;
 }
@@ -326,6 +372,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	font-weight:bold;
 	color:#333333;
 	margin-top:9px;
+	font-family:'FF DIN';
 }
 
 #container .box p {
@@ -396,7 +443,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	display:block;
 	width:100%;
 	text-align:center;
-	font-family:Helvetica !important;
+	font-family:'FF DIN';
 }
 
 #container .box .r-child a {
@@ -507,6 +554,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	text-transform:uppercase;
 	font-size:14px;
 	margin-bottom:7px;
+	font-family:'FF DIN';
 }
 
 #container .left {
@@ -517,13 +565,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 #container .left h2 {
-	font-family:'Klavika Bold Bold';
+	font-family:'FF DIN';
 	font-size:22px;
 	color:#333333;
 	text-transform:uppercase;
 }
 
 #container .left h1 {
+font-family:'FF DIN';
 font-size: 22px;
 margin: 0px 0 30px 0;
 text-decoration: none;
@@ -746,7 +795,7 @@ color: #333333;
 }
 
 #container .right h2 {
-	font-family:'Klavika Bold Bold';
+	font-family:'FF DIN';
 	font-size:22px;
 	margin-bottom:30px;
 	color:#333333;
@@ -876,6 +925,7 @@ color: #333333;
 	cursor:pointer;
 	line-height:22px;
 	margin:10px 0 0 0;
+	font-family:'FF DIN';
 }
 
 #container .box .left #l_n p {
@@ -900,7 +950,7 @@ span.screen-reader-text {display: none;}
 .single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px;}
 .single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
 .video-feature-image{ height:158px;}
-.gsom-sa-wrapper h2{ display:none;}
+.gsom-sa-wrapper h2{ display:none;font-family:'FF DIN';}
 .allvid{ width:280px;background: #f0f0f0;height: 232px;}
 .allvid .vid{height: 174px;padding: 20px;padding-bottom: 0;}
 .allvid .view{text-align: center;padding-top: 10px;}
@@ -910,7 +960,7 @@ span.screen-reader-text {display: none;}
 .home-latest-image .text p{color: #333333;font-size: 14px;line-height: 22px;margin-top: 5px;}
 .vid iframe{ width:240px; height:170px;}
 .tvpexcerpt{height:45px;}
-.r-child-h3-a{height: 68px; color: #fff !important;display: block !important;font-family: Helvetica !important;font-size: 18px !important;text-align: center !important;width: 100% !important;text-decoration: none;}
+.r-child-h3-a{height: 68px; color: #fff !important;display: block !important;font-family:'FF DIN';font-size: 18px !important;text-align: center !important;width: 100% !important;text-decoration: none;}
 .radio-single-image img{ height:170px !important;}
 .radio-single-image p{color: #333333;font-size: 14px;line-height: 23px;margin-bottom: 20px;}
 .single-rad-vid iframe{height: 250px;width: 582px;}
@@ -928,5 +978,5 @@ img.desaturate:hover{-webkit-filter: grayscale(0%);
 filter: grayscale(0%);
 filter: none;}
 .sigle-football-title{ margin-top: 25px;}
-.sigle-football-title h1{ font-size: 26px !important;margin: 0 0 15px !important;}
+.sigle-football-title h1{ font-size: 26px !important;margin: 0 0 15px !important;c}
 .home-radio-post{margin-right: 13px !important;}
