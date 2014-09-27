@@ -882,11 +882,11 @@ function GetImg($videoid,$imgid = 1) {
 function ShowImg($videoid,$imgid = 1,$alt = 'Video screenshot', $width='120', $height='90') {
  return "<img src='".GetImg($videoid,$imgid)."' width='".$width."' height='".$height."' border='0' alt='".$alt."' title='".$alt."' />";
 }
+function ShowTvVideoImg($videoid,$alt = 'Video screenshot', $width='120', $height='90') {
+ return "<img src='".GetTvVideoImage($videoid)."' width='".$width."' height='".$height."' border='0' alt='".$alt."' title='".$alt."' />";
+}
 
 function GetTvVideoImage($videoid) {
  $videoid = getVideoID($videoid);
  return "http://img.youtube.com/vi/$videoid/mqdefault.jpg";
-}
-function ShowTvVideoImg($videoid,$alt = 'Video screenshot', $width='120', $height='90') {
- return "<img src='".GetTvVideoImage($videoid)."' width='".$width."' height='".$height."' border='0' alt='".$alt."' title='".$alt."' />";
 }
