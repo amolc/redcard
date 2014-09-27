@@ -687,7 +687,7 @@ color: #333333;
 }
 
 #container .left .related ul li img {
-	width:287px;
+	width:287px;height: 210px;
 }
 
 #container .left .related ul li a {
