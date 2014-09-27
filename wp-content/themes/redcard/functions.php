@@ -642,8 +642,200 @@ function tvideo_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+		'supports'           => array( 'title' )
 	);
 
 	register_post_type( 'tvideo', $args );
 }
+add_action( 'init', 'register_taxonomy_tvcategory' );
+
+function register_taxonomy_tvcategory() {
+    $labels = array( 
+        'name' => _x( 'Category', 'tvcategory' ),
+        'singular_name' => _x( 'Category', 'tvcategory' ),
+        'search_items' => _x( 'Search Category', 'tvcategory' ),
+        'popular_items' => _x( 'Popular Category', 'tvcategory' ),
+        'all_items' => _x( 'All Category', 'tvcategory' ),
+        'parent_item' => _x( 'Parent Category', 'tvcategory' ),
+        'parent_item_colon' => _x( 'Parent Category:', 'tvcategory' ),
+        'edit_item' => _x( 'Edit Category', 'tvcategory' ),
+        'update_item' => _x( 'Update Category', 'tvcategory' ),
+        'add_new_item' => _x( 'Add New Category', 'tvcategory' ),
+        'new_item_name' => _x( 'New Category', 'tvcategory' ),
+        'separate_items_with_commas' => _x( 'Separate Category with commas', 'tvcategory' ),
+        'add_or_remove_items' => _x( 'Add or remove Category', 'tvcategory' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Category', 'tvcategory' ),
+        'menu_name' => _x( 'Category', 'tvcategory' ),
+    );
+
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => radio,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+    
+
+   register_taxonomy( 'tvcategory', array('tvideo'), $args );
+}
+
+add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+function be_initialize_cmb_meta_boxes() {
+	if ( !class_exists( 'cmb_Meta_Box' ) ) {
+		require_once( 'custom-metaboxes/init.php' );
+	}
+}
+
+
+function be_tvideo_metaboxes_strength( $meta_boxes ) {
+	$prefix = '_cmb_'; // Prefix for all fields
+	$posttype = 'tvideo_';
+	$meta_boxes[] = array(
+		'id' => 'tvideo_metabox',
+		'title' => __( 'Additional Detail', 'cmb' ),
+		'pages' => array('tvideo'), // post type
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			
+			  array(
+				'name' => 'Tag Line',
+				//'desc' => 'field description (optional)',
+				'id'   => $prefix . 'tagline_text',
+				'type' => 'text',
+			),
+                    array(
+				'name' => __( 'Youtub URL', 'cmb' ),
+				'desc' => __( 'Youtub video Url ', 'cmb' ),
+				'id'   => $prefix . 'youtub_url',
+				'type' => 'text_url',
+				 'protocols' => array('http', 'https'), // Array of allowed protocols
+				// 'repeatable' => true,
+			),
+			array(
+				'name' => __( 'Featured', 'cmb' ),
+				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
+				'id'   => $prefix . 'featured_checkbox',
+				'type' => 'checkbox',
+			),
+               
+                    
+		),
+	);
+	
+	
+	return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'be_tvideo_metaboxes_strength' );
+
+
+add_action( 'add_meta_boxes', 'tvideo_add_meta_box' );
+function tvideo_add_meta_box( $post_id ){
+	add_meta_box(
+			'tvideo_detail',
+			__( 'Detail', 'myplugin_textdomain' ),
+			'tvideo_detail_meta_box_callback',
+			'tvideo'
+			
+		);
+
+}
+
+function tvideo_detail_meta_box_callback( $post ){
+	$field_value = get_post_meta( $post->ID, '_tvideo_editor_detail', false );
+	wp_editor( $field_value[0], '_tvideo_editor_detail' );
+}
+
+function tin_tvideo_save_data($post_id) {
+	global $meta_box_title,  $post;
+	 
+	//Check autosave
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		return $post_id;
+	}
+	if( 'tvideo' == $post->post_type ){
+			update_post_meta( $post_id, '_tvideo_editor_detail', $_POST['_tvideo_editor_detail'] );
+	}
+
+}
+add_action('save_post', 'tin_tvideo_save_data');
+
+
+
+function be_footballs_metaboxes_strength( $meta_boxes ) {
+	$prefix = '_cmb_'; // Prefix for all fields
+	$posttype = 'footballs_';
+	$meta_boxes[] = array(
+		'id' => 'footballs_metabox',
+		'title' => __( 'Additional Detail', 'cmb' ),
+		'pages' => array('footballs'), // post type
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			
+			  array(
+				'name' => 'Tag Line',
+				//'desc' => 'field description (optional)',
+				'id'   => $prefix . 'tagline_text',
+				'type' => 'text',
+			),
+                   
+			array(
+				'name' => __( 'Featured', 'cmb' ),
+				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
+				'id'   => $prefix . 'featured_checkbox',
+				'type' => 'checkbox',
+			),
+			
+               
+                    
+		),
+	);
+	
+	
+	return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'be_footballs_metaboxes_strength' );
+
+
+function be_radioarticles_metaboxes_strength( $meta_boxes ) {
+	$prefix = '_cmb_'; // Prefix for all fields
+	$posttype = 'radio-articles_';
+	$meta_boxes[] = array(
+		'id' => 'radio-articles_metabox',
+		'title' => __( 'Additional Detail', 'cmb' ),
+		'pages' => array('radio-articles'), // post type
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			
+			  array(
+				'name' => 'Tag Line',
+				//'desc' => 'field description (optional)',
+				'id'   => $prefix . 'tagline_text',
+				'type' => 'text',
+			),
+                   
+			array(
+				'name' => __( 'Featured', 'cmb' ),
+				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
+				'id'   => $prefix . 'featured_checkbox',
+				'type' => 'checkbox',
+			),
+			
+               
+                    
+		),
+	);
+	
+	
+	return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'be_radioarticles_metaboxes_strength' );
