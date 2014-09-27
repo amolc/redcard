@@ -136,13 +136,13 @@
     <h1 class="h1">Latest News</h1>
 	<?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image">
-    <?php $trimtitle = get_the_title();
+    <?php  //$trimtitle = get_the_title();
 	
-		  $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
+		 // $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span>Singapore</span> </div>
-      <div class="text"> <a href="<?php the_permalink() ?>"><?php echo $shorttitle; ?></a>
+      <div class="text"> <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
       <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
       <p><?php echo $shortcontent; ?></p>
@@ -171,8 +171,9 @@
 			foreach($resultarray as $row)
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='240', $height='175');
 	  ?>
-        <div class="vid"><?php echo EmbedVideo($youtubURL_values,$width = 240,$height =174); ?></div>
+        <div class="vid"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
         <?php }}?>
         <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
       </div>
