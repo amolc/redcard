@@ -72,7 +72,7 @@ return $newstr;
 				 						$youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_show_youtub_url', true ); 
 				 						$videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='320', $height='250');
 	  					?>
-						<div class="" style=" width:320px; height:250px; margin-left:10px;"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
+						<div class="" style=" width:320px; height:250px; margin-left:10px;"><a href =""><?php echo $videoID; ?></a></div>
         				<?php }} ?>
 					</div>
 					<div class="b" id="no-border">
