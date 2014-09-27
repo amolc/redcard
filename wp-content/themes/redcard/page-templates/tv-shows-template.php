@@ -104,7 +104,7 @@ return $newstr;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
-						   echo '<div class="g-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3><a href="" class="r-child-shop-h3-a">'.$radtitlefinal.'</a></h3><div id="social_tvshow" >';
+						   echo '<div class="g-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3><div id="social_tvshow" >';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
         <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
