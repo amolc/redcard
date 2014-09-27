@@ -692,8 +692,8 @@ function be_initialize_cmb_meta_boxes() {
 
 
 function be_tvideo_metaboxes_strength( $meta_boxes ) {
-	$prefix = '_cmb_'; // Prefix for all fields
-	$posttype = 'tvideo_';
+	$prefix = '_cmb_tvideo_'; // Prefix for all fields
+	$posttype = 'tvideo';
 	$meta_boxes[] = array(
 		'id' => 'tvideo_metabox',
 		'title' => __( 'Additional Detail', 'cmb' ),
@@ -839,3 +839,46 @@ function be_radioarticles_metaboxes_strength( $meta_boxes ) {
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_radioarticles_metaboxes_strength' );
+
+/*you tube video image and all*/
+
+function GetVideoIdFromUrl($url) {
+ $parts = explode('?v=',$url);
+ if (count($parts) == 2) {
+  $tmp = explode('&',$parts[1]);
+  if (count($tmp)>1) {
+   return $tmp[0];
+  } else {
+   return $parts[1];
+  }
+ } else {
+  return $url;
+ }
+}
+
+function getVideoID($url)
+{
+    $videoid = GetVideoIdFromUrl($url);
+ 
+ if($videoid=="")
+ {
+ preg_match('/youtube\.com\/v\/([\w\-]+)/', $url, $match);
+ $videoid = $match[1];
+ }
+ 
+ return $videoid;
+
+}
+
+function EmbedVideo($videoid,$width = 425,$height = 350) {
+ $videoid = getVideoID($videoid);
+ return '<object width="'.$width.'" height="'.$height.'"><param name="movie" value="http://www.youtube.com/v/'.$videoid.'&autoplay=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/'.$videoid.'&autoplay=1" type="application/x-shockwave-flash" wmode="transparent" width="'.$width.'" height="'.$height.'"></embed></object>';
+}
+function GetImg($videoid,$imgid = 1) {
+ $videoid = getVideoID($videoid);
+ return "http://img.youtube.com/vi/$videoid/$imgid.jpg";
+}
+
+function ShowImg($videoid,$imgid = 1,$alt = 'Video screenshot', $width='120', $height='90') {
+ return "<img src='".GetImg($videoid,$imgid)."' width='".$width."' height='".$height."' border='0' alt='".$alt."' title='".$alt."' />";
+}

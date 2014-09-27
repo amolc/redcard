@@ -8,7 +8,6 @@ $m_tablename=$wpdb->prefix."programmes";
 function my_convert_date($date)
 {
 	$datearr=explode("-",$date);
-	
 	$newdate=strftime("%A, %d %B %Y",mktime(0,0,0,$datearr[1],$datearr[2],$datearr[0]));
 	return $newdate;
 }
@@ -52,26 +51,16 @@ return $newstr;
 						}
 							?>
 						</ul>
-					
-                        <?php
+	                <?php
 						}
 						else
 						{
-							?>
-						<ul style="overflow:scroll;height:250px; ">
-							<li>	
-								
-								<h2>No Programme Scheduled</h2>
-							
-							</li>
-							
-						</ul>
-					
+					?>
+						<ul style="overflow:scroll;height:250px; "><li><h2>No Programme Scheduled</h2></li></ul>
                         <?php
 						}
 						?>
 					</div>
-					
 					<div class="b">
 						<h1>Featured Video</h1>
 						<iframe width="340" height="255" src="http://www.youtube.com/embed/g5xT54X9mIM" frameborder="0" allowfullscreen></iframe>
@@ -81,26 +70,26 @@ return $newstr;
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
 				</div> 
-		
 <div class="box">
 					<h1>Video Segments</h1>
-                 <?php  $args = array( 'post_type' => 'tvideo');
-						  $loop = new WP_Query( $args ); $as =1;
-						  while ( $loop->have_posts() ) : $loop->the_post(); ?>
+               <?php  $args = array( 'post_type' => 'tvideo');
+					  $loop = new WP_Query( $args ); $as =1;
+					  while ( $loop->have_posts() ) : $loop->the_post(); 
+							 $postID = get_the_ID();
+							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
+			  ?>
 					<div class="child">
-						<?php // twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
-                        <?php the_content(); ?>
-                      	<?php $trimtitle = get_the_title();
+						<?php $videoID = ShowImg($youtubURL_values,$imgid = 2,$alt = get_the_title(), $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
+                        <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
+                        <?php $trimtitle = get_the_title();
 							  $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
-						<a href="#"><?php echo $shorttitle; ?></a>
-                        <?php $trimexcerpt = get_the_excerpt();
-							  $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 10, $more = '…' ); ?>
-						<p class="tvpexcerpt"><?php echo $shortexcerpt; ?></p>
+						<a href="<?php the_permalink() ?>"><?php echo $shorttitle; ?></a>
+                        <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true ); ?>
+                        <?php $trimtag = $youtubetagline_value;
+							  $shorttag = wp_trim_words( $trimtag, $num_words = 10, $more = '…' ); ?>
+						<p class="tvpexcerpt"><?php echo $shorttag; ?></p>
 						<span></span>
 					</div>
 					<?php endwhile;?>
-					
-				
 				</div> 
-
 <?php get_footer();?>
