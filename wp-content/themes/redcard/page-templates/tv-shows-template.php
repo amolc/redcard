@@ -80,26 +80,44 @@ return $newstr;
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
 				</div> 
+
+
+
+
+
+
+
+
+
 <div class="box">
-					<h1>Video Segments</h1>
-               <?php  $args = array( 'post_type' => 'tvideoshow');
-					  $loop = new WP_Query( $args ); $as =1;
-					  while ( $loop->have_posts() ) : $loop->the_post(); 
-							 $postID = get_the_ID();
-							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_show_youtub_url', true ); 
-			  ?>
-					<div class="child">
-						<?php $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
-                        <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
-                        <?php //$trimtitle = get_the_title();
-							  //$shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
-						<a style="text-decoration: none;" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                        <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_show_tagline_text', true ); ?>
-                        <?php //$trimtag = $youtubetagline_value;
-							  //$shorttag = wp_trim_words( $trimtag, $num_words = 10, $more = '…' ); ?>
-						<p class="tvpexcerpt"><?php echo $youtubetagline_value; ?></p>
-						<span></span>
-					</div>
-					<?php endwhile;?>
-				</div> 
+				<h1>Shows</h1>
+				<?php
+				        echo '<div class="box">';
+				    	$args = array(
+										'posts_per_page'   => 5,
+										'post_type'        => 'tvideoshow',
+										'post_status'      => 'publish'
+										);
+
+						$allarts = get_posts( $args );
+				    	$i = 1;
+				    	foreach ( $allarts as $article ) {
+						   $radtitle = $article->post_title;
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						   echo '<div class="g-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3><a href="" class="r-child-shop-h3-a">'.$radtitlefinal.'</a></h3><div id="social_tvshow" >';
+								?>
+								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
+        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        
+								<?php
+	   								
+	   						echo '</div>
+	   						</span></span></div>';
+	   						$i++;
+							
+						}
+
+				        echo '</div>';?>
+			</div>                
 <?php get_footer();?>
