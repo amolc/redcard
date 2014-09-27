@@ -19,7 +19,6 @@ function other_sports_init() {
 		'not_found'          => __( 'No Post found.', 'your-plugin-textdomain' ),
 		'not_found_in_trash' => __( 'No Posts found in Trash.', 'your-plugin-textdomain' )
 	);
-
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
@@ -34,9 +33,9 @@ function other_sports_init() {
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
-
 	register_post_type( 'other_sports', $args );
 }
+
 function be_othersports_metaboxes( $meta_boxes ) {
 	$prefix = '_cmb_othersports_'; // Prefix for all fields
 	$meta_boxes[] = array(
@@ -47,29 +46,37 @@ function be_othersports_metaboxes( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-			
-			  array(
-				'name' => 'Tag Line',
-				//'desc' => 'field description (optional)',
-				'id'   => $prefix . 'tagline_text',
-				'type' => 'text',
+						  array(
+								'name' => 'Tag Line',
+								//'desc' => 'field description (optional)',
+								'id'   => $prefix . 'tagline_text',
+								'type' => 'text',
+								),
+						  array(
+								'name' => __( 'Featured', 'cmb' ),
+								'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
+								'id'   => $prefix . 'featured_checkbox',
+								'type' => 'checkbox',
+								),
+						   array(
+				'name'    => __( 'Category', 'cmb' ),
+				'desc'    => __( 'Check any one (optional)', 'cmb' ),
+				'id'      => $prefix . 'test_radio',
+				'type'    => 'radio',
+				'options' => array(
+					'option1' => __( 'UFC', 'cmb' ),
+					'option2' => __( 'Tennis', 'cmb' ),
+					'option3' => __( 'Motorsport', 'cmb' ),
+					'option4' => __( 'Golf', 'cmb' ),
+					'option5' => __( 'Others', 'cmb' ),
+				),
 			),
-                   
-			array(
-				'name' => __( 'Featured', 'cmb' ),
-				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
-				'id'   => $prefix . 'featured_checkbox',
-				'type' => 'checkbox',
-			),
-			
-               
-                    
-		),
-	);
-	
-	
-	return $meta_boxes;
+						),
+		);
+return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_othersports_metaboxes' );
+
+
 
 ?>

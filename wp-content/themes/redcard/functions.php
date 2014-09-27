@@ -786,27 +786,20 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-			
 			  array(
 				'name' => 'Tag Line',
 				//'desc' => 'field description (optional)',
 				'id'   => $prefix . 'tagline_text',
 				'type' => 'text',
 			),
-                   
 			array(
 				'name' => __( 'Featured', 'cmb' ),
 				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
 			),
-			
-               
-                    
 		),
 	);
-	
-	
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_footballs_metaboxes_strength' );
