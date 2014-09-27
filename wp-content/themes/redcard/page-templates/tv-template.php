@@ -79,7 +79,7 @@ return $newstr;
 							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
 			  ?>
 					<div class="child">
-						<?php $videoID = ShowImg($youtubURL_values,$imgid = 2,$alt = get_the_title(), $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
+						<?php $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
                         <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
                         <?php $trimtitle = get_the_title();
 							  $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
