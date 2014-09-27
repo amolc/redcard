@@ -72,7 +72,7 @@
   
       <?php 
 	  
-	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'";
+	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox' ORDER BY RAND() LIMIT 0,5";
          $resultarray = $wpdb->get_results($selectsql) ;
 		if(!empty($resultarray)){
 			foreach($resultarray as $row)
@@ -164,12 +164,16 @@
     <div class="ad_right">
       <div class="allvid">
         <?php 
-		   	$args = array( 'post_type' => 'tvideo','numberposts' => 1);
-			$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-			 foreach($recent_posts as $row){
-		?>
-        <div class="vid"><?php echo $row['post_content']; ?></div>
-        <?php }?>
+	  
+	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_tvideo_featured_checkbox' ORDER BY RAND() LIMIT 0,1";
+         $resultarray = $wpdb->get_results($selectsql) ;
+		if(!empty($resultarray)){
+			foreach($resultarray as $row)
+			{
+				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
+	  ?>
+        <div class="vid"><?php echo EmbedVideo($youtubURL_values,$width = 240,$height =174); ?></div>
+        <?php }}?>
         <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
       </div>
       <br/>
