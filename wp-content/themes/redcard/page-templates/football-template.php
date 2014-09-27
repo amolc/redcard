@@ -14,7 +14,7 @@ get_header();
 		<?php 
 		
 			$args = array( 'post_type' => 'footballs');
-			$loop = new WP_Query( $args ); $as =1;
+			$loop = new WP_Query( $args ); $as =1; 
 			while ( $loop->have_posts() ) : $loop->the_post();
 		
 			if($as ==1){?>
