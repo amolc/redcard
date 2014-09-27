@@ -59,8 +59,11 @@ get_header(); ?>
       <ul>
         <?php if(!empty($recent_posts)){ 
               foreach($recent_posts as $row){
+				  $postID = $row['ID'];
+				  $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
                   
-                   $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row['ID']) );
+                 
+				   $feat_image = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');
               ?>
         <li> <img src="<?php  echo $feat_image;?>"> <a href="<?php echo get_permalink( $row['ID']); ?>"><?php echo $row['post_title']; ?></a> </li>
         <?php } } ?>
