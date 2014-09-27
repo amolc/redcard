@@ -28,7 +28,7 @@ function tv_shows_init() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'tvideoshow' ),
+		'rewrite'            => array( 'slug' => 'tv-video-show' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
