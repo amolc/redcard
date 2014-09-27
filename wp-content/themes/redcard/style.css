@@ -734,7 +734,7 @@ color: #333333;
 }
 
 #container .left .c_list ul li img {
-	width:240px;
+	width:240px; height: 135px;
 }
 
 #container .left .c_list ul li .img {
@@ -946,8 +946,8 @@ float: right;
 .menu_center{width: 900px;margin: 0 auto;display: block;overflow: hidden;}
 .seacrh-li{float: right !important;margin-top: 9px;}
 span.screen-reader-text {display: none;}
-.post-thumbnail .attachment-twentyfourteen-full-width{ height:135px;}
-.single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px;}
+
+.single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px; width: 600px;}
 .single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
 .video-feature-image{ height:158px;}
 .gsom-sa-wrapper h2{ display:none;font-family:'FF DIN';}
@@ -969,12 +969,15 @@ span.screen-reader-text {display: none;}
 #social a{ padding-left:7px;}
 .social-bottom a{ padding-left: 0 !important;padding-right: 7px;}
 .social-bottom{ margin-top: -10px;}
+.ad_1 .left .post-thumbnail img.attachment-twentyfourteen-full-width{ height:350px !important; }
+.footballs-top-image-latest .attachment-twentyfourteen-full-width.wp-post-image {height: 350px;width: 600px;}
 
 filter: grayscale(0%);
-filter: none;}
 .sigle-football-title{ margin-top: 25px;}
 .sigle-football-title h1{ font-size: 26px !important;margin: 0 0 15px !important;c}
 .home-radio-post{margin-right: 13px !important;}
+
+
 .menu-orange:hover{
 	background-color:#f99235;
 	text-transform:uppercase;
@@ -982,9 +985,7 @@ filter: none;}
 	font-size:16px;
 	font-weight:bold;
 	display:block;
-
 	padding-bottom:10px;
-	
 }
 .menu-green:hover{
 	background-color:#00a69c;
@@ -993,11 +994,9 @@ filter: none;}
 	font-size:16px;
 	font-weight:bold;
 	display:block;
-
 	padding-bottom:10px;
 	
 }
-
 .menu-blue:hover{
 	background-color:#116dbb;
 	text-transform:uppercase;
@@ -1005,7 +1004,5 @@ filter: none;}
 	font-size:16px;
 	font-weight:bold;
 	display:block;
-
 	padding-bottom:10px;
-	
 }

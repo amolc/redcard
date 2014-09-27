@@ -30,7 +30,7 @@ get_header();
                         </div>
                       </div>
 
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/d_post.jpg" class="post_img"/>
+                      <div class="footballs-top-image-latest"><?php twentyfourteen_post_thumbnail();?></div>
                       <div class="f_text"><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a> </div>
                       
                       <div class="c_list">

@@ -27,7 +27,7 @@ function other_sports_init() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'other-sports' ),
+		'rewrite'            => array( 'slug' => 'othersports' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
