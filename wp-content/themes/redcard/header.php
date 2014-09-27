@@ -80,7 +80,7 @@
 				
 			 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
 	  ?>
-      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><span class='facebook'></span><span class='twitter'></span><span class='message'></span>1,200 views</div>" /></li>
+      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><span class='facebook'></span> <a href='http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>via @RedCardConnect'  ><div class='twitter'></div></a><span class='message'></span>1,200 views</div>" /></li>
     <?php } }?>
        
     </ul>
