@@ -33,10 +33,23 @@
  * @since Twenty Fourteen 1.0
  */
 
+add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+function be_initialize_cmb_meta_boxes()
+{
+	if ( !class_exists( 'cmb_Meta_Box' ) )
+	{
+		require_once( 'custom-metaboxes/init.php' );
+	}
+}
+
 require_once locate_template('/inc/theme_option.php');            // Theme Options 
 require_once locate_template('/inc/social_option.php');            // Social Theme Options 
+require_once locate_template('/inc/radio_artciles.php');
 
-require_once locate_template('/inc/radio_artciles.php');            // Utility functions
+
+//require_once locate_template('/inc/radio_shows.php');            // Utility functions
+require_once locate_template('/inc/tvvideo_shows.php'); 
+require_once locate_template('/inc/other-sports.php'); 
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
@@ -557,8 +570,21 @@ function pr($array,$isDie = 0)
  if($isDie > 0 ) 
  { die(); }
 }
+/* */
 add_theme_support( 'post-thumbnails' );
+/**/
+if ( function_exists( 'add_theme_support' ) ) {
+ add_theme_support('post-thumbnails');
+ set_post_thumbnail_size( 160, 100 );
+ }
+if ( function_exists( 'add_image_size' ) ) {
+ add_image_size( 'featImg', 350, 200, true );
+ add_image_size( 'realImg', 200, 120, true );
 
+ }
+ if ( function_exists('register_sidebar') )
+{    register_sidebar(); }
+/**/
 add_action( 'init', 'football_init' );
 /* Register a football post type. */
 function football_init() {
@@ -596,20 +622,42 @@ function football_init() {
 
 	register_post_type( 'footballs', $args );
 }
+add_action( 'init', 'register_taxonomy_footballregions' );
 
-if ( function_exists( 'add_theme_support' ) ) {
- add_theme_support('post-thumbnails');
- set_post_thumbnail_size( 160, 100 );
- }
-if ( function_exists( 'add_image_size' ) ) {
- add_image_size( 'featImg', 350, 200, true );
- add_image_size( 'realImg', 200, 120, true );
+function register_taxonomy_footballregions() {
+    $labels = array( 
+        'name' => _x( 'Regions', 'footballregions' ),
+        'singular_name' => _x( 'Regions', 'footballregions' ),
+        'search_items' => _x( 'Search Regions', 'footballregions' ),
+        'popular_items' => _x( 'Popular Regions', 'footballregions' ),
+        'all_items' => _x( 'All Regions', 'footballregions' ),
+        'parent_item' => _x( 'Parent Region', 'footballregions' ),
+        'parent_item_colon' => _x( 'Parent Region:', 'footballregions' ),
+        'edit_item' => _x( 'Edit Region', 'footballregions' ),
+        'update_item' => _x( 'Update Region', 'footballregions' ),
+        'add_new_item' => _x( 'Add New Region', 'footballregions' ),
+        'new_item_name' => _x( 'New Region', 'footballregions' ),
+        'separate_items_with_commas' => _x( 'Separate Region with commas', 'footballregions' ),
+        'add_or_remove_items' => _x( 'Add or remove Region', 'footballregions' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Region', 'footballregions' ),
+        'menu_name' => _x( 'Regions', 'footballregions' ),
+    );
 
- }
- if ( function_exists('register_sidebar') )
-{    register_sidebar(); }
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => radio,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+    
 
-
+   register_taxonomy( 'footballregions', array('footballs'), $args );
+}
+/**/
 add_action( 'init', 'tvideo_init' );
 /* Register a football post type. */
 function tvideo_init() {
@@ -683,14 +731,7 @@ function register_taxonomy_tvcategory() {
    register_taxonomy( 'tvcategory', array('tvideo'), $args );
 }
 
-add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
-function be_initialize_cmb_meta_boxes() {
-	if ( !class_exists( 'cmb_Meta_Box' ) ) {
-		require_once( 'custom-metaboxes/init.php' );
-	}
-}
-
-
+/**/
 function be_tvideo_metaboxes_strength( $meta_boxes ) {
 	$prefix = '_cmb_tvideo_'; // Prefix for all fields
 	$posttype = 'tvideo';
@@ -733,9 +774,7 @@ function be_tvideo_metaboxes_strength( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'be_tvideo_metaboxes_strength' );
 
-
-
-
+/**/
 function be_footballs_metaboxes_strength( $meta_boxes ) {
 	$prefix = '_cmb_footballs_'; // Prefix for all fields
 	$posttype = 'footballs';
@@ -772,7 +811,7 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'be_footballs_metaboxes_strength' );
 
-
+/**/
 function be_radioarticles_metaboxes_strength( $meta_boxes ) {
 	$prefix = '_cmb_radio-articles_'; // Prefix for all fields
 	$posttype = 'radio-articles';
@@ -810,7 +849,6 @@ function be_radioarticles_metaboxes_strength( $meta_boxes ) {
 add_filter( 'cmb_meta_boxes', 'be_radioarticles_metaboxes_strength' );
 
 /*you tube video image and all*/
-
 function GetVideoIdFromUrl($url) {
  $parts = explode('?v=',$url);
  if (count($parts) == 2) {
