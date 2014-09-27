@@ -31,7 +31,7 @@ get_header(); ?>
       <div style="margin-bottom: 10px;"><?php echo EmbedVideo($youtubvid_value,$width = 600,$height = 350); ?></div>
       
 	  <?php $youtubdetail_value = get_post_meta( $postID, '_tvideo_editor_detail', true ); ?>
-        <div style="margin-bottom: 10px;"><?php echo $youtubdetail_value; ?></div>
+        <div style="margin-bottom: 10px;"><?php echo apply_filters('the_content', $youtubdetail_value ); ?></div>
 
     
         <?php $field_value = get_post_meta( $post->ID, '_wp_editor_scloud' ); ?>
