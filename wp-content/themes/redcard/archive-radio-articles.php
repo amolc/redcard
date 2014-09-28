@@ -94,8 +94,29 @@ return $newstr;
 					</div>
 					
 					<div class="b">
-						<h1>Featured Video</h1>
-						<iframe width="340" height="255" src="http://www.youtube.com/embed/g5xT54X9mIM" frameborder="0" allowfullscreen></iframe>
+						<h1>Featured Radio</h1>
+        <?php 
+	  
+	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radio-articles_featured_checkbox' ORDER BY RAND() LIMIT 0,1";
+         $resultarray = $wpdb->get_results($selectsql) ;
+		if(!empty($resultarray)){
+		
+			foreach($resultarray as $row)
+			{
+				 $youtubURL_values = get_post( $row->post_id); 
+				
+				
+	  ?>
+        <div class="" style=" width:320px; height:230px; margin-left:10px;text-align:center;background:#f99235;padding-top:20px;">
+		<a href="<?php echo get_permalink($row->post_id);?>" class="r-child-h3-a">
+		<?php echo get_the_post_thumbnail( $row->post_id ,'medium') ;?><Br/>
+<?php echo $youtubURL_values->post_title;?>
+</a>
+        </div>
+        <?php }}?>
+        
+
+        
 					</div>
 					<div class="b" id="no-border">
 						<h1>Sponsor</h1>
