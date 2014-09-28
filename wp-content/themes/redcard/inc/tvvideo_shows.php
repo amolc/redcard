@@ -106,6 +106,12 @@ function be_tvideo_show_metaboxes_strength( $meta_boxes ) {
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
 			),
+			array(
+				'name' => __( 'Date Picker', 'cmb' ),
+				'desc' => __( 'Select a date (optional)', 'cmb' ),
+				'id'   => $prefix . 'test_textdate',
+				'type' => 'text_date',
+			),
                
                     
 		),
