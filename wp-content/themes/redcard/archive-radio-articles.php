@@ -123,7 +123,10 @@ return $newstr;
 
         
 					</div>
-					
+					<div class="b" id="no-border">
+						<h1>Sponsor</h1>
+						<?php dynamic_sidebar( 'postsponser' ); ?>
+					</div>
 				</div>
 			<div class="box">
 				<?php dynamic_sidebar( 'radioarchive' ); ?>	
