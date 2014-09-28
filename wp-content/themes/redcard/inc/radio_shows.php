@@ -70,7 +70,7 @@ function register_taxonomy_radioshowscategory() {
     );
     
 
-   register_taxonomy( 'radioshowcategory', array('radioshows'), $args );
+   register_taxonomy( 'radioshowcategory', array('radio_schedule'), $args );
 }
 
 
@@ -79,7 +79,7 @@ function be_radioshows_metaboxes_strength( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id' => 'radioshows_metabox',
 		'title' => __( 'Additional Detail', 'cmb' ),
-		'pages' => array('radioshows'), // post type
+		'pages' => array('radio_schedule'), // post type
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Radio Shows template Page
+ * Template Name: Radio Schedules Template
  */
 get_header(); 
 $m_tablename=$wpdb->prefix."programmes";
@@ -149,7 +149,7 @@ return $newstr;
 						$today=date('m/d/Y', strtotime(' +1 day'));
 					
 				    	$args = array(
-										'post_type'        => 'radioshows',
+										'post_type'        => 'radio_schedule',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
 										'meta_key' => '_cmb_radioshows_test_textdate',
@@ -199,7 +199,7 @@ return $newstr;
 						$today=date('m/d/Y', strtotime(' +2 day'));
 						
 				    	$args = array(
-										'post_type'        => 'radioshows',
+										'post_type'        => 'radio_schedule',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
 										'meta_key' => '_cmb_radioshows_test_textdate',
