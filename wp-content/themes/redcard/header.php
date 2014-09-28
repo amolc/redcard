@@ -59,7 +59,7 @@
 <div id="menu">
   <div class="menu_center">
     <?php // wp_nav_menu( array('menu' => 'Header' )); ?>
-    <?php shailan_dropdown_menu(); ?>
+    <?php wp_nav_menu( array('menu' => 'Header2' )); ?>
     <ul>
       <li class="seacrh-li">
         <?php dynamic_sidebar( 'search-menu' ); ?>
