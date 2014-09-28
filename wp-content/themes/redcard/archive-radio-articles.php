@@ -108,11 +108,13 @@ return $newstr;
 			{
 				 $youtubURL_values = get_post( $row->post_id); 
 				$field_value = get_post_meta( $row->post_id, '_wp_editor_scloud' );
+				$mvalue=apply_filters('the_content', $field_value[0] );
+				$mvalue=str_replace('width="474" height="400"','width="320" height="230"',$mvalue);
 				
 	  ?>
-        <div class="" style=" width:320px; height:230px; margin-left:10px;text-align:center;background:#f99235;">
+        <div class="" style="width:320px; height:230px; margin-left:10px;text-align:center;background:#f99235;">
 		<a href="<?php echo get_permalink($row->post_id);?>" class="r-child-h3-a">
-		<?php echo apply_filters('the_content', $field_value[0] ); ?><Br/>
+		<?php echo $mvalue ?><Br/>
 <?php echo $youtubURL_values->post_title;?>
 </a>
         </div>
@@ -121,10 +123,7 @@ return $newstr;
 
         
 					</div>
-					<?php /*?><div class="b" id="no-border">
-						<h1>Sponsor</h1>
-						<?php dynamic_sidebar( 'postsponser' ); ?>
-					</div><?php */?>
+					
 				</div>
 			<div class="box">
 				<?php dynamic_sidebar( 'radioarchive' ); ?>	
