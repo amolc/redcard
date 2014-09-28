@@ -584,7 +584,8 @@ if ( function_exists( 'add_image_size' ) ) {
  }
  if ( function_exists('register_sidebar') )
 {    register_sidebar(); }
-/**/
+
+/*** Football Starts ***/
 add_action( 'init', 'football_init' );
 /* Register a football post type. */
 function football_init() {
@@ -604,7 +605,6 @@ function football_init() {
 		'not_found'          => __( 'No Post found.', 'your-plugin-textdomain' ),
 		'not_found_in_trash' => __( 'No Posts found in Trash.', 'your-plugin-textdomain' )
 	);
-
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
@@ -619,7 +619,6 @@ function football_init() {
 		'menu_position'      => null,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 	);
-
 	register_post_type( 'footballs', $args );
 }
 add_action( 'init', 'register_taxonomy_footballregions' );
@@ -642,7 +641,6 @@ function register_taxonomy_footballregions() {
         'choose_from_most_used' => _x( 'Choose from the most used Region', 'footballregions' ),
         'menu_name' => _x( 'Regions', 'footballregions' ),
     );
-
     $args = array( 
         'labels' => $labels,
         'public' => true,
@@ -653,11 +651,13 @@ function register_taxonomy_footballregions() {
         'rewrite' => true,
         'query_var' => true
     );
-    
-
    register_taxonomy( 'footballregions', array('footballs'), $args );
 }
-/**/
+
+
+/*** Football Ends ***/
+
+/*** TV Starts ***/
 add_action( 'init', 'tvideo_init' );
 /* Register a football post type. */
 function tvideo_init() {
@@ -797,6 +797,27 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
+			),
+			array(
+				'name'    => __( 'Opinion', 'cmb' ),
+				'desc'    => __( 'Choose (optional)', 'cmb' ),
+				'id'      => $prefix . 'test_radio',
+				'type'    => 'radio',
+				'options' => array(
+					'option1' => __( 'Sasi Says', 'cmb' ),
+
+				),
+			),
+			array(
+				'name'    => __( 'In the Week', 'cmb' ),
+				'desc'    => __( 'Choose any of them (optional)', 'cmb' ),
+				'id'      => $prefix . 'test_radio',
+				'type'    => 'radio',
+				'options' => array(
+					'option1' => __( 'Match Review', 'cmb' ),
+					'option2' => __( 'Chronicles of Duncan', 'cmb' ),
+					'option3' => __( 'Trending', 'cmb' ),
+				),
 			),
 		),
 	);
