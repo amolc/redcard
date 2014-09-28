@@ -135,7 +135,7 @@ return $newstr;
 				<?php
 				$args = array( ' hide_empty = true' );
 
-				$terms = get_terms('radio-categories', $args);
+				$terms = get_terms('radio-shows', $args);
 			
 				if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
 				    foreach ($terms as $term) {
@@ -143,11 +143,11 @@ return $newstr;
 				    	echo '<h4>' . $term->name. '</h4>';
 				    	$args = array(
 						'posts_per_page'   => 5,
-						'post_type'        => 'radio-shows',
+						'post_type'        => 'radio-articles',
 						'post_status'      => 'publish',
 						'tax_query' => array(
 								array(
-									'taxonomy' => 'radio-categories',
+									'taxonomy' => 'radio-shows',
 									'field' => 'slug',
 									'terms' => $term->slug
 								)
