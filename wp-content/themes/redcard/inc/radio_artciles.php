@@ -96,7 +96,6 @@ function codex_radioarticle_init() {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
-		
 		'query_var'             => true,
 		//'rewrite'               => array( 'slug' => 'radio-categories' ),
 	);
