@@ -70,7 +70,7 @@ function register_taxonomy_radioshowscategory() {
     );
     
 
-   register_taxonomy( 'radioshowcategory', array('radio_schedule'), $args );
+  // register_taxonomy( 'radioshowcategory', array('radio_schedule'), $args );
 }
 
 
