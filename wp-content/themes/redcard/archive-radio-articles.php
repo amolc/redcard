@@ -1,4 +1,7 @@
 <?php
+/*
+	Template Name: Radio Articles by Category
+*/
 /**
  * The template for displaying Archive pages
  *
