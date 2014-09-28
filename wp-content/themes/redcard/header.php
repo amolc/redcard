@@ -31,6 +31,8 @@
 <link href="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.css" rel="stylesheet"/>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="<?php echo get_template_directory_uri(); ?>/prettyphoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   $(document).ready(function(){
 	$('.bxslider').bxSlider({
@@ -172,10 +174,16 @@
 			foreach($resultarray as $row)
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
-				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='232');
+				 
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='240', $height='175');
 	  ?>
-        <div class="vid"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
+        <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
         <?php }}?>
+        <script type="text/javascript" charset="utf-8">
+
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+
+</script>
         <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
       </div>
       <br/>
