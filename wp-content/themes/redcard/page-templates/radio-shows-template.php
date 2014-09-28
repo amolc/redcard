@@ -99,7 +99,7 @@ return $newstr;
 										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
-										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
 
@@ -140,7 +140,7 @@ return $newstr;
 										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
-										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
 
@@ -182,7 +182,7 @@ return $newstr;
 										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
-										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
 
