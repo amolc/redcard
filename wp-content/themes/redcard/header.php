@@ -76,12 +76,13 @@
 	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox' ORDER BY RAND() LIMIT 0,5";
          $resultarray = $wpdb->get_results($selectsql) ;
 		if(!empty($resultarray)){
+			$mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
 			foreach($resultarray as $row)
 			{
 				
 			 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
 	  ?>
-      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><a onclick='javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;' href='http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>'><span class='facebook'></span></<a href='http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $row->post_id);?>'  ><span class='twitter'></span></a><span class='message'></span>1,200 views</div>" /></li>
+      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><a onclick='<?=$mstr;?>' href='http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>'><span class='facebook'></span></<a href='http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $row->post_id);?>'  ><span class='twitter'></span></a> <a onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;'  target='_blank' href='mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink(  $article->ID);?>'><span class='message'></span>1,200 views</div>" /></li>
     <?php } }?>
        
     </ul>
@@ -150,7 +151,7 @@
       <div class="date" id="date2"> <span>120 views</span>
           <div id="social_3">
              <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-        <a href="http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $article->ID);?>"  ><div class="twitter"></div></a>
+       <a href="http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $article->ID);?>"  ><div class="twitter"></div></a>
         <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
         
           </div>
