@@ -81,14 +81,6 @@ return $newstr;
 					</div>
 				</div> 
 
-
-
-
-
-
-
-
-
 <div class="box">
 				<h1>Shows</h1>
 				<?php

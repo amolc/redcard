@@ -96,7 +96,7 @@ return $newstr;
 						$today=date('m/d/Y');
 						
 				    	$args = array(
-										'post_type'        => 'tvideoshow',
+										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
 										'meta_key' => '_cmb_tvideo_show_test_textdate',
@@ -137,7 +137,7 @@ return $newstr;
 						$today=date('m/d/Y', strtotime(' +1 day'));
 					
 				    	$args = array(
-										'post_type'        => 'tvideoshow',
+										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
 										'meta_key' => '_cmb_tvideo_show_test_textdate',
@@ -179,7 +179,7 @@ return $newstr;
 						$today=date('m/d/Y', strtotime(' +2 day'));
 						
 				    	$args = array(
-										'post_type'        => 'tvideoshow',
+										'post_type'        => 'radioshows',
 										'post_status'      => 'publish',
 										'post_status'   => 'publish',
 										'meta_key' => '_cmb_tvideo_show_test_textdate',
