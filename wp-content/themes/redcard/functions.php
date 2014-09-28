@@ -47,7 +47,7 @@ require_once locate_template('/inc/social_option.php');            // Social The
 require_once locate_template('/inc/radio_artciles.php');
 
 
-//require_once locate_template('/inc/radio_shows.php');            // Utility functions
+require_once locate_template('/inc/radio_shows.php');            // Utility functions
 require_once locate_template('/inc/tvvideo_shows.php'); 
 require_once locate_template('/inc/other-sports.php'); 
 
