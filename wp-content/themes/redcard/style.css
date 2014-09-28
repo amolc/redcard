@@ -1045,7 +1045,10 @@ filter: grayscale(0%);
     display: block !important;
     font-family: "FF DIN";
     font-size: 18px !important;
-    height: 35px;
+    min-height: 35px;
     text-align: center !important;
     text-decoration: none;
     width: 100% !important; margin-top:10px;}
+.radioimage img{  height: 130px;
+    width: 165px !important;}
+.radioshowssocial{  padding-bottom: 15px;}

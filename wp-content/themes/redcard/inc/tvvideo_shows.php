@@ -107,10 +107,16 @@ function be_tvideo_show_metaboxes_strength( $meta_boxes ) {
 				'type' => 'checkbox',
 			),
 			array(
-				'name' => __( 'Date Picker', 'cmb' ),
-				'desc' => __( 'Select a date (optional)', 'cmb' ),
+				'name' => __( 'Date', 'cmb' ),
+				'desc' => __( 'Select a date', 'cmb' ),
 				'id'   => $prefix . 'test_textdate',
 				'type' => 'text_date',
+			),
+			array(
+				'name' => __( 'Time', 'cmb' ),
+				'desc' => __( 'Show Time', 'cmb' ),
+				'id'   => $prefix . 'test_time',
+				'type' => 'text_time',
 			),
                
                     
