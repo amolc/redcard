@@ -109,10 +109,10 @@ return $newstr;
 				 $youtubURL_values = get_post( $row->post_id); 
 				$field_value = get_post_meta( $row->post_id, '_wp_editor_scloud' );
 				$mvalue=apply_filters('the_content', $field_value[0] );
-				$mvalue=str_replace('width="474" height="400"','width="302" height="252"',$mvalue);
+				$mvalue=str_replace('width="474" height="400"','width="320" height="252"',$mvalue);
 				
 	  ?>
-        <div class="" style="width:302px; height:252px; margin-left:10px;text-align:center;background:#f99235;">
+        <div class="" style="width:320px; height:252px; margin-left:10px;text-align:center;background:#f99235;">
 		<a href="<?php echo get_permalink($row->post_id);?>" class="r-child-h3-a">
 		<?php echo $mvalue ?><Br/>
 <?php echo $youtubURL_values->post_title;?>
