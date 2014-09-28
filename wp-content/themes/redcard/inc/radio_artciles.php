@@ -65,12 +65,43 @@ function codex_radioarticle_init() {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
-		'update_count_callback' => '_update_post_term_count',
+		
 		'query_var'             => true,
 		//'rewrite'               => array( 'slug' => 'radio-categories' ),
 	);
 
 	register_taxonomy( 'radio-categories', 'radio-articles', $args );
+
+	$labels = array(
+		'name'                       => _x( 'Radio Shows', 'taxonomy general name' ),
+		'singular_name'              => _x( 'Radio Show', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search Radio Shows' ),
+		'popular_items'              => __( 'Popular Radio Shows' ),
+		'all_items'                  => __( 'All Radio Shows' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Radio Show' ),
+		'update_item'                => __( 'Update Radio Show' ),
+		'add_new_item'               => __( 'Add New Radio Show' ),
+		'new_item_name'              => __( 'New Radio Show Name' ),
+		'separate_items_with_commas' => __( 'Separate Radio Shows with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove Radio Shows' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Radio Shows' ),
+		'not_found'                  => __( 'No Radio Shows found.' ),
+		'menu_name'                  => __( 'Radio Shows' ),
+	);
+
+	$args = array(
+		'hierarchical'          => true,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		
+		'query_var'             => true,
+		//'rewrite'               => array( 'slug' => 'radio-categories' ),
+	);
+
+	register_taxonomy( 'radio-shows', 'radio-articles', $args );
 
 	$labels = array(
 		'name'                       => _x( 'Radio Tags', 'taxonomy general name' ),
@@ -96,7 +127,7 @@ function codex_radioarticle_init() {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
-		'update_count_callback' => '_update_post_term_count',
+		
 		'query_var'             => true,
 		//'rewrite'               => array( 'slug' => 'radio-categories' ),
 	);
@@ -162,7 +193,7 @@ function codex_radioarticle_init() {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_admin_column'     => true,
-		'update_count_callback' => '_update_post_term_count',
+		
 		'query_var'             => true,
 		//'rewrite'               => array( 'slug' => 'radio-categories' ),
 	);
