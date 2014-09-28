@@ -31,6 +31,11 @@
 <link href="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.css" rel="stylesheet"/>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="<?php echo get_template_directory_uri(); ?>/prettyphoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jcarousel/style.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/jcarousellite_1.0.1.pack.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/captify.tiny.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
 	$('.bxslider').bxSlider({
@@ -110,11 +115,19 @@
 						);
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				    	$i = 1;
+						?>
+						<div id="list">
+			
+					 <div class="prev"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
+				<div class="slider">
+               
+					<ul>
+						<?php
 				    	foreach ( $recent_posts as $article ) {
 							$thumb = get_the_post_thumbnail( $article[ID]);
 						    $radtitle = $article['post_title'];
-						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
-						   echo '<div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '?' );
+						   echo '<li><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
 	   							<h3><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 	   							<a href="#">In Added Time</a>
 	   							<a href="'.get_permalink( $article[ID]).'" class="llink">Listen</a>
@@ -127,11 +140,25 @@
 								<?php
                                 echo '</div>
 	   							<span>1,290 views<span>
-	   						</span></span></div>';
+	   						</span></span></div></li>';
 	   						$i++;
 						}
+						?>
+						</ul>
+                        </div>
+                        <div class="next"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
+                        </div>
+						<?php
 				        echo '</div>';
 				?>
+<script type="text/javascript">
+		$(function() {
+    		$(".slider").jCarouselLite({
+        		btnNext: ".next",
+        		btnPrev: ".prev",
+        		visible: 5
+    		});
+		});</script>
 
 <div class="box">
   <div class="left">
@@ -173,10 +200,16 @@
 			foreach($resultarray as $row)
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
-				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='232');
+				 
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='240', $height='175');
 	  ?>
-        <div class="vid"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
+        <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
         <?php }}?>
+         <script type="text/javascript" charset="utf-8">
+
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+
+</script>
         <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
       </div>
       <br/>
