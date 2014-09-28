@@ -199,34 +199,75 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 #menu ul {
-	margin:0;
-	padding:0;
-	width:900px;
-	margin:0 auto;
-	list-style:none;
+  text-align: left;
+  display: inline;
+  margin: 0;
+  list-style: none; position:absolute;
 }
 
 #menu ul li {
-	float:left;
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  position: relative; padding:13px 15px;
+  cursor: pointer;
 }
+
+#menu ul li:hover {
+  color: #fff;
+}
+#menu ul li ul {
+  padding: 0;
+  position: absolute;
+  top:44px;
+  left: 0;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+
+}
+#menu ul li ul li { 
+ width: 150px;
+  display: inline-block; 
+  color: #fff; padding:10px 15px;
+  border-bottom:1px solid #fff;
+}
+#menu ul li ul li:hover {  }
+#menu ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu ul li li:hover ul { display:block !important;}
+#menu ul ul ul{ display:none !important; left:180px;
+    position:absolute; top:0px !important; }
+#menu ul li li:hover ul li{ position:absolute; display:block !important;}
+#menu ul ul ul li{position: relative !important;}
 
 #menu ul li a {
 	color:#fff !important;
 	text-transform:uppercase;
-	text-decoration:none;
 	font-size:16px;
-	padding:0px 13px;
-	margin-top:15px;
 	font-weight:bold;
-	display:block;
+	display:block; text-decoration:none;
 }
 
 #menu ul li:first-child a {
 	padding-left:0;
 }
+#menu ul.serch2{ float:right; position:relative;}
+#menu ul.serch2 li{padding:2px}
 
-
-
+.sport-menu-main:hover{ background:#dadada;}
+sport-menu-main a{color:#333;}
+.blue-menu-main:hover{ background:#dc1f26;}
+.green-menu-main:hover{ background:#00a69c;}
+.orange-menu-main:hover{ background:#f99235; }
+.sport-menu{background:#dadada;}
+.blue-menu{background:#dc1f26;}
+.orange-menu{background:#f99235;}
+.green-menu{background:#00a69c;}
 .search-form input.search-field{
 	background:#000000;
 	border:1px solid #333333;
@@ -951,9 +992,9 @@ span.screen-reader-text {display: none;}
 .single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
 .video-feature-image{ height:158px;}
 .gsom-sa-wrapper h2{ display:none;font-family:'FF DIN';}
-.allvid{ width:280px;background: #f0f0f0;height: 232px;}
-.allvid .vid{height: 174px;padding: 20px;padding-bottom: 0;}
-.allvid .view{text-align: center;padding-top: 10px;}
+.allvid{ width:280px;background: #f0f0f0;height: 264px;}
+.allvid .vid{height: 232px;}
+.allvid .view{text-align: center;}
 .allvid .view a{color:#116DBA;font-size: 13px;font-weight: bold;text-decoration: none;}
 .home-latest-image .attachment-twentyfourteen-full-width{ height:150px;}
 .home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;font-weight: bold;text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
