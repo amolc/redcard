@@ -105,12 +105,12 @@ function be_radioshows_metaboxes_strength( $meta_boxes ) {
 			),
 			array(
 				'name' => __( 'From Time', 'cmb' ),
-				'id'   => $prefix . 'test_time',
+				'id'   => $prefix . 'from_time',
 				'type' => 'text_time',
 			),
 			array(
 				'name' => __( 'To', 'cmb' ),
-				'id'   => $prefix . 'test_time',
+				'id'   => $prefix . 'to_time',
 				'type' => 'text_time',
 			),
 			

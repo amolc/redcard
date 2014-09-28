@@ -102,6 +102,14 @@ return $newstr;
 										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
+	 					$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_from_time'";
+						$metafrom = $wpdb->get_results($selectsql) ;
+						$metafrom[0]->meta_value;
+						
+						$selectsqlto = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_to_time'";
+						$metato = $wpdb->get_results($selectsqlto) ;
+						$metato[0]->meta_value;
+						  //echo $metafrom[0]['meta_value']; die(); 
 
 						$allarts = get_posts( $args );
 						if(sizeof($allarts)>0)
@@ -110,10 +118,14 @@ return $newstr;
 							echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
+						
 						   $radtitle = $article->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						  
+						   
 						   echo '<div class="r-child radioimage list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3 style=" margin-bottom: 15px;"><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3>
-						   <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.mysql2date('F j, Y g:i a', $article->post_date).'</div>
+						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">From</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metafrom[0]->meta_value.'</div>
+						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">To</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metato[0]->meta_value.'</div>
 						   <div id="social_2" class="radioshowssocial" >';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
@@ -143,6 +155,13 @@ return $newstr;
 										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
+	 					$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_from_time'";
+						$metafrom = $wpdb->get_results($selectsql) ;
+						$metafrom[0]->meta_value;
+						
+						$selectsqlto = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_to_time'";
+						$metato = $wpdb->get_results($selectsqlto) ;
+						$metato[0]->meta_value;
 
 						$allarts = get_posts( $args );
 						if(sizeof($allarts)>0)
@@ -154,7 +173,8 @@ return $newstr;
 						   $radtitle = $article->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						   echo '<div class="r-child radioimage list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3 style=" margin-bottom: 15px;"><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3>
-						   <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.mysql2date('F j, Y g:i a', $article->post_date).'</div>
+						  <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">From</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metafrom[0]->meta_value.'</div>
+						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">To</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metato[0]->meta_value.'</div>
 						   <div id="social_2" class="radioshowssocial" >';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
@@ -185,6 +205,13 @@ return $newstr;
 										'meta_key' => '_cmb_radioshows_test_textdate',
 										'meta_value'      => $today
 										);
+	 					$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_from_time'";
+						$metafrom = $wpdb->get_results($selectsql) ;
+						$metafrom[0]->meta_value;
+						
+						$selectsqlto = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radioshows_to_time'";
+						$metato = $wpdb->get_results($selectsqlto) ;
+						$metato[0]->meta_value;
 
 						$allarts = get_posts( $args );
 						if(sizeof($allarts)>0)
@@ -196,7 +223,8 @@ return $newstr;
 						   $radtitle = $article->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						   echo '<div class="r-child radioimage list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3 style=" margin-bottom: 15px;"><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3>
-						   <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.mysql2date('F j, Y g:i a', $article->post_date).'</div>
+						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">From</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metafrom[0]->meta_value.'</div>
+						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">To</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metato[0]->meta_value.'</div>
 						   <div id="social_2" class="radioshowssocial" >';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
