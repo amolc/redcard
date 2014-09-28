@@ -46,7 +46,7 @@ return $newstr;
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			
+					&nbsp;
 
 			<header class="page-header">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/radio_slide.jpg" class="tv_slide" />
