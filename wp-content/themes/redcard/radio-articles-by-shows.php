@@ -143,7 +143,7 @@ return $newstr;
 				    	echo '<h4>' . $term->name. '</h4>';
 				    	$args = array(
 						'posts_per_page'   => 5,
-						'post_type'        => 'radio-articles',
+						'post_type'        => 'radio-shows',
 						'post_status'      => 'publish',
 						'tax_query' => array(
 								array(
