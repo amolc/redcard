@@ -172,7 +172,7 @@
 			foreach($resultarray as $row)
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
-				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='240', $height='175');
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='232');
 	  ?>
         <div class="vid"><a href ="<?php echo get_permalink($row->post_id); ?>"><?php echo $videoID; ?></a></div>
         <?php }}?>
