@@ -951,8 +951,8 @@ span.screen-reader-text {display: none;}
 .single-post-image .post-thumbnail img{margin: 20px 0 20px 0;display: block;}
 .video-feature-image{ height:158px;}
 .gsom-sa-wrapper h2{ display:none;font-family:'FF DIN';}
-.allvid{ width:280px;background: #f0f0f0;height: 232px;}
-.allvid .vid{height: 174px;padding: 20px;padding-bottom: 0;}
+.allvid{ width:338px;background: #f0f0f0;height: 280px;}
+.allvid .vid{height: 232px;padding: 20px;padding-bottom: 0;}
 .allvid .view{text-align: center;padding-top: 10px;}
 .allvid .view a{color:#116DBA;font-size: 13px;font-weight: bold;text-decoration: none;}
 .home-latest-image .attachment-twentyfourteen-full-width{ height:150px;}
