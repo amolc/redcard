@@ -113,9 +113,13 @@ function be_tvideo_show_metaboxes_strength( $meta_boxes ) {
 				'type' => 'text_date',
 			),
 			array(
-				'name' => __( 'Time', 'cmb' ),
-				'desc' => __( 'Show Time', 'cmb' ),
-				'id'   => $prefix . 'test_time',
+				'name' => __( 'From Time', 'cmb' ),
+				'id'   => $prefix . 'from_time',
+				'type' => 'text_time',
+			),
+			array(
+				'name' => __( 'To', 'cmb' ),
+				'id'   => $prefix . 'to_time',
 				'type' => 'text_time',
 			),
                

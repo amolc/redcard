@@ -93,10 +93,86 @@ return $newstr;
 				<h1>Shows</h1>
 				<?php
 				        echo '<div class="box">';
+						$today=date('m/d/Y');
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
 				    	$args = array(
-										'posts_per_page'   => 5,
-										'post_type'        => 'radioshows',
-										'post_status'      => 'publish'
+										'post_type'        => 'tvideoshow',
+										'post_status'      => 'publish',
+										'post_status'   => 'publish',
+										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_value'      => $today
+										);
+
+						$allarts = get_posts( $args );
+				    	$i = 1;
+				    	foreach ( $allarts as $article ) {
+						   $radtitle = $article->post_title;
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						   echo '<div class="r-child radioimage list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3 style=" margin-bottom: 15px;"><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3>
+						   <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.mysql2date('F j, Y g:i a', $article->post_date).'</div>
+						   <div id="social_2" class="radioshowssocial" >';
+								?>
+								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
+        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        
+								<?php
+	   								
+	   						echo '</div>
+	   						</span></span></div>';
+	   						$i++;
+							
+						}
+
+				        echo '</div>';?>
+                        
+                        
+                        <?php
+				        echo '<div class="box">';
+						$today=date('m/d/Y', strtotime(' +1 day'));
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
+				    	$args = array(
+										'post_type'        => 'tvideoshow',
+										'post_status'      => 'publish',
+										'post_status'   => 'publish',
+										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_value'      => $today
+										);
+
+						$allarts = get_posts( $args );
+				    	$i = 1;
+				    	foreach ( $allarts as $article ) {
+						   $radtitle = $article->post_title;
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						   echo '<div class="r-child radioimage list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'<h3 style=" margin-bottom: 15px;"><div class="r-child-shop-h3-a">'.$radtitlefinal.'</div></h3>
+						   <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.mysql2date('F j, Y g:i a', $article->post_date).'</div>
+						   <div id="social_2" class="radioshowssocial" >';
+								?>
+								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
+        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        
+								<?php
+	   								
+	   						echo '</div>
+	   						</span></span></div>';
+	   						$i++;
+							
+						}
+
+				        echo '</div>';?>
+                        
+                        
+                        <?php
+				        echo '<div class="box">';
+						$today=date('m/d/Y', strtotime(' +2 day'));
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
+				    	$args = array(
+										'post_type'        => 'tvideoshow',
+										'post_status'      => 'publish',
+										'post_status'   => 'publish',
+										'meta_key' => '_cmb_tvideo_show_test_textdate',
+										'meta_value'      => $today
 										);
 
 						$allarts = get_posts( $args );
