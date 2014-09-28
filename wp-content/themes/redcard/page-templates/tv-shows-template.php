@@ -92,10 +92,10 @@ return $newstr;
 <div class="box">
 				<h1>Shows</h1>
 				<?php
-				        echo '<div class="box">';
+				     
 						 
 						$today=date('m/d/Y');
-						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
+						
 				    	$args = array(
 										'post_type'        => 'tvideoshow',
 										'post_status'      => 'publish',
@@ -104,6 +104,10 @@ return $newstr;
 										'meta_value'      => $today
 										);
 						$allarts = get_posts( $args );
+						if(sizeof($allarts)>0)
+						{
+							   echo '<div class="box">';
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 							
@@ -125,15 +129,17 @@ return $newstr;
 							
 						}
 
-				        echo '</div>';?>
+				        echo '</div>';
+						}
+						?>
                         
                         
                         
                         
                         <?php
-				        echo '<div class="box">';
+				 
 						$today=date('m/d/Y', strtotime(' +1 day'));
-						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
+					
 				    	$args = array(
 										'post_type'        => 'tvideoshow',
 										'post_status'      => 'publish',
@@ -142,7 +148,10 @@ return $newstr;
 										'meta_value'      => $today
 										);
 						$allarts = get_posts( $args );
-						//pr($allarts,3);
+						if(sizeof($allarts)>0)
+						{
+							   echo '<div class="box">';
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
@@ -163,13 +172,15 @@ return $newstr;
 							
 						}
 
-				        echo '</div>';?>
+				        echo '</div>';
+						}
+						?>
                         
                          <?php
-				        echo '<div class="box">';
+				       
 						$today=date('m/d/Y', strtotime(' +2 day'));
 						
-						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
+						
 				    	$args = array(
 										'post_type'        => 'tvideoshow',
 										'post_status'      => 'publish',
@@ -178,7 +189,10 @@ return $newstr;
 										'meta_value'      => $today
 										);
 						$allarts = get_posts( $args );
-						//pr($allarts,3);
+					if(sizeof($allarts)>0)
+						{
+							   echo '<div class="box">';
+						echo '<h1> '.mysql2date('F j, Y ', $today).' </h1>';
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
@@ -199,7 +213,7 @@ return $newstr;
 							
 						}
 
-				        echo '</div>';?>
+				        echo '</div>';}?>
                         
 			</div>                
 <?php get_footer();?>
