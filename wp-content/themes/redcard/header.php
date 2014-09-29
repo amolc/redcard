@@ -47,26 +47,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/captify.tiny.js"></script>
 
 <?php wp_head(); ?>
-<style>
 
-.mainSliderDetail{ background-color: #000;height: 60px;width: 600px;}
-.mainSliderDetail .mstitle{border: 0 solid #000;font-weight: 700;margin-left: 15px;margin-bottom: 5px;color: #fff;overflow: hidden;font-size: 18px;float: left;margin-top: 5px;width: 450px;}
-.mainSliderDetail .mssocile{margin-top: 5px;float: left;width: 120px;margin-left: 10px;}
-.mainSliderDetail .mssocile .facebook{
-	background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
-    float: left;height: 30px;padding: 0;width: 30px;}
-.mainSliderDetail .mssocile .twitter{
-	background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll -30px 0 rgba(0, 0, 0, 0);
-    float: left;height: 30px;padding: 0;width: 30px;}
-.mainSliderDetail .mssocile	.message {
-    background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll -60px 0 rgba(0, 0, 0, 0);
-    float: left;height: 30px;padding: 0;width: 30px;}
-.viewcount{color: #428bca;float: left;}
-.prevmain{ left: 1%;position: absolute;top: 39%;width: 20px;z-index: 999;}
-.nextmain {position: absolute; right: 1%;top: 40%;z-index: 999;}
-.myslider{ position:relative;}
-
-</style>
 </head>
 
 <body>
