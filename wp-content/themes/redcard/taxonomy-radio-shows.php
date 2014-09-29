@@ -28,10 +28,7 @@ get_header(); ?>
 					echo '<div class="box">';
 					echo '<h1>RADIO SEGMENTS</h1>';
 				    //echo '<h4>' . $term->name. '</h4>';
-						$args = array( ' hide_empty = true' );
-
-							$terms = get_terms('radio-shows', $args);
-						pr($terms,1);
+				
 				    	// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -44,7 +41,8 @@ get_header(); ?>
 						global $post;
 						   $radtitle = $post->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
-						
+						  $getCategory =  get_the_category( $post->ID);
+						pr($getCategory,1);
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
