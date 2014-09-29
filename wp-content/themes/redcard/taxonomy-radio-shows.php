@@ -28,6 +28,10 @@ get_header(); ?>
 					echo '<div class="box">';
 					echo '<h1>RADIO SEGMENTS</h1>';
 				    //echo '<h4>' . $term->name. '</h4>';
+						$args = array( ' hide_empty = true' );
+
+							$terms = get_terms('radio-shows', $args);
+						pr($terms,1);
 				    	// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -40,11 +44,12 @@ get_header(); ?>
 						global $post;
 						   $radtitle = $post->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 								
-	   							<a href="#"></a>
+	   							<a href="#">In Added Time</a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
 	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $post->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
