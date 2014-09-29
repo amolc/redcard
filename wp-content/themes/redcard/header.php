@@ -37,24 +37,35 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<link href="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.css" rel="stylesheet"/>
+
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.min.js"></script>
+
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
 <script src="<?php echo get_template_directory_uri(); ?>/prettyphoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jcarousel/style.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/jcarousellite_1.0.1.pack.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/captify.tiny.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-	$('.bxslider').bxSlider({
-		mode: 'fade',
-		pager: false,
-		captions: true
-	});
-  });
-</script>
+
 <?php wp_head(); ?>
+<style>
+
+.mainSliderDetail{ background-color: #000;height: 60px;width: 600px;}
+.mainSliderDetail .mstitle{border: 0 solid #000;font-weight: 700;margin-left: 15px;margin-bottom: 5px;color: #fff;overflow: hidden;font-size: 18px;float: left;margin-top: 5px;width: 450px;}
+.mainSliderDetail .mssocile{margin-top: 5px;float: left;width: 120px;margin-left: 10px;}
+.mainSliderDetail .mssocile .facebook{
+	background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;height: 30px;padding: 0;width: 30px;}
+.mainSliderDetail .mssocile .twitter{
+	background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll -30px 0 rgba(0, 0, 0, 0);
+    float: left;height: 30px;padding: 0;width: 30px;}
+.mainSliderDetail .mssocile	.message {
+    background: url("<?php echo get_template_directory_uri(); ?>/img/social_4.png") repeat scroll -60px 0 rgba(0, 0, 0, 0);
+    float: left;height: 30px;padding: 0;width: 30px;}
+.viewcount{color: #428bca;float: left;}
+.prevmain{ left: 1%;position: absolute;top: 39%;width: 20px;z-index: 999;}
+.nextmain {position: absolute; right: 1%;top: 40%;z-index: 999;}
+
+</style>
 </head>
 
 <body>
@@ -89,23 +100,47 @@
 <div class="box">
   <div class="left">
     <h1 class="h1">Featured</h1>
-    <ul class="bxslider">
-  
-      <?php 
-	  
-	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox' ORDER BY RAND() LIMIT 0,5";
-         $resultarray = $wpdb->get_results($selectsql) ;
-		if(!empty($resultarray)){
-			$mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
-			foreach($resultarray as $row)
-			{
-				
-			 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
-	  ?>
-      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><a onclick='<?=$mstr;?>' href='http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>'><span class='facebook'></span></a><a href='http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $row->post_id);?> via @RedCardConnect'  ><span class='twitter'></span></a> <a onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;'  target='_blank' href='mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink(  $article->ID);?>'><span class='message'></span>1,200 views</div>" /></li>
-    <?php } }?>
-       
-    </ul>
+    <div class="myslider">
+        <div class="prevmain"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
+        <div id="mainSlider">
+        <ul >
+      
+          <?php 
+          
+                 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox' ORDER BY RAND() LIMIT 0,5";
+             $resultarray = $wpdb->get_results($selectsql) ;
+            if(!empty($resultarray)){
+                $mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
+                foreach($resultarray as $row)
+                {
+                    
+                 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
+          ?>
+          <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /> 
+          <div class="mainSliderDetail"> 
+          <span class="mstitle"><?php echo get_the_title( $row->post_id ); ?> </span>
+          <span class="mssocile">
+          <span class='facebook'></span>
+          <span class='twitter'></span>
+          <span class='message'></span>
+          <span class='viewcount'>1,200 views</span>
+          
+          </span>
+        </div></li>
+        <?php } }?>
+           
+        </ul>
+        </div>
+        <div class="nextmain"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
+    </div>
+    <script type="text/javascript">
+		$(function() {
+    		$("#mainSlider").jCarouselLite({
+        		btnNext: ".nextmain",
+        		btnPrev: ".prevmain",
+        		visible: 1
+    		});
+		});</script>
   </div>
   <div class="right">
     <h1>Connect With us</h1>
