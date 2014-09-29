@@ -39,7 +39,7 @@ get_header(); ?>
 			?>
     </div>
  
-     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>,<a href="#">Singapore</a><span>Comments</span> </div>
+     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>,<a href="#">Singapore</a><span><a href="#dis_comment">Comments</a></span> </div>
     
     <div class="author-bio">
 			<div class="authimage"><?php echo get_avatar( get_the_author_meta('email'), '90' ); ?></div>
@@ -73,7 +73,7 @@ get_header(); ?>
         <?php } } ?>
       </ul>
     </div>
-    <h2>Comments</h2>
+    <h2 id="dis_comment">Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
