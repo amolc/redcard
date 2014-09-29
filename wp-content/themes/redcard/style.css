@@ -1094,3 +1094,6 @@ filter: grayscale(0%);
 .radioimage img{  height: 130px;
     width: 165px !important;}
 .radioshowssocial{  padding-bottom: 15px;}
+.mred{
+	color:red;
+}
