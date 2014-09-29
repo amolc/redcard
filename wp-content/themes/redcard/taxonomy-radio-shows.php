@@ -44,7 +44,7 @@ get_header(); ?>
 						   	 	
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 								
-	   							<a href="#">In Added Time</a>
+	   							<a href="#"></a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
 	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $post->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>

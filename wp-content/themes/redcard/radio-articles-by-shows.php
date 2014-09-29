@@ -158,20 +158,6 @@ return $newstr;
 						);
 				    	$allarts = get_posts( $args );
 						
-						$argsForRadioShow = array(
-						'post_type'        => 'radio-articles',
-						'post_status'      => 'publish',
-						'tax_query' => array(
-								array(
-									'taxonomy' => 'radio-shows',
-									'field' => 'name',
-									'terms' => $term->slug
-								)
-							)
-						);
-						$postRadioShow = get_posts( $argsForRadioShow );
-						pr($postRadioShow,1);
-						
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
