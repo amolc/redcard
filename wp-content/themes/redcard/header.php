@@ -28,6 +28,8 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <link href="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.css" rel="stylesheet"/>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.min.js"></script>
@@ -61,7 +63,13 @@
     <?php //shailan_dropdown_menu(); ?>
     <ul class="serch2">
       <li class="seacrh-li">
-        <?php dynamic_sidebar( 'search-menu' ); ?>
+        <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+	<label>
+		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+	</label>
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( '<i class="fa fa-search"></i>', 'submit button' ) ?>" />
+</form>
       </li>
     </ul>
   </div>
