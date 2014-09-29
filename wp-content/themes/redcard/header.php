@@ -29,7 +29,14 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link href="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.css" rel="stylesheet"/>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.bxslider.min.js"></script>
@@ -68,7 +75,7 @@
 		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
 	</label>
-	<button type="submit" class="search-submit" ><?php echo esc_attr_x( '<i class="fa fa-search"></i>', 'submit button' ) ?></button>
+	<button type="submit" class="search-submit" style="width:30px;" ><i class="fa fa-search"></i></button>
 </form>
       </li>
     </ul>
