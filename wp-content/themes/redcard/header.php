@@ -142,7 +142,7 @@
 							$thumb = get_the_post_thumbnail( $article[ID]);
 						    $radtitle = $article['post_title'];
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '?' );
-						   echo '<li><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
+						   echo '<li style="width:151px;margin-right: 15px;"><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
 	   							<h3><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 	   							<a href="#">In Added Time</a>
 	   							<a href="'.get_permalink( $article[ID]).'" class="llink">Listen</a>

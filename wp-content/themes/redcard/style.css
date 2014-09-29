@@ -464,7 +464,8 @@ sport-menu-main a{color:#333;}
 
 #container .box .r-child {
 	background:#f99235;
-	width:165px;
+	/*width:165px;*/
+	width:151px;
 	float:left;
 	margin-right:15px;
 	min-height:150px;
@@ -1017,7 +1018,7 @@ span.screen-reader-text {display: none;}
 filter: grayscale(0%);
 .sigle-football-title{ margin-top: 25px;}
 .sigle-football-title h1{ font-size: 26px !important;margin: 25px 0 15px !important;c}
-.home-radio-post{margin-right: 13px !important;}
+
 .author-title{ margin-top:0; margin-bottom: 0;}
 .author-title a{color: #333333;font-family: "FF DIN";font-size: 22px;font-weight: bold;}
 .author-info{float: left; width: 82%;}
@@ -1025,6 +1026,8 @@ filter: grayscale(0%);
 .author-info p{ height: 65px; overflow-y: scroll;}
 .authimage{float: left; margin-right: 12px;}
 .authimage img{ height: 90px;width: 90px;}
+.prev, .next{ padding-top: 16%;}
+
 
 /**/
 .menu-orange:hover{
