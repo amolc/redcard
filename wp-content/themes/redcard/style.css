@@ -1107,6 +1107,7 @@ filter: grayscale(0%);
 .radioimage img{  height: 130px;
     width: 165px !important;}
 .radioshowssocial{  padding-bottom: 15px;}
-.menu .mred a{
+#menu-item-380 a{
 	color:red;
+	font-weight:bold;
 }
