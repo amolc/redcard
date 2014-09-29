@@ -102,7 +102,7 @@
   <div class="left">
     <h1 class="h1">Featured</h1>
     <div class="myslider">
-        <div class="prevmain"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
+        <div class="prevmain"><i class="fa fa-2x fa-arrow-left"></i></div>
         <div id="mainSlider">
         <ul >
       
@@ -132,7 +132,7 @@
            
         </ul>
         </div>
-        <div class="nextmain"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
+        <div class="nextmain"><i class="fa fa-2x fa-arrow-right"></i></div>
     </div>
     <script type="text/javascript">
 		$(function() {
