@@ -59,7 +59,7 @@ get_header(); ?>
 				    	foreach ( $allarts as $article ) {	
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'
 	   							<h3>'.$article->post_title.'</h3>
-	   							<a href="#">In Added Time</a>
+	   							<a href="#">'.$term->name.'</a>
 	   							<button>Listen</button>
 	   							<div id="social_2">
 	   								<a href="#"><div class="facebook"></div></a>
