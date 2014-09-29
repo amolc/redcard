@@ -64,6 +64,7 @@
 .viewcount{color: #428bca;float: left;}
 .prevmain{ left: 1%;position: absolute;top: 39%;width: 20px;z-index: 999;}
 .nextmain {position: absolute; right: 1%;top: 40%;z-index: 999;}
+.myslider{ position:relative;}
 
 </style>
 </head>
@@ -120,9 +121,9 @@
           <div class="mainSliderDetail"> 
           <span class="mstitle"><?php echo get_the_title( $row->post_id ); ?> </span>
           <span class="mssocile">
-          <span class='facebook'></span>
-          <span class='twitter'></span>
-          <span class='message'></span>
+          <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><span class='facebook'></span></a>
+          <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
+          <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><span class='message'></span></a>
           <span class='viewcount'>1,200 views</span>
           
           </span>
