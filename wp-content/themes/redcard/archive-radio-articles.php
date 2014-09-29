@@ -164,7 +164,7 @@ return $newstr;
 						   	 	
 	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 								
-	   							<a href="#">In Added Time</a>
+	   							<a href="#">'.$term->name.'</a>
 	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">';
 								?>
