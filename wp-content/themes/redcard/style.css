@@ -240,7 +240,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 #menu ul li li:hover ul { display:block !important;}
-#menu ul ul ul{ display:none !important; left:180px;
+#menu ul ul ul{ display:none !important; left:150px;
     position:absolute; top:0px !important; }
 #menu ul li li:hover ul li{ position:absolute; display:block !important;}
 #menu ul ul ul li{position: relative !important;}
