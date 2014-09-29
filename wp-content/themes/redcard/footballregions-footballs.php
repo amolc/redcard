@@ -124,7 +124,7 @@ return $newstr;
         
 					</div>
 					<div class="b" id="no-border">
-						<h1>Sponsor</h1>
+						<h1>ADVERTISMENT</h1>
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
 					
