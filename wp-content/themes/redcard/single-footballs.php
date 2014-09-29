@@ -10,6 +10,9 @@ get_header(); ?>
    <div class="sigle-football-title"> <h1>
       <?php the_title(); ?>
     </h1></div>
+    <?php $postID = get_the_ID();
+		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
+              <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
    
     <div class="date"> <a href="#">Singapore</a> <span>
       <?php the_time('l, F j, Y'); ?>
