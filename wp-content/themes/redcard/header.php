@@ -102,7 +102,7 @@
 				
 			 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
 	  ?>
-      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><a onclick='<?=$mstr;?>' href='http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>'><span class='facebook'></span></<a href='http://twitter.com/intent/tweet?text=via @RedCardConnect&url=<?php echo get_permalink( $row->post_id);?>'  ><span class='twitter'></span></a> <a onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;'  target='_blank' href='mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink(  $article->ID);?>'><span class='message'></span>1,200 views</div>" /></li>
+      <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<label> <?php echo get_the_title( $row->post_id ); ?> </label><div><a onclick='<?=$mstr;?>' href='http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>'><span class='facebook'></span></a><a href='http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $row->post_id);?> via @RedCardConnect'  ><span class='twitter'></span></a> <a onclick='javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;'  target='_blank' href='mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink(  $article->ID);?>'><span class='message'></span>1,200 views</div>" /></li>
     <?php } }?>
        
     </ul>
@@ -216,7 +216,7 @@
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
 				 
-				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='240', $height='175');
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='300', $height='220');
 	  ?>
         <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
         <?php }}?>
