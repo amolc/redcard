@@ -42,7 +42,7 @@ get_header(); ?>
 						   $radtitle = $post->post_title;
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						  $getCategory =  get_the_category( $post->ID);
-						
+						echo $wp_query->queried_object->name;die();
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
