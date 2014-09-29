@@ -1107,7 +1107,7 @@ filter: grayscale(0%);
 .radioimage img{  height: 130px;
     width: 165px !important;}
 .radioshowssocial{  padding-bottom: 15px;}
-#menu-item-380 a{
-	color:red !important;
-	
-}
+#menu-item-380 a{color:red !important;}
+.loop-pagination .prev.page-numbers{ padding-top:0; float:left; margin-right:10px;}
+.loop-pagination .next.page-numbers{ padding-top:0; float:left; margin-left:10px;}
+.page-numbers {float: left; margin-right: 5px;}
