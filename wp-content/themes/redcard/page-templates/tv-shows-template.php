@@ -76,7 +76,7 @@ return $newstr;
         				<?php }} ?>
 					</div>
 					<div class="b" id="no-border">
-						<h1>ADVERTISMENT</h1>
+						<h1>ADVERTISEMENT</h1>
 						<?php dynamic_sidebar( 'postsponser' ); ?>
 					</div>
 				</div> 

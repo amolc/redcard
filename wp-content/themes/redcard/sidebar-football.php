@@ -7,7 +7,7 @@
  */
 ?>
 <div class="right">
-  <h2>ADVERTISMENT</h2>
+  <h2>ADVERTISEMENT</h2>
   <div class="ad_right"><?php dynamic_sidebar( 'postsponser' ); ?></div>
   <h2>Popular Posts</h2>
   <div class="popular">
