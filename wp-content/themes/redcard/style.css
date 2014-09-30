@@ -1031,7 +1031,7 @@ filter: grayscale(0%);
 .authimage{float: left; margin-right: 12px;}
 .authimage img{ height: 90px;width: 90px;}
 .prev, .next{ padding-top: 20%;}
-.home-top-box{ margin-bottom:15px;}
+.home-top-box{ margin-bottom:15px !important;}
 
 
 /**/

@@ -17,7 +17,7 @@ get_header();
 			$loop = new WP_Query( $args ); $as =1; 
 			while ( $loop->have_posts() ) : $loop->the_post();
 		
-			if($as ==1){?>
+			if($as == 1){?>
 				  <a href="<?php the_permalink() ?>">
                       <h1><?php the_title(); ?></h1>
                       </a>
@@ -36,8 +36,9 @@ get_header();
                       <div class="c_list">
                         <ul>
       
-			<?php }
-			 ?><li>
+			<?php } if($as > 1) { ?>
+            
+            <li>
  				<div class="img"> <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?> <span>Singapore</span> </div>
 
      			<div class="text">
@@ -45,7 +46,7 @@ get_header();
                     <p><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a></p>
 				</div>
                 </li>
-			<?php $as++; endwhile;?>
+			<?php } $as++; endwhile;?>
       
     </ul>
   </div>
