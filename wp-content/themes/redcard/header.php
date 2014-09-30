@@ -72,8 +72,7 @@
 <div id="container">
 <?php dynamic_sidebar( 'container-image' ); ?>
 <?php if(is_front_page()){ ?>
-<?php $args = array( 'post_type' => 'footballs','order' => 'DESC','numberposts' => 4);
-	  $loop = new WP_Query( $args ); $as =1;?>
+
 <div class="box">
   <div class="left">
     <h1 class="h1">Featured</h1>
@@ -90,11 +89,16 @@
                 $mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
                 foreach($resultarray as $row)
                 {
-
-                 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
+					$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );  
+                  $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
           ?>
           <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" />
-            <div class="mainSliderDetail"> <span class="mstitle"><?php echo get_the_title( $row->post_id ); ?> </span> <span class="mssocile"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
+            <div class="mainSliderDetail">
+             <span class="mstitle">
+                 <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"><?php echo get_the_title( $row->post_id ); ?> </p>
+                 <p style="color: #fff; font-size: 12px;"><?php  echo $tagLine ; ?></p>
+             </span>
+             <span class="mssocile"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
           </li>
           <?php } }?>
         </ul>
@@ -179,6 +183,8 @@
 <div class="box">
   <div class="left">
     <h1 class="h1">Latest News</h1>
+    <?php $args = array( 'post_type' => 'footballs','order' => 'DESC','numberposts' => 4);
+	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image">
       <?php  //$trimtitle = get_the_title();
