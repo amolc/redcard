@@ -259,12 +259,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #menu ul.serch2{ float:right; position:relative;}
 #menu ul.serch2 li{padding:2px}
 
-.sport-menu-main:hover{ background:#dadada;}
+.sport-menu-main:hover{ background:#4d4d4d;}
 sport-menu-main a{color:#333;}
 .blue-menu-main:hover{ background:#dc1f26;}
 .green-menu-main:hover{ background:#00a69c;}
 .orange-menu-main:hover{ background:#f99235; }
-.sport-menu{background:#dadada;}
+.sport-menu{background:#4d4d4d;}
 .blue-menu{background:#dc1f26;}
 .orange-menu{background:#f99235;}
 .green-menu{background:#00a69c;}
