@@ -1012,7 +1012,7 @@ span.screen-reader-text {display: none;}
 .radio-single-image p{color: #333333;font-size: 14px;line-height: 23px;margin-bottom: 20px;}
 .single-rad-vid iframe{height: 250px;width: 582px;}
 .single-rad-vid{margin-bottom: 20px;}
-.tweetcss iframe{height: 304px;}
+.tweetcss iframe{height: 234px;}
 #social a{ padding-left:7px;}
 .social-bottom a{ padding-left: 0 !important;padding-right: 7px;}
 .social-bottom{ margin-top: -10px;}
@@ -1031,6 +1031,7 @@ filter: grayscale(0%);
 .authimage{float: left; margin-right: 12px;}
 .authimage img{ height: 90px;width: 90px;}
 .prev, .next{ padding-top: 20%;}
+.home-top-box{ margin-bottom:15px;}
 
 
 /**/
@@ -1128,4 +1129,5 @@ filter: grayscale(0%);
 .prevmain{ left: 1%;position: absolute;top: 39%;width: 20px;z-index: 999;}
 .nextmain {position: absolute; right: 1%;top: 40%;z-index: 999;}
 .myslider{ position:relative;}
-.homeRighth1{margin-top: 6px;}
+.homeRighth1{ margin-bottom: 31px;margin-top: 4px;}
+.footballs-top-image-latest {margin-bottom: 10px;}
