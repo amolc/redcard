@@ -814,7 +814,7 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 			array(
 				'name'    => __( 'Opinion', 'cmb' ),
 				'desc'    => __( 'Choose (optional)', 'cmb' ),
-				'id'      => $prefix . 'test_radio',
+				'id'      => $prefix . 'opinion_radio',
 				'type'    => 'radio',
 				'options' => array(
 					'option1' => __( 'Sasi Says', 'cmb' ),
@@ -824,7 +824,7 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 			array(
 				'name'    => __( 'In the Week', 'cmb' ),
 				'desc'    => __( 'Choose any of them (optional)', 'cmb' ),
-				'id'      => $prefix . 'test_radio',
+				'id'      => $prefix . 'inTheWeek_radio',
 				'type'    => 'radio',
 				'options' => array(
 					'option1' => __( 'Match Review', 'cmb' ),
