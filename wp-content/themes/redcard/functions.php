@@ -751,7 +751,7 @@ function register_taxonomy_football_intheweek() {
    register_taxonomy( 'footballintheweek', array('footballs'), $args );
 }
 
-/*** Football Ends ***/
+/*** all Football Ends ***/
 
 /*** TV Starts ***/
 add_action( 'init', 'tvideo_init' );
