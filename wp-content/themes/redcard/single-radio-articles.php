@@ -69,7 +69,7 @@ get_header(); ?>
         <?php } } ?>
       </ul>
     </div>
-        <h2>Comments</h2>
+        <h2 id="dis_comment">Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

@@ -37,17 +37,13 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
-
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
 <script src="<?php echo get_template_directory_uri(); ?>/prettyphoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jcarousel/style.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/jcarousellite_1.0.1.pack.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/captify.tiny.js"></script>
-
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jcarousel/style.css" type="text/css" media="screen" />
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/jcarousellite_1.0.1.pack.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/jcarousel/js/captify.tiny.js"></script>
 <?php wp_head(); ?>
-
 </head>
 
 <body>
@@ -57,19 +53,18 @@
     <?php dynamic_sidebar( 'header-social' ); ?>
   </div>
 </div>
+
 <div id="menu">
   <div class="menu_center">
     <?php  wp_nav_menu( array('menu' => 'Header2' )); ?>
-    <?php //shailan_dropdown_menu(); ?>
     <ul class="serch2">
       <li class="seacrh-li">
         <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<label>
-		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
-		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-	</label>
-	<button type="submit" class="search-submit" style="width:30px;background: #000;border: medium none;" ><i class="fa fa-search" style="color: #fff;"></i></button>
-</form>
+          <label> <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+            <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+          </label>
+          <button type="submit" class="search-submit" style="width:30px;background: #000;border: medium none;" ><i class="fa fa-search" style="color: #fff;"></i></button>
+        </form>
       </li>
     </ul>
   </div>
@@ -83,37 +78,28 @@
   <div class="left">
     <h1 class="h1">Featured</h1>
     <div class="myslider">
-        <div class="prevmain"><i class="fa fa-2x fa-arrow-left"></i></div>
-        <div id="mainSlider">
+      <div class="prevmain"><i class="fa fa-2x fa-arrow-left"></i></div>
+      <div id="mainSlider">
         <ul >
-      
           <?php 
-          
-                 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox' ORDER BY RAND() LIMIT 0,5";
+             $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
              $resultarray = $wpdb->get_results($selectsql) ;
+
+			 	
             if(!empty($resultarray)){
                 $mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
                 foreach($resultarray as $row)
                 {
-                    
+
                  $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
           ?>
-          <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /> 
-          <div class="mainSliderDetail"> 
-          <span class="mstitle"><?php echo get_the_title( $row->post_id ); ?> </span>
-          <span class="mssocile">
-          <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><span class='facebook'></span></a>
-          <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
-          <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><span class='message'></span></a>
-          <span class='viewcount'>1,200 views</span>
-          
-          </span>
-        </div></li>
-        <?php } }?>
-           
+          <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" />
+            <div class="mainSliderDetail"> <span class="mstitle"><?php echo get_the_title( $row->post_id ); ?> </span> <span class="mssocile"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
+          </li>
+          <?php } }?>
         </ul>
-        </div>
-        <div class="nextmain"><i class="fa fa-2x fa-arrow-right"></i></div>
+      </div>
+      <div class="nextmain"><i class="fa fa-2x fa-arrow-right"></i></div>
     </div>
     <script type="text/javascript">
 		$(function() {
@@ -122,22 +108,18 @@
         		btnPrev: ".prevmain",
         		visible: 1
     		});
-		});</script>
+		});</script> 
   </div>
   <div class="right">
-    <h1>Connect With us</h1>
-    <div id="connect"> Subscribe to our mailing list 
-      <?php echo do_shortcode('[gsom-optin]'); ?> </div>
-  <!--  <h1>Tweets</h1> -->
- 
-   <div class="tweetcss"> <a class="twitter-timeline" href="https://twitter.com/RedCardConnect" data-widget-id="515153763913322496">Tweets by @RedCardConnect</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </div>
+    <h1 class="homeRighth1">Connect With us</h1>
+    <div id="connect"> Subscribe to our mailing list <?php echo do_shortcode('[gsom-optin]'); ?> </div>
+    <!--  <h1>Tweets</h1> -->
     
-    </div>
+    <div class="tweetcss"> <a class="twitter-timeline" href="https://twitter.com/RedCardConnect" data-widget-id="515153763913322496">Tweets by @RedCardConnect</a> 
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </div>
+  </div>
 </div>
-
-  
-				<?php
+<?php
 				    	echo '<div class="box">';
 						echo '<h1>Radio Soundbites</h1>';
 				    	$args = array(
@@ -148,17 +130,16 @@
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				    	$i = 1;
 						?>
-						<div id="list">
-			
-					 <div class="prev"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
-				<div class="slider">
-               
-					<ul>
-						<?php
+<div id="list">
+  <div class="prev"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
+  <div class="slider">
+    <ul>
+      <?php
 				    	foreach ( $recent_posts as $article ) {
-							$thumb = get_the_post_thumbnail( $article[ID]);
+											
+							$thumb = get_the_post_thumbnail( $article[ID]);							
 						    $radtitle = $article['post_title'];
-						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '?' );
+						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '' );
 						   echo '<li style="width:151px;margin-right: 15px;"><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
 	   							<h3><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
 	   							<a href="#">In Added Time</a>
@@ -166,22 +147,25 @@
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitlefinal);
 								?>
-	   							  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-           <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><div class="twitter"></div></a>
-        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink(  $article[ID]);?>&body=<?php echo get_permalink(  $article[ID]);?>"><div class="message"></div></a>
-        
-								<?php
+      <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink(  $article[ID]));?>"  title="Share on Facebook" >
+      <div class="facebook" ></div>
+      </a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  >
+      <div class="twitter"></div>
+      </a> <a href="<?php echo get_permalink(  $article[ID]);?>#dis_comment">
+      <div class="message"></div>
+      </a>
+      <?php
                                 echo '</div>
 	   							<span>1,290 views<span>
 	   						</span></span></div></li>';
 	   						$i++;
 						}
 						?>
-						</ul>
-                        </div>
-                        <div class="next"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
-                        </div>
-						<?php
+    </ul>
+  </div>
+  <div class="next"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
+</div>
+<?php
 				        echo '</div>';
 				?>
 <script type="text/javascript">
@@ -192,37 +176,36 @@
         		visible: 5
     		});
 		});</script>
-
 <div class="box">
   <div class="left">
     <h1 class="h1">Latest News</h1>
-	<?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image">
-    <?php  //$trimtitle = get_the_title();
+      <?php  //$trimtitle = get_the_title();
 	
 		 // $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span>Singapore</span> </div>
       <div class="text"> <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
-      <?php $trimcontent = get_the_content();
+        <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
-      <p><?php echo $shortcontent; ?></p>
-      <div class="date" id="date2"> <span>120 views</span>
-          <div id="social_3">
-             <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(the_permalink());?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-       <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?> <?php the_permalink() ?> via @RedCardConnect&url=" ><div class="twitter"></div></a>
-        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo the_permalink();?>"><div class="message"></div></a>
-        
-          </div>
+        <p><?php echo $shortcontent; ?></p>
+        <div class="date" id="date2"> <span>120 views</span>
+          <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(the_permalink());?>"  title="Share on Facebook" >
+            <div class="facebook" ></div>
+            </a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?> <?php the_permalink() ?> via @RedCardConnect&url=" >
+            <div class="twitter"></div>
+            </a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo the_permalink();?>">
+            <div class="message"></div>
+            </a> </div>
         </div>
       </div>
     </div>
     <?php endwhile;?>
-  
   </div>
   <div class="right">
-    <h1>Featured Video</h1>
+    <h1 class="homeRighth1">Featured Video</h1>
     <div class="ad_right">
       <div class="allvid">
         <?php 
@@ -238,7 +221,7 @@
 	  ?>
         <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
         <?php }}?>
-         <script type="text/javascript" charset="utf-8">
+        <script type="text/javascript" charset="utf-8">
 
     $("a[rel^='prettyPhoto']").prettyPhoto();
 
