@@ -23,9 +23,7 @@ function myplugin_activate1()
 {
 	global $wpdb;
 	 $tablename=$wpdb->prefix."adverts";
-	$mQuery="
-	DROP TABLE IF EXISTS `$tablename`;
-	CREATE TABLE `$tablename` (
+	$mQuery="CREATE TABLE `$tablename` (
   `adId` int(11) NOT NULL auto_increment,
   `adimage` varchar(255) default NULL,
   `adlink` text,
