@@ -50,6 +50,7 @@ require_once locate_template('/inc/radio_artciles.php');
 require_once locate_template('/inc/radio_shows.php');            // Utility functions
 require_once locate_template('/inc/tvvideo_shows.php'); 
 require_once locate_template('/inc/other-sports.php'); 
+require_once locate_template('/inc/featured.php');
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
@@ -798,6 +799,18 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
 			),
+			
+			array(
+				'name'    => __( 'Exclusive', 'cmb' ),
+				'desc'    => __( 'Choose (optional)', 'cmb' ),
+				'id'      => $prefix . 'exc_radio',
+				'type'    => 'radio',
+				'options' => array(
+					'option1' => __( '', 'cmb' ),
+
+				),
+			),
+			
 			array(
 				'name'    => __( 'Opinion', 'cmb' ),
 				'desc'    => __( 'Choose (optional)', 'cmb' ),
