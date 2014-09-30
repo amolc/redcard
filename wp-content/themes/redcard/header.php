@@ -141,7 +141,7 @@
 				    	echo '<div class="box">';
 						echo '<h1>Radio Soundbites</h1>';
 				    	$args = array(
-						'posts_per_page'   => 5,
+						'posts_per_page'   => 10,
 						'post_type'        => 'radio-articles',
 						'post_status'      => 'publish',
 						);
