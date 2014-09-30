@@ -8,7 +8,7 @@ Plugin Name: Red Card Advertisement
 Plugin URI: http://www.fountaintechies.com/
 Description: A direct way to add   advertisements.
 Author: Fountain Technologies
-Version: 1.0.0
+Version: 1.0.0.0
 Author URI: http://www.fountaintechies.com/
 */
 add_action('admin_menu', 'add_program_menu1');
