@@ -646,7 +646,7 @@ function register_taxonomy_footballregions() {
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
-        'show_ui' => radio,
+        'show_ui' => true,
         'show_tagcloud' => true,
         'hierarchical' => true,
         'rewrite' => true,
@@ -655,6 +655,101 @@ function register_taxonomy_footballregions() {
    register_taxonomy( 'footballregions', array('footballs'), $args );
 }
 
+add_action( 'init', 'register_taxonomy_footballexclusive' );
+function register_taxonomy_footballexclusive() {
+    $labels = array( 
+        'name' => _x( 'Exclusive', 'footballexclusive' ),
+        'singular_name' => _x( 'Exclusive', 'footballexclusive' ),
+        'search_items' => _x( 'Search Exclusive', 'footballexclusive' ),
+        'popular_items' => _x( 'Popular Exclusive', 'footballexclusive' ),
+        'all_items' => _x( 'All Exclusive', 'footballexclusive' ),
+        'parent_item' => _x( 'Parent Exclusive', 'footballexclusive' ),
+        'parent_item_colon' => _x( 'Parent Exclusive:', 'footballexclusive' ),
+        'edit_item' => _x( 'Edit Exclusive', 'footballexclusive' ),
+        'update_item' => _x( 'Update Exclusive', 'footballexclusive' ),
+        'add_new_item' => _x( 'Add New Exclusive', 'footballexclusive' ),
+        'new_item_name' => _x( 'New Exclusive', 'footballexclusive' ),
+        'separate_items_with_commas' => _x( 'Separate Exclusive with commas', 'footballexclusive' ),
+        'add_or_remove_items' => _x( 'Add or remove Exclusive', 'footballexclusive' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Exclusive', 'footballexclusive' ),
+        'menu_name' => _x( 'Exclusive', 'footballexclusive' ),
+    );
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+   register_taxonomy( 'footballexclusive', array('footballs'), $args );
+}
+
+add_action( 'init', 'register_taxonomy_footballopinion' );
+function register_taxonomy_footballopinion() {
+    $labels = array( 
+        'name' => _x( 'Opinion', 'footballopinion' ),
+        'singular_name' => _x( 'Opinion', 'footballopinion' ),
+        'search_items' => _x( 'Search Opinion', 'footballopinion' ),
+        'popular_items' => _x( 'Popular Opinion', 'footballopinion' ),
+        'all_items' => _x( 'All Opinion', 'footballopinion' ),
+        'parent_item' => _x( 'Parent Opinion', 'footballopinion' ),
+        'parent_item_colon' => _x( 'Parent Opinion:', 'footballopinion' ),
+        'edit_item' => _x( 'Edit Opinion', 'footballopinion' ),
+        'update_item' => _x( 'Update Opinion', 'footballopinion' ),
+        'add_new_item' => _x( 'Add New Opinion', 'footballopinion' ),
+        'new_item_name' => _x( 'New Opinion', 'footballopinion' ),
+        'separate_items_with_commas' => _x( 'Separate Opinion with commas', 'footballopinion' ),
+        'add_or_remove_items' => _x( 'Add or remove Opinion', 'footballopinion' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Opinion', 'footballopinion' ),
+        'menu_name' => _x( 'Opinion', 'footballopinion' ),
+    );
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+   register_taxonomy( 'footballopinion', array('footballs'), $args );
+}
+
+add_action( 'init', 'register_taxonomy_football_intheweek' );
+function register_taxonomy_football_intheweek() {
+    $labels = array( 
+        'name' => _x( 'In The Week', 'footballintheweek' ),
+        'singular_name' => _x( 'In The Week', 'footballintheweek' ),
+        'search_items' => _x( 'Search In The Week', 'footballintheweek' ),
+        'popular_items' => _x( 'Popular In The Week', 'footballintheweek' ),
+        'all_items' => _x( 'All In The Week', 'footballintheweek' ),
+        'parent_item' => _x( 'Parent In The Week', 'footballintheweek' ),
+        'parent_item_colon' => _x( 'Parent In The Week:', 'footballintheweek' ),
+        'edit_item' => _x( 'Edit In The Week', 'footballintheweek' ),
+        'update_item' => _x( 'Update In The Week', 'footballintheweek' ),
+        'add_new_item' => _x( 'Add New In The Week', 'footballintheweek' ),
+        'new_item_name' => _x( 'New In The Week', 'footballintheweek' ),
+        'separate_items_with_commas' => _x( 'Separate In The Week with commas', 'footballintheweek' ),
+        'add_or_remove_items' => _x( 'Add or remove In The Week', 'footballintheweek' ),
+        'choose_from_most_used' => _x( 'Choose from the most used In The Week', 'footballintheweek' ),
+        'menu_name' => _x( 'In The Week', 'footballintheweek' ),
+    );
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+   register_taxonomy( 'footballintheweek', array('footballs'), $args );
+}
 
 /*** Football Ends ***/
 
@@ -798,39 +893,6 @@ function be_footballs_metaboxes_strength( $meta_boxes ) {
 				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
-			),
-			
-			array(
-				'name'    => __( 'Exclusive', 'cmb' ),
-				'desc'    => __( 'Choose (optional)', 'cmb' ),
-				'id'      => $prefix . 'exc_radio',
-				'type'    => 'radio',
-				'options' => array(
-					'option1' => __( '', 'cmb' ),
-
-				),
-			),
-			
-			array(
-				'name'    => __( 'Opinion', 'cmb' ),
-				'desc'    => __( 'Choose (optional)', 'cmb' ),
-				'id'      => $prefix . 'opinion_radio',
-				'type'    => 'radio',
-				'options' => array(
-					'option1' => __( 'Sasi Says', 'cmb' ),
-
-				),
-			),
-			array(
-				'name'    => __( 'In the Week', 'cmb' ),
-				'desc'    => __( 'Choose any of them (optional)', 'cmb' ),
-				'id'      => $prefix . 'inTheWeek_radio',
-				'type'    => 'radio',
-				'options' => array(
-					'option1' => __( 'Match Review', 'cmb' ),
-					'option2' => __( 'Chronicles of Duncan', 'cmb' ),
-					'option3' => __( 'Trending', 'cmb' ),
-				),
 			),
 		),
 	);
