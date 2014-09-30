@@ -237,6 +237,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   display: block;
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 
 #menu ul li li:hover ul { display:block !important;}
@@ -795,7 +796,7 @@ color: #333333;
 #container .left .c_list ul li .img span {
 	position:absolute;
 	top:0;
-	background:#652d90;
+	background:#dd2a26;
 	padding:5px 10px;
 	color:#fff;
 	font-size:12px;
