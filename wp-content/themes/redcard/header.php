@@ -70,7 +70,25 @@
   </div>
 </div>
 <div id="container">
-<?php dynamic_sidebar( 'container-image' ); ?>
+<?php 
+	$m_table=$wpdb->prefix."adverts";
+	$advertQuery="select * from $m_table where page='home' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql=$wpdb->get_results($advertQuery);
+	
+	if(sizeof($advertSql)>0)
+	{
+		foreach($advertSql as $adsql)
+		{
+		?>
+		
+<div class="ad_1" align="center"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" />
+<label style="font-size:9px;">ADVERTISEMENT</label>
+</div>
+
+		<?php
+		}
+	}
+ ?>
 <?php if(is_front_page()){ ?>
 
 <div class="box home-top-box">
@@ -236,7 +254,18 @@
       </div>
       <br/>
       <br/>
-      <?php dynamic_sidebar( 'postsponser' ); ?>
+      <?php if(sizeof($advertSql)>0)
+	{
+		foreach($advertSql as $adsql)
+		{
+		?>
+		
+<div class="a d_1" align="center"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" />
+</div>
+
+		<?php
+		}
+	} ?>
     </div>
     <h2>Popular Posts</h2>
     <div class="popular">

@@ -154,11 +154,22 @@ if(isset($_POST['plaction']))
 	$movepath.="uploads/";
 	$movepath1=plugin_dir_path(__FILE__);
 	
-			
+	if($advertimage1['size']>0)
+	{		
 	$adpath1=$movepath."ad1XX".time().".".get_extension($advertimage1['name']);
+	}
+	if($advertimage2['size']>0)
+	{
 	$adpath2=$movepath."ad2XX".time().".".get_extension($advertimage2['name']);
+	}
+	if($bgimage['size']>0)
+	{
 	$bgpath=$movepath."bgXX".time().".".get_extension($bgimage['name']);		
+	}
+	if($bgcss['size']>0)
+	{
 	$csspath=$movepath."styleXX".time().".".get_extension($bgcss['name']);
+	}
 	$move1=move_uploaded_file($advertimage1['tmp_name'],$adpath1);		
 	$move2=move_uploaded_file($advertimage2['tmp_name'],$adpath2);		
 	$move3=move_uploaded_file($bgimage['tmp_name'],$bgpath);		
