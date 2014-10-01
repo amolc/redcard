@@ -48,6 +48,13 @@ function m_filter_text1($str)
 	$str=ltrim(rtrim(strip_tags($str)));
 	return $str;
 }
+function get_extension($str)
+{
+	$str=explode(".",$str);
+	$str=$str[sizeof($str)-1];
+	return $str;
+	
+}
 function manage_Adverts()
 {
 	?>
@@ -121,8 +128,12 @@ function mtrim(str)
 <div class="box box-body">
 <br/><br/>
 <?php 
+
+	global $wpdb;
+	 $tablename=$wpdb->prefix."adverts";
 if(isset($_POST['plaction']))
 {
+	
 	if($_POST['plaction']=="submit")
 	{
 	$advertimage1=$_FILES['advertimage1'];
@@ -130,10 +141,41 @@ if(isset($_POST['plaction']))
 	$bgimage=$_FILES['bgimage'];
 	$bgcss=$_FILES['bgcss'];
 	$displayonpage=$_POST['displayonpage'];
-	$text=$_POST['text'];
+	$adlink=$_POST['adlink'];
 	$isactive=$_POST['isactive']['0'];
-	$movepath=get_plugin_dir();
-	echo $movepath;
+	$movepath=plugin_dir_path(__FILE__);
+	$movepath.="uploads/";
+	$movepath1=plugin_dir_path(__FILE__);
+	
+			
+	$adpath1=$movepath."ad1XX".time().".".get_extension($advertimage1['name']);
+	$adpath2=$movepath."ad2XX".time().".".get_extension($advertimage2['name']);
+	$bgpath=$movepath."bgXX".time().".".get_extension($bgimage['name']);		
+	$csspath=$movepath."styleXX".time().".".get_extension($bgcss['name']);
+	$move1=move_uploaded_file($advertimage1['tmp_name'],$adpath1);		
+	$move2=move_uploaded_file($advertimage2['tmp_name'],$adpath2);		
+	$move3=move_uploaded_file($bgimage['tmp_name'],$bgpath);		
+	$move4=move_uploaded_file($bgcss['tmp_name'],$csspath);		
+	if($move1 && $move2)
+	{
+		$adpath1=str_replace($movepath1,'',$adpath1);
+		$adpath2=str_replace($movepath1,'',$adpath2);
+		$bgpath=str_replace($movepath1,'',$bgpath);
+		$csspath=str_replace($movepath1,'',$csspath);
+		$adlink=urlencode($adlink);
+		
+								
+		$insertquery="insert into $tablename(adimage1,adimage2,adlink,bgcss,bgimage,page,isactive,addate)values('$adpath1','$adpath2','$adlink','$csspath','$bgpath','$displayonpage','$isactive',now())";
+		$insertsql=$wpdb->query($insertquery);
+		if($insertsql)
+		{
+			?>
+			<br/>
+            <div class="alert alert-success " style="width:50%;" >Advertisement added successfully.</div>
+			<?php
+		}
+	}
+	
 	}
 }
 ?>
