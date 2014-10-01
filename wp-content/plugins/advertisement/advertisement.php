@@ -18,7 +18,7 @@ function add_program_menu1()
 	
 }
 register_activation_hook( __FILE__, 'myplugin_activate1' );
-
+register_deactivation_hook( __FILE__, 'myplugin_deactivation' );
 function myplugin_activate1()
 {
 	global $wpdb;
@@ -31,8 +31,18 @@ function myplugin_activate1()
   PRIMARY KEY  (`adId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ";
+
 $mSql=$wpdb->query($mQuery);
 }
+function myplugin_deactivation()
+{
+	global $wpdb;
+	 $tablename=$wpdb->prefix."adverts";
+	$mQuery="DROP TABLE $tablename";
+
+$mSql=$wpdb->query($mQuery);
+}
+
 function m_filter_text1($str)
 {
 	$str=ltrim(rtrim(strip_tags($str)));
