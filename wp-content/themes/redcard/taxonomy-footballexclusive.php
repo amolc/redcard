@@ -6,7 +6,7 @@ get_header();
 ?>
 <div class="left">
 
-<h2>Region</h2>
+<h2>Exclusive</h2>
 <?php
  $ad = 1;
 	while ( have_posts() ) : the_post();
