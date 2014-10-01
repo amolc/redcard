@@ -57,13 +57,49 @@ return $newstr;
             <div class="box">
 					<div class="s">
 						<h1>On Tonight</h1>
-                        <iframe width="300" height="200" src="http://redcardradio.sg/schedule.php" frameborder="0"></iframe>
+                        <?php 
+						$programmequery="select * from $m_tablename where prgdate>=now() order by prgdate";
+						$programmesql=$wpdb->get_results($programmequery);
+						if(sizeof($programmesql)>0)
+						{
+								?>
+						<ul style="overflow:scroll;height:250px; ">
+                        <?php foreach($programmesql as $my_sql)
+						{
+							?>
+							<li>	
+								<div class="date" style="width:180px;background-color:#f99235;"><?php echo my_convert_date($my_sql->prgdate);?></div >
+								<h2><?php echo $my_sql->prgTitle;?></h2>
+								<p><?php echo my_convert_time($my_sql->prgfrom);?> to <?php echo my_convert_time($my_sql->prgto);?><br/><?php echo $my_sql->prgtagline;?></p>
+							</li>
+							<?php
+						}
+							?>
+						</ul>
+					
+                        <?php
+						}
+						else
+						{
+							?>
+						<ul style="overflow:scroll;height:250px; ">
+							<li>	
+								
+								<h2>No Programme Scheduled</h2>
+							
+							</li>
+							
+						</ul>
+					
+                        <?php
+						}
+						?>
 					</div>
 					
 					<div class="b">
 						<h1>Featured Radio</h1>
         <?php 
-	  /*
+	  
 	 		 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radio-articles_featured_checkbox' ORDER BY RAND() LIMIT 0,1";
          $resultarray = $wpdb->get_results($selectsql) ;
 		if(!empty($resultarray)){
@@ -82,7 +118,7 @@ return $newstr;
 <?php echo $youtubURL_values->post_title;?>
 </a>
         </div>
-        <?php }}*/?>
+        <?php }}?>
         
 
         
