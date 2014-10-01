@@ -72,7 +72,7 @@ get_header(); ?>
     </h1></div>
     <?php $postID = get_the_ID();
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
-              <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
+              <div style="margin-bottom: 10px;  font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
 
    
     <div class="date">
