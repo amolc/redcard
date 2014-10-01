@@ -85,17 +85,23 @@ function validate_advert_form()
 		document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image II";
 		return false;
 	}
-	if((bgimage.indexOf(".png")<=0) && (bgimage.indexOf(".jpg")<=0) && (bgimage.indexOf(".png")<=0))
+	if(bgimage.length>0)
 	{
-		document.getElementById("errormsg").style.display="block";
-		document.getElementById("errormsg").innerHTML="Error, Invalid Background image";
-		return false;
+				if((bgimage.indexOf(".png")<=0) && (bgimage.indexOf(".jpg")<=0) && (bgimage.indexOf(".png")<=0))
+				{
+					document.getElementById("errormsg").style.display="block";
+					document.getElementById("errormsg").innerHTML="Error, Invalid Background image";
+					return false;
+				}
 	}
-	if((bgcss.indexOf(".css")<=0))
+	if(bgcss.length>0)
 	{
-		document.getElementById("errormsg").style.display="block";
-		document.getElementById("errormsg").innerHTML="Error, Invalid background css";
-		return false;
+			if((bgcss.indexOf(".css")<=0))
+			{
+				document.getElementById("errormsg").style.display="block";
+				document.getElementById("errormsg").innerHTML="Error, Invalid background css";
+				return false;
+			}
 	}
 	 var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
     if (!re.test(adlink)) { 
@@ -114,10 +120,26 @@ function mtrim(str)
 </script>
 <div class="box box-body">
 <br/><br/>
-
+<?php 
+if(isset($_POST['plaction']))
+{
+	if($_POST['plaction']=="submit")
+	{
+	$advertimage1=$_FILES['advertimage1'];
+	$advertimage2=$_FILES['advertimage2'];
+	$bgimage=$_FILES['bgimage'];
+	$bgcss=$_FILES['bgcss'];
+	$displayonpage=$_POST['displayonpage'];
+	$text=$_POST['text'];
+	$isactive=$_POST['isactive']['0'];
+	$movepath=get_plugin_dir();
+	echo $movepath;
+	}
+}
+?>
 <div class="col-md-6" style="background-color:#fff;padding-top:10px;" >
-	<div class="alert alert-danger mhidden"></div>
-	<form action="" method="post" enctype="multipart/form-data" onClick="return validate_advert_form()">
+	<div class="alert alert-danger mhidden" id="errormsg"></div>
+	<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate_advert_form()">
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
         	<label>Advertisement image I(Rectangular)</label>
@@ -128,7 +150,7 @@ function mtrim(str)
             <input type="file" name="advertimage2" id="advertimage2" required />
         </div>
          <div class="form-group">
-        	<label>Advertisement Link(Square)</label>
+        	<label>Advertisement Link</label>
             <input type="text" name="adlink" id="adlink" required class="form-control" />
         </div>
         <div class="form-group">
@@ -150,6 +172,11 @@ function mtrim(str)
                 	<option value="football">Football</option>                                        
                 	<option value="other-sports">Other Sports</option>                                        
 			   </select>
+        </div>
+        <div class="form-group">
+        	<label>Is Published</label>
+            <input type="radio" name="isactive[]" id="isactive" value="1" checked> Yes
+            <input type="radio" name="isactive[]" id="isactive" value="0"  > No            
         </div>
         <div class="form-group" align="right">
         	<button type="submit" class="btn btn-primary">Add Avertisement</button>
