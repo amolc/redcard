@@ -24,13 +24,18 @@ function myplugin_activate1()
 	global $wpdb;
 	 $tablename=$wpdb->prefix."adverts";
 	$mQuery="CREATE TABLE `$tablename` (
-  `adId` int(11) NOT NULL auto_increment,
-  `adimage` varchar(255) default NULL,
-  `adlink` text,
-  `isactive` enum('0','1') default '0',
+    `adId` int(11) NOT NULL auto_increment,
+  `adimage1` varchar(255) default NULL,
+  `adimage2` varchar(255) default NULL,
+  `bgcss` varchar(255) default NULL,
+  `bgimage` varchar(255) default NULL,
+  `page` varchar(255) default NULL,
+  `isactive` enum('0','1') default '1',
+  `addate` datetime default NULL,
+  `adlink1` varchar(255) default NULL,
+  `adlink2` varchar(255) default NULL,
   PRIMARY KEY  (`adId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-";
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
 $mSql=$wpdb->query($mQuery);
 }
@@ -212,16 +217,16 @@ if(isset($_POST['plaction']))
 	<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate_advert_form()">
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
-        	<label>Advertisement image I (Rectangular)</label>
+        	<label>Advertisement Image I (Rectangular)</label>
             <input type="file" name="advertimage1" id="advertimage1" required />
-        </div>
-        <div class="form-group">
-        	<label>Advertisement image II (Square)</label>
-            <input type="file" name="advertimage2" id="advertimage2" required />
         </div>
          <div class="form-group">
         	<label>Advertisement Link I (Rectangular)</label>
             <input type="text" name="adlink1" id="adlink1" required class="form-control" />
+        </div>
+        <div class="form-group">
+        	<label>Advertisement image II (Square)</label>
+            <input type="file" name="advertimage2" id="advertimage2" required />
         </div>
          <div class="form-group">
         	<label>Advertisement Link II (Rectangular)</label>
