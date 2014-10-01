@@ -135,27 +135,17 @@ return $newstr;
 			<div class="box">
 				<h1>Radio Segments</h1>
 				<?php
-				$args = array( ' hide_empty = true' );
 
-				$terms = get_terms('radio-categories', $args);
-			
-				if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
-				    foreach ($terms as $term) {
+
 				    	echo '<div class="box">';
 				    	echo '<h4>' . $term->name. '</h4>';
 				    	$args = array(
-						'posts_per_page'   => 5,
+						'posts_per_page'   => 10,
 						'post_type'        => 'radio-articles',
 						'post_status'      => 'publish',
-						'tax_query' => array(
-								array(
-									'taxonomy' => 'radio-categories',
-									'field' => 'slug',
-									'terms' => $term->slug
-								)
-							)
 						);
 				    	$allarts = get_posts( $args );
+						//pr($allarts,1);
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
@@ -179,14 +169,11 @@ return $newstr;
 	   						</span></span></div>';
 	   						$i++;
 						}
-						/*
-						<a class="twitter_link" href="http://twitter.com/share?text=&url=http%3A//redcard.fountaintechies.com/radio-articles/andrew-mangan-arseblog-on-drivetime/" target="_blank">INSERT LINK CONTENTS HERE</a>
-						*/
-				    	echo '<div class="lastl"><a href="'.get_term_link( $term ).'">View all in '.$term->name.'</a></div>';
+
 				        echo '</div>';
-				    }
+
 				  
-				}
+
 				?>
 			</div>
 			
