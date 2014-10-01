@@ -69,7 +69,7 @@ function manage_Adverts()
         <?php  $url = plugins_url();?>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <link id="bs-css" href="<?php echo $url;?>/advertisement/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php echo $url;?>/advertisement/font-awesome.min.css" rel="stylesheet">
+				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <script type="text/javascript">
 function validate_advert_form()
 {
@@ -184,11 +184,11 @@ if(isset($_POST['plaction']))
 	<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate_advert_form()">
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
-        	<label>Advertisement image I(Rectangular)</label>
+        	<label>Advertisement image I (Rectangular)</label>
             <input type="file" name="advertimage1" id="advertimage1" required />
         </div>
         <div class="form-group">
-        	<label>Advertisement image II(Square)</label>
+        	<label>Advertisement image II (Square)</label>
             <input type="file" name="advertimage2" id="advertimage2" required />
         </div>
          <div class="form-group">
@@ -228,6 +228,66 @@ if(isset($_POST['plaction']))
 &nbsp;
 <div class="col-md-6">
 
+</div>
+
+<div class="col-md-12">
+<br/><br/>
+<?php 
+		$allquery="select * from $tablename order by addate DESC";
+		$allsql=$wpdb->get_results($allquery);
+		if(sizeof($allsql)>0)
+		{
+			?>
+			<table class="table table-responsive table-bordered">
+            	<thead>
+                	<th>#</th>
+                	<th>Link</th>                    
+                	<th>Ad Images</th> 
+                    <th>Display On Page</th>                                         
+                    <th>Published</th>                                                             
+                    <th>&nbsp;</th>  
+                    <tbody>
+                    	<?php 
+						$sno=1;
+						$pluginurl=plugin_dir_url(__FILE__);
+						foreach($allsql as $mysql)
+						{
+							?>
+                            <tr>
+							<td><?php echo $sno++;?></td>
+                            	<td><a href="<?php echo urldecode($mysql->adlink);?>"><?php echo urldecode($mysql->adlink);?></a></td>
+                                	
+                                     	<td>
+                                    <A href="<?php echo $pluginurl;?><?php echo $mysql->adimage1;?>" target="_blank" ><img src="<?php echo $pluginurl;?><?php echo $mysql->adimage1;?>" width="100" height="13" /></A>
+                                    <A href="<?php echo $pluginurl;?><?php echo $mysql->adimage2;?>" target="_blank" ><img src="<?php echo $pluginurl;?><?php echo $mysql->adimage2;?>" width="100" height="100" /></A>
+                                        
+                                        </td>
+                                        <td><?php echo $mysql->page;?></td>
+                                               	<td>
+												<?php if($mysql->isactive)
+												{
+													echo "Yes";
+												}
+												else
+												{
+													echo "No";
+												}
+												?>
+                                                
+                                                </td>
+                                                   	<td style="text-align:right;">
+
+                                                  <a href="admin.php?page=today-programme&delId=<?php echo $mysql->prgId;?>"><i class="fa fa-ban mandatory"></i></a></td>
+                                                  </tr>
+							<?php
+						}
+						?>
+                    </tbody>                                                                               
+                </thead>
+            </table>
+			<?php
+		}
+?>
 </div>
 </div>
 
