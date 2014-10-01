@@ -91,6 +91,6 @@ return $newstr;
 
 <div class="box">
 				<h1>Shows</h1>
-			<iframe src="http://redcardradio.sg/schedule.php" width="900" height="550" frameborder="0"></iframe>
+			<iframe src="http://redcardradio.sg/schedule.php" width="900" height="800" frameborder="0"></iframe>
 </div>                
 <?php get_footer();?>
