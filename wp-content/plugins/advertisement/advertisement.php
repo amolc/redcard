@@ -131,6 +131,13 @@ function mtrim(str)
 
 	global $wpdb;
 	 $tablename=$wpdb->prefix."adverts";
+	 
+	 if(isset($_GET['delId']))
+	 {
+		 $delId=$_GET['delId'];
+		 $delQuery=$wpdb->query("delete from $tablename where adId=$delId");
+		 
+	 }
 if(isset($_POST['plaction']))
 {
 	
@@ -277,7 +284,7 @@ if(isset($_POST['plaction']))
                                                 </td>
                                                    	<td style="text-align:right;">
 
-                                                  <a href="admin.php?page=today-programme&delId=<?php echo $mysql->prgId;?>"><i class="fa fa-ban mandatory"></i></a></td>
+                                                  <a href="admin.php?page=manage-adverts&delId=<?php echo $mysql->adId;?>"><i class="fa fa-ban mandatory"></i></a></td>
                                                   </tr>
 							<?php
 						}
