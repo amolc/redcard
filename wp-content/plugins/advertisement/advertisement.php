@@ -174,6 +174,7 @@ if(isset($_POST['plaction']))
 								
 		$insertquery="insert into $tablename(adimage1,adimage2,adlink,bgcss,bgimage,page,isactive,addate)values('$adpath1','$adpath2','$adlink','$csspath','$bgpath','$displayonpage','$isactive',now())";
 		$insertsql=$wpdb->query($insertquery);
+		print_r($insertsql);
 		if($insertsql)
 		{
 			?>
