@@ -82,7 +82,7 @@ if(is_front_page()){
 		{
 		?>
 		
-<div class="ad_1" align="center"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" />
+<div class="ad_1" align="center"><a href="<?=$adsql->adlink1;?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
 <label style="font-size:9px;">ADVERTISEMENT</label>
 </div>
 
@@ -262,7 +262,7 @@ if(is_front_page()){
 		{
 		?>
 		
-<div class="a d_1" align="center"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" />
+<div class="a d_1" align="center"><a href="<?=$adsql->adlink2;?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 </div>
 
 		<?php
