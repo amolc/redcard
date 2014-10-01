@@ -2,6 +2,66 @@
 
 
 get_header(); ?>
+  <?php $postID = get_the_ID(); 
+						
+						  $mytermArray = array();
+                          $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
+						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
+						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
+						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
+						  $as =1;
+						
+						  if(!empty($term_list_reg))
+						  {
+							  foreach($term_list_reg as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								 
+								  $as++;
+							  }
+						  }
+						  if(!empty($term_list_exc))
+						  {
+							  foreach($term_list_exc as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						  if(!empty($term_list_opi))
+						  {
+							  foreach($term_list_opi as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						   if(!empty($term_list_week))
+						  {
+							  foreach($term_list_week as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						 
+						    ?>
 
 <div id="container">
   <div class="left">
@@ -13,9 +73,23 @@ get_header(); ?>
     <?php $postID = get_the_ID();
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
               <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
+
    
-    <div class="date"> <a href="#">Singapore</a> <span>
-      <?php the_time('l, F j, Y'); ?>
+    <div class="date">
+     <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?>
+      <span><?php the_time('l, F j, Y'); ?>
       </span>
       <div id="social_3">
          <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
@@ -39,7 +113,19 @@ get_header(); ?>
 			?>
     </div>
  
-     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>,<a href="#">Singapore</a><span><a href="#dis_comment">Comments</a></span> </div>
+     <div class="tags"> <strong>Tags:</strong>      <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?>	<span><a href="#dis_comment">Comments</a></span> </div>
     
     <div class="author-bio">
 			<div class="authimage"><?php echo get_avatar( get_the_author_meta('email'), '90' ); ?></div>
