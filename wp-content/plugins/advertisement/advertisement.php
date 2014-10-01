@@ -55,30 +55,111 @@ function manage_Adverts()
 .mandatory {
 	color: red;
 }
-.maindiv {
-	width: 95%;
-	height: 100%;
-	padding: 20px;
+.mhidden{
+	display:none;
 }
 </style>
         <?php  $url = plugins_url();?>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <link id="bs-css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-        <link id="bsdp-css" href="<?php echo $url;?>/todayprogramme/datepicker3.css" rel="stylesheet">
-        <script type="text/javascript" src="<?php echo $url;?>/todayprogramme/bootstrap-datepicker.js"></script>
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link id="bs-css" href="<?php echo $url;?>/advertisement/bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo $url;?>/advertisement/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript">
+function validate_advert_form()
+{
+	var advertimage1=mtrim(document.getElementById("advertimage1").value).toLowerCase();
+	var advertimage2=mtrim(document.getElementById("advertimage2").value).toLowerCase();
+	var adlink=mtrim(document.getElementById("adlink").value);
+	var bgimage=mtrim(document.getElementById("bgimage").value).toLowerCase();
+	var bgcss=mtrim(document.getElementById("bgcss").value).toLowerCase();
+	var adlink=mtrim(document.getElementById("adlink").value);
+	
+	if((advertimage1.indexOf(".png")<=0) && (advertimage1.indexOf(".jpg")<=0) && (advertimage1.indexOf(".png")<=0))
+	{
+		document.getElementById("errormsg").style.display="block";
+		document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image I";
+		return false;
+	}
+	if((advertimage2.indexOf(".png")<=0) && (advertimage2.indexOf(".jpg")<=0) && (advertimage2.indexOf(".png")<=0))
+	{
+		document.getElementById("errormsg").style.display="block";
+		document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image II";
+		return false;
+	}
+	if((bgimage.indexOf(".png")<=0) && (bgimage.indexOf(".jpg")<=0) && (bgimage.indexOf(".png")<=0))
+	{
+		document.getElementById("errormsg").style.display="block";
+		document.getElementById("errormsg").innerHTML="Error, Invalid Background image";
+		return false;
+	}
+	if((bgcss.indexOf(".css")<=0))
+	{
+		document.getElementById("errormsg").style.display="block";
+		document.getElementById("errormsg").innerHTML="Error, Invalid background css";
+		return false;
+	}
+	 var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+    if (!re.test(adlink)) { 
+             document.getElementById("errormsg").style.display="block";
+    document.getElementById("errormsg").innerHTML="Error, Invalid advertisement link";
+              return false;
+         }
+					
+}
 
+function mtrim(str)
+{
+	str=str.replace(/\s+/,'');
+	return str;
+}
+</script>
 <div class="box box-body">
 <br/><br/>
-<div class="col-md-6" style="background-color:#ebebeb;">
-	<form action="" method="post" enctype="multipart/form-data">
+
+<div class="col-md-6" style="background-color:#fff;padding-top:10px;" >
+	<div class="alert alert-danger mhidden"></div>
+	<form action="" method="post" enctype="multipart/form-data" onClick="return validate_advert_form()">
+    <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
-        	<label>Advertisement image</label>
+        	<label>Advertisement image I(Rectangular)</label>
+            <input type="file" name="advertimage1" id="advertimage1" required />
+        </div>
+        <div class="form-group">
+        	<label>Advertisement image II(Square)</label>
+            <input type="file" name="advertimage2" id="advertimage2" required />
+        </div>
+         <div class="form-group">
+        	<label>Advertisement Link(Square)</label>
+            <input type="text" name="adlink" id="adlink" required class="form-control" />
+        </div>
+        <div class="form-group">
+        	<label>Background Image</label>
+            <input type="file" name="bgimage" id="bgimage"  />
+        </div>
+        <div class="form-group">
+        	<label>Background CSS</label>
+            <input type="file" name="bgcss" id="bgcss"  />
+        </div>
+        <div class="form-group">
+        	<label>Display On Page</label>
+				<select name="displayonpage" id="displayonpage" class="form-control">
+                	<option value="home">Home Page</option>
+                	<option value="tv-articles">Tv Articles</option>
+                	<option value="radio-articles">Radio Articles</option>
+                	<option value="tv-shows">Tv Shows</option>
+                	<option value="radio-shows">Radio Shows</option>                    
+                	<option value="football">Football</option>                                        
+                	<option value="other-sports">Other Sports</option>                                        
+			   </select>
+        </div>
+        <div class="form-group" align="right">
+        	<button type="submit" class="btn btn-primary">Add Avertisement</button>
         </div>
     </form>
 </div>
 &nbsp;
-<div class="col-md-6"></div>
+<div class="col-md-6">
+
+</div>
 </div>
 
 <?php
