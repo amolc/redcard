@@ -27,7 +27,7 @@ function my_convert_time($time)
 return $newstr;
 }
 ?>
-<img src="<?php echo get_template_directory_uri(); ?>/img/tv_slide.jpg" class="tv_slide"/>
+<?php dynamic_sidebar( 'tvbanner' ); ?>
 
 <div class="box">
 					<div class="s">

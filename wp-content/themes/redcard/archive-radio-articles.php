@@ -52,7 +52,7 @@ return $newstr;
 					&nbsp;
 
 			<header class="page-header">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/radio_slide.jpg" class="tv_slide" />
+				<?php dynamic_sidebar( 'radiobanner' ); ?>
 			</header><!-- .page-header -->
             <div class="box">
 					<div class="s">
