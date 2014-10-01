@@ -78,7 +78,8 @@ function validate_advert_form()
 	var adlink=mtrim(document.getElementById("adlink").value);
 	var bgimage=mtrim(document.getElementById("bgimage").value).toLowerCase();
 	var bgcss=mtrim(document.getElementById("bgcss").value).toLowerCase();
-	var adlink=mtrim(document.getElementById("adlink").value);
+	var adlink=mtrim(document.getElementById("adlink1").value);
+	var adlink2=mtrim(document.getElementById("adlink2").value);
 	
 	if((advertimage1.indexOf(".png")<=0) && (advertimage1.indexOf(".jpg")<=0) && (advertimage1.indexOf(".png")<=0))
 	{
@@ -116,6 +117,12 @@ function validate_advert_form()
     document.getElementById("errormsg").innerHTML="Error, Invalid advertisement link";
               return false;
          }
+		  var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+    if (!re.test(adlink2)) { 
+             document.getElementById("errormsg").style.display="block";
+    document.getElementById("errormsg").innerHTML="Error, Invalid advertisement link";
+              return false;
+         }
 					
 }
 
@@ -148,7 +155,8 @@ if(isset($_POST['plaction']))
 	$bgimage=$_FILES['bgimage'];
 	$bgcss=$_FILES['bgcss'];
 	$displayonpage=$_POST['displayonpage'];
-	$adlink=$_POST['adlink'];
+	$adlink1=$_POST['adlink1'];
+	$adlink2=$_POST['adlink2'];
 	$isactive=$_POST['isactive']['0'];
 	$movepath=plugin_dir_path(__FILE__);
 	$movepath.="uploads/";
@@ -180,10 +188,11 @@ if(isset($_POST['plaction']))
 		$adpath2=str_replace($movepath1,'',$adpath2);
 		$bgpath=str_replace($movepath1,'',$bgpath);
 		$csspath=str_replace($movepath1,'',$csspath);
-		$adlink=urlencode($adlink);
+		$adlink1=urlencode($adlink1);
+		$adlink2=urlencode($adlink2);
 		
 								
-		$insertquery="insert into $tablename(adimage1,adimage2,adlink,bgcss,bgimage,page,isactive,addate)values('$adpath1','$adpath2','$adlink','$csspath','$bgpath','$displayonpage','$isactive',now())";
+		$insertquery="insert into $tablename(adimage1,adimage2,adlink1,adlink2,bgcss,bgimage,page,isactive,addate)values('$adpath1','$adpath2','$adlink1','$adlink2','$csspath','$bgpath','$displayonpage','$isactive',now())";
 		$insertsql=$wpdb->query($insertquery);
 	
 		if($insertsql)
@@ -211,9 +220,14 @@ if(isset($_POST['plaction']))
             <input type="file" name="advertimage2" id="advertimage2" required />
         </div>
          <div class="form-group">
-        	<label>Advertisement Link</label>
-            <input type="text" name="adlink" id="adlink" required class="form-control" />
+        	<label>Advertisement Link I (Rectangular)</label>
+            <input type="text" name="adlink1" id="adlink1" required class="form-control" />
         </div>
+         <div class="form-group">
+        	<label>Advertisement Link II (Rectangular)</label>
+            <input type="text" name="adlink2" id="adlink2" required class="form-control" />
+        </div>
+
         <div class="form-group">
         	<label>Background Image</label>
             <input type="file" name="bgimage" id="bgimage"  />
