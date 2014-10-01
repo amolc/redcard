@@ -70,7 +70,7 @@
   </div>
 </div>
 <div id="container">
-<?php dynamic_sidebar( 'container-image' ); ?>
+<?php //dynamic_sidebar( 'container-image' ); ?>
 <?php if(is_front_page()){ ?>
 
 <div class="box home-top-box">
