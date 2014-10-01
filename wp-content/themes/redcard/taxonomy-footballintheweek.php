@@ -12,11 +12,11 @@ get_header();
 	while ( have_posts() ) : the_post();
 
 if($ad == 1){?>
-  <a href="<?php the_permalink() ?>">
+    <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
   <h1>
     <?php the_title(); ?>
   </h1>
-  </a>
+  </a> </div>
   <?php $postID = get_the_ID(); 
 						
 						  $mytermArray = array();
