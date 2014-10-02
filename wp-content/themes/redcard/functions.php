@@ -52,6 +52,7 @@ require_once locate_template('/inc/tvvideo_shows.php');
 require_once locate_template('/inc/other-sports.php'); 
 //require_once locate_template('/inc/featured.php');
 require_once locate_template('/inc/show-list.php');
+require_once locate_template('/inc/radio-shows-articles.php');
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;

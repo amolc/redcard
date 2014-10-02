@@ -2,7 +2,7 @@
  
 <div id="container">
   <div class="left">
-    <h2>Shows List</h2>
+    <h2>Radio Shows Articles</h2>
     
    <div class="sigle-football-title"> <h1>
       <?php the_title(); ?>
@@ -51,7 +51,7 @@
     'post__not_in '=> $postid,
     'numberposts' => 2,
     'orderby' => 'rand',          
-    'post_type' => 'showslist',
+    'post_type' => 'radioshowsartcles',
     'post_status' => 'publish');
 
     $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
