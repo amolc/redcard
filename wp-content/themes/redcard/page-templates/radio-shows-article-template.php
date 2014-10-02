@@ -31,7 +31,7 @@ get_header();
     
   </div>
   <?php   endwhile;?>
-</div>
+
 </div>
 <?php get_sidebar('football');?>
 <?php get_footer();?>
