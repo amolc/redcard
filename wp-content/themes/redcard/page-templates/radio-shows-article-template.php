@@ -10,7 +10,7 @@ get_header();
   <?php 
 		
 			$args = array( 'post_type' => 'radioshowsartcles');
-			$loop = new WP_Query( $args ); $ad =1; 
+			$loop = new WP_Query( $args ); 
 			while ( $loop->have_posts() ) : $loop->the_post();
 ?>
   <div class="c_list radio-showscss">
@@ -26,7 +26,7 @@ get_header();
           <p><?php echo get_the_excerpt(); ?></p>
         </div>
       </li>
-      <?php  $ad++; endwhile;?>
+      <?php   endwhile;?>
     </ul>
   </div>
 </div>
