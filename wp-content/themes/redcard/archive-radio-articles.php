@@ -47,7 +47,7 @@ get_header();
 	   							<div id="social_2">';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=
-								  <?php echo $radtitle." ".get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" ><div class="facebook" ></div></a>
+								  [title]=<?php echo $radtitle;?>&[url]=<?php echo get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" ><div class="facebook" ></div></a>
        <a href="http://twitter.com/intent/tweet?text=<?php echo $radtitle. get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
         <a href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
         
