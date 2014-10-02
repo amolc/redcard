@@ -12,12 +12,43 @@ get_header(); ?>
 </style>
   <div class="left">
 		<?php
+				 
 				while ( have_posts() ) : the_post();
 				//get_template_part( 'content', get_post_format() );
+				
+				$postID = get_the_ID();
+				 $mytermArray = array();
+                 $term_list_reg = wp_get_post_terms($postID, 'radio-tags');  
+				  $as =1;
+				if(!empty($term_list_reg))
+						  {
+							  foreach($term_list_reg as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								 
+								  $as++;
+							  }
+						  }
 		?>
         <h2>Radio</h2>
         <h1><?php the_title(); ?></h1>
-        <div class="date"> <a href="#">Singapore</a> <span>
+        <div class="date"> <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?> <span>
       <?php the_time('l, F j, Y'); ?>
       </span>
       <div id="social_3">

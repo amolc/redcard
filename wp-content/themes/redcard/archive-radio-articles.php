@@ -37,7 +37,7 @@ get_header();
 						  // $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'
 						   	 	
-	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>';
+	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a child-a-left">'.$radtitle.'</a></h3>';
 								
 								 $term_list_reg = wp_get_post_terms($article->ID, 'radio-shows');
 								//pr($term_list_reg);
