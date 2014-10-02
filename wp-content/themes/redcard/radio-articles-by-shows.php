@@ -152,7 +152,7 @@ return $newstr;
 			</div>
 
 			<div class="box">
-				<h1>Radio Segments</h1>
+				<h1>Radio Segments1</h1>
 				<?php
 				$args = array( ' hide_empty = true' );
 
