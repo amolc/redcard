@@ -22,9 +22,9 @@ get_header(); ?>
         <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
         <div class="date"> <a href="#">Singapore</a> <span><?php the_time('l, F j, Y'); ?></span>
       	<div id="social_3">
-        <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-        <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
-        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article->ID);?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=<?php echo the_title().' '.get_permalink( $article->ID);?>&url=" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
+        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="#dis_comments"><div class="message"></div></a>
       </div>
       </div>
       <?php $youtubvid_value = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); ?>
@@ -41,7 +41,7 @@ get_header(); ?>
       	</div>
 		<?php endwhile; ?>
         
-     <h2>Related Articles</h2>
+     <h2>Related Videos</h2>
     <?php $postid = get_the_ID(); ?>
     <?php 
 	$args = array(

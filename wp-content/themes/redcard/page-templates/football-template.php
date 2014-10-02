@@ -18,7 +18,7 @@ get_header();
 			if($ad == 1){?>
   <a href="<?php the_permalink() ?>">
   <h1>
-    <?php the_title(); ?>
+   <?php the_title(); ?>
   </h1>
   </a>
   <?php $postID = get_the_ID(); 

@@ -31,11 +31,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-<!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/slider/jquery.min.js"></script>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/prettyphoto/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
@@ -110,9 +106,10 @@ if(is_front_page()){
                 foreach($resultarray as $row)
                 {
 					$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );  
-                  $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
-          ?>
-          <li><img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" />
+                    $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
+         			 ?>
+          <li>
+          <img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" />
             <div class="mainSliderDetail">
              <span class="mstitle">
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"><?php echo get_the_title( $row->post_id ); ?> </p>

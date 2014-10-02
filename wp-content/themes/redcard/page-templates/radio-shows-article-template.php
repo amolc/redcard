@@ -6,7 +6,7 @@ get_header();
 ?>
 <?php dynamic_sidebar( 'radioshowsbanner' ); ?>
 <div class="left">
-  <h2>Radio Shows Articles</h2>
+  <h2>Radio Shows</h2>
   <?php 
 			$args = array( 'post_type' => 'radioshowsartcles');
 			$loop = new WP_Query( $args ); $sd=0;
@@ -26,7 +26,7 @@ get_header();
     <ul>
       <li>
         <div class="img">
-          <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
+     	 <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
           </div>
        <?php ?>
         <div class="text"> <a href="<?php echo $URL_values; ?>">
