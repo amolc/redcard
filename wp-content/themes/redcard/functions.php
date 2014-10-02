@@ -262,6 +262,24 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Radio Shows Banner', 'twentyfourteen' ),
+		'id'            => 'radioshowsbanner',
+		'description'   => __( '' ),
+		'before_widget' => '<div class="ad_1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'TV Shows Banner', 'twentyfourteen' ),
+		'id'            => 'tvshowsbanner',
+		'description'   => __( '' ),
+		'before_widget' => '<div class="ad_1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );

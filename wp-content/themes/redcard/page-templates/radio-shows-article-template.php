@@ -1,12 +1,11 @@
 <?php
 /**
  * Template Name: Radio Shows Articles template
- 
  */
 get_header(); 
 
 ?>
-
+<?php dynamic_sidebar( 'radioshowsbanner' ); ?>
 <div class="left">
   <h2>Radio Shows Articles</h2>
   <?php 
@@ -15,13 +14,13 @@ get_header();
 			$loop = new WP_Query( $args ); $ad =1; 
 			while ( $loop->have_posts() ) : $loop->the_post();
 ?>
-  <div class="c_list">
+  <div class="c_list radio-showscss">
     <ul>
 
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
