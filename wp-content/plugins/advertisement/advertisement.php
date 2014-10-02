@@ -198,7 +198,7 @@ if(isset($_POST['plaction']))
 	$move2=move_uploaded_file($advertimage2['tmp_name'],$adpath2);		
 	$move3=move_uploaded_file($bgimage['tmp_name'],$bgpath);		
 	$move4=move_uploaded_file($bgcss['tmp_name'],$csspath);		
-	if($move1 && $move2)
+	if($move1 || $move2)
 	{
 		$adpath1=str_replace($movepath1,'',$adpath1);
 		$adpath2=str_replace($movepath1,'',$adpath2);
