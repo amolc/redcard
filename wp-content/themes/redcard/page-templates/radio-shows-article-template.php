@@ -11,13 +11,12 @@ get_header();
 			$args = array( 'post_type' => 'radioshowsartcles');
 			$loop = new WP_Query( $args ); $sd=0;
 			while ( $loop->have_posts() ) : $loop->the_post();
-			 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_radio_shows_articles_url'";
-			 
-         	 $resultarray = $wpdb->get_results($selectsql) ;
-
-			 if(!empty($resultarray)){
-				$URL_values="";
-				$URL_values = get_post_meta( $resultarray[$sd]->post_id, '_cmb_radio_shows_articles_url', true ); 
+		
+	 		 $postID =get_the_ID();
+		
+				$URL_values="#";
+				$URL_values = get_post_meta( $postID, '_cmb_radio_shows_articles_url', true ); 
+				
 				if(!$URL_values)
 				{
 					$URL_values="#";
@@ -40,7 +39,7 @@ get_header();
       </li>
     </ul>
   </div>
-  <?php   } $sd++; endwhile; ?>
+  <?php endwhile;  ?>
 </div>
 <?php get_sidebar('football');?>
 <?php get_footer();?>
