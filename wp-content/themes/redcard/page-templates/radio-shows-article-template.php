@@ -1,9 +1,8 @@
 <?php
 /**
  * Template Name: Radio Shows Articles template
- */
+* */
 get_header(); 
-
 ?>
 <?php dynamic_sidebar( 'radioshowsbanner' ); ?>
 <div class="left">
