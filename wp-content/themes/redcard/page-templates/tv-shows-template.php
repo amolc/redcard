@@ -89,7 +89,7 @@ return $newstr;
 		?>
         <div class="b" id="no-border">
 						<h1>ADVERTISEMENT</h1>
-		<a href="http://<?=$adsql->adlink2;?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" />
+		<a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" />
         </div>
 
 		<?php
@@ -136,7 +136,7 @@ return $newstr;
 						   <div style="color: rgb(255, 255, 255); font-size: 14px; margin-top:5px;margin-bottom:5px;">To</div> <div style="color: rgb(255, 255, 255); font-size: 13px;" >'.$metato[0]->meta_value.'</div>
 						   <div id="social_tvshow" >';
 								?>
-								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $article->post_title. get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" ><div class="facebook" ></div></a>
          <a href="http://twitter.com/intent/tweet?text=<?php echo $article->post_title. get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
         <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
         
