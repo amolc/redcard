@@ -82,7 +82,7 @@ if(is_front_page()){
 		{
 		?>
 		
-<div class="ad_1" align="center"><a href="<?=$adsql->adlink1;?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
+<div class="ad_1" align="center"><a href="<?php echo urldecode($adsql->adlink1);?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
 <label style="font-size:9px;">ADVERTISEMENT</label>
 </div>
 
@@ -207,9 +207,7 @@ if(is_front_page()){
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image">
-      <?php  //$trimtitle = get_the_title();
-	
-		 // $shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
+ 
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span>Singapore</span> </div>
@@ -262,7 +260,7 @@ if(is_front_page()){
 		{
 		?>
 		
-<div class="a d_1" align="center"><a href="<?=$adsql->adlink2;?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<div class="a d_1" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 </div>
 
 		<?php
