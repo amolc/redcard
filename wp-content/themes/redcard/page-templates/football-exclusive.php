@@ -1,22 +1,36 @@
 <?php
 /**
- * Taxonomy for Football Exclusive page
+ * Template Name: Football Exclusive template Page
+ 
  */
 get_header(); 
+
 ?>
+
 <div class="left">
-
-<h2>Exclusive</h2>
-<?php
- $ad = 1;
-	while ( have_posts() ) : the_post();
-
-if($ad == 1){?>
-     <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
+  <h2>Football</h2>
+  <?php 
+		$ad =1; 
+		$terms = get_terms( 'footballexclusive', array(
+    'orderby'    => 'count',
+    'hide_empty' => 0
+) );
+		
+		foreach( $terms as $term ) {
+			//$args = array( 'post_type' => 'footballs', );
+				$args = array(
+			'post_type' => 'footballs',
+			'footballexclusive' => $term->slug
+		);
+			$loop = new WP_Query( $args ); 
+			while ( $loop->have_posts() ) : $loop->the_post();
+		
+			if($ad == 1){?>
+  <a href="<?php the_permalink() ?>">
   <h1>
     <?php the_title(); ?>
   </h1>
-  </a></div>
+  </a>
   <?php $postID = get_the_ID(); 
 						
 						  $mytermArray = array();
@@ -94,11 +108,11 @@ if($ad == 1){?>
 
     
     <span><?php the_time('l, F j, Y'); ?></span>
-    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" >
+    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_title(); ?> <?php echo get_permalink( $article->ID);?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
       </a> <a href="http://twitter.com/intent/tweet?text= <?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;">
       <div class="twitter"></div>
-      </a>  <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
+      </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
       <div class="message"></div>
       </a> </div>
   </div>
@@ -119,7 +133,7 @@ if($ad == 1){?>
           <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
         </div>
       </li>
-      <?php } $ad++; endwhile;?>
+      <?php } $ad++; endwhile; }?>
     </ul>
   </div>
 </div>
