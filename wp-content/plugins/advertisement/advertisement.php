@@ -85,18 +85,23 @@ function validate_advert_form()
 	var bgcss=mtrim(document.getElementById("bgcss").value).toLowerCase();
 	var adlink=mtrim(document.getElementById("adlink1").value);
 	var adlink2=mtrim(document.getElementById("adlink2").value);
-	
-	if((advertimage1.indexOf(".png")<=0) && (advertimage1.indexOf(".jpg")<=0) && (advertimage1.indexOf(".png")<=0))
+	if(advertimage1.length>0)
 	{
-		document.getElementById("errormsg").style.display="block";
-		document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image I";
-		return false;
+			if((advertimage1.indexOf(".png")<=0) && (advertimage1.indexOf(".jpg")<=0) && (advertimage1.indexOf(".png")<=0))
+			{
+				document.getElementById("errormsg").style.display="block";
+				document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image I";
+				return false;
+			}
 	}
+	if(advertimage2.length>0)
+	{
 	if((advertimage2.indexOf(".png")<=0) && (advertimage2.indexOf(".jpg")<=0) && (advertimage2.indexOf(".png")<=0))
 	{
 		document.getElementById("errormsg").style.display="block";
 		document.getElementById("errormsg").innerHTML="Error, Invalid advertisement image II";
 		return false;
+	}
 	}
 	if(bgimage.length>0)
 	{
@@ -116,18 +121,24 @@ function validate_advert_form()
 				return false;
 			}
 	}
+	if(advertimage1.length>0)
+	{
 	 var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
     if (!re.test(adlink)) { 
              document.getElementById("errormsg").style.display="block";
     document.getElementById("errormsg").innerHTML="Error, Invalid advertisement link";
               return false;
          }
+	}
+	if(advertimage2.length>0)
+	{
 		  var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
     if (!re.test(adlink2)) { 
              document.getElementById("errormsg").style.display="block";
     document.getElementById("errormsg").innerHTML="Error, Invalid advertisement link";
               return false;
          }
+	}
 					
 }
 
@@ -217,20 +228,20 @@ if(isset($_POST['plaction']))
 	<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate_advert_form()">
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
-        	<label>Advertisement Image I (Rectangular)</label>
-            <input type="file" name="advertimage1" id="advertimage1" required />
+        	<label>Leaderboard Image</label>
+            <input type="file" name="advertimage1" id="advertimage1"  />
         </div>
          <div class="form-group">
-        	<label>Advertisement Link I (Rectangular)</label>
-            <input type="text" name="adlink1" id="adlink1" required class="form-control" />
+        	<label>Leaderboard Link </label>
+            <input type="text" name="adlink1" id="adlink1"  class="form-control" />
         </div>
         <div class="form-group">
-        	<label>Advertisement image II (Square)</label>
-            <input type="file" name="advertimage2" id="advertimage2" required />
+        	<label>Rectangular image</label>
+            <input type="file" name="advertimage2" id="advertimage2"  />
         </div>
          <div class="form-group">
-        	<label>Advertisement Link II (Rectangular)</label>
-            <input type="text" name="adlink2" id="adlink2" required class="form-control" />
+        	<label>Rectangular Link</label>
+            <input type="text" name="adlink2" id="adlink2" class="form-control" />
         </div>
 
         <div class="form-group">
