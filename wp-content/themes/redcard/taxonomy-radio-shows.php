@@ -19,11 +19,18 @@ get_header(); ?>
 								
 	   							<a href="#">'.$wp_query->queried_object->name.'</a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
-	   							<div id="social_2">
-	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $post->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
-	   								<a href="#"><div class="twitter"></div></a>
-	   								<a href="#"><div class="message"></div></a>
-	   							</div>
+	   							<div id="social_2">';
+								$mtitle=str_replace("?","",$radtitlefinal);
+								?>
+      <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
+      <div class="facebook" ></div>
+      </a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
+      <div class="twitter"></div>
+      </a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment">
+      <div class="message"></div>
+      </a>
+      <?php
+                                echo '</div>
 	   							<span>1,290 views<span>
 	   						</span></span></div>';
 	   						$i++;
