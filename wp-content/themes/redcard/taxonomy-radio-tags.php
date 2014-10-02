@@ -51,7 +51,7 @@ get_header(); ?>
 								echo "<a href='".$mlink."'>".$term_list_reg[0]->name."</a>";
 	   							echo '<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">';
-								$mtitle=str_replace("?","",$radtitlefinal);
+								$mtitle=str_replace("?","",$radtitle);
 								?>
       <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
       <div class="facebook" ></div>
