@@ -465,10 +465,11 @@ sport-menu-main a{color:#333;}
 
 #container .box .r-child {
 	background:#f99235;
-	/*width:165px;*/
-	width:151px;
+	width:165px;
+	/*width:151px;*/
 	float:left;
-	margin-right:15px;
+	/*margin-right:15px;*/
+	margin-right:7px;
 	min-height:150px;
 	margin-bottom:10px;
 	overflow:hidden;
