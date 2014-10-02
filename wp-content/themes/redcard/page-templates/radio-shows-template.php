@@ -100,13 +100,6 @@ return $newstr;
 				</div> 
 
 
-
-
-
-
-
-
-
 <div class="box">
 				<h1>Shows</h1>
 			<iframe src="http://redcardradio.sg/schedule.php" width="900" height="1000" scrolling="no" frameborder="0"></iframe>

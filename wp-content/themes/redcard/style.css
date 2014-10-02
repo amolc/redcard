@@ -465,7 +465,7 @@ sport-menu-main a{color:#333;}
 
 #container .box .r-child {
 	background:#f99235;
-	width:165px;
+	width:173px;
 	/*width:151px;*/
 	float:left;
 	/*margin-right:15px;*/
@@ -478,7 +478,7 @@ sport-menu-main a{color:#333;}
 }
 
 #container .box .r-child img {
-	width:167px;
+	width:173px;
 	height:130px;
 	margin-bottom:20px;
 }
@@ -1137,3 +1137,4 @@ filter: grayscale(0%);
 .radio-showscss ul li .img {
     width: 200px !important;
 }
+.home-radio-post{ width:156px !important;}

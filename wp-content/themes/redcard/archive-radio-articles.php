@@ -27,21 +27,28 @@ get_header();
 						);
 				    	$allarts = get_posts( $args );
 						//pr($allarts,1);
+					
+
+                         
+						  
 				    	$i = 1;
 				    	foreach ( $allarts as $article ) {
 						   $radtitle = $article->post_title;
-						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						  // $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $article->ID ).'
 						   	 	
-	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
+	   							<h3><a href="'.get_permalink( $article->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>';
 								
-	   							<a href="#">'.$term->name.'</a>
-	   							<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
+								 $term_list_reg = wp_get_post_terms($article->ID, 'radio-shows');
+								//pr($term_list_reg);
+								 $mlink=(get_term_link( $term_list_reg[0] ));
+								echo "<a href='".$mlink."'>".$term_list_reg[0]->name."</a>";
+	   							echo '<a href="'.get_permalink( $article->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">';
 								?>
 								  <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
        <a href="http://twitter.com/intent/tweet?text= <?php echo $radtitlefinal. get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
-        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>"><div class="message"></div></a>
+        <a href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
         
 								<?php
 	   								
