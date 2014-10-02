@@ -36,4 +36,29 @@ function radio_shows_articles_init() {
 	register_post_type( 'radioshowsartcles', $args );
 }
 
+add_filter( 'cmb_meta_boxes', 'be_radio_shows_articles_metaboxes' );
+
+function be_radio_shows_articles_metaboxes( $meta_boxes ) {
+	$prefix = '_cmb_radio_shows_articles_'; // Prefix for all fields
+	$meta_boxes[] = array(
+		'id' => 'radio_shows_articles_metabox',
+		'title' => __( 'Additional Detail', 'cmb' ),
+		'pages' => array('radioshowsartcles'), // post type
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+						 array(
+							  'name' => __( 'Website URL', 'cmb' ),
+							  'desc' => __( 'Enter URL (optional)', 'cmb' ),
+							  'id'   => $prefix . 'url',
+							  'type' => 'text_url',
+										
+								),
+						 ),
+		);
+return $meta_boxes;
+}
+
+
 ?>

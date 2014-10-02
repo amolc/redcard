@@ -26,10 +26,12 @@ get_header();
           <p><?php echo get_the_excerpt(); ?></p>
         </div>
       </li>
-      <?php   endwhile;?>
+      
     </ul>
+    
   </div>
-</div>
+  <?php   endwhile;?>
+
 </div>
 <?php get_sidebar('football');?>
 <?php get_footer();?>
