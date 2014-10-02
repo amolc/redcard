@@ -19,8 +19,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+<?php dynamic_sidebar( 'radiobanner' ); ?>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -39,13 +38,16 @@ get_header(); ?>
 						//get_template_part( 'content', get_post_format() );
 						global $post;
 						   $radtitle = $post->post_title;
-						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
+						  // $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
-	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
+	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>';
 								
-	   							<a href="#">In Added Time</a>
-	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
+	   							 $term_list_reg = wp_get_post_terms($post->ID, "radio-tags");
+								//pr($term_list_reg);
+								 $mlink=(get_term_link( $term_list_reg[0] ));
+								echo "<a href='".$mlink."'>".$term_list_reg[0]->name."</a>";
+	   							echo '<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">
 	   								<a href="http://www.facebook.com/share.php?u='.get_permalink( $post->ID) .'" target="_blank" title="Share on Facebook" ><div class="facebook"></div></a>
 	   								<a href="#"><div class="twitter"></div></a>
@@ -71,8 +73,7 @@ get_header(); ?>
 
 				endif;
 			?>
-		</div><!-- #content -->
-	</section><!-- #primary -->
+
 
 <?php
 //get_sidebar();
