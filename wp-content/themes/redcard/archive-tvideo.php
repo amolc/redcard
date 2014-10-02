@@ -1,10 +1,9 @@
 <?php
 /**
- * Template Name: TV template Page
- */
-get_header(); 
+ * The template for displaying Archive pages
+*/
 
-?>
+get_header(); ?>
 <?php dynamic_sidebar( 'tvbanner' ); ?>
 
 

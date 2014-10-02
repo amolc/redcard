@@ -26,7 +26,7 @@ function shows_list_init() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'all-shows-list' ),
+		'rewrite'            => array( 'slug' => 'showslist' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,

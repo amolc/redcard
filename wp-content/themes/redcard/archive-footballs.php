@@ -2,71 +2,130 @@
 /**
  * The template for displaying Archive pages
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each specific one. For example, Twenty Fourteen
- * already has tag.php for Tag archives, category.php for Category archives,
- * and author.php for Author archives.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
 
-			<?php if ( have_posts() ) : ?>
+<div class="left">
+  <h2>Football</h2>
+  <?php 
+		
+			$args = array( 'post_type' => 'footballs');
+			$loop = new WP_Query( $args ); $ad =1; 
+			while ( $loop->have_posts() ) : $loop->the_post();
+		
+			if($ad == 1){?>
+  <a href="<?php the_permalink() ?>">
+  <h1>
+    <?php the_title(); ?>
+  </h1>
+  </a>
+  <?php $postID = get_the_ID(); 
+						
+						  $mytermArray = array();
+                          $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
+						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
+						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
+						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
+						  $as =1;
+						
+						  if(!empty($term_list_reg))
+						  {
+							  foreach($term_list_reg as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								 
+								  $as++;
+							  }
+						  }
+						  if(!empty($term_list_exc))
+						  {
+							  foreach($term_list_exc as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						  if(!empty($term_list_opi))
+						  {
+							  foreach($term_list_opi as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						   if(!empty($term_list_week))
+						  {
+							  foreach($term_list_week as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+						 
+						    ?>
+  <div class="date">
+    <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'twentyfourteen' ), get_the_date() );
-
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyfourteen' ) ) );
-
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'twentyfourteen' ), get_the_date( _x( 'Y', 'yearly archives date format', 'twentyfourteen' ) ) );
-
-						else :
-							_e( 'Archives', 'twentyfourteen' );
-
-						endif;
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
-
-						/*
-						 * Include the post format-specific template for the content. If you want to
-						 * use this in a child theme, then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-
-					endwhile;
-					// Previous/next page navigation.
-					twentyfourteen_paging_nav();
-
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
-
-				endif;
-			?>
-		</div><!-- #content -->
-	</section><!-- #primary -->
-<?php
-get_sidebar();
-get_footer();?>
+    
+    <span><?php the_time('l, F j, Y'); ?></span>
+    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" >
+      <div class="facebook" ></div>
+      </a> <a href="http://twitter.com/intent/tweet?text= <?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;">
+      <div class="twitter"></div>
+      </a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>">
+      <div class="message"></div>
+      </a> </div>
+  </div>
+  <div class="footballs-top-image-latest">
+    <?php twentyfourteen_post_thumbnail();?>
+  </div>
+  <div class="f_text"><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a> </div>
+  <div class="c_list">
+    <ul>
+      <?php } if($ad > 1) { ?>
+      <li>
+        <div class="img">
+          <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
+          <span>Singapore</span> </div>
+        <div class="text"> <a href="<?php the_permalink() ?>">
+          <?php the_title(); ?>
+          </a>
+          <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
+        </div>
+      </li>
+      <?php } $ad++; endwhile;?>
+    </ul>
+  </div>
+</div>
+<?php get_sidebar('football');?>
+<?php get_footer();?>

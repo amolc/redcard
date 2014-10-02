@@ -1109,7 +1109,7 @@ filter: grayscale(0%);
 .radioimage img{  height: 130px;
     width: 165px !important;}
 .radioshowssocial{  padding-bottom: 15px;}
-#menu-item-380 a{color:red !important;}
+#menu-item-380 a{color:#116dbb !important;}
 .loop-pagination .prev.page-numbers{ padding-top:0; float:left; margin-right:10px;}
 .loop-pagination .next.page-numbers{ padding-top:0; float:left; margin-left:10px;}
 .page-numbers {float: left; margin-right: 5px;}
@@ -1132,3 +1132,4 @@ filter: grayscale(0%);
 .homeRighth1{ margin-bottom: 31px;margin-top: 4px;}
 .footballs-top-image-latest {margin-bottom: 10px;}
 .allvid .vid img{ height:170px;}
+.radio-showscss img{height: 240px !important;}

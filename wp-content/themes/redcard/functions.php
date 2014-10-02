@@ -52,6 +52,7 @@ require_once locate_template('/inc/tvvideo_shows.php');
 require_once locate_template('/inc/other-sports.php'); 
 //require_once locate_template('/inc/featured.php');
 require_once locate_template('/inc/show-list.php');
+require_once locate_template('/inc/radio-shows-articles.php');
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
@@ -255,6 +256,24 @@ function twentyfourteen_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'TV Banner', 'twentyfourteen' ),
 		'id'            => 'tvbanner',
+		'description'   => __( '' ),
+		'before_widget' => '<div class="ad_1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Radio Shows Banner', 'twentyfourteen' ),
+		'id'            => 'radioshowsbanner',
+		'description'   => __( '' ),
+		'before_widget' => '<div class="ad_1">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'TV Shows Banner', 'twentyfourteen' ),
+		'id'            => 'tvshowsbanner',
 		'description'   => __( '' ),
 		'before_widget' => '<div class="ad_1">',
 		'after_widget'  => '</div>',
