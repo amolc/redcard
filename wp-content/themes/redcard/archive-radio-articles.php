@@ -4,20 +4,6 @@
 */
 /**
  * The template for displaying Archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each specific one. For example, Twenty Fourteen
- * already has tag.php for Tag archives, category.php for Category archives,
- * and author.php for Author archives.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
  */
 
 get_header(); 
@@ -46,14 +32,9 @@ function my_convert_time($time)
 return $newstr;
 }
 ?>
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
 
-					&nbsp;
-
-			<header class="page-header">
 				<?php dynamic_sidebar( 'radiobanner' ); ?>
-			</header><!-- .page-header -->
+
             <div class="box">
 					<div class="s">
 						<h1>On Tonight</h1>
@@ -197,8 +178,6 @@ return $newstr;
 			</div>
 			
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
 
 <?php
 //get_sidebar( 'content' );
