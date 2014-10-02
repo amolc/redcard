@@ -229,19 +229,19 @@ if(isset($_POST['plaction']))
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
         	<label>Leaderboard Image</label>
-            <input type="file" name="advertimage1" id="advertimage1" required />
+            <input type="file" name="advertimage1" id="advertimage1"  />
         </div>
          <div class="form-group">
         	<label>Leaderboard Link </label>
-            <input type="text" name="adlink1" id="adlink1" required class="form-control" />
+            <input type="text" name="adlink1" id="adlink1"  class="form-control" />
         </div>
         <div class="form-group">
         	<label>Rectangular image</label>
-            <input type="file" name="advertimage2" id="advertimage2" required />
+            <input type="file" name="advertimage2" id="advertimage2"  />
         </div>
          <div class="form-group">
         	<label>Rectangular Link</label>
-            <input type="text" name="adlink2" id="adlink2" required class="form-control" />
+            <input type="text" name="adlink2" id="adlink2" class="form-control" />
         </div>
 
         <div class="form-group">
