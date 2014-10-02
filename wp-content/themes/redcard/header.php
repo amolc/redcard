@@ -115,7 +115,7 @@ if(is_front_page()){
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"><?php echo get_the_title( $row->post_id ); ?> </p>
                  <p style="color: #fff;font-size: 13px;font-weight: bold;"><?php  echo $tagLine ; ?></p>
              </span>
-             <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article[ID]);?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="<?php echo get_permalink(  $article[ID]);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
+             <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article[ID]);?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a target="_blank" href="<?php echo get_permalink(  $article[ID]);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
           </li>
           <?php } }?>
         </ul>
@@ -217,7 +217,7 @@ if(is_front_page()){
             <div class="facebook" ></div>
             </a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?> <?php the_permalink() ?> via @RedCardConnect&url=" >
             <div class="twitter"></div>
-            </a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="<?php echo get_permalink( $article->ID);?>#dis_comments">
+            </a> <a target="_blank" href="<?php echo get_permalink( $article->ID);?>#dis_comments">
             <div class="message"></div>
             </a> </div>
         </div>
