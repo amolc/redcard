@@ -24,7 +24,7 @@ $termlink = get_term_link($term);
     <ul>
       <li>
         <div class="img">
-     	 <?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>
+     	 <img src="<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url($term->term_id); ?>" width="150" height="150" />
           </div>
        <?php ?>
         <div class="text"> <a href="<?php echo $termlink;?>">
