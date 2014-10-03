@@ -179,7 +179,7 @@ if(is_front_page()){
       </a>
       <?php
                                 echo '</div>
-	   							<span>1,290 views<span>
+	   							<span>'.getPostViews($article[ID]).'<span>
 	   						</span></span></div></li>';
 	   						$i++;
 						}
@@ -229,7 +229,9 @@ if(is_front_page()){
         <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
         <p><?php echo $shortcontent; ?></p>
-        <div class="date" id="date2"> <span>120 views</span>
+        <div class="date" id="date2"> <span>
+		
+		<?php echo getPostViews(get_the_ID());?></span>
           <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
             <div class="facebook" ></div>
             </a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?> <?php the_permalink() ?> via @RedCardConnect&url=" >

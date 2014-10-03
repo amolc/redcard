@@ -122,5 +122,6 @@ get_header(); ?>
     </noscript>
    </div>
 <?php
+setPostViews(get_the_ID());
 get_sidebar('radio');
 get_footer(); ?>
