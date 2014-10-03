@@ -228,9 +228,8 @@ if(is_front_page()){
       <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
       </div>
         <?php $trimcontent = get_the_content();
-		  
-        $youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true ); 
-		 $shortcontent = wp_trim_words( $youtubtagline_value, $num_words = 10, $more = '…' ); ?>
+		  $youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true ); 
+		  $shortcontent = wp_trim_words( $youtubtagline_value, $num_words = 10, $more = '…' ); ?>
           <p style="height:60px;"><?php echo $shortcontent; ?></p>
         <div class="date" id="date2"> <span>
 		

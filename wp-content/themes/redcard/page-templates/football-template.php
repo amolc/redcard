@@ -131,6 +131,11 @@ get_header();
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
+          <p><?php
+	
+		  		$youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true );
+				echo $youtagline_vale;
+				?> </p>
           <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
         </div>
       </li>
