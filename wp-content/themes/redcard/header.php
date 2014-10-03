@@ -163,9 +163,13 @@ if(is_front_page()){
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '' );
 						   $term_list_reg = wp_get_post_terms($article[ID], 'radio-shows');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
-						   echo '<li style="width:151px;margin-right: 15px;"><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
-	   							<h3 style="padding:3px;margin-top:none !important;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
-	   							<a href="'.$mlink.'">'.$term_list_reg[0]->name.'</a>
+						   $term_list_reg1 = wp_get_post_terms($article[ID], 'radio-categories');
+      					   $mlink1=(get_term_link( $term_list_reg1[0] ));
+						   echo '<li style="width:151px;margin-right: 15px;">
+						   <div class="r-child home-radio-post list'.$i.'">'.get_the_post_thumbnail( $article[ID] ).'
+	   							<h3 style="padding:5px;margin-top:0px !important;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
+								<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
+								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
 	   							<a href="'.get_permalink( $article[ID]).'" class="llink">Listen</a>
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitle);
@@ -206,10 +210,7 @@ if(is_front_page()){
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image" style="height:350px;">
-	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); 
-
-	
-	?>
+	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span><?php

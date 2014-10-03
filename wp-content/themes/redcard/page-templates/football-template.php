@@ -116,7 +116,18 @@ get_header();
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          <span>	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
+          <?php
+		$g=0;
+		foreach($term_list_reg as $mterm)
+		{
+			$m_array[$g]=$mterm->name;
+			$g++;
+		}
+		$m_str=implode(",",$m_array);
+		echo $m_str;
+		 ?>
+          </span> </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
