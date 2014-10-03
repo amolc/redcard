@@ -20,11 +20,13 @@ get_header(); ?>
 						   $radtitle = $post->post_title;
 						  // $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '…' );
 						 $wp_query->queried_object->name;
+						 $term_list_reg1 = wp_get_post_terms($post->ID, 'radio-categories');
+      					   $mlink1=(get_term_link( $term_list_reg1[0] ));
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 								
-	   							<a href="#">'.$wp_query->queried_object->name.'</a>
+	   							<a href="#">'.$wp_query->queried_object->name.':</a><a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitle);
