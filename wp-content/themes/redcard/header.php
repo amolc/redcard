@@ -210,10 +210,7 @@ if(is_front_page()){
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image" style="height:350px;">
-	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); 
-
-	
-	?>
+	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
         <span><?php
