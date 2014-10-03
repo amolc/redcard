@@ -176,6 +176,11 @@ get_header(); ?>
     Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
   </div>
-  <?php get_sidebar('football');?>
+  <?php
+  setPostViews(get_the_ID());
+  
+   get_sidebar('football');?>
 </div>
-<?php get_footer();?>
+<?php get_footer();
+
+?>
