@@ -92,10 +92,10 @@ if(is_front_page()){
 <div class="box home-top-box">
   <div class="left">
     <h1 class="h1">Featured</h1>
-    <div class="myslider">
-      <div class="prevmain"><i class="fa fa-2x fa-arrow-left"></i></div>
-      <div id="mainSlider">
-        <ul >
+    <div class="myslider" style="height:500px;">
+      <div class="prevmain" style="cursor:pointer;"><i class="fa fa-2x fa-arrow-left"></i></div>
+      <div id="mainSlider" style="height:450px;">
+        <ul style="height:470px;">
           <?php 
              $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
              $resultarray = $wpdb->get_results($selectsql) ;
@@ -110,17 +110,17 @@ if(is_front_page()){
          			 ?>
           <li>
         <a href="<?php echo get_permalink( $row->post_id);?>">  <img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /></a>
-            <div class="mainSliderDetail">
+            <div class="mainSliderDetail"  style="height:400px !important;">
              <span class="mstitle">
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"><?php echo get_the_title( $row->post_id ); ?> </p>
-                 <p style="color: #fff;font-size: 13px;font-weight: bold;"><?php  echo $tagLine ; ?></p>
+                 <p style="color: #fff;font-size: 13px;"><?php  echo $tagLine ; ?></p>
              </span>
              <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>"  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title( $row->post_id );?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a  href="<?php echo get_permalink(  $article[ID]);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'>1,200 views</span> </span> </div>
           </li>
           <?php } }?>
         </ul>
       </div>
-      <div class="nextmain"><i class="fa fa-2x fa-arrow-right"></i></div>
+      <div class="nextmain" style="cursor:pointer;"><i class="fa fa-2x fa-arrow-right"></i></div>
     </div>
     <script type="text/javascript">
 		$(function() {
