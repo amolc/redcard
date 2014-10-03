@@ -228,7 +228,7 @@ if(is_front_page()){
       </div>
         <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
-        <p><?php echo $shortcontent; ?></p>
+        
         <div class="date" id="date2"> <span>
 		
 		<?php echo getPostViews(get_the_ID());?></span>
