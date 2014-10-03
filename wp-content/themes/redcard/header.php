@@ -206,10 +206,22 @@ if(is_front_page()){
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image">
- 
+	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); 
+
+	
+	?>
       <div class="img">
         <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
-        <span>Singapore</span> </div>
+        <span><?php
+		$g=0;
+		foreach($term_list_reg as $mterm)
+		{
+			$m_array[$g]=$mterm->name;
+			$g++;
+		}
+		$m_str=implode(",",$m_array);
+		echo $m_str;
+		 ?></span> </div>
       <div class="text"> <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
         <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
