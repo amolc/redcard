@@ -29,7 +29,7 @@ get_header();
 						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
 						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
 						  $as =1;
-						
+					
 						  if(!empty($term_list_reg))
 						  {
 							  foreach($term_list_reg as $row)
@@ -116,7 +116,9 @@ get_header();
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
+          <span>	<?php 
+
+		   $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
           <?php
 		$g=0;
 		foreach($term_list_reg as $mterm)
@@ -131,6 +133,9 @@ get_header();
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
+          <p style="font-weight:bold;"><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
+			echo $youtubtagline_value;?></p>  
           <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
         </div>
       </li>
