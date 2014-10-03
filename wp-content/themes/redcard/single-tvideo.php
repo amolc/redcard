@@ -170,7 +170,7 @@ get_header(); ?>
 	} ?>
   
   </div>
-  <h2>Popular Tv Videos</h2>
+  <h2>Popular Tv </h2>
   <div class="popular">
     <ul>
       <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) ?>
