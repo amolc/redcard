@@ -164,11 +164,11 @@ if(is_front_page()){
 						   $term_list_reg = wp_get_post_terms($article[ID], 'radio-shows');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
 						   echo '<li style="width:151px;margin-right: 15px;"><div class="r-child home-radio-post list'.$i.'">'. get_the_post_thumbnail( $article[ID] ).'
-	   							<h3 style="padding:3px;margin-top:none !important;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitlefinal.'</a></h3>
+	   							<h3 style="padding:3px;margin-top:none !important;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 	   							<a href="'.$mlink.'">'.$term_list_reg[0]->name.'</a>
 	   							<a href="'.get_permalink( $article[ID]).'" class="llink">Listen</a>
 	   							<div id="social_2">';
-								$mtitle=str_replace("?","",$radtitlefinal);
+								$mtitle=str_replace("?","",$radtitle);
 								?>
       <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article[ID]);?>&description=<?php echo $radtitle;?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
