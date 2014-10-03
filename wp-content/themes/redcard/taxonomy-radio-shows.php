@@ -39,7 +39,7 @@ get_header(); ?>
 </a>
 <?php
                                 echo '</div>
-	   							<span>1,290 views<span>
+	   							<span>'.getPostViews($post->ID).'<span>
 	   						</span></span></div>';
 	   						$i++;
 					endwhile;
