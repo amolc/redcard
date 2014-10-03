@@ -18,7 +18,7 @@ get_header();
 	?>
   <?php $postID = get_the_ID(); 
   
-
+$termlink = get_term_link($term);
  ?>
   <div class="c_list radio-showscss">
     <ul>
@@ -27,7 +27,7 @@ get_header();
      	 <?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>
           </div>
        <?php ?>
-        <div class="text"> <a href="<?php the_permalink();?>">
+        <div class="text"> <a href="<?php echo $termlink;?>">
           <?php echo $term->name; ?>
           </a>
           <p><?php echo $term->description; ?></p>
