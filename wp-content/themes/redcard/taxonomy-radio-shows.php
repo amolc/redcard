@@ -4,8 +4,15 @@
  */
 get_header(); ?>
 <?php dynamic_sidebar( 'radioshowsbanner' ); ?>
-			<?php if ( have_posts() ) : ?>
-			<?php
+<?php if ( have_posts() ) : ?>
+<?php
+					 $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				    	$args = array(
+						'posts_per_page'   => 10,
+						'post_type'        => 'radio-articles',
+						'post_status'      => 'publish',
+                                                'paged' =>  $current_page,
+						);
 					echo '<div class="box">';
 					echo '<h1>'.$wp_query->queried_object->name.'</h1>';
 					while ( have_posts() ) : the_post();
@@ -22,22 +29,27 @@ get_header(); ?>
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitle);
 								?>
-      <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
-      <div class="facebook" ></div>
-      </a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
-      <div class="twitter"></div>
-      </a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment">
-      <div class="message"></div>
-      </a>
-      <?php
+
+<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
+<div class="facebook" ></div>
+</a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
+<div class="twitter"></div>
+</a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment">
+<div class="message"></div>
+</a>
+<?php
                                 echo '</div>
 	   							<span>1,290 views<span>
 	   						</span></span></div>';
 	   						$i++;
 					endwhile;
 					echo '</div>';
-					// Previous/next page navigation.
-					twentyfourteen_paging_nav();
+
+					//twentyfourteen_paging_nav();
+      if (function_exists(custom_pagination)) {
+        custom_pagination($post->max_num_pages,"",$current_page);
+      }
+else{}
 				else :
 					// If no content, include the "No posts found" template.
 					get_template_part( 'content', 'none' );
