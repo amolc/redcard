@@ -222,7 +222,10 @@ if(is_front_page()){
 		$m_str=implode(",",$m_array);
 		echo $m_str;
 		 ?></span> </div>
-      <div class="text"> <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
+      <div class="text">
+      <div style="height:70px; overflow:hidden;">
+      <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
+      </div>
         <?php $trimcontent = get_the_content();
 		    $shortcontent = wp_trim_words( $trimcontent, $num_words = 10, $more = '…' ); ?>
         <p><?php echo $shortcontent; ?></p>
