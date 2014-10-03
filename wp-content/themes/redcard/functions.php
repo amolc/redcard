@@ -1025,6 +1025,8 @@ function GetTvVideoImage($videoid) {
  return "http://img.youtube.com/vi/$videoid/mqdefault.jpg";
 }
 
+/* custom pafination */
+
 function custom_pagination($numpages = '', $pagerange = '', $paged='') {
    if (empty($pagerange)) {
     $pagerange = 2;
@@ -1062,4 +1064,30 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
       echo $paginate_links;
     echo "</nav>";
   }
+}
+
+
+/* for Post Views*/
+
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 View";
+    }
+    return $count.' Views';
+}
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
 }
