@@ -865,6 +865,36 @@ function register_taxonomy_tvcategory() {
    register_taxonomy( 'tvcategory', array('tvideo'), $args );
 }
 
+$labels = array(
+		'name'                       => _x( 'TV Tags', 'taxonomy general name' ),
+		'singular_name'              => _x( 'TV Tag', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search TV Tags' ),
+		'popular_items'              => __( 'Popular TV Tags' ),
+		'all_items'                  => __( 'All TV Tags' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit TV Tag' ),
+		'update_item'                => __( 'Update TV Tag' ),
+		'add_new_item'               => __( 'Add New TV Tag' ),
+		'new_item_name'              => __( 'New TV Tag Name' ),
+		'separate_items_with_commas' => __( 'Separate TV Tags with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove TV Tags' ),
+		'choose_from_most_used'      => __( 'Choose from the most used TV Tags' ),
+		'not_found'                  => __( 'No TV Tags found.' ),
+		'menu_name'                  => __( 'TV Tags' ),
+	);
+
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'query_var'             => true,
+		
+	);
+
+	register_taxonomy( 'tvTags', 'tvideo', $args );
+
 /**/
 function be_tvideo_metaboxes_strength( $meta_boxes ) {
 	$prefix = '_cmb_tvideo_'; // Prefix for all fields

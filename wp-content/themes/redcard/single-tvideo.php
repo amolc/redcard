@@ -22,12 +22,11 @@ get_header(); ?>
         <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
         <div class="date">
         
-        
-        <?php $term_list_reg = wp_get_post_terms($postID, 'tvcategory');
+         <?php $term_list_tag = wp_get_post_terms($postID, 'tvcategory');
 				 $as =1;
-				 if(!empty($term_list_reg))
+				 if(!empty($term_list_tag))
 								  {
-									  foreach($term_list_reg as $row)
+									  foreach($term_list_tag as $row)
 									  {
 										  $mytermArray[$as]['term_id']= $row->term_id;
 										  $mytermArray[$as]['name']= $row->name;
@@ -39,6 +38,7 @@ get_header(); ?>
 									  }
 								  }
 		  ?>
+       
          <?php if(!empty($mytermArray)){
 						 $is =1;
 						 $arraycount =  count($mytermArray);
@@ -72,7 +72,38 @@ get_header(); ?>
 		?>
       	</div>
 		<?php endwhile; ?>
+         <?php
+		 	$postID = get_the_ID();
+		    $term_list_reg = wp_get_post_terms($postID, 'tvTags');
+				 $as =1;
+				 if(!empty($term_list_reg))
+								  {
+									  foreach($term_list_reg as $row)
+									  {
+										  $mytermArray[$as]['term_id']= $row->term_id;
+										  $mytermArray[$as]['name']= $row->name;
+										  $mytermArray[$as]['slug']= $row->slug;
+										  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+										  $mytermArray[$as]['link']= get_term_link( $row );
+										 
+										  $as++;
+									  }
+								  }
+		  ?>
         
+         <div class="tags"> <strong>Tags:</strong>      <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?>	<span><a href="#dis_comment">Comments</a></span> </div>
      <h2>Related Videos</h2>
     <?php $postid = get_the_ID(); ?>
     <?php 
