@@ -9,7 +9,9 @@ get_header();
 <h2>Region</h2>
 <?php
  $ad = 1;
-	while ( have_posts() ) : the_post();
+	if(have_posts())
+	{
+ 	while ( have_posts() ) : the_post();
 
 if($ad == 1){?>
      <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
@@ -119,9 +121,19 @@ if($ad == 1){?>
           <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
         </div>
       </li>
-      <?php } $ad++; endwhile;?>
+      <?php }?>
     </ul>
   </div>
+  <?php 
+   $ad++; endwhile;
+	}
+	else
+	{
+		?>
+		<h3 style="color:blue;">You are offside!</h3>
+		<?php
+	}
+  ?>
 </div>
 <?php get_sidebar('football');?>
 <?php get_footer();?>

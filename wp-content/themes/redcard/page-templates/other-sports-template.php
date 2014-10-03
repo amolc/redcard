@@ -10,6 +10,8 @@ get_header();
 		<?php 
 			$args = array( 'post_type' => 'other_sports');
 			$loop = new WP_Query( $args ); $as =1;
+			if($loop->have_posts())
+			{
 			while ( $loop->have_posts() ) : $loop->the_post();
 			if($as ==1)
 			{
@@ -35,9 +37,17 @@ get_header();
 							</div>
                 		</li>
                       
-		<?php $as++; endwhile;?>
+		
          </ul>
      </div>
+     <?php $as++; endwhile;
+			}else
+			{
+				?>
+		<h3 style="color:blue;">Watch this space!</h3>
+		<?php
+			}
+	 ?>
 </div>
 <?php get_sidebar('football');?>
 
