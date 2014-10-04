@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <div class="left">
-  <h2>Football</h2>
+  <h2>Football > Opinion</h2>
   <?php 
 		$ad =1; 
 		$terms = get_terms( 'footballopinion', array(
@@ -108,11 +108,11 @@ get_header();
 
     
     <span><?php the_time('l, F j, Y'); ?></span>
-    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_title(); ?> <?php echo get_permalink( $article->ID);?>"  title="Share on Facebook" >
+    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article->ID);?>&description=<?php the_title(); ?> via @RedCardConnect"  title="Share on Facebook" >
       <div class="facebook" ></div>
       </a> <a href="http://twitter.com/intent/tweet?text= <?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;">
       <div class="twitter"></div>
-      </a>  <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
+      </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
       <div class="message"></div>
       </a> </div>
   </div>

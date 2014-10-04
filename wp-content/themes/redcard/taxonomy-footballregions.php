@@ -6,7 +6,7 @@ get_header();
 ?>
 <div class="left">
 
-<h2>Region</h2>
+<h2>Football > Region </h2>
 <?php
  $ad = 1;
 	if(have_posts())
@@ -96,11 +96,11 @@ if($ad == 1){?>
 
     
     <span><?php the_time('l, F j, Y'); ?></span>
-    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" >
+    <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article->ID);?>&description=<?php the_title(); ?> via @RedCardConnect"  title="Share on Facebook" >
       <div class="facebook" ></div>
       </a> <a href="http://twitter.com/intent/tweet?text= <?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect&url="   onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;">
       <div class="twitter"></div>
-      </a> <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="mailto:?subject=<?php echo get_permalink( $article->ID);?>&body=<?php echo get_permalink( $article->ID);?>">
+      </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
       <div class="message"></div>
       </a> </div>
   </div>
@@ -131,6 +131,7 @@ if($ad == 1){?>
 	{
 		?>
 		<h3 style="color:blue;">You are offside!</h3>
+        <h4 style="color:blue;">Keep trying and watch this space, you will find the goal soon enough!</h4>
 		<?php
 	}
   ?>
