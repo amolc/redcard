@@ -256,10 +256,11 @@ if(isset($_POST['plaction']))
         	<label>Display On Page</label>
 				<select name="displayonpage" id="displayonpage" class="form-control">
                 	<option value="home">Home Page</option>
-                	<option value="tv-articles">Tv Articles</option>
-                	<option value="radio-articles">Radio Articles</option>
+                    <option value="radio-articles">Radio Articles</option>
+					<option value="radio-shows">Radio Shows</option> 
+                    <option value="radio-schedules">Radio Schedules</option> 
+                	<option value="tv">Tv</option>
                 	<option value="tv-shows">Tv Shows</option>
-                	<option value="radio-shows">Radio Shows</option>                    
                 	<option value="football-articles">Football</option>                                        
                 	<option value="other-sports">Other Sports</option>                                        
 			   </select>
