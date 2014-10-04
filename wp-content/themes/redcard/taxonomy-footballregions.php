@@ -121,11 +121,11 @@ if($ad == 1){?>
           <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
         </div>
       </li>
-      <?php }?>
+      <?php } $ad++; endwhile;?>
     </ul>
   </div>
   <?php 
-   $ad++; endwhile;
+   
 	}
 	else
 	{
