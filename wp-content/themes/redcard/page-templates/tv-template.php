@@ -38,7 +38,7 @@ get_header();
                         <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
                         <?php //$trimtitle = get_the_title();
 							  //$shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
-						<a style="text-decoration: none;" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+						<a style="text-decoration: none;font-size:16px !important;" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                         <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true ); ?>
                         <?php //$trimtag = $youtubetagline_value;
 							  //$shorttag = wp_trim_words( $trimtag, $num_words = 10, $more = '…' ); ?>
