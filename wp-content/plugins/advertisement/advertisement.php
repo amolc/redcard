@@ -223,24 +223,26 @@ if(isset($_POST['plaction']))
 	}
 }
 ?>
+
 <div class="col-md-6" style="background-color:#fff;padding-top:10px;" >
+	<h3>Manage Advertisements</h3>
 	<div class="alert alert-danger mhidden" id="errormsg"></div>
 	<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate_advert_form()">
     <input type="hidden" name="plaction" id="plaction" value="submit" />
     	<div class="form-group">
-        	<label>Leaderboard Image</label>
+        	<label>Leaderboard</label>
             <input type="file" name="advertimage1" id="advertimage1"  />
         </div>
          <div class="form-group">
-        	<label>Leaderboard Link </label>
+        	<label>Leaderboard </label>
             <input type="text" name="adlink1" id="adlink1"  class="form-control" />
         </div>
         <div class="form-group">
-        	<label>Rectangular image</label>
+        	<label>Rectangular</label>
             <input type="file" name="advertimage2" id="advertimage2"  />
         </div>
          <div class="form-group">
-        	<label>Rectangular Link</label>
+        	<label>Rectangular</label>
             <input type="text" name="adlink2" id="adlink2" class="form-control" />
         </div>
 
