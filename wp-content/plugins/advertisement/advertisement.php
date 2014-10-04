@@ -260,7 +260,7 @@ if(isset($_POST['plaction']))
                 	<option value="radio-articles">Radio Articles</option>
                 	<option value="tv-shows">Tv Shows</option>
                 	<option value="radio-shows">Radio Shows</option>                    
-                	<option value="football">Football</option>                                        
+                	<option value="football-articles">Football</option>                                        
                 	<option value="other-sports">Other Sports</option>                                        
 			   </select>
         </div>
