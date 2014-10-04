@@ -5,7 +5,8 @@
 get_header(); 
 
 ?>
-<?php dynamic_sidebar( 'tvbanner' );$m_table=$wpdb->prefix."adverts";
+<?php dynamic_sidebar( 'tvbanner' );
+$m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='tv' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
@@ -23,28 +24,42 @@ get_header();
 		}
 	}
 	?>
-
-
-<div class="box">
-					<h1>Video Segments</h1>
-               <?php  $args = array( 'post_type' => 'tvideo');
-					  $loop = new WP_Query( $args ); $as =1;
-					  while ( $loop->have_posts() ) : $loop->the_post(); 
-							 $postID = get_the_ID();
-							 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); 
-			  ?>
-					<div class="child">
-						<?php $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='150');// twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'video-feature-image' ) );?>
-                        <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
-                        <?php //$trimtitle = get_the_title();
-							  //$shorttitle = wp_trim_words( $trimtitle, $num_words = 3, $more = '…' ); ?>
-						<a style="text-decoration: none;font-size:16px !important;" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                        <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true ); ?>
-                        <?php //$trimtag = $youtubetagline_value;
-							  //$shorttag = wp_trim_words( $trimtag, $num_words = 10, $more = '…' ); ?>
-						<p class="tvpexcerpt"><?php echo $youtubetagline_value; ?></p>
-						<span></span>
-					</div>
-					<?php endwhile;?>
-				</div> 
+ <div class="box">
+	<h1>Video Segments</h1>
+		<?php
+		echo '<div class="box">';
+		
+		$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		 $args = array( 'post_type' => 'tvideo');
+                                        
+        $i = 1;
+		$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) : $loop->the_post();
+			$postID = get_the_ID(); 
+			 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true );
+			 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='150', $height='130');
+		   	echo '<div class="r-child list'.$i.'" style="background-color:#00a69c;">'.$videoID.'
+			<h3><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
+			
+	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5">';
+	?>		
+			<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink($postID);?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
+      <div class="facebook" ></div>
+      </a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title();?> <?php echo get_permalink($postID);?> via @RedCardConnect&url="  >
+      <div class="twitter"></div>
+      </a> <a href="<?php echo get_permalink($postID);?>#dis_comment">
+      <div class="message"></div>
+      </a>
+	<?php		
+			echo '</div><span>'.getPostViews($postID).'<span></span></span></div>';
+   			$i++;
+			endwhile;
+			echo '</div>';
+?>
+<?php
+      if (function_exists(custom_pagination)) {
+        custom_pagination($loop->max_num_pages,"",$current_page);
+      }
+?>
+</div>
 <?php get_footer();?>
