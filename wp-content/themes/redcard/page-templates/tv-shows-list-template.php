@@ -4,7 +4,7 @@
 * */
 get_header(); 
 ?>
-<?php dynamic_sidebar( 'tvbanner' ); ?>
+<?php dynamic_sidebar( 'tvshowsbanner' ); ?>
 <div class="left">
   <h2>TV Shows</h2>
 	<?php 
