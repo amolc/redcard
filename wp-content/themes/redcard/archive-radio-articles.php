@@ -27,7 +27,7 @@ $m_table=$wpdb->prefix."adverts";
 	}
 	?>
 <div class="box">
-	<h1>Radio Segments</h1>
+	<h1>Latest Radio Shows </h1>
 		<?php
 		echo '<div class="box">';
 		echo '<h4>' . $term->name. '</h4>';
