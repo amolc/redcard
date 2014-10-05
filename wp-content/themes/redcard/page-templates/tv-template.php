@@ -5,7 +5,7 @@
 get_header(); 
 
 ?>
-<?php dynamic_sidebar( 'tvbanner' );
+<?php dynamic_sidebar( 'tvshowsbanner' );
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='tv' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
@@ -25,7 +25,7 @@ $m_table=$wpdb->prefix."adverts";
 	}
 	?>
  <div class="box">
-	<h1>Video Segments</h1>
+	<h1>Latest Videos</h1>
 		<?php
 		echo '<div class="box">';
 		
