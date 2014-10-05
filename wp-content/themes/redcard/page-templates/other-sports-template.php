@@ -44,8 +44,8 @@ get_header();
 			}else
 			{
 				?>
-		<h3 style="color:blue;">Watch this space!</h3>
-  		<h4 style="color:blue;">The place for the hardest hitting stories from the world of MMA, the ace articles served up for tennis, heart-stopping motorsports news, golf gossip and more!</h4>
+		<h3 style="font-family: 'FF DIN';">Watch this space!</h3>
+  		<h4 style="font-family: 'FF DIN';">The place for the hardest hitting stories from the world of MMA, the ace articles served up for tennis, heart-stopping motorsports news, golf gossip and more!</h4>
 		<?php
 			}
 	 ?>

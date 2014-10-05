@@ -130,8 +130,8 @@ if($ad == 1){?>
 	else
 	{
 		?>
-		<h3 style="color:blue;">You are offside!</h3>
-        <h4 style="color:blue;">Keep trying and watch this space, you will find the goal soon enough!</h4>
+		<h3  style="font-family: 'FF DIN';">You are offside!</h3>
+        <h4  style="font-family: 'FF DIN';">Keep trying and watch this space, you will find the goal soon enough!</h4>
 		<?php
 	}
   ?>
