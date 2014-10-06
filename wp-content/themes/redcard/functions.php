@@ -843,7 +843,7 @@ function tvideo_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title','editor' )
+		'supports'           => array( 'title','editor', 'thumbnail' )
 	);
 
 	register_post_type( 'tvideo', $args );
