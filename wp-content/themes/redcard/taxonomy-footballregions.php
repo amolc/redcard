@@ -9,7 +9,7 @@ get_header();
 <h2>Football > <?php echo $wp_query->queried_object->name; ?> </h2>
 <?php
  $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array( 'post_type' => 'footballs','posts_per_page'=>2, 'post_status'=> 'publish', 'paged'=>  $current_page);
+			$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
 			$loop = new WP_Query( $args ); $ad =1; 
 
 	if($loop->have_posts())
