@@ -10,8 +10,8 @@ get_header();
 <div class="left">
   <h2>Football</h2>
   <?php 
-		
-			$args = array( 'post_type' => 'footballs');
+				$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$args = array( 'post_type' => 'footballs','posts_per_page'=>5,'paged'=>  $current_page);
 			$loop = new WP_Query( $args ); $ad =1; 
 			while ( $loop->have_posts() ) : $loop->the_post();
 		
@@ -136,12 +136,17 @@ get_header();
           <p style="font-weight:bold;"><?php
           $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
 			echo $youtubtagline_value;?></p>  
-          <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
+
         </div>
       </li>
       <?php } $ad++; endwhile;?>
     </ul>
   </div>
+ <?php
+      if (function_exists(custom_pagination)) {
+        custom_pagination($loop->max_num_pages,"",$current_page);
+      }
+?>
 </div>
 <div class="right">
  
@@ -173,7 +178,8 @@ get_header();
      
     </ul>
   </div>
- 
+
+
 </div>
 
 <?php get_footer();?>

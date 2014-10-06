@@ -40,7 +40,9 @@ $m_table=$wpdb->prefix."adverts";
 			 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='150', $height='130');
 		   	echo '<div class="r-child list'.$i.'" style="background-color:#00a69c;">'.$videoID.'
 			<h3><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
-			
+			 $term_list_reg = wp_get_post_terms($postID, 'tvcategory');
+      					   $mlink=(get_term_link( $term_list_reg[0] ));
+						   echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;color:white;">'.$term_list_reg[0]->name.':</a>';
 	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5">';
 	?>		
 			<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink($postID);?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
