@@ -80,7 +80,7 @@ if($ad == 1){?>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
-         <p style="font-weight:bold;"><?php
+         <p><?php
           $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
 			echo $youtubtagline_value;?></p> 
         </div>
