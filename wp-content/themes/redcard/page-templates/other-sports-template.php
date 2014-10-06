@@ -34,6 +34,9 @@ $m_table=$wpdb->prefix."adverts";
 			{
 		?>
 				  <a href="<?php the_permalink() ?>"><h1><?php the_title(); ?></h1></a>
+                  <p style="font-weight:bold;"><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
+			echo $youtubtagline_value;?></p> 
                   <div class="date"> <a href="#">Singapore</a> <span><?php the_time('l, F j, Y'); ?></span>
                      <div id="social_3">
                           <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" ><div class="facebook" ></div></a>
