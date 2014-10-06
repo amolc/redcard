@@ -281,6 +281,16 @@ function twentyfourteen_widgets_init() {
 		'after_title'   => '',
 	) );
 	
+	register_sidebar( array(
+		'name'          => __( 'Popular posts for TV', 'twentyfourteen' ),
+		'id'            => 'po-po-tv',
+		'description'   => __( '' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 

@@ -189,14 +189,15 @@ $m_table=$wpdb->prefix."adverts";
 		}
 	} ?>
   
-  </div>
-  <h2>Popular Tv </h2>
+
+  <h2>Popular Videos </h2>
   <div class="popular">
     <ul>
-      <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) ?>
-     
+      <?php /* For Popular Posts */  /* if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) */  ?>
+        <?php dynamic_sidebar( 'po-po-tv' ); ?>
     </ul>
   </div>
+    </div>
 </div>
 <?php
 
