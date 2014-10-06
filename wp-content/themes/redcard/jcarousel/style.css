@@ -8,9 +8,9 @@ URL: http://www.onextrapixel.com
 	      JCAROUSEL LITE		
 ************************************************/
 #list {
-	height:130px;
-	
-	margin:30px auto; 
+height: 440px;
+    margin: 30px auto 0;
+    position: relative;
 }
 
 .slider {
@@ -38,15 +38,18 @@ URL: http://www.onextrapixel.com
 }
 
 .prev {
-	cursor:pointer; 
-	float:left;
-	padding-top:60px;margin:auto;
+  bottom: 0;
+    cursor: pointer;
+    float: left;
+    left: 47%;
+    margin: auto;
 }
 
 .next {
-	cursor:pointer; 
-	float:right; 
-	padding-top:60px;
+	 bottom: 0;
+    cursor: pointer;
+    float: right;
+    right: 47%;
 }
 
 /************************************************
