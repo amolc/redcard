@@ -6,7 +6,7 @@ get_header();
 ?>
 <div class="left">
 
-<h2>Football > Region </h2>
+<h2>Football > <?php echo $wp_query->queried_object->name; ?> </h2>
 <?php
  $ad = 1;
 	if(have_posts())
@@ -23,6 +23,7 @@ if($ad == 1){?>
 						
 						  $mytermArray = array();
                           $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
+						
 						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
 						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
 						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
@@ -114,7 +115,7 @@ if($ad == 1){?>
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          <span><?php echo $wp_query->queried_object->name; ?></span> </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
