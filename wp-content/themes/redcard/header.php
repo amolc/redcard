@@ -151,7 +151,7 @@ if(is_front_page()){
 				    	$i = 1;
 						?>
 <div id="list">
-  <div class="prev"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
+
   <div class="slider">
     <ul>
       <?php
@@ -189,7 +189,10 @@ if(is_front_page()){
 						?>
     </ul>
   </div>
+
+  <div class="prev"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/prev.jpg" alt="prev" /></div>
   <div class="next"><img src="<?php echo get_template_directory_uri(); ?>/jcarousel/images/next.jpg" alt="next" /></div>
+
 </div>
 <?php
 				        echo '</div>';
