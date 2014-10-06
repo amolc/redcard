@@ -8,23 +8,23 @@ get_header();
 
 <h2>Football > <?php echo $wp_query->queried_object->name; ?> </h2>
 <?php
- $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
-			$loop = new WP_Query( $args ); $ad =1; 
+	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
+	$loop = new WP_Query( $args ); $ad =1; 
 
 	if($loop->have_posts())
 	{
  	while ( $loop->have_posts() ) : $loop->the_post();
 
-if($ad == 1){?>
+	if($ad == 1){?>
      <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
-  <h1>
-    <?php the_title(); ?>
-  </h1>
-  </a><p style="font-weight:bold;"><?php
+      <h1>
+        <?php the_title(); ?>
+      </h1>
+      </a><p style="font-weight:bold;"><?php
           $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
 			echo $youtubtagline_value;?></p> </div>
-  <?php $postID = get_the_ID(); 
+ 		 <?php $postID = get_the_ID(); 
 						
 						  $mytermArray = array();
                           $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
