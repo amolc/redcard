@@ -264,6 +264,10 @@ if(isset($_POST['plaction']))
                 	<option value="tv">Tv</option>
                 	<option value="tv-shows">Tv Shows</option>
                 	<option value="football-articles">Football</option>                                        
+                	<option value="football-exclusive">Football Exclusive</option>                                        
+                	<option value="football-opinions">Football Opinions</option>                                        
+                	<option value="football-regions">Football Regions</option>
+                    <option value="football-intheweek">Football In The Week</option>                                                                                                                                                                                                        
                 	<option value="other-sports">Other Sports</option>                                        
 			   </select>
         </div>
