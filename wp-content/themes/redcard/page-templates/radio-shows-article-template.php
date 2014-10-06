@@ -11,7 +11,7 @@ $m_table=$wpdb->prefix."adverts";
 	
 	if(sizeof($advertSql)>0)
 	{
-		
+
 		foreach($advertSql as $adsql)
 		{
 			if($adsql->adlink1)
