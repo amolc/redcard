@@ -53,7 +53,9 @@ $m_table=$wpdb->prefix."adverts";
  							<div class="img"> <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?> <span>Singapore</span> </div>
 	 						<div class="text">
                             	<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                                <p><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a></p>
+                                <p ><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
+			echo $youtubtagline_value;?></p> 
 							</div>
                 		</li>
                       

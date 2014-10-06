@@ -27,7 +27,9 @@ $m_table=$wpdb->prefix."adverts";
     
    <div class="sigle-football-title"> <h1>
       <?php the_title(); ?>
-    </h1></div>
+    </h1><p style="font-weight:bold;"><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
+			echo $youtubtagline_value;?></p> </div>
    
     <div class="date"> <a href="#">Singapore</a> <span>
       <?php the_time('l, F j, Y'); ?>
