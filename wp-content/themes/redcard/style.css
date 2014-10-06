@@ -1171,7 +1171,7 @@ filter: grayscale(0%);
 .radio-showscss ul li .img {
     width: 200px !important;
 }
-.home-radio-post{ width:156px !important;}
+.home-radio-post{ /*width:156px !important; */width:165px !important;}
 .custom-pagination span,
 .custom-pagination a {
   display: inline-block;
@@ -1200,3 +1200,5 @@ filter: grayscale(0%);
 .mred a {
 	color:white !important;
 }
+#list .slider{ width:900px !important;margin: 15px 0;}
+
