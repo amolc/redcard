@@ -85,11 +85,11 @@ $m_table=$wpdb->prefix."adverts";
 	} ?>
  
 
-  <h2>Popular Radio Shows</h2>
+  <h2>Popular Audios</h2>
   <div class="popular">
     <ul>
-      <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) ?>
-     
+      <?php /* For Popular Posts*/ /* if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) */ ?>
+     <?php dynamic_sidebar( 'po-po-radio' ); ?>
     </ul>
   </div>
  
