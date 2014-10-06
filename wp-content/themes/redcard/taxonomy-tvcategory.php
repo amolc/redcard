@@ -6,7 +6,7 @@ get_header();
 ?>
 <?php dynamic_sidebar( 'tvbanner' );
 $m_table=$wpdb->prefix."adverts";
-	$advertQuery="select * from $m_table where page='tv-category' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertQuery="select * from $m_table where page='tv-shows' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
 	if(sizeof($advertSql)>0)
