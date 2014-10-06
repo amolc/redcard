@@ -12,9 +12,31 @@ get_header(); ?>
 </style>
   <div class="left">
 		<?php
+$m_table=$wpdb->prefix."adverts";
+	$advertQuery="select * from $m_table where page='tv-shows' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql=$wpdb->get_results($advertQuery);
+	
+	if(sizeof($advertSql)>0)
+	{
+		foreach($advertSql as $adsql)
+		{
+			if($adsql->adlink1)
+			{
+		?>
+		
+<div class="ad_1" align="center"><a href="<?php echo urldecode($adsql->adlink1);?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
+<label style="font-size:9px;">ADVERTISEMENT</label>
+</div>
+
+		<?php
+			}
+		}
+	}
 				while ( have_posts() ) : the_post();
 				//get_template_part( 'content', get_post_format() );
+		
 		?>
+        
         <h2>Video</h2>
         <?php $postID = get_the_ID();
 			  $youtubtagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true );  ?>
@@ -149,19 +171,17 @@ get_header(); ?>
     </noscript>
    </div>
 <div class="right">
-  <h2>ADVERTISEMENT</h2>
-  <div class="ad_right">
+  
   <?php 
-  $m_table=$wpdb->prefix."adverts";
-	$advertQuery="select * from $m_table where page='tv' and isactive='1' order by adId DESC LIMIT 0,1";
-	$advertSql=$wpdb->get_results($advertQuery);
+ 
   if(sizeof($advertSql)>0)
 	{
 		foreach($advertSql as $adsql)
 		{
 		?>
-		
-<div class="a d_1" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+		<h2>ADVERTISEMENT</h2>
+  <div class="ad_right"  align="center">
+<a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 <label style="font-size:10px;">Advertisement</label>
 </div>
 
