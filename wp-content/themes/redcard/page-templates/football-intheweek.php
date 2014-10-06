@@ -145,7 +145,7 @@ $m_table=$wpdb->prefix."adverts";
   <div class="footballs-top-image-latest">
     <?php twentyfourteen_post_thumbnail();?>
   </div>
-  <div class="f_text"><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a> </div>
+  <div class="f_text"><?php /*?><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a><?php */?> </div>
   <div class="c_list">
     <ul>
       <?php } if($ad > 1) { ?>
