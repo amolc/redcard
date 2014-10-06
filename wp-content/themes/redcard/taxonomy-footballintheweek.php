@@ -6,7 +6,7 @@ get_header();
 ?>
 <div class="left">
 
-<h2>In The Week</h2>
+<h2>In The Week > <?php echo $wp_query->queried_object->name; ?></h2>
 <?php
  $ad = 1;
 	while ( have_posts() ) : the_post();
@@ -72,7 +72,7 @@ if($ad == 1){?>
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          <span><?php echo $wp_query->queried_object->name; ?></span> </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
