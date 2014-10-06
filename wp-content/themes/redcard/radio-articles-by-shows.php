@@ -137,7 +137,7 @@ return $newstr;
 		?>
         <div class="b" id="no-border">
 						<h1>ADVERTISEMENT</h1>
-		<a href="http://<?=$adsql->adlink2;?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" />
+		<a href="http://<?=$adsql->adlink2;?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
         </div>
 
 		<?php

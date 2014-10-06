@@ -3,7 +3,7 @@
  * Template Name: Radio Shows Articles template
 * */
 get_header(); 
-?>
+?>&nbsp;
 <?php dynamic_sidebar( 'radioshowsbanner' ); 
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='radio-shows' and isactive='1' order by adId DESC LIMIT 0,1";
