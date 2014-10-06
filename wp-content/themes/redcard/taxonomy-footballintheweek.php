@@ -8,15 +8,19 @@ get_header();
 
 <h2>In The Week > <?php echo $wp_query->queried_object->name; ?></h2>
 <?php
- $ad = 1;
-	while ( have_posts() ) : the_post();
+ $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
+			$loop = new WP_Query( $args ); $ad =1; 
+	while ( $loop->have_posts() ) : $loop->the_post();
 
 if($ad == 1){?>
     <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
   <h1>
     <?php the_title(); ?>
   </h1>
-  </a> </div>
+  </a><p style="font-weight:bold;"><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
+			echo $youtubtagline_value;?></p>  </div>
   <?php $postID = get_the_ID(); 
 						
 						  $mytermArray = array();
@@ -76,12 +80,19 @@ if($ad == 1){?>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
-          <p><?php echo get_the_excerpt(); ?> <a href="<?php the_permalink() ?>">Read More</a></p>
+         <p style="font-weight:bold;"><?php
+          $youtubtagline_value = get_post_meta($post->ID, '_cmb_footballs_tagline_text',true  );
+			echo $youtubtagline_value;?></p> 
         </div>
       </li>
       <?php } $ad++; endwhile;?>
     </ul>
   </div>
+   <?php
+      if (function_exists(custom_pagination)) {
+        custom_pagination($loop->max_num_pages,"",$current_page);
+      }
+?>
 </div>
 <?php get_sidebar('football');?>
 <?php get_footer();?>
