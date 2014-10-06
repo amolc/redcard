@@ -43,7 +43,7 @@ height: 440px;
     float: left;
     left: 47.5%;
     margin: auto;
-	position: absolute;
+
 }
 
 .next {
@@ -51,7 +51,7 @@ height: 440px;
     cursor: pointer;
     float: right;
     right: 47.5%;
-	position: absolute;
+
 }
 
 /************************************************

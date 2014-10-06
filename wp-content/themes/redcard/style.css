@@ -1065,7 +1065,7 @@ filter: grayscale(0%);
 .author-info p{ height: 65px; overflow-y: scroll;}
 .authimage{float: left; margin-right: 12px;}
 .authimage img{ height: 90px;width: 90px;}
-
+.prev, .next{  position: absolute;}
 .home-top-box{ margin-bottom:15px !important;}
 
 
