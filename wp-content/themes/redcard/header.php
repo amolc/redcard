@@ -279,6 +279,7 @@ if(is_front_page()){
 		?>
 		
 <div class="a d_1" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<label style="font-size:10px;">Advertisement</label>
 </div>
 
 		<?php
