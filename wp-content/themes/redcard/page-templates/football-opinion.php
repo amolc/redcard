@@ -6,7 +6,7 @@
 get_header(); 
 
 $m_table=$wpdb->prefix."adverts";
-	$advertQuery="select * from $m_table where page='football-opinion' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertQuery="select * from $m_table where page='football-opinions' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
 	if(sizeof($advertSql)>0)
@@ -174,7 +174,7 @@ $m_table=$wpdb->prefix."adverts";
  
   <?php
   $m_table=$wpdb->prefix."adverts";
-	$advertQuery="select * from $m_table where page='football-opinion' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertQuery="select * from $m_table where page='football-opinions' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
 	if(sizeof($advertSql)>0)
