@@ -34,13 +34,11 @@ $m_table=$wpdb->prefix."adverts";
 <div class="box">
 	<h1>Latest Radio Shows 
     <div class="redsort">
-    	<form>
             <select name="dropdown" id="sel"  onclick="changeOpt()">
                 <option value="latest" <?php if($param_1 == "latest" ){ echo 'selected="selected"';} ?> >Latest</option>
                 <option value="bycategories" <?php if($param_1 == "bycategories" ){ echo 'selected="selected"';} ?> >By Categories</option>
                 <option value="byshows" <?php if($param_1 == "byshows" ){ echo 'selected="selected"';} ?> >By Shows</option>
             </select>
-        </form>
 <script>
 function changeOpt(){
   document.getElementById("sel");
