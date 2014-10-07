@@ -140,7 +140,6 @@ function changeOpt(){
 			echo '</div>';
 ?>
 <?php
-echo get_pagenum_link(3);
 
 function custom_pagination_r($numpages = '', $pagerange = '', $paged='') {
    if (empty($pagerange)) {
