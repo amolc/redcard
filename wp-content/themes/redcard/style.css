@@ -1201,4 +1201,6 @@ filter: grayscale(0%);
 	color:white !important;
 }
 #list .slider{ width:900px !important;margin: 15px 0;}
-
+.redsort{ color: #333333; float: right; font-family: "FF DIN"; font-size: 14px;}
+.redsort select{padding: 2px 5px;}
+.redsort option{ color: #333333; font-family: "FF DIN"; font-size: 14px;padding: 2px 5px;}
