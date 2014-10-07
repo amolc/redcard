@@ -28,9 +28,17 @@ $m_table=$wpdb->prefix."adverts";
 		}
 	}
 	?>
- <?php  dynamic_sidebar( 'tvshowsbanner' ); ?>
+ <?php  dynamic_sidebar( 'tvbanner' ); ?>
  <div class="box">
-	<h1>Latest Videos</h1>
+	<h1>Latest Videos
+    <div style="float:right" class="redsort">
+        <select name="dropdown">
+        	<option value="Latest" selected="selected">Latest</option>
+            <option value="By Categories" >By Categories</option>
+            <option value="By Shows">By Shows</option>
+        </select>
+    </div></h1>
+    
 		<?php
 		echo '<div class="box">';
 		
