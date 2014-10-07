@@ -26,7 +26,7 @@ $m_table=$wpdb->prefix."adverts";
 ?>
 
 <div class="left">
-  <h2>Football > Opinion</h2>
+  <h2>Football > <?php $taxo = $wp_query->queried_object; echo $taxo->post_title; ?></h2>
   <?php 
 		$ad =1; 
 		$terms = get_terms( 'footballopinion', array(
@@ -151,7 +151,7 @@ $m_table=$wpdb->prefix."adverts";
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          <span><?php echo $taxo->post_title; ?></span> </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>

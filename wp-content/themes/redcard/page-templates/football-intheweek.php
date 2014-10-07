@@ -27,15 +27,17 @@ $m_table=$wpdb->prefix."adverts";
 
 
 <div class="left">
-  <h2>Football > In The Week</h2>
+  <h2>Football > <?php $taxo = $wp_query->queried_object; echo $taxo->post_title; ?></h2>
   <?php 
 		$ad =1; 
 		$terms = get_terms( 'footballintheweek', array(
     'orderby'    => 'count',
     'hide_empty' => 0
 ) );
+
 		
 		foreach( $terms as $term ) {
+			
 			//$args = array( 'post_type' => 'footballs', );
 			$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$args = array(
@@ -152,7 +154,7 @@ $m_table=$wpdb->prefix."adverts";
       <li>
         <div class="img">
           <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
-          <span>Singapore</span> </div>
+          <span><?php echo $taxo->post_title; ?></span> </div>
         <div class="text"> <a href="<?php the_permalink() ?>">
           <?php the_title(); ?>
           </a>
