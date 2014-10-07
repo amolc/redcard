@@ -78,7 +78,7 @@ $m_table=$wpdb->prefix."adverts";
       	<div id="social_3">
         <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article->ID);?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
         <a href="http://twitter.com/intent/tweet?text=<?php echo the_title().' '.get_permalink( $article->ID);?> via @RedCardConnect&url=" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"><div class="twitter"></div></a>
-        <a onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;"  target="_blank" href="#dis_comments"><div class="message"></div></a>
+        <a href="#dis_comments"><div class="message"></div></a>
       </div>
       </div>
       <?php $youtubvid_value = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true ); ?>
@@ -153,7 +153,7 @@ $m_table=$wpdb->prefix."adverts";
         <?php } } ?>
       </ul>
     </div>
-        <h2>Comments</h2>
+         <h2 id="dis_comment">Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
