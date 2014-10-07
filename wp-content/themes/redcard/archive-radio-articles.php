@@ -93,7 +93,7 @@ function changeOpt(){
 							'posts_per_page'   => 10,
 							'post_type'        => 'radio-articles',
 							'radio-shows' 	  => $am,
-							'order'			=> 'ASC',
+							'order'			=> 'DESC',
 							'post_status'      => 'publish',
 							'paged' 			=> $current_page,
 							);			
