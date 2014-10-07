@@ -3,7 +3,7 @@
  * The template for displaying Archive pages
  */
 get_header(); ?>
-<?php dynamic_sidebar( 'radioshowsbanner' ); 
+<?php
 
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='radio-shows' and isactive='1' order by adId DESC LIMIT 0,1";
@@ -14,14 +14,15 @@ $m_table=$wpdb->prefix."adverts";
 		foreach($advertSql as $adsql)
 		{
 		?>
-		
-<div class="ad_1" align="center"><a href="<?php echo urldecode($adsql->adlink1);?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
-<label style="font-size:9px;">ADVERTISEMENT</label>
-</div>
 
-		<?php
+<div class="ad_1" align="center"><a href="<?php echo urldecode($adsql->adlink1);?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
+  <label style="font-size:9px;">ADVERTISEMENT</label>
+</div>
+<?php
 		}
 	}
+	
+	 dynamic_sidebar( 'radioshowsbanner' ); 
  if ( have_posts() ) : ?>
 <?php
 					 $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -52,7 +53,6 @@ $m_table=$wpdb->prefix."adverts";
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitle);
 								?>
-
 <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
 <div class="facebook" ></div>
 </a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
