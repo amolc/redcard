@@ -14,7 +14,7 @@ $m_table=$wpdb->prefix."adverts";
 	{
 		foreach($advertSql as $adsql)
 		{
-			pr($adsql->adimage1);
+			
 			if($adsql->adimage1){
 				
 		?>
