@@ -5,7 +5,7 @@
 get_header(); 
 
 ?>
-<?php dynamic_sidebar( 'tvshowsbanner' );
+<?php
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='tv-shows' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
@@ -24,13 +24,14 @@ $m_table=$wpdb->prefix."adverts";
 		}
 	}
 	?>
+ <?php  dynamic_sidebar( 'tvshowsbanner' ); ?>
  <div class="box">
 	<h1>Latest Videos</h1>
 		<?php
 		echo '<div class="box">';
 		
 		$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		 $args = array( 'post_type' => 'tvideo');
+		$args = array( 'post_type' => 'tvideo','paged'=>  $current_page, 'post_status'=>'publish',  'posts_per_page'=>10,);
                                         
         $i = 1;
 		$loop = new WP_Query( $args );
@@ -40,7 +41,7 @@ $m_table=$wpdb->prefix."adverts";
 			 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='150', $height='130');
 		   	echo '<div class="r-child list'.$i.'" style="background-color:#00a69c;">'.$videoID.'
 			<h3><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
-			 $term_list_reg = wp_get_post_terms($postID, 'tvcategory');
+			 				$term_list_reg = wp_get_post_terms($postID, 'tvcategory');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
 						   echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;color:white;">'.$term_list_reg[0]->name.':</a>';
 	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5">';
