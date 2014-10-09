@@ -184,7 +184,7 @@ if(is_front_page()){
       </a>
       <?php
                                 echo '</div>
-	   							<span>'.getPostViews($article[ID]).'<span>
+	   							<span>'/*.getPostViews($article[ID])*/.'<span>
 	   						</span></span></div></li>';
 	   						$i++;
 						}
