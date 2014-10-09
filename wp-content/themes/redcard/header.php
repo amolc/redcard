@@ -93,10 +93,10 @@ if(is_front_page()){
 <div class="box home-top-box">
   <div class="left">
     <h1 class="h1">Featured</h1>
-    <div class="myslider" style="height:500px;">
+    <div class="myslider" style="height:420px;">
       <div class="prevmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x fa-arrow-left"></i></div>
-      <div id="mainSlider" style="height:450px;">
-        <ul style="height:470px;">
+      <div id="mainSlider" style="height:420px;">
+        <ul style="height:420px;">
           <?php 
              $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
              $resultarray = $wpdb->get_results($selectsql) ;
@@ -111,9 +111,9 @@ if(is_front_page()){
          			 ?>
           <li>
         <a href="<?php echo get_permalink( $row->post_id);?>">  <img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /></a>
-            <div class="mainSliderDetail"  style="height:400px !important;">
+            <div class="mainSliderDetail"  style="height:70px !important;">
              <span class="mstitle">
-                 <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"> <a href="<?php echo get_permalink( $row->post_id);?>" style="color:white;"> <?php echo get_the_title( $row->post_id ); ?> </a></p>
+                 <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"> <a href="<?php echo get_permalink( $row->post_id);?>" style="color:white;"> <?php //echo get_the_title( $row->post_id ); ?> </a></p>
                  <p style="color: #fff;font-size: 13px; font-weight:normal !important;"><?php  echo $tagLine ; ?></p>
              </span>
              <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php echo getPostViews($row->post_id);?></span> </span> </div>
@@ -133,11 +133,11 @@ if(is_front_page()){
 		});</script> 
   </div>
   <div class="right">
-    <h1 class="homeRighth1">Connect With us</h1>
+    <h1 class="homeRighth1" style=" margin: 22px 0 13px;">Connect With us</h1>
     <div id="connect"> Subscribe to our mailing list <?php echo do_shortcode('[gsom-optin]'); ?> </div>
     <!--  <h1>Tweets</h1> -->
     
-    <div class="tweetcss" style="height:272px;"> <a class="twitter-timeline" href="https://twitter.com/RedCardConnect" data-widget-id="515153763913322496">Tweets by @RedCardConnect</a> 
+    <div class="tweetcss" style="height:244px;"> <a class="twitter-timeline" href="https://twitter.com/RedCardConnect" data-widget-id="515153763913322496">Tweets by @RedCardConnect</a> 
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> </div>
   </div>
 </div>
@@ -251,7 +251,7 @@ if(is_front_page()){
     <?php endwhile;?>
   </div>
   <div class="right">
-    <h1 class="homeRighth1">Featured Video</h1>
+    <h1 class="homeRighth1"  style="margin: 22px 0px 13px;">Featured Video</h1>
     <div class="ad_right">
       <div class="allvid">
         <?php 
@@ -263,7 +263,7 @@ if(is_front_page()){
 			{
 				 $youtubURL_values = get_post_meta( $row->post_id, '_cmb_tvideo_youtub_url', true ); 
 				 
-				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='300', $height='220');
+				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='220');
 	  ?>
         <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
         <?php }}?>
@@ -274,16 +274,14 @@ if(is_front_page()){
 </script>
         <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
       </div>
-      <br/>
-      <br/>
-      <?php if(sizeof($advertSql)>0)
+       <?php if(sizeof($advertSql)>0)
 	{
 		foreach($advertSql as $adsql)
 		{
 			if($adsql->adimage2){
 		?>
 		
-<div class="a d_1" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<div class="a d_1" align="center" style="margin-top: 5px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 <label style="font-size:10px;">ADVERTISEMENT</label>
 </div>
 

@@ -623,7 +623,8 @@ sport-menu-main a{color:#333;}
 
 #footer .box .col_150 ul li a {
 	font-size:12px;
-	color:#c4c4c4;
+	/*color:#c4c4c4;*/
+	color:#fff;
 	text-decoration:none;
 	line-height:20px;
 	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -1047,7 +1048,7 @@ span.screen-reader-text {display: none;}
 .radio-single-image p{color: #333333;font-size: 14px;line-height: 23px;margin-bottom: 20px;}
 .single-rad-vid iframe{height: 250px;width: 582px;}
 .single-rad-vid{margin-bottom: 20px;}
-.tweetcss iframe{height: 272px;}
+.tweetcss iframe{height: 244px;}
 #social a{ padding-left:7px;}
 .social-bottom a{ padding-left: 0 !important;padding-right: 7px;}
 .social-bottom{ margin-top: -10px;}
@@ -1200,7 +1201,7 @@ filter: grayscale(0%);
 .mred a {
 	color:white !important;
 }
-#list .slider{ width:900px !important;margin: 15px 0;}
+#list .slider{ width:900px !important;margin: 7px 0;}
 .redsort{ color: #333333; float: right; font-family: "FF DIN"; font-size: 14px;}
 .redsort select{padding: 2px 5px;}
 .redsort option{ color: #333333; font-family: "FF DIN"; font-size: 14px;padding: 2px 5px;}
