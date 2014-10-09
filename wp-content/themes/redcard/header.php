@@ -128,6 +128,8 @@ if(is_front_page()){
     		$("#mainSlider").jCarouselLite({
         		btnNext: ".nextmain",
         		btnPrev: ".prevmain",
+				auto: 5000,
+    			speed: 2000,
         		visible: 1
     		});
 		});</script> 
@@ -204,9 +206,7 @@ if(is_front_page()){
     		$(".slider").jCarouselLite({
         		btnNext: ".next",
         		btnPrev: ".prev",
-				auto: 5000,
-    			speed: 2000,
-        		visible: 5
+				visible: 5
     		});
 		});</script>
 <div class="box" style=" margin-bottom: 10px;">
