@@ -142,7 +142,7 @@ if(is_front_page()){
   </div>
 </div>
 <?php
-				    	echo '<div class="box">';
+				    	echo '<div class="box" style=" margin-bottom: 10px;">';
 						echo '<h1>Radio Soundbites</h1>';
 				    	$args = array(
 						'posts_per_page'   => 10,
@@ -228,8 +228,9 @@ if(is_front_page()){
 		echo $m_str;
 		 ?></span> </div>
       <div class="text">
-      <div style="height:70px; overflow:hidden;">
+      <div style="height:90px; overflow:hidden;">
       <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
+      <div><span><?php the_time('l, F j, Y'); ?></span></div>
       </div>
         <?php $trimcontent = get_the_content();
 		  $youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true ); 
