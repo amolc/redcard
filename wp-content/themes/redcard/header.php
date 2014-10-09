@@ -116,7 +116,7 @@ if(is_front_page()){
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"> <a href="<?php echo get_permalink( $row->post_id);?>" style="color:white;"> <?php //echo get_the_title( $row->post_id ); ?> </a></p>
                  <p style="color: #fff;font-size: 13px; font-weight:normal !important;"><?php  echo $tagLine ; ?></p>
              </span>
-             <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php echo getPostViews($row->post_id);?></span> </span> </div>
+             <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
           </li>
           <?php } }?>
         </ul>
@@ -240,7 +240,7 @@ if(is_front_page()){
           <p style="height:90px;overflow:hidden;"><?php echo $youtubtagline_value; ?></p>
         <div class="date" id="date2"> <span>
 		
-		<?php echo getPostViews(get_the_ID());?></span>
+		<?php //echo getPostViews(get_the_ID());?></span>
           <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
             <div class="facebook" ></div>
             </a> <a href="http://twitter.com/intent/tweet?text=<?php echo get_the_title(); ?> <?php the_permalink() ?> via @RedCardConnect&url=" >
@@ -284,7 +284,7 @@ if(is_front_page()){
 			if($adsql->adimage2){
 		?>
 		
-<div class="a d_1" align="center" style="margin-top: 20px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<div class="a d_1" align="center" style="margin-top: 25px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 <label style="font-size:10px;">ADVERTISEMENT</label>
 </div>
 
