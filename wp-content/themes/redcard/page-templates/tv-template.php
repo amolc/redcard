@@ -27,17 +27,64 @@ $m_table=$wpdb->prefix."adverts";
 			}
 		}
 	}
+	
 	?>
  <?php  dynamic_sidebar( 'tvbanner' ); ?>
+ 
+<?php $param_1 = "";
+		if(isset($_GET['param']))
+		{
+			$param_1=$_GET['param'];
+		} ?>
  <div class="box">
-	<h1>Latest Videos</h1>
+	<h1>Latest Videos <div class="redsort">
+            <select name="dropdown" id="sel"  onchange="changeOpt()">
+                <option value="latest" <?php if($param_1 == "latest" ){ echo 'selected="selected"';} ?> >Latest</option>
+                <option value="bycategories" <?php if($param_1 == "bycategories" ){ echo 'selected="selected"';} ?> >By Categories</option>
+            </select>
+<script>
+function changeOpt(){
+  document.getElementById("sel");
+  window.location="?param="+ document.getElementById("sel").value;
+}
+</script>
+ </div></h1>
     
 		<?php
 		echo '<div class="box">';
-		
 		$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		$args = array( 'post_type' => 'tvideo','paged'=>  $current_page, 'post_status'=>'publish',  'posts_per_page'=>10,);
-                                        
+		if($param_1=="bycategories")
+			{
+				$categories = get_terms( 'tvcategory', array('orderby' => 'count', 'hide_empty' => 1) );
+				$arrcat =  array();										 
+				if(!empty($categories))
+				{
+					foreach($categories as $catId)
+						{
+							$arrcat[]= $catId->slug;
+						}
+				}
+				$am = implode(',', $arrcat);
+				
+				$args = array(
+							'posts_per_page'   => 10,
+							'post_type'        => 'tvideo',
+							'tvcategory'	   => $am,
+							'order'			=> 'ASC',
+							'post_status'      => 'publish',
+							'paged' 			=> $current_page,
+							);	
+			}
+		else
+		{
+			$args = array(
+						'posts_per_page'   => 10,
+						'post_type'        => 'tvideo',
+						'post_status'      => 'publish',
+                        'paged' 			=>  $current_page,
+					);
+		}
+
         $i = 1;
 		$loop = new WP_Query( $args );
 		while ( $loop->have_posts() ) : $loop->the_post();
@@ -65,9 +112,8 @@ $m_table=$wpdb->prefix."adverts";
 			echo '</div>';
 ?>
 <?php
-      if (function_exists(custom_pagination)) {
-        custom_pagination($loop->max_num_pages,"",$current_page);
-      }
+wp_pagenavi( array( 'query' => $loop ) );
+wp_reset_postdata();
 ?>
 </div>
 <?php get_footer();?>
