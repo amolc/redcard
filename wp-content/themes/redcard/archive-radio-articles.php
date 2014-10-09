@@ -110,7 +110,7 @@ function changeOpt(){
 		$loop = new WP_Query( $args );
 		while ( $loop->have_posts() ) : $loop->the_post();
 			$postID = get_the_ID(); 
-		   	echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $postID ).'
+		   	echo '<div class="r-child list'.$i.'"><a href="'.get_permalink( $postID).'">'.get_the_post_thumbnail( $postID ).'</a>
 			<h3><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
 			 $term_list_reg = wp_get_post_terms($postID, 'radio-shows');
 			 if(!empty($term_list_reg))
