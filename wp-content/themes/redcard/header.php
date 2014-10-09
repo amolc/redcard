@@ -207,7 +207,7 @@ if(is_front_page()){
         		visible: 5
     		});
 		});</script>
-<div class="box">
+<div class="box" style=" margin-bottom: 10px;">
   <div class="left">
     <h1 class="h1">Latest News</h1>
     <?php $args = array( 'post_type' => 'footballs','order' => 'DESC','posts_per_page'   => 6);
@@ -282,7 +282,7 @@ if(is_front_page()){
 			if($adsql->adimage2){
 		?>
 		
-<div class="a d_1" align="center" style="margin-top: 5px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<div class="a d_1" align="center" style="margin-top: 20px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
 <label style="font-size:10px;">ADVERTISEMENT</label>
 </div>
 
