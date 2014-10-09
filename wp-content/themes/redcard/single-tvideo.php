@@ -126,6 +126,7 @@ $m_table=$wpdb->prefix."adverts";
     									<?php } ?>
                                 <?php $is++; ?>
                                 <?php } } ?>	<span><a href="#dis_comment">Comments</a></span> </div>
+     <div style="clear:both;"></div>
      <h2>Related Videos</h2>
     <?php $postid = get_the_ID(); ?>
     <?php 

@@ -56,6 +56,7 @@ $m_table=$wpdb->prefix."adverts";
 			?>
     </div>
     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <a href="#dis_comment">Comments</a></span>  </div>
+    <div style="clear:both;"></div>
     <h2>Related Articles</h2>
     <?php $postid = get_the_ID(); ?>
     <?php 

@@ -726,9 +726,10 @@ color: #333333;
 }
 
 #container .left .tags {
-	color:#333333;
-	font-size:12px;
-	margin:10px 0 40px 0;
+	 color: #333333;
+    float: right;
+    font-size: 12px;
+    margin: 10px 0 0;
 }
 
 #container .left .tags a {
