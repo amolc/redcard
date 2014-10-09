@@ -76,8 +76,8 @@ $m_table=$wpdb->prefix."adverts";
 		foreach($advertSql as $adsql)
 		{
 		?>
-		  <h2> &nbsp;</h2>
- <div class="ad_right" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a><label style="font-size:10px;">Advertisement</label>
+		  <h2>&nbsp; </h2>
+ <div class="ad_right" align="center"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a><label style="font-size:10px;">ADVERTISEMENT</label>
 </div>
 
 		<?php
