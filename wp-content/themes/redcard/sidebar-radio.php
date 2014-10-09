@@ -8,7 +8,7 @@
 ?>
 <div class="right">
   <h2></h2>
-  <div class="ad_right"><?php dynamic_sidebar( 'postsponser' ); ?><label style="font-size:10px;">Advertisement</label></div>
+  <div class="ad_right" align="center"><?php dynamic_sidebar( 'postsponser' ); ?><label style="font-size:10px;">Advertisement</label></div>
   <h2>Popular Audios</h2>
   <div class="popular">
     <ul>
