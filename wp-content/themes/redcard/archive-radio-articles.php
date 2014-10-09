@@ -141,6 +141,7 @@ function changeOpt(){
 ?>
 <?php
 wp_pagenavi( array( 'query' => $loop ) );
+wp_reset_postdata();
 ?>
 </div>
 <?php get_footer();?>
