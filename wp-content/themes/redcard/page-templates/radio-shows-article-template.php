@@ -57,6 +57,8 @@ $m_table=$wpdb->prefix."adverts";
           <?php the_title(); ?>
           </a>
           <p><?php echo get_the_excerpt(); ?></p>
+          <div style="clear:both;"></div>
+		  <div style="background: #333;width: 45px;"><a style="color: #fff;font-size: 12px;font-weight: bold;padding: 2px 5px;" href="<?php echo $URL_values; ?>">Listen</a></div>
         </div>
         <?php
 		?>
