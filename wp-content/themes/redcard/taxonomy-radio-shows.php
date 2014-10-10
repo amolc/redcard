@@ -50,7 +50,7 @@ $m_table=$wpdb->prefix."adverts";
 	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 								
 	   							<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
-								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>;
+								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
 	   							<div id="social_2">';
 								$mtitle=str_replace("?","",$radtitle);
