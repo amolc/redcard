@@ -116,7 +116,10 @@ if(is_front_page()){
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"> <a href="<?php echo get_permalink( $row->post_id);?>" style="color:white;"> <?php //echo get_the_title( $row->post_id ); ?> </a></p>
                  <p style="color: #fff;font-size: 13px; font-weight:normal !important;"><?php  echo $tagLine ; ?></p>
              </span>
-             <span class="mssocile" style="padding-top:8px;"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a> <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a> <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
+             <span class="mssocile" style="padding-top:8px;">
+             <a onclick="javascript:window.open(this.href,'', menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a>
+             <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
+             <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
           </li>
           <?php } }?>
         </ul>

@@ -57,7 +57,9 @@ $m_table=$wpdb->prefix."adverts";
 								?>
 <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
 <div class="facebook" ></div>
-</a> <a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
+</a> 
+
+<a href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  >
 <div class="twitter"></div>
 </a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment">
 <div class="message"></div>
