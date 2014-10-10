@@ -1030,7 +1030,7 @@ float: right;
 
 /*My css*/
 .menu_center{width: 900px;margin: 0 auto;display: block;overflow: hidden;}
-.seacrh-li{float: right !important;margin-top: 9px;}
+.seacrh-li{float: right !important;margin-top: 6px;}
 span.screen-reader-text {display: none;}
 
 .single-post-image .post-thumbnail .attachment-twentyfourteen-full-width{ height:350px; width: 600px;}
