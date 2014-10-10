@@ -44,7 +44,7 @@ $m_table=$wpdb->prefix."adverts";
 					<div class="r-child list<?php '.$as.' ?>" style="background-color:#00a69c;">
 						<?php $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='150', $height='150');?>
                         <a href="<?php the_permalink() ?>"><?php echo $videoID; ?></a>
-						<h3><a style="text-decoration: none;" class="r-child-h3-a" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+						<h3 style="padding:5px 5px 12px;margin-top:0px !important; background:#333333;"><a style="text-decoration: none;" class="r-child-h3-a" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
                        <?php /*?> <?php $youtubetagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true ); ?>
                         <p class="tvpexcerpt"><?php echo $youtubetagline_value; ?></p>
 						<span></span><?php */?>
