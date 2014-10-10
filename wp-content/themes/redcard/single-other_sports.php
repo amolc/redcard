@@ -56,6 +56,13 @@ $m_table=$wpdb->prefix."adverts";
 			?>
     </div>
     <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <a href="#dis_comment">Comments</a></span>  </div>
+     <div class="author-bio">
+			<div class="authimage"><?php echo get_avatar( get_the_author_meta('email'), '90' ); ?></div>
+			<div class="author-info">
+				<h3 class="author-title"><?php the_author_link(); ?></h3>
+				<p class="author-description"><?php the_author_meta('description'); ?></p>
+			</div>
+	</div>
     <div style="clear:both;"></div>
     <h2>Related Articles</h2>
     <?php $postid = get_the_ID(); ?>
@@ -110,7 +117,7 @@ $m_table=$wpdb->prefix."adverts";
 		foreach($advertSql as $adsql)
 		{
 			?>
-			 <h2> &nbsp;</h2>
+			 <h2>&nbsp; </h2>
 			  <div class="ad_right" align="center">
               <a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
               <label style="font-size:10px;">ADVERTISEMENT</label>
