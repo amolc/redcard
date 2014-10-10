@@ -94,7 +94,7 @@ if(is_front_page()){
   <div class="left">
     <h1 class="h1">Featured</h1>
     <div class="myslider" style="height:420px;">
-      <div class="prevmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x fa-arrow-left"></i></div>
+      <div class="prevmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x  fa-chevron-left"></i></div>
       <div id="mainSlider" style="height:420px;">
         <ul style="height:420px;">
           <?php 
@@ -121,7 +121,7 @@ if(is_front_page()){
           <?php } }?>
         </ul>
       </div>
-      <div class="nextmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x fa-arrow-right"></i></div>
+      <div class="nextmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x  fa-chevron-right"></i></div>
     </div>
     <script type="text/javascript">
 		$(function() {
