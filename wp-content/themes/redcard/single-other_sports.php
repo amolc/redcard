@@ -55,7 +55,7 @@ $m_table=$wpdb->prefix."adverts";
 				endwhile;
 			?>
     </div>
-    <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <a href="#dis_comment">Comments</a></span>  </div>
+   <!-- <div class="tags"> <strong>Tags:</strong> <a href="#">Gerard Pique</a>, <a href="#">Singapore</a> <a href="#dis_comment">Comments</a></span>  </div>-->
      <div class="author-bio">
 			<div class="authimage"><?php echo get_avatar( get_the_author_meta('email'), '90' ); ?></div>
 			<div class="author-info">
