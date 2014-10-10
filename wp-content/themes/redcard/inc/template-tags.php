@@ -174,10 +174,9 @@ function twentyfourteen_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() ) {
+	if ( is_single() ) {
 	?>
-
-	<div class="post-thumbnail">
+	<div class="post-thumbnail hgjjh">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
 			the_post_thumbnail( 'twentyfourteen-full-width' );
@@ -186,20 +185,20 @@ function twentyfourteen_post_thumbnail() {
 		}
 	?>
 	</div>
-	
-    
     <?php
-	}elseif ( is_front_page() || is_page(559) ) {
+	}
+	else if ( is_front_page() || is_page(559) )
+	{
 	
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
 			the_post_thumbnail( 'twentyfourteen-full-width' );
 		} else {
 			the_post_thumbnail();
 		}
+	}
+	else
+	{
 	?>
-    
-	<?php } else { ?>
-
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
 		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
@@ -210,4 +209,4 @@ function twentyfourteen_post_thumbnail() {
 	?>
 	</a>
 
-	<?php  } } ?>
+	<?php } } ?>

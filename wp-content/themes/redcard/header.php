@@ -221,8 +221,7 @@ if(is_front_page()){
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image" style="height:420px;">
 	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
-      <div class="img">
-        <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?>
+      <div class="img"><a href="<?php the_permalink() ?>"><?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?></a>
         <span><?php
 		$g=0;
 		foreach($term_list_reg as $mterm)
