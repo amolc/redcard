@@ -236,7 +236,7 @@ if(is_front_page()){
       <div class="text">
       <div style="height:90px; overflow:hidden;">
       <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
-      <div><span style="color: rgb(175, 175, 175);"><?php the_time('l, F j, Y'); ?></span></div>
+      <div><span style="color: rgb(175, 175, 175); font-size:12px;"><?php the_time('l, F j, Y'); ?></span></div>
       </div>
         <?php $trimcontent = get_the_content();
 		  $youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true ); 
