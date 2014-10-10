@@ -121,7 +121,7 @@ if(is_front_page()){
              <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
              <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
           </li>
-          <?php } }?>
+          <?php } } ?>
         </ul>
       </div>
       <div class="nextmain" style="cursor:pointer;color:#efefef;"><i class="fa fa-2x  fa-chevron-right"></i></div>

@@ -1,10 +1,8 @@
 <?php
 /**
- * The template for displaying Archive pages
+ * Template Name: Other Sports template Page
  */
-get_header(); ?>
-
-<?php
+get_header(); 
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='other-sports' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
@@ -50,7 +48,7 @@ $m_table=$wpdb->prefix."adverts";
                   <div class="f_text"><?php /*?><?php echo get_the_excerpt(); ?>  <a href="<?php the_permalink() ?>">Read More</a><?php */?> </div>
                   <div class="c_list">
                       <ul>
-		<?php } ?>
+		<?php } if($as > 1) { ?>
         				<li>
  							<div class="img"> <?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?> <span>Singapore</span> </div>
 	 						<div class="text">
@@ -64,7 +62,7 @@ $m_table=$wpdb->prefix."adverts";
 		
          </ul>
      </div>
-     <?php $as++; endwhile;
+     <?php } $as++; endwhile;
 			}else
 			{
 				?>

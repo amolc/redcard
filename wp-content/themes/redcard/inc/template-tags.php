@@ -174,7 +174,7 @@ function twentyfourteen_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() ) :
+	if ( is_singular() ) {
 	?>
 
 	<div class="post-thumbnail">
@@ -186,8 +186,19 @@ function twentyfourteen_post_thumbnail() {
 		}
 	?>
 	</div>
-
-	<?php else : ?>
+	
+    
+    <?php
+	}elseif ( is_front_page() || is_page(559) ) {
+	
+		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
+			the_post_thumbnail( 'twentyfourteen-full-width' );
+		} else {
+			the_post_thumbnail();
+		}
+	?>
+    
+	<?php } else { ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 	<?php
@@ -199,5 +210,4 @@ function twentyfourteen_post_thumbnail() {
 	?>
 	</a>
 
-	<?php endif; // End is_singular()
-}
+	<?php  } } ?>

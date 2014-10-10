@@ -50,7 +50,7 @@ $m_table=$wpdb->prefix."adverts";
     <ul>
       <li>
         <div class="img">
-     	 <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?>
+     	 <a href="<?php echo $URL_values; ?>"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'post-feature-image' ) );?></a>
           </div>
        <?php ?>
         <div class="text"> <a href="<?php echo $URL_values; ?>">
