@@ -157,8 +157,8 @@ $m_table=$wpdb->prefix."adverts";
          <h2 id="dis_comment">Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'mekey'; // required: replace example with your forum shortname
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * mekey * */
+        var disqus_shortname = 'redcardconnect'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

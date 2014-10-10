@@ -47,7 +47,7 @@ $m_table=$wpdb->prefix."adverts";
       					   $mlink1=(get_term_link( $term_list_reg1[0] ));
 						   echo '<div class="r-child list'.$i.'">'. get_the_post_thumbnail( $post->ID ).'
 						   	 	
-	   							<h3><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
+	   							<h3 style=" background: none repeat scroll 0 0 #333333;margin-top: 0 !important;padding:5px 5px 12px;"><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 								
 	   							<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
 								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
