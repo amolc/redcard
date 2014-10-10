@@ -933,13 +933,14 @@ color: #333333;
 /*home page css*/
 
 #container .right #connect {
-	background:#f0f0f0;
-	padding:20px;
-	color:#333333;
-	font-weight:bold;
-	font-size:14px;
-	margin-bottom:23px;
-	overflow:hidden;
+	 background: url("img/280x157.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    height: 157px;
+    margin-bottom: 23px;
+    overflow: hidden;
+    padding: 20px;
 }
 
 #container .right #connect input[type='text'] {
