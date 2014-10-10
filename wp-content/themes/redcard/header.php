@@ -118,7 +118,7 @@ if(is_front_page()){
              </span>
              <span class="mssocile" style="padding-top:8px;">
              <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a>
-             <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
+             <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
              <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
           </li>
           <?php } }?>
@@ -148,6 +148,7 @@ if(is_front_page()){
 </div>
 <?php
 				    	echo '<div class="box" style=" margin-bottom: 10px;">';
+
 						echo '<h1>Radio Soundbites</h1>';
 				    	$args = array(
 						'posts_per_page'   => 10,
