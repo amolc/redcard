@@ -91,7 +91,7 @@ function changeOpt(){
 			$postID = get_the_ID(); 
 			 $youtubURL_values = get_post_meta( $postID, '_cmb_tvideo_youtub_url', true );
 			 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='150', $height='130');
-		   	echo '<div class="r-child list'.$i.'" style="background-color:#00a69c;">'.$videoID.'
+		   	echo '<div class="r-child list'.$i.'" style="background-color:#00a69c;"><a href="'.get_permalink( $postID).'">'.$videoID.'</a>
 			<h3><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
 			 				$term_list_reg = wp_get_post_terms($postID, 'tvcategory');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
