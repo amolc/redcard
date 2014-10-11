@@ -32,6 +32,8 @@ $m_table=$wpdb->prefix."adverts";
 			}
 		}
 	}
+	
+				$relPost = '';
 				while ( have_posts() ) : the_post();
 				//get_template_part( 'content', get_post_format() );
 		
@@ -53,7 +55,8 @@ $m_table=$wpdb->prefix."adverts";
 										  $mytermArray[$as]['slug']= $row->slug;
 										  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
 										  $mytermArray[$as]['link']= get_term_link( $row );
-										 
+										// pr($mytermArray);
+										$relPost = $row->slug;
 										  $as++;
 									  }
 								  }
@@ -138,7 +141,9 @@ $m_table=$wpdb->prefix."adverts";
     'numberposts' => 2,
     'orderby' => 'rand',          
     'post_type' => 'tvideo',
-    'post_status' => 'publish');
+    'post_status' => 'publish',
+	'tvcategory' => $relPost,
+	);
 
     $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
    
