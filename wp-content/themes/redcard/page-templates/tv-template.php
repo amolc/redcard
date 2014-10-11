@@ -95,9 +95,7 @@ function changeOpt(){
 			<h3 style="padding:5px 5px 12px;margin-top:0px !important; background:#333333;"><a href="'.get_permalink( $postID).'" class="r-child-h3-a child-a-left">'.get_the_title().'</a></h3>';
 			 				$term_list_reg = wp_get_post_terms($postID, 'tvcategory');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
-						   if(!empty($mlink)){
-						   pr($mlink);
-						   }
+						  
 						   echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;color:white;">'.$term_list_reg[0]->name.':</a>';
 	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5">';
 	?>		
