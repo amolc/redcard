@@ -37,12 +37,10 @@ $m_table=$wpdb->prefix."adverts";
 		
 		?>
         
-        <h2>Video</h2>
+       
         <?php $postID = get_the_ID();
 			  $youtubtagline_value = get_post_meta( $postID, '_cmb_tvideo_tagline_text', true );  ?>
-        <h1><?php the_title(); ?></h1>
-        <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
-        <div class="date">
+        
         
          <?php $term_list_tag = wp_get_post_terms($postID, 'tvcategory');
 				 $as =1;
@@ -60,7 +58,11 @@ $m_table=$wpdb->prefix."adverts";
 									  }
 								  }
 		  ?>
-       
+        <h2>Video  >  <?php echo $mytermArray[1]['name'];?></h2>
+       <h1><?php the_title(); ?></h1>
+        <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
+        <div class="date">
+        
          <?php if(!empty($mytermArray)){
 						 $is =1;
 						 $arraycount =  count($mytermArray);
@@ -68,6 +70,7 @@ $m_table=$wpdb->prefix."adverts";
 							  	if($is == $arraycount)
 								{
 		?>
+        
           <a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
           <?php } else { ?>
                           <a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
