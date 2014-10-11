@@ -843,7 +843,7 @@ color: #333333;
 #container .left .c_list ul li .text {
 	float:left;
 	display:block;
-	width:500px;
+	width:350px;
 	padding-left:10px;
 	
 }
@@ -1171,8 +1171,8 @@ filter: grayscale(0%);
 .homeRighth1{ margin-bottom: 31px;margin-top: 4px;}
 .footballs-top-image-latest {margin-bottom: 10px;}
 .allvid .vid img{ height:170px;}
-.radio-showscss .img img{ height: 100px !important; width: 100px !important;}
-.radio-showscss ul li .img {width: 100px !important;}
+.radio-showscss .img img{ height: 200px !important; width: 200px !important;}
+.radio-showscss ul li .img {width: 200px !important;}
 .home-radio-post{ /*width:156px !important;*/width:165px !important; margin-bottom: 0px !important; }
 .custom-pagination span,
 .custom-pagination a {
