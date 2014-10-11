@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors",0);
 /**
  * Template Name: TV template Page
  */
