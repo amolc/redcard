@@ -1041,7 +1041,7 @@ span.screen-reader-text {display: none;}
 .allvid .view{text-align: center;}
 .allvid .view a{color:#116DBA;font-size: 13px;font-weight: bold;text-decoration: none;}
 .home-latest-image .attachment-twentyfourteen-full-width{ height:150px;}
-.home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;font-weight: bold;text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
+.home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;  font-family: "FF DIN";font-weight: bold;text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
 .home-latest-image .text p{color: #333333;font-size: 14px;line-height: 22px;margin-top: 5px;}
 .vid iframe{ width:240px; height:170px;}
 .tvpexcerpt{height:45px;}
