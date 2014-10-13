@@ -19,8 +19,6 @@ $m_table=$wpdb->prefix."adverts";
 		<?php
 		}
 	}
-
-
 ?>
   <?php $postID = get_the_ID(); 
 						
@@ -85,7 +83,7 @@ $m_table=$wpdb->prefix."adverts";
 
 <div id="container">
   <div class="left">
-    <h2>Football</h2>
+    <h2>Football > <?php echo $mytermArray[1]['name']; ?></h2>
     
    <div class="sigle-football-title"> <h1>
       <?php the_title(); ?>
@@ -97,6 +95,7 @@ $m_table=$wpdb->prefix."adverts";
    
     <div class="date">
      <?php if(!empty($mytermArray)){
+
 						 $is =1;
 						 $arraycount =  count($mytermArray);
 						  foreach($mytermArray as $row){
@@ -109,8 +108,7 @@ $m_table=$wpdb->prefix."adverts";
     									<?php } ?>
                                 <?php $is++; ?>
                                 <?php } } ?>
-      <span><?php the_time('l, F j, Y'); ?>
-      </span>
+      <span><?php the_time('l, F j, Y'); ?></span>
       <div id="social_3">
          <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
         <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a>
