@@ -1583,7 +1583,7 @@ function gsom_get_form_field_names($customForm) {
 function gsom_mod_remslashes ( $string ){       
 // all wordress $_POST ,$_GET and $_COOKIE variables
 // are compulsory backslashed!
-		//return stripslashes( $string );
+		return stripslashes( $string );
 }
 function gsom_manager()
 {
