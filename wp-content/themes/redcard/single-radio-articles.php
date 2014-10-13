@@ -54,7 +54,7 @@ get_header(); ?>
 						  }
 		?>
         <?php $term_reg_cat = wp_get_post_terms($postID, 'radio-shows'); ?>
-        <h2>Radio > <?php echo $term_reg_cat[1]->name; ?></h2>
+        <h2>Radio > <?php echo $term_reg_cat[0]->name; ?></h2>
         <h1><?php the_title(); ?></h1>
         <div class="date"> <?php if(!empty($mytermArray)){
 						 $is =1;
