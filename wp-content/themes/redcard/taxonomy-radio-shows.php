@@ -59,7 +59,7 @@ $m_table=$wpdb->prefix."adverts";
 <div class="facebook" ></div></a><a onclick="javascript:window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=400, width=400');return false;" href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  ><div class="twitter"></div></a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment"><div class="message"></div></a>
 <?php
                                 echo '</div>
-	   							<span>'.getPostViews($post->ID).'<span>
+	   							<span>'./*getPostViews($post->ID).*/'<span>
 	   						</span></span></div>';
 	   						$i++;
 					endwhile;

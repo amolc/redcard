@@ -134,7 +134,7 @@ function changeOpt(){
       <div class="message"></div>
       </a>
 	<?php		
-			echo '</div><span>'.getPostViews($postID).'<span></span></span></div>';
+			echo '</div><span>'./*getPostViews($postID).*/'<span></span></span></div>';
    			$i++;
 			endwhile;
 			echo '</div>';
