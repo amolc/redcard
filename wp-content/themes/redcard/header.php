@@ -158,7 +158,7 @@ if(is_front_page()){
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				    	$i = 1;
 						?>
-<div id="list" style="height: 410px;">
+<div id="list" style="height: 375px;">
 
   <div class="slider">
     <ul>
