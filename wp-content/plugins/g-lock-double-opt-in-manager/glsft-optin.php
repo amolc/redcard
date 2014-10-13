@@ -3314,9 +3314,8 @@ function gsom_Mail($subjTpl, $messageTpl, $notification = false, $opts = false) 
 			
 				break;
 			}
-			
 		$mail->CharSet = 'utf-8';
-		//$mail->IsHTML(true);
+		$mail->IsHTML(true);
 		$mail->AddReplyTo($gsom_email_from, $gsom_name_from);
 		$mail->SetFrom($gsom_email_from, $gsom_name_from);
 		$mail->AddAddress($email);
