@@ -219,7 +219,7 @@ if(is_front_page()){
     <?php $args = array( 'post_type' => 'footballs','order' => 'DESC','posts_per_page'   => 6);
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    <div id="l_n" class="home-latest-image" style="height:420px;">
+    <div id="l_n" class="home-latest-image" style="height:370px;">
 	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
       <div class="img"><a href="<?php the_permalink() ?>"><?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?></a>
         <span><?php
