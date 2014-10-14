@@ -27,6 +27,7 @@ $m_table=$wpdb->prefix."adverts";
 						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
 						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
 						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
+						  $term_list_tag = wp_get_post_terms($postID, 'football-tags');
 						  $as =1;
 						
 						  if(!empty($term_list_reg))
@@ -78,6 +79,18 @@ $m_table=$wpdb->prefix."adverts";
 								  $as++;
 							  }
 						  }
+						   if(!empty($term_list_tag))
+						  {
+							  foreach($term_list_tag as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
 						 
 						    ?>
 
@@ -96,15 +109,16 @@ $m_table=$wpdb->prefix."adverts";
     <?php $postID = get_the_ID(); ?>
     <?php
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
-          <div style="margin-bottom: 10px;  font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
-
+          <div style="font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
+		   <span class="bywriter"><?php the_time('l, F j, Y'); ?></span>
    
-    <div class="date">
+    <div class="date" style="margin-top: 10px;">
      <?php if(!empty($mytermArray)){
 
 						 $is =1;
 						 $arraycount =  count($mytermArray);
 						  foreach($mytermArray as $row){
+							  
 							  	if($is == $arraycount)
 								{
 	?>
@@ -114,7 +128,7 @@ $m_table=$wpdb->prefix."adverts";
     									<?php } ?>
                                 <?php $is++; ?>
                                 <?php } } ?>
-      <span><?php the_time('l, F j, Y'); ?></span>
+     
       <div id="social_3">
          <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
         <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a>
