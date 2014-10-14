@@ -430,7 +430,7 @@ sport-menu-main a{color:#333;}
 
 #container .box h4 { 
 	font-size:18px;
-	font-weight:bold;
+	/* font-weight:bold;*/
 	font-family:'FF DIN';
 	color:#f99235;
 	margin-bottom:20px;
@@ -445,7 +445,7 @@ sport-menu-main a{color:#333;}
 
 #container .box h2 {
 	font-size:14px;
-	font-weight:bold;
+	/*font-weight:bold;*/
 	color:#333333;
 	margin-top:9px;
 	font-family:'FF DIN';
@@ -1005,7 +1005,7 @@ color: #333333;
 	width:270px;
 	font-size:18px;
 	color:#116dbb;
-	font-weight:bold;
+	/*font-weight:bold;*/
 	text-transform:none;
 	cursor:pointer;
 	line-height:22px;
@@ -1041,7 +1041,7 @@ span.screen-reader-text {display: none;}
 .allvid .view{text-align: center;}
 .allvid .view a{color:#116DBA;font-size: 13px;font-weight: bold;text-decoration: none;}
 .home-latest-image .attachment-twentyfourteen-full-width{ height:150px;}
-.home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;  font-family: "FF DIN";font-weight: bold;text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
+.home-latest-image .text a{width: 270px;font-size: 18px;color: #116dbb;  font-family: "FF DIN";/*font-weight: bold;*/text-transform: none;cursor: pointer;line-height: 22px;margin: 10px 0 0 0;}
 .home-latest-image .text p{color: #333333;font-size: 14px;line-height: 22px;margin-top: 5px;}
 .vid iframe{ width:240px; height:170px;}
 .tvpexcerpt{height:45px;}
@@ -1062,7 +1062,7 @@ filter: grayscale(0%);
 .sigle-football-title h1{ font-size: 26px !important;margin: 25px 0 15px !important;c}
 
 .author-title{ margin-top:0; margin-bottom: 0;}
-.author-title a{color: #333333;font-family: "FF DIN";font-size: 22px;font-weight: bold;}
+.author-title a{color: #333333;font-family: "FF DIN";font-size: 22px;/*font-weight: bold;*/}
 .author-info{float: left; width: 82%;}
 .author-bio{background: none repeat scroll 0% 0% rgb(245, 245, 245); height: 122px;padding: 15px;}
 .author-info p{ height: 65px; overflow-y: scroll;}
