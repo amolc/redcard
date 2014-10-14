@@ -36,6 +36,37 @@ function other_sports_init() {
 	register_post_type( 'other_sports', $args );
 }
 
+
+add_action( 'init', 'register_taxonomy_othersports_tags' );
+function register_taxonomy_othersports_tags() {
+$labels = array(
+		'name'                       => _x( 'Other Sports Tags', 'taxonomy general name' ),
+		'singular_name'              => _x( 'Other Sports Tag', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search Other Sports Tags' ),
+		'popular_items'              => __( 'Popular Other Sports Tags' ),
+		'all_items'                  => __( 'All Other Sports Tags' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Other Sport Tag' ),
+		'update_item'                => __( 'Update Other Sport Tag' ),
+		'add_new_item'               => __( 'Add New Other Sport Tag' ),
+		'new_item_name'              => __( 'New Other Sport Tag Name' ),
+		'separate_items_with_commas' => __( 'Separate Other Sports Tags with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove Other Sports Tags' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Other Sports Tags' ),
+		'not_found'                  => __( 'No Other Sports Tags found.' ),
+		'menu_name'                  => __( 'Other Sports Tags' ),
+	);
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'query_var'             => true,
+	);
+register_taxonomy( 'other-sports-tags', 'other_sports', $args );
+}
+
 function be_othersports_metaboxes( $meta_boxes ) {
 	$prefix = '_cmb_othersports_'; // Prefix for all fields
 	$meta_boxes[] = array(
@@ -58,19 +89,6 @@ function be_othersports_metaboxes( $meta_boxes ) {
 								'id'   => $prefix . 'featured_checkbox',
 								'type' => 'checkbox',
 								),
-						   array(
-				'name'    => __( 'Category', 'cmb' ),
-				'desc'    => __( 'Check any one (optional)', 'cmb' ),
-				'id'      => $prefix . 'test_radio',
-				'type'    => 'radio',
-				'options' => array(
-					'option1' => __( 'UFC', 'cmb' ),
-					'option2' => __( 'Tennis', 'cmb' ),
-					'option3' => __( 'Motorsport', 'cmb' ),
-					'option4' => __( 'Golf', 'cmb' ),
-					'option5' => __( 'Others', 'cmb' ),
-				),
-			),
 						),
 		);
 return $meta_boxes;

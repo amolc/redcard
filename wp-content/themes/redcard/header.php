@@ -233,7 +233,7 @@ if(is_front_page()){
 		echo $m_str;
 		 ?></span> </div>
       <div class="text">
-      <div style="height:90px; overflow:hidden;">
+      <div style="height:65px; overflow:hidden;">
       <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
       <div><span style="color: rgb(175, 175, 175); font-size:12px;"><?php the_time('l, F j, Y'); ?></span></div>
       </div>

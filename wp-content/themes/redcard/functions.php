@@ -679,8 +679,40 @@ function football_init() {
 	);
 	register_post_type( 'footballs', $args );
 }
-add_action( 'init', 'register_taxonomy_footballregions' );
 
+
+add_action( 'init', 'register_taxonomy_footballtags' );
+function register_taxonomy_footballtags() {
+$labels = array(
+		'name'                       => _x( 'Football Tags', 'taxonomy general name' ),
+		'singular_name'              => _x( 'Football Tag', 'taxonomy singular name' ),
+		'search_items'               => __( 'Search Football Tags' ),
+		'popular_items'              => __( 'Popular Football Tags' ),
+		'all_items'                  => __( 'All Football Tags' ),
+		'parent_item'                => null,
+		'parent_item_colon'          => null,
+		'edit_item'                  => __( 'Edit Football Tag' ),
+		'update_item'                => __( 'Update Football Tag' ),
+		'add_new_item'               => __( 'Add New Football Tag' ),
+		'new_item_name'              => __( 'New Football Tag Name' ),
+		'separate_items_with_commas' => __( 'Separate Football Tags with commas' ),
+		'add_or_remove_items'        => __( 'Add or remove Football Tags' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Football Tags' ),
+		'not_found'                  => __( 'No Football Tags found.' ),
+		'menu_name'                  => __( 'Football Tags' ),
+	);
+	$args = array(
+		'hierarchical'          => false,
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'show_admin_column'     => true,
+		'query_var'             => true,
+	);
+register_taxonomy( 'football-tags', 'footballs', $args );
+}
+
+
+add_action( 'init', 'register_taxonomy_footballregions' );
 function register_taxonomy_footballregions() {
     $labels = array( 
         'name' => _x( 'Regions', 'footballregions' ),
@@ -711,6 +743,8 @@ function register_taxonomy_footballregions() {
     );
    register_taxonomy( 'footballregions', array('footballs'), $args );
 }
+
+
 
 add_action( 'init', 'register_taxonomy_footballexclusive' );
 function register_taxonomy_footballexclusive() {

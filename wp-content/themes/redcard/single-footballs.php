@@ -82,15 +82,21 @@ $m_table=$wpdb->prefix."adverts";
 						    ?>
 
 <div id="container">
+
   <div class="left">
-    <h2>Football > <?php echo $mytermArray[1]['name']; ?></h2>
+    <?php
+				while ( have_posts() ) : the_post();
+				?>
+      <h2>Football > <?php echo $mytermArray[1]['name']; ?></h2>
     
-   <div class="sigle-football-title"> <h1>
-      <?php the_title(); ?>
-    </h1></div>
-    <?php $postID = get_the_ID();
+   <div class="sigle-football-title"  style="margin-bottom: 13px;">
+    <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
+    <span class="bywriter"><?php the_author_link(); ?></span>
+   </div>
+    <?php $postID = get_the_ID(); ?>
+    <?php
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
-              <div style="margin-bottom: 10px;  font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
+          <div style="margin-bottom: 10px;  font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
 
    
     <div class="date">
@@ -117,9 +123,7 @@ $m_table=$wpdb->prefix."adverts";
       </div>
     </div>
     <div class="post">
-      <?php
-				while ( have_posts() ) : the_post();
-				?>
+    
       <div class="single-post-image">
         <?php 
 				twentyfourteen_post_thumbnail();
@@ -131,7 +135,7 @@ $m_table=$wpdb->prefix."adverts";
 			?>
     </div>
  
-     <div class="tags"> <strong>Tags:</strong>      <?php if(!empty($mytermArray)){
+    <div class="tags"> <strong>Tags:</strong>      <?php if(!empty($mytermArray)){
 						 $is =1;
 						 $arraycount =  count($mytermArray);
 						  foreach($mytermArray as $row){

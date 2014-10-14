@@ -62,7 +62,8 @@ $m_table=$wpdb->prefix."adverts";
 								  }
 		  ?>
         <h2>Video  >  <?php echo $mytermArray[1]['name'];?></h2>
-       <h1><?php the_title(); ?></h1>
+      <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
+    <span class="bywriter"><?php the_author_link(); ?></span>
         <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
         <div class="date">
         

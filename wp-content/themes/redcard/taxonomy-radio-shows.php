@@ -50,17 +50,15 @@ $m_table=$wpdb->prefix."adverts";
 	   							<h3 style=" background: none repeat scroll 0 0 #333333;margin-top: 0 !important;padding:5px 5px 12px;"><a href="'.get_permalink( $post->ID).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 								
 	   							<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
-								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
+								<a href="'.$mlink1.'" style="margin-top: 5px; margin-bottom: 10px;">'.$term_list_reg1[0]->name.'</a>
 	   							<a href="'.get_permalink( $post->ID).'" class="llink">Listen</a>
-	   							<div id="social_2">';
+	   							<div id="social_2"  style=" height: 55px;padding-top: 8px;">';
 								$mtitle=str_replace("?","",$radtitle);
 								?>
 <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect"  title="Share on Facebook" >
 <div class="facebook" ></div></a><a onclick="javascript:window.open(this.href, '', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=400, width=400');return false;" href="http://twitter.com/intent/tweet?text=<?php echo $mtitle;?> <?php echo get_permalink( $post->ID);?> via @RedCardConnect&url="  ><div class="twitter"></div></a> <a href="<?php echo get_permalink(  $post->ID);?>#dis_comment"><div class="message"></div></a>
 <?php
-                                echo '</div>
-	   							<span>'./*getPostViews($post->ID).*/'<span>
-	   						</span></span></div>';
+                                echo '</div>'./*getPostViews($post->ID).*/'</div>';
 	   						$i++;
 					endwhile;
 					echo '</div>';
