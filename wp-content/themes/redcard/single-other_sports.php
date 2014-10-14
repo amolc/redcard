@@ -17,24 +17,50 @@
 ?>
 <div id="container">
   <div class="left">
-    <?php while ( have_posts() ) : the_post();?>
+    <?php while ( have_posts() ) : the_post();
+	$postID = get_the_ID();
+				 $mytermArray = array();
+                 $term_list_reg = wp_get_post_terms($postID, 'other-sports-tags');  
+				  $as =1;
+				if(!empty($term_list_reg))
+						  {
+							  foreach($term_list_reg as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								 
+								  $as++;
+							  }
+						  }
+		?>
     <h2>Other Sports</h2>
     <div class="sigle-football-title">
-      <h1 style="margin-bottom: 0px ! important;">
-        <?php the_title(); ?>
-      </h1>
-      <span class="bywriter">
-      <?php the_author_link(); ?>
-      </span>
-      <p style="font-weight:bold; margin-top: 13px;">
-        <?php
-          $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
-			echo $youtubtagline_value;?>
+      <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
+      <span class="bywriter"><?php the_author_link(); ?></span>
+      <p style="font-weight:bold;  margin-bottom: 0; margin-top: 13px;">
+        <?php   $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
+				echo $youtubtagline_value; ?>
       </p>
     </div>
-    <div class="date"> <a href="#">Singapore</a> <span>
-      <?php the_time('l, F j, Y'); ?>
-      </span>
+    <span class="bywriter"><?php the_time('l, F j, Y'); ?></span>
+    <div class="date" style="margin-top: 10px;"> 
+    <?php if(!empty($mytermArray)){
+						 $is =1;
+						 $arraycount =  count($mytermArray);
+						  foreach($mytermArray as $row){
+							  	if($is == $arraycount)
+								{
+	?>
+    							<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>
+    							<?php } else { ?>
+    											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
+    									<?php } ?>
+                                <?php $is++; ?>
+                                <?php } } ?> 
+
       <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" >
         <div class="facebook" ></div>
         </a> <a href="http://twitter.com/intent/tweet?text=&url=<?php echo get_permalink( $article->ID);?>" target="_blank" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;">

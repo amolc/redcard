@@ -69,9 +69,8 @@ get_header(); ?>
     											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
     									<?php } ?>
                                 <?php $is++; ?>
-                                <?php } } ?> <span>
-      <?php the_time('l, F j, Y'); ?>
-      </span>
+                                <?php } } ?> 
+         <span><?php the_time('l, F j, Y'); ?></span>
       <div id="social_3">
        <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $post->ID);?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
