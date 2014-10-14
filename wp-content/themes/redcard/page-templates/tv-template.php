@@ -104,8 +104,8 @@ function changeOpt(){
 			 				$term_list_reg = wp_get_post_terms($postID, 'tvcategory');
       					   $mlink=(get_term_link( $term_list_reg[0] ));
 						  
-						   echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;color:white;">'.$term_list_reg[0]->name.'</a>';
-	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5">';
+			echo '<a href="'.$mlink.'" style=" margin-bottom: 13px;margin-top: 17px;;color:white;">'.$term_list_reg[0]->name.'</a>';
+	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Watch</a><div id="social_5" style="height: 50px;margin: 10px auto 0;">';
 	?>		
 			<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink($postID);?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
@@ -117,7 +117,7 @@ function changeOpt(){
 	<?php		
 			//echo '</div><span>'.getPostViews($postID).'<span></span></span></div>';
 			
-			echo '</div><span><span></span></span></div>';
+			echo '</div></div>';
    			$i++;
 			endwhile;
 			echo '</div>';

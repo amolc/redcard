@@ -124,8 +124,8 @@ function changeOpt(){
       			   $mlink1=(get_term_link( $term_list_reg1[0] ));
 			 }
 			echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
-								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>';
-	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Listen</a><div id="social_2">';
+				  <a href="'.$mlink1.'" style="margin-top: 5px; margin-bottom: 10px;">'.$term_list_reg1[0]->name.'</a>';
+	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Listen</a><div id="social_2" style=" height: 50px;padding-top: 8px;">';
 	?>		
 			<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink($postID);?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
@@ -135,7 +135,7 @@ function changeOpt(){
       <div class="message"></div>
       </a>
 	<?php		
-			echo '</div><span>'./*getPostViews($postID).*/'<span></span></span></div>';
+			echo '</div>'./*getPostViews($postID).*/'</div>';
    			$i++;
 			endwhile;
 			echo '</div>';
