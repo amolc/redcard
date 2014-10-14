@@ -123,7 +123,7 @@ function changeOpt(){
 			 {
       			   $mlink1=(get_term_link( $term_list_reg1[0] ));
 			 }
-			echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.'</a>  
+			echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
 								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>';
 	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Listen</a><div id="social_2">';
 	?>		
