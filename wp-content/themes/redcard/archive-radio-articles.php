@@ -125,7 +125,7 @@ function changeOpt(){
 			 }
 			echo '<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
 				  <a href="'.$mlink1.'" style="margin-top: 5px; margin-bottom: 10px;">'.$term_list_reg1[0]->name.'</a>';
-	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Listen</a><div id="social_2" style=" height: 50px;padding-top: 8px;">';
+	   		echo '<a href="'.get_permalink( $postID).'" class="llink">Listen</a><div id="social_2" style=" height: 55px;padding-top: 8px;">';
 	?>		
 			<a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink($postID);?>&description=<?php echo get_the_title();?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
