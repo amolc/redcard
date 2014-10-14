@@ -158,7 +158,7 @@ if(is_front_page()){
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				    	$i = 1;
 						?>
-<div id="list" style="height: 375px;">
+<div id="list" style="height: 390px;">
 
   <div class="slider">
     <ul>
@@ -174,11 +174,11 @@ if(is_front_page()){
       					   $mlink1=(get_term_link( $term_list_reg1[0] ));
 						   echo '<li style="width:165px;margin-right: 19px;">
 						   <div class="r-child home-radio-post list'.$i.'">'.get_the_post_thumbnail( $article[ID] ).'
-	   							<h3 style="padding:5px;margin-top:0px !important; background:#333333;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
+	   							<h3 style="padding:5px 5px 12px;margin-top:0px !important; background:#333333;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
 								<a href="'.$mlink.'" style="margin-bottom:0px !important;">'.$term_list_reg[0]->name.':</a>  
-								<a href="'.$mlink1.'">'.$term_list_reg1[0]->name.'</a>
+								<a href="'.$mlink1.'" style="margin-top: 5px; margin-bottom: 15px;">'.$term_list_reg1[0]->name.'</a>
 	   							<a href="'.get_permalink( $article[ID]).'" class="llink">Listen</a>
-	   							<div id="social_2">';
+	   							<div id="social_2" style=" height: 55px;padding-top: 8px;">';
 								$mtitle=str_replace("?","",$radtitle);
 								?>
       <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $article[ID]);?>&description=<?php echo $radtitle;?>"  title="Share on Facebook" >
@@ -189,9 +189,7 @@ if(is_front_page()){
       <div class="message"></div>
       </a>
       <?php
-                                echo '</div>
-	   							<span>'/*.getPostViews($article[ID])*/.'<span>
-	   						</span></span></div></li>';
+                                echo '</div>'/*.getPostViews($article[ID])*/.'</div></li>';
 	   						$i++;
 						}
 						?>

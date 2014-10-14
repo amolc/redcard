@@ -67,6 +67,43 @@ $labels = array(
 register_taxonomy( 'other-sports-tags', 'other_sports', $args );
 }
 
+
+/***/
+
+add_action( 'init', 'register_taxonomy_othersports_category' );
+function register_taxonomy_othersports_category() {
+    $labels = array( 
+        'name' => _x( 'Category', 'categories' ),
+        'singular_name' => _x( 'Category', 'categories' ),
+        'search_items' => _x( 'Search Category', 'categories' ),
+        'popular_items' => _x( 'Popular Category', 'categories' ),
+        'all_items' => _x( 'All Category', 'categories' ),
+        'parent_item' => _x( 'Parent Category', 'categories' ),
+        'parent_item_colon' => _x( 'Parent Category:', 'categories' ),
+        'edit_item' => _x( 'Edit Category', 'categories' ),
+        'update_item' => _x( 'Update Category', 'categories' ),
+        'add_new_item' => _x( 'Add New Category', 'categories' ),
+        'new_item_name' => _x( 'New Category', 'categories' ),
+        'separate_items_with_commas' => _x( 'Separate Category with commas', 'categories' ),
+        'add_or_remove_items' => _x( 'Add or remove Category', 'categories' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Category', 'categories' ),
+        'menu_name' => _x( 'Category', 'categories' ),
+    );
+    $args = array( 
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'show_tagcloud' => true,
+        'hierarchical' => true,
+        'rewrite' => true,
+        'query_var' => true
+    );
+   register_taxonomy( 'categories', array('other_sports'), $args );
+}
+
+/****/
+
 function be_othersports_metaboxes( $meta_boxes ) {
 	$prefix = '_cmb_othersports_'; // Prefix for all fields
 	$meta_boxes[] = array(
@@ -94,7 +131,5 @@ function be_othersports_metaboxes( $meta_boxes ) {
 return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_othersports_metaboxes' );
-
-
 
 ?>
