@@ -271,14 +271,13 @@ if(is_front_page()){
 				 
 				 $videoID = ShowTvVideoImg($youtubURL_values,$alt = 'Video screenshot', $width='280', $height='220');
 	  ?>
-        <div class="vid"><a href ="<?php echo $youtubURL_values; ?>" rel="prettyPhoto"><?php echo $videoID; ?></a></div>
-        <?php }}?>
-        <script type="text/javascript" charset="utf-8">
-
+        <div class="vid"><a href ="<?php echo $youtubURL_values; ?>"  rel="prettyPhoto"><?php echo $videoID; ?></a></div>
+        <div class="view"><a href="<?php echo $youtubURL_values; ?>"  TARGET="_blank">View Video</a></div>
+        <?php } } ?>
+<script type="text/javascript" charset="utf-8">
     $("a[rel^='prettyPhoto']").prettyPhoto();
-
 </script>
-        <div class="view"><a href="<?php echo site_url(); ?>/tv">View All Videos</a></div>
+        
       </div>
        <?php if(sizeof($advertSql)>0)
 	{
