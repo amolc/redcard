@@ -91,7 +91,7 @@ $m_table=$wpdb->prefix."adverts";
     
    <div class="sigle-football-title"  style="margin-bottom: 13px;">
     <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-    <span class="bywriter"><?php the_author_link(); ?></span>
+    <span class="bywriter">By <?php the_author_link(); ?></span>
    </div>
     <?php $postID = get_the_ID(); ?>
     <?php
