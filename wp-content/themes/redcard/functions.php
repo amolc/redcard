@@ -708,7 +708,7 @@ $labels = array(
 		'show_admin_column'     => true,
 		'query_var'             => true,
 	);
-register_taxonomy( 'football-tags', 'footballs', $args );
+register_taxonomy( 'footballtags', 'footballs', $args );
 }
 
 

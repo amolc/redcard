@@ -141,7 +141,7 @@ $m_table=$wpdb->prefix."adverts";
     <?php
 	
 			  $mytermArray = array();
-		  $term_list_tag = wp_get_post_terms($postID, 'football-tags');
+		  $term_list_tag = wp_get_post_terms($postID, 'footballtags');
 		  $as =1;
 		   if(!empty($term_list_tag))
 						  {
