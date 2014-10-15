@@ -56,7 +56,7 @@ get_header(); ?>
         <?php $term_reg_cat = wp_get_post_terms($postID, 'radio-shows'); ?>
         <h2>Radio > <?php echo $term_reg_cat[0]->name; ?></h2>
         <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-    <span class="bywriter">By <?php the_author_link(); ?></span>
+    <span class="bywriter" style=" margin-left:0;">By <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >@<?php the_author_meta('display_name'); ?></a></span>
          <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
         <div class="date" style="margin-top: 13px;"> <?php if(!empty($mytermArray)){
 						 $is =1;
