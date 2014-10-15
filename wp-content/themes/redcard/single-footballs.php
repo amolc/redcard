@@ -91,13 +91,14 @@ $m_table=$wpdb->prefix."adverts";
     
    <div class="sigle-football-title"  style="margin-bottom: 13px;">
     <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-    <span class="bywriter">By <?php the_author_link(); ?></span>
+    
    </div>
     <?php $postID = get_the_ID(); ?>
     <?php
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
           <div style="font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
-		   <span class="bywriter"><?php the_time('l, F j, Y'); ?></span>
+          <span class="bywriter">By <?php the_author_link(); ?></span>
+		   <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
    
     <div class="date" style="margin-top: 10px;">
      <?php
