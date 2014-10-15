@@ -36,8 +36,10 @@ $m_table=$wpdb->prefix."adverts";
     <div class="redsort">
             <select name="dropdown" id="sel"  onchange="changeOpt()">
                 <option value="latest" <?php if($param_1 == "latest" ){ echo 'selected="selected"';} ?> >Latest</option>
-                <option value="bycategories" <?php if($param_1 == "bycategories" ){ echo 'selected="selected"';} ?> >By Categories</option>
-                <option value="byshows" <?php if($param_1 == "byshows" ){ echo 'selected="selected"';} ?> >By Shows</option>
+                <option value="byshowsfightclub" <?php if($param_1 == "byshowsfightclub" ){ echo 'selected="selected"';} ?> >By Show : The Fight Club</option>
+                <option value="byshowsbestleague" <?php if($param_1 == "byshowsbestleague" ){ echo 'selected="selected"';} ?> >By Show : The Best League</option>
+                <option value="byshowsaddedtime" <?php if($param_1 == "byshowsaddedtime" ){ echo 'selected="selected"';} ?> >By Show : In Added Time</option>
+                <option value="byshowsdrivetime" <?php if($param_1 == "byshowsdrivetime" ){ echo 'selected="selected"';} ?> >By Show : Drivetime</option>
             </select>
 <script>
 function changeOpt(){
@@ -51,47 +53,47 @@ function changeOpt(){
 		echo '<h4>' . $term->name. '</h4>';
 		$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		
-		if($param_1=="bycategories")
+		if($param_1=="byshowsfightclub")
 			{
-
-				$categories = get_terms( 'radio-categories', array('orderby' => 'count', 'hide_empty' => 1) );
-				$arrcat =  array();										 
-				if(!empty($categories))
-				{
-					foreach($categories as $catId)
-						{
-							$arrcat[]= $catId->slug;
-						}
-				}
-				$am = implode(',', $arrcat);
-				
 				$args = array(
 							'posts_per_page'   => 10,
 							'post_type'        => 'radio-articles',
-							'radio-categories' => $am,
+							'radio-shows' 	  => 'the-fight-club',
 							'order'			=> 'ASC',
 							'post_status'      => 'publish',
 							'paged' 			=> $current_page,
 							);	
 			}
-		elseif($param_1=="byshows")
+		elseif($param_1=="byshowsbestleague")
 			{
-				$categories = get_terms( 'radio-shows', array('orderby' => 'count', 'hide_empty' => 1) );
-				pr($categories);
-				$arrcat =  array();										 
-				if(!empty($categories))
-				{
-					foreach($categories as $catId)
-						{
-							$arrcat[]= $catId->slug;
-						}
-				}
-				$am = implode(',', $arrcat);
-				
+							
 				$args = array(
 							'posts_per_page'   => 10,
 							'post_type'        => 'radio-articles',
-							'radio-shows' 	  => $am,
+							'radio-shows' 	  => 'the-best-league',
+							'order'			=> 'ASC',
+							'post_status'      => 'publish',
+							'paged' 			=> $current_page,
+							);			
+			}
+		elseif($param_1=="byshowsaddedtime")
+			{
+				$args = array(
+							'posts_per_page'   => 10,
+							'post_type'        => 'radio-articles',
+							'radio-shows' 	  => 'in-added-time',
+							'order'			=> 'ASC',
+							'post_status'      => 'publish',
+							'paged' 			=> $current_page,
+							);			
+			}
+		elseif($param_1=="byshowsdrivetime")
+			{
+			
+				$args = array(
+							'posts_per_page'   => 10,
+							'post_type'        => 'radio-articles',
+							'radio-shows' 	  => 'drivetime',
 							'order'			=> 'ASC',
 							'post_status'      => 'publish',
 							'paged' 			=> $current_page,
