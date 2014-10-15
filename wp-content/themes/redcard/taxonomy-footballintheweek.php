@@ -8,9 +8,9 @@ get_header();
 
 <h2>In The Week > <?php echo $wp_query->queried_object->name; ?></h2>
 <?php
- $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+/* $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
-			$loop = new WP_Query( $args ); $ad =1; 
+			$loop = new WP_Query( $args );*/ $ad =1; 
 	while ( $loop->have_posts() ) : $loop->the_post();
 
 if($ad == 1){?>

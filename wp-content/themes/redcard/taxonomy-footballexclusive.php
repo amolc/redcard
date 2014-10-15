@@ -8,10 +8,8 @@ get_header();
 
 <h2>Exclusive > <?php echo $wp_query->queried_object->name; ?></h2>
 <?php
- $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array( 'post_type' => 'footballs','posts_per_page'=>5, 'post_status'=> 'publish', 'paged'=>  $current_page);
-			$loop = new WP_Query( $args ); $ad =1; 
-	while ( $loop->have_posts() ) : $loop->the_post();
+ $ad =1; 
+	while ( have_posts() ) : the_post();
 
 if($ad == 1){?>
      <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
@@ -24,25 +22,10 @@ if($ad == 1){?>
   <?php $postID = get_the_ID(); 
 						
 						  $mytermArray = array();
-                          $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
 						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
-						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
-						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
 						  $as =1;
 						
-						  if(!empty($term_list_reg))
-						  {
-							  foreach($term_list_reg as $row)
-							  {
-								  $mytermArray[$as]['term_id']= $row->term_id;
-								  $mytermArray[$as]['name']= $row->name;
-								  $mytermArray[$as]['slug']= $row->slug;
-								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
-								  $mytermArray[$as]['link']= get_term_link( $row );
-								 
-								  $as++;
-							  }
-						  }
+						 
 						  if(!empty($term_list_exc))
 						  {
 							  foreach($term_list_exc as $row)
@@ -55,30 +38,7 @@ if($ad == 1){?>
 								  $as++;
 							  }
 						  }
-						  if(!empty($term_list_opi))
-						  {
-							  foreach($term_list_opi as $row)
-							  {
-								  $mytermArray[$as]['term_id']= $row->term_id;
-								  $mytermArray[$as]['name']= $row->name;
-								  $mytermArray[$as]['slug']= $row->slug;
-								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
-								  $mytermArray[$as]['link']= get_term_link( $row );
-								  $as++;
-							  }
-						  }
-						   if(!empty($term_list_week))
-						  {
-							  foreach($term_list_week as $row)
-							  {
-								  $mytermArray[$as]['term_id']= $row->term_id;
-								  $mytermArray[$as]['name']= $row->name;
-								  $mytermArray[$as]['slug']= $row->slug;
-								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
-								  $mytermArray[$as]['link']= get_term_link( $row );
-								  $as++;
-							  }
-						  }
+						  
 						 
 						    ?>
   <div class="date">
