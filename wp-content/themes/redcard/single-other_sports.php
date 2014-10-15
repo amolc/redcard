@@ -39,8 +39,8 @@
     <h2>Other Sports</h2>
     <div class="sigle-football-title">
       <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-      <span class="bywriter"><?php the_author_link(); ?></span>
-      <p style="font-weight:bold;  margin-bottom: 0; margin-top: 5px;">
+      
+      <p style="font-weight:bold; margin-bottom: 5px; margin-top: 5px;">
         <?php   $youtubtagline_value = get_post_meta($post->ID, '_cmb_othersports_tagline_text',true  );
 				echo $youtubtagline_value; ?>
       </p>
@@ -59,8 +59,9 @@
     											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
     									<?php } ?>
                                 <?php $is++; ?>
-                                <?php } } */?> 
-      <span class="bywriter"  style="margin-left: 0px;"><?php the_time('l, F j, Y'); ?></span>
+                                <?php } } */?>
+      <span class="bywriter" style=" margin-left:0;">By <?php the_author_link(); ?></span> 
+      <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
 
       <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" >
         <div class="facebook" ></div>

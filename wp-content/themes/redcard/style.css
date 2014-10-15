@@ -1205,4 +1205,5 @@ filter: grayscale(0%);
 .redsort{ color: #333333; float: right; font-family: "FF DIN"; font-size: 14px;}
 .redsort select{padding: 2px 5px;}
 .redsort option{ color: #333333; font-family: "FF DIN"; font-size: 14px;padding: 2px 5px;}
-.bywriter, .bywriter a{ color: rgb(175, 175, 175); font-size: 12px; font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;}
+.bywriter, .bywriter a{ color: rgb(175, 175, 175 ); font-size: 12px; font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;}
+#container .left .date .bywriter a{color: rgb(175, 175, 175 ) !important;text-decoration: none;}
