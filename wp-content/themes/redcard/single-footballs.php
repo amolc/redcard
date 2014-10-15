@@ -27,7 +27,6 @@ $m_table=$wpdb->prefix."adverts";
 						  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
 						  $term_list_opi = wp_get_post_terms($postID, 'footballopinion');  
 						  $term_list_week = wp_get_post_terms($postID, 'footballintheweek'); 
-						  $term_list_tag = wp_get_post_terms($postID, 'football-tags');
 						  $as =1;
 						
 						  if(!empty($term_list_reg))
@@ -79,18 +78,6 @@ $m_table=$wpdb->prefix."adverts";
 								  $as++;
 							  }
 						  }
-						   if(!empty($term_list_tag))
-						  {
-							  foreach($term_list_tag as $row)
-							  {
-								  $mytermArray[$as]['term_id']= $row->term_id;
-								  $mytermArray[$as]['name']= $row->name;
-								  $mytermArray[$as]['slug']= $row->slug;
-								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
-								  $mytermArray[$as]['link']= get_term_link( $row );
-								  $as++;
-							  }
-						  }
 						 
 						    ?>
 
@@ -113,7 +100,10 @@ $m_table=$wpdb->prefix."adverts";
 		   <span class="bywriter"><?php the_time('l, F j, Y'); ?></span>
    
     <div class="date" style="margin-top: 10px;">
-     <?php if(!empty($mytermArray)){
+     <?php
+
+	 
+	  		if(!empty($mytermArray)){
 
 						 $is =1;
 						 $arraycount =  count($mytermArray);
@@ -148,6 +138,25 @@ $m_table=$wpdb->prefix."adverts";
 				endwhile;
 			?>
     </div>
+    <?php
+	
+			  $mytermArray = array();
+		  $term_list_tag = wp_get_post_terms($postID, 'football-tags');
+		  $as =1;
+		   if(!empty($term_list_tag))
+						  {
+							  foreach($term_list_tag as $row)
+							  {
+								  $mytermArray[$as]['term_id']= $row->term_id;
+								  $mytermArray[$as]['name']= $row->name;
+								  $mytermArray[$as]['slug']= $row->slug;
+								  $mytermArray[$as]['term_taxonomy_id']= $row->term_taxonomy_id;
+								  $mytermArray[$as]['link']= get_term_link( $row );
+								  $as++;
+							  }
+						  }
+	
+	 ?>
  
     <div class="tags"> <strong>Tags:</strong>      <?php if(!empty($mytermArray)){
 						 $is =1;
