@@ -56,7 +56,8 @@ get_header(); ?>
         <?php $term_reg_cat = wp_get_post_terms($postID, 'radio-shows'); ?>
         <h2>Radio > <?php echo $term_reg_cat[0]->name; ?></h2>
         <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-    <span class="bywriter"><?php the_author_link(); ?></span>
+    <span class="bywriter">By <?php the_author_link(); ?></span>
+         <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
         <div class="date" style="margin-top: 13px;"> <?php if(!empty($mytermArray)){
 						 $is =1;
 						 $arraycount =  count($mytermArray);
@@ -70,7 +71,7 @@ get_header(); ?>
     									<?php } ?>
                                 <?php $is++; ?>
                                 <?php } } ?> 
-         <span><?php the_time('l, F j, Y'); ?></span>
+         
       <div id="social_3">
        <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $post->ID);?>"  title="Share on Facebook" >
       <div class="facebook" ></div>
