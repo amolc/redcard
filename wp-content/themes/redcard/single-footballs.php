@@ -97,7 +97,7 @@ $m_table=$wpdb->prefix."adverts";
     <?php
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
           <div style="font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
-         <span class="bywriter" style=" margin-left:0;">By <?php the_author_meta('display_name'); ?> <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >@<?php the_author_meta('Facebook'); ?></a></span>
+         <span class="bywriter" style=" margin-left:0;">By <?php the_author_meta('display_name'); ?> <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >@<?php the_author_meta('facebook'); ?></a></span>
 		   <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
    
     <div class="date" style="margin-top: 10px;">
