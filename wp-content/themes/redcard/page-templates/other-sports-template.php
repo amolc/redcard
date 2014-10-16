@@ -83,6 +83,8 @@ if(sizeof($advertSql)>0)
           <span>
 			  <?php $term_list_reg = wp_get_post_terms($post->ID, 'categories'); ?>
               <?php $g=0;
+			  	if(!empty($term_list_reg))
+				{
                     foreach($term_list_reg as $mterm)
                     {
                         $m_array[$g]=$mterm->name;
@@ -90,7 +92,7 @@ if(sizeof($advertSql)>0)
                     }
                     $m_str=implode(",",$m_array);
                     echo $m_str;
-			
+				}
              ?>
          </span>
         </div>
