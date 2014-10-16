@@ -63,7 +63,7 @@ $m_table=$wpdb->prefix."adverts";
 		  ?>
         <h2>Video  >  <?php echo $mytermArray[1]['name'];?></h2>
       <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-   <span class="bywriter" style=" margin-left:0;">By <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >@<?php the_author_meta('display_name'); ?></a></span>
+   <span class="bywriter" style=" margin-left:0;">By <?php the_author_meta('display_name'); ?> <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >(@<?php the_author_meta('facebook'); ?>)</a></span>
     <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
         <div style="margin-bottom: 10px;"><?php echo $youtubtagline_value; ?></div>
         <div class="date">

@@ -61,7 +61,7 @@
                                 <?php $is++; ?>
                                 <?php } } */?>
                                 
-      <span class="bywriter" style=" margin-left:0;">By <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >@<?php the_author_meta('display_name'); ?></a></span> 
+      <span class="bywriter" style=" margin-left:0;">By <?php the_author_meta('display_name'); ?> <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >(@<?php the_author_meta('facebook'); ?>)</a></span> 
       <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
       <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>"  title="Share on Facebook" >
         <div class="facebook" ></div>
