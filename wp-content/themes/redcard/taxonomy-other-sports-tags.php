@@ -23,7 +23,7 @@ if($ad == 1){ ?>
   </div>
   <?php $postID = get_the_ID(); 
 		$mytermArray = array();
-		$term_list_tag = wp_get_post_terms($postID, 'footballtags'); 
+		$term_list_tag = wp_get_post_terms($postID, 'other-sports-tags'); 
 		$as =1;
 		if(!empty($term_list_tag))
 			  {
@@ -52,9 +52,7 @@ if($ad == 1){ ?>
     <?php } ?>
     <?php $is++; ?>
     <?php } } ?>
-    <span>
-    <?php the_time('l, F j, Y'); ?>
-    </span>
+    <span style="margin-left: 0px;"><?php the_time('l, F j, Y'); ?></span>
     <div id="social_3">
       <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php the_title(); ?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  title="Share on Facebook" >
       <div class="facebook" ></div>
