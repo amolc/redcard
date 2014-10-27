@@ -98,8 +98,8 @@ if(is_front_page()){
       <div id="mainSlider" style="height:420px;">
         <ul style="height:420px;">
           <?php 
-             $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
-			 /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
+             /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
+			 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_url' ORDER BY RAND() LIMIT 0,5";
              $resultarray = $wpdb->get_results($selectsql) ;
 
 			 	
@@ -107,21 +107,21 @@ if(is_front_page()){
                 $mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
                 foreach($resultarray as $row)
                 {
-					$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );
-					/*$tagLine = get_post_meta( $row->post_id, '_cmb_featured_tagline_text', true );  */
+					/*$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );*/
+					$tagLine = get_post_meta( $row->post_id, '_cmb_featured_tagline_text', true );
                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
          			 ?>
           <li>
-        <a href="<?php echo get_permalink( $row->post_id);?>">  <img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /></a>
+        <a href="<?php echo $row->meta_value;?>">  <img src="<?php echo $feat_image; ?>" height="350" width="621" title="<?php echo get_the_title( $row->post_id ); ?>" /></a>
             <div class="mainSliderDetail"  style="height:70px !important;">
              <span class="mstitle">
                  <p style="font-size: 18px; font-weight: 700; color: #fff; overflow: hidden; margin-bottom: 3px;"> <a href="<?php echo get_permalink( $row->post_id);?>" style="color:white;"> <?php //echo get_the_title( $row->post_id ); ?> </a></p>
                  <p style="color: #fff;font-size: 13px; font-weight:normal !important;"><?php  echo $tagLine ; ?></p>
              </span>
              <span class="mssocile" style="padding-top:8px;">
-             <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo get_permalink( $row->post_id);?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a>
+             <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo $row->meta_value ; ?>&description=<?php echo get_the_title( $row->post_id ); ?> "  title="Share on Facebook" ><span class='facebook'></span></a>
              <a href="http://twitter.com/intent/tweet?text=<?php echo urlencode(get_the_title( $row->post_id ));?> <?php echo get_permalink( $article[ID]);?> via @RedCardConnect&url="  ><span class='twitter'></span></a>
-             <a  href="<?php echo get_permalink(  $row->post_id);?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
+             <a  href="<?php echo $row->meta_value; ?>#dis_comments"><span class='message'></span></a> <span class='viewcount'><?php //echo getPostViews($row->post_id);?></span> </span> </div>
           </li>
           <?php } } ?>
         </ul>
