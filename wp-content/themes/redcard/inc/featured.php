@@ -31,7 +31,7 @@ function featured_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+		'supports'           => array( 'title',  'thumbnail', )
 	);
 	register_post_type( 'featured', $args );
 }
@@ -55,11 +55,11 @@ function be_featured_metaboxes( $meta_boxes ) {
 								'type' => 'text',
 								),
 						  array(
-								'name' => __( 'Featured', 'cmb' ),
-								'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
-								'id'   => $prefix . 'featured_checkbox',
-								'type' => 'checkbox',
-								),
+								'name' => __( 'URL', 'cmb' ),
+								'desc' => __( 'field description (optional)', 'cmb' ),
+								'id'   => $prefix . 'url',
+								'type' => 'text_url',
+							),
 						),
 		);
 return $meta_boxes;
