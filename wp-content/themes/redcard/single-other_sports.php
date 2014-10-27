@@ -192,4 +192,6 @@
     </div>
   </div>
 </div>
-<?php get_footer();?>
+<?php
+setPostViews(get_the_ID());
+ get_footer();?>

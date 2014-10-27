@@ -1186,4 +1186,20 @@ function my_new_contactmethods( $contactmethods ) {
 add_filter('user_contactmethods','my_new_contactmethods',10,1);
 
 
+/****/
+function view_modify_post_table( $column ) {
+    $column['views'] = 'Views';
+    return $column;
+}
+add_filter( 'manage_posts_columns', 'view_modify_post_table' );
+
+
+function views_modify_user_table_row($column_name, $post_id  ) {
+	
+//	echo $post_id ;
+
+	echo getPostViews($post_id);
+}
+add_action('manage_posts_custom_column', 'views_modify_user_table_row',10,2);
+
 ?>
