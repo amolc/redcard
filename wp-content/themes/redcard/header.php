@@ -98,8 +98,8 @@ if(is_front_page()){
       <div id="mainSlider" style="height:420px;">
         <ul style="height:420px;">
           <?php 
-             $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
-			 /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
+             /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
+			 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
              $resultarray = $wpdb->get_results($selectsql) ;
 
 			 	
@@ -107,8 +107,8 @@ if(is_front_page()){
                 $mstr="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;";
                 foreach($resultarray as $row)
                 {
-					$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );
-					/*$tagLine = get_post_meta( $row->post_id, '_cmb_featured_tagline_text', true );  */
+					/*$tagLine = get_post_meta( $row->post_id, '_cmb_footballs_tagline_text', true );*/
+					$tagLine = get_post_meta( $row->post_id, '_cmb_featured_tagline_text', true );  
                     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($row->post_id) );
          			 ?>
           <li>
