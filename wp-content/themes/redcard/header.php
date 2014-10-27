@@ -98,8 +98,8 @@ if(is_front_page()){
       <div id="mainSlider" style="height:420px;">
         <ul style="height:420px;">
           <?php 
-             /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
-			 $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
+             $selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_footballs_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";
+			 /*$selectsql = "SELECT *  FROM `rd_postmeta` WHERE `meta_key` = '_cmb_featured_featured_checkbox'  ORDER BY RAND() LIMIT 0,5";*/
              $resultarray = $wpdb->get_results($selectsql) ;
 
 			 	
