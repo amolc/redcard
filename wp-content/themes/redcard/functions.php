@@ -50,7 +50,7 @@ require_once locate_template('/inc/radio_artciles.php');
 require_once locate_template('/inc/radio_shows.php');            // Utility functions
 require_once locate_template('/inc/tvvideo_shows.php'); 
 require_once locate_template('/inc/other-sports.php'); 
-//require_once locate_template('/inc/featured.php');
+require_once locate_template('/inc/featured.php');
 //require_once locate_template('/inc/tv-show-list.php');
 require_once locate_template('/inc/radio-shows-articles.php');
 
