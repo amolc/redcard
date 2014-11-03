@@ -159,21 +159,26 @@ if(is_front_page()){
 						);
 						$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 				    	$i = 1;
+              
 						?>
 <div id="list" style="height: 390px;">
 
   <div class="slider">
     <ul>
       <?php
-				    	foreach ( $recent_posts as $article ) {
+				    	foreach ( $recent_posts as $key => $article ) {
 											
 							$thumb = get_the_post_thumbnail( $article[ID]);							
 						    $radtitle = $article['post_title'];
 						   $radtitlefinal = wp_trim_words( $radtitle, $num_words = 5, $more = '' );
 						   $term_list_reg = wp_get_post_terms($article[ID], 'radio-shows');
+               if( !empty( $term_list_reg ) )
       					   $mlink=(get_term_link( $term_list_reg[0] ));
+
 						   $term_list_reg1 = wp_get_post_terms($article[ID], 'radio-categories');
+               if( !empty( $term_list_reg1 ) )
       					   $mlink1=(get_term_link( $term_list_reg1[0] ));
+                 
 						   echo '<li style="width:165px;margin-right: 19px;">
 						   <div class="r-child home-radio-post list'.$i.'">'.get_the_post_thumbnail( $article[ID] ).'
 	   							<h3 style="padding:5px 5px 12px;margin-top:0px !important; background:#333333;"><a href="'.get_permalink( $article[ID]).'" class="r-child-h3-a">'.$radtitle.'</a></h3>
