@@ -168,6 +168,8 @@ get_header();
 ?>
 </div>
 <div class="right">
+ <h2 class="homeRighth1" style=" margin: 22px 0 13px;">Connect With us</h2>
+    <div id="connect"> Subscribe to our mailing list <?php echo do_shortcode('[gsom-optin]'); ?> </div>
  
   <?php
 	if(sizeof($advertSql)>0)
