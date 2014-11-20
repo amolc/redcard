@@ -88,6 +88,8 @@ $m_table=$wpdb->prefix."adverts";
 				while ( have_posts() ) : the_post();
 				?>
       <h2>Football > <?php echo $mytermArray[1]['name']; ?></h2>
+      <div style="border: 1px solid rgb(137, 137, 137);"></div>
+      <div style="clear:both; margin-bottom: 10px;"></div>
     <span class="bywriter" style="margin-left: 0px;"><?php the_time('l, F j, Y'); ?></span>
    <div class="sigle-football-title" style="margin-bottom: 13px;"><h1 style="margin-bottom: 0px ! important;margin-top: 7px !important;"><?php the_title(); ?></h1></div>
     <?php $postID = get_the_ID(); ?>
