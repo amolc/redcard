@@ -88,20 +88,31 @@ $m_table=$wpdb->prefix."adverts";
 				while ( have_posts() ) : the_post();
 				?>
       <h2>Football > <?php echo $mytermArray[1]['name']; ?></h2>
-    
-   <div class="sigle-football-title"  style="margin-bottom: 13px;">
-    <h1 style="margin-bottom: 0px ! important;"><?php the_title(); ?></h1>
-    
-   </div>
+    <span class="bywriter" style="margin-left: 0px;"><?php the_time('l, F j, Y'); ?></span>
+   <div class="sigle-football-title" style="margin-bottom: 13px;"><h1 style="margin-bottom: 0px ! important;margin-top: 7px !important;"><?php the_title(); ?></h1></div>
     <?php $postID = get_the_ID(); ?>
     <?php
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
-          <div style="font-weight: bold;"><?php echo $youtubtagline_value; ?></div>
+          <span style="font-weight: bold;  background: none repeat scroll 0 0 yellow;"><?php echo $youtubtagline_value; ?></span>
+          <div style="clear:both; margin-bottom: 10px;"></div>
          <span class="bywriter" style=" margin-left:0;">By <?php the_author_meta('display_name'); ?> <a href="<?php the_author_meta('twitter'); ?>" target="_blank" >(@<?php the_author_meta('facebook'); ?>)</a></span>
-		   <span class="bywriter" style="margin-left: 20px;"><?php the_time('l, F j, Y'); ?></span>
+		   
    
-    <div class="date" style="margin-top: 10px;">
-     <?php
+    <div class="date" >
+
+     
+      <div id="social_3">
+         <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a>
+        <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
+        
+      </div>
+    </div>
+    <div class="post">
+    
+      <div class="single-post-image">
+        <?php twentyfourteen_post_thumbnail(); ?>
+            <div style="margin-bottom: 10px; margin-top: -10px;"> <?php
 
 	 
 	  		if(!empty($mytermArray)){
@@ -118,22 +129,8 @@ $m_table=$wpdb->prefix."adverts";
     											<a href="<?php echo $row['link']?>"><?php echo $row['name']?></a>,
     									<?php } ?>
                                 <?php $is++; ?>
-                                <?php } } ?>
-     
-      <div id="social_3">
-         <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
-        <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a>
-        <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
-        
-      </div>
-    </div>
-    <div class="post">
-    
-      <div class="single-post-image">
-        <?php 
-				twentyfourteen_post_thumbnail();
-					the_content();
-					?>
+                                <?php } } ?></div>
+		<?php the_content(); ?>
       </div>
       <?php
 				endwhile;
