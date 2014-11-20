@@ -221,7 +221,7 @@ if(is_front_page()){
 <div class="box" style=" margin-bottom: 10px;">
   <div class="left">
     <h1 class="h1">Latest News</h1>
-    <?php $args = array( 'post_type' => 'footballs','order' => 'DESC','posts_per_page'   => 6);
+    <?php $args = array( 'post_type' => array('footballs', 'other-sports'),'order' => 'DESC','posts_per_page'   => 6);
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image" style="height:370px;">
