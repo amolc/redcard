@@ -308,6 +308,16 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Popular posts for Other Sports', 'twentyfourteen' ),
+		'id'            => 'po-po-other-sports',
+		'description'   => __( '' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	
 	
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
