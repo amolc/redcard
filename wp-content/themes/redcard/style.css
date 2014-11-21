@@ -305,7 +305,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #menu ul.serch2 li{padding:2px}
 
 .sport-menu-main:hover{ background:#4d4d4d;}
-sport-menu-main a{color:#333;}
+.sport-menu{ background:#4d4d4d;}
+.sport-menu-main a{color:#333;}
 .blue-menu-main:hover{ background:#dc1f26;}
 .green-menu-main:hover{ background:#00a69c;}
 .orange-menu-main:hover{ background:#f99235; }
@@ -1219,3 +1220,4 @@ filter: grayscale(0%);
 #container .left .date .bywriter a{color: rgb(175, 175, 175 ) !important;text-decoration: none;}
 .aboutustitle{color: #333333;font-family: "FF DIN";font-size: 22px;text-transform: uppercase;margin: 20px 0;}
 .column-views{ width:70px !important;}
+.social-bar{ background:url(img/bar.JPG)}
