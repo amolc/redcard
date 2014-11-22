@@ -46,13 +46,13 @@
 	<a href="">#LionKings</a>  
 </div>
 <div class="main row">
-   	<div class="col-sm-6">
-   		<h3 style="padding:11px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h3>
+   	<div class="col-sm-8">
+   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
    	</div>
-   	<div class="menu-main-container col-sm-6">
+   	<div class="menu-main-container col-sm-4">
 	    <ul id="menu-main" class="menu">
-	    	<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="http://curveinfotech.16mb.com">NEWS</a></li>
-<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="http://curveinfotech.16mb.com/">FIXTURES</a></li>
+	    	<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="#">NEWS</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="#">FIXTURES</a></li>
 </ul>
 		</div> 
 	</div>
@@ -64,10 +64,7 @@
  
 </div>
 <style>
-.main{width: 654px;
-height: 40px;
-color: black;
-background: URL('/suzuki-images/Gray_Gradient-11.jpg'); }
+.main{height: 28px; color: black; background: URL('/suzuki-images/slice.png'); margin-top: 10px; width: 669px;}
 
 #header{ width: 950px;
 height: 290px;
@@ -76,29 +73,13 @@ overflow: hidden;
 margin: 0 auto;
 background: URL('/suzuki-images/r1.jpg'); }
 
-.news{ width: 50;
-display:block;
-background: URL('/suzuki-images/news.png');
-}
-.dada{
-width:50px;
-	height:30px;
-	display:block;
-	overflow:hidden;
-	margin:0 auto;
-}
-.baba a{
-	font-size:20px;
-	color: #fff;
-	margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 15px;
-    margin-left: 30px;
-}
+.news{ width: 50; display:block; background: URL('/suzuki-images/news.png'); }
+.dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
+.baba a{font-size:20px; color: #fff; margin-top: 10px; margin-bottom: 10px; margin-right: 15px; margin-left: 30px; }
 .raj{background:URL('/suzuki-images/r.jpg'); }
-.main{width:654px; height:40px; color: black; background:URL('/suzuki-images/Gray_Gradient-11.jpg'); }
 .menu > li a{ color: #fff;}
-.menu > li{ width: 120px;
+.menu > li{ width: 96px;
+	top: -5px;
 	list-style: none;
 	text-align: center;
 float: left;
@@ -106,7 +87,7 @@ margin-left: 0px;
 position: relative;
 padding: 13px 11px;
 cursor: pointer;
-background: url("/suzuki-images/news1.png") no-repeat;}
+background: url("/suzuki-images/news.png") no-repeat;}
 .menu > li:hover {
 color: #fff;
 background-image: URL('/suzuki-images/fixture.png'); }
@@ -114,7 +95,12 @@ background-image: URL('/suzuki-images/fixture.png'); }
 </style>
 
 <div id="container">
-
+	<div class="breadcrumbs">
+    <?php if(function_exists('bcn_display'))
+    {
+        bcn_display();
+    }?>
+</div>
 	<?php
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
