@@ -52,7 +52,7 @@
 
 	     </ul></div>
 </div>
-<img src="wp-content/themes/redcard/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
+<img src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
 <div id="social" class="right top">
       </div>
  
@@ -63,11 +63,11 @@ height: 290px;
 display: block;
 overflow: hidden;
 margin: 0 auto;
-background: URL('wp-content/themes/redcard/suzuki-images/r1.jpg'); }
+background: URL('/suzuki-images/r1.jpg'); }
 
 .news{ width: 50;
 display:block;
-background: URL('wp-content/themes/redcard/suzuki-images/news.png');
+background: URL('/suzuki-images/news.png');
 }
 .dada{
 width:50px;
@@ -85,13 +85,13 @@ width:50px;
     margin-left: 30px;
 }
 .raj{
-background:URL('wp-content/themes/redcard/suzuki-images/r.jpg');
+background:URL('/suzuki-images/r.jpg');
 }
 .main{  
 	width:654px;
 	height:40px;
 	color: black;
-background:URL('wp-content/themes/redcard/suzuki-images/Gray_Gradient-11.jpg');
+background:URL('/suzuki-images/Gray_Gradient-11.jpg');
 }
 </style>
 
