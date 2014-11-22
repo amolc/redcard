@@ -63,7 +63,7 @@ height: 290px;
 display: block;
 overflow: hidden;
 margin: 0 auto;
-background: URL('/suzuki-images/r1.jpg'); }
+background: URL('suzuki-images/r1.jpg'); }
 
 .news{ width: 50;
 display:block;
