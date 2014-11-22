@@ -97,14 +97,19 @@ width:50px;
 }
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .main{width:654px; height:40px; color: black; background:URL('/suzuki-images/Gray_Gradient-11.jpg'); }
-.menu ul li{ width: 120px;
+.menu > li a{ color: #fff;}
+.menu > li{ width: 120px;
+	list-style: none;
+	text-align: center;
+float: left;
 margin-left: 0px;
-font: bold 12px/22px sans-serif;
-display: inline-flex;
 position: relative;
-padding: 15px 11px;
+padding: 13px 11px;
 cursor: pointer;
-background-image: url("/suzuki-images/news1.png");}
+background: url("/suzuki-images/news1.png") no-repeat;}
+.menu > li:hover {
+color: #fff;
+background-image: URL('/suzuki-images/fixture.png'); }
 
 </style>
 
