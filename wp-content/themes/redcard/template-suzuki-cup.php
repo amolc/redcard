@@ -45,17 +45,20 @@
 	<a href="">#AFFSuzukiCup</a>
 	<a href="">#LionKings</a>  
 </div>
-<div class="main">
-   <div align="right">
-	    <div class="menu-main-container">
+<div class="main row">
+   	<div class="col-sm-6">
+   		<h3 style="padding:11px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h3>
+   	</div>
+   	<div class="menu-main-container col-sm-6">
 	    <ul id="menu-main" class="menu">
 	    	<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="http://curveinfotech.16mb.com">NEWS</a></li>
 <li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="http://curveinfotech.16mb.com/">FIXTURES</a></li>
-</ul></div> <ul class="serch2">
-
-	     </ul></div>
+</ul>
+		</div> 
+	</div>
+	<img src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
 </div>
-<img src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
+
 <div id="social" class="right top">
       </div>
  
@@ -92,15 +95,17 @@ width:50px;
     margin-right: 15px;
     margin-left: 30px;
 }
-.raj{
-background:URL('/suzuki-images/r.jpg');
-}
-.main{  
-	width:654px;
-	height:40px;
-	color: black;
-background:URL('/suzuki-images/Gray_Gradient-11.jpg');
-}
+.raj{background:URL('/suzuki-images/r.jpg'); }
+.main{width:654px; height:40px; color: black; background:URL('/suzuki-images/Gray_Gradient-11.jpg'); }
+.menu ul li{ width: 120px;
+margin-left: 0px;
+font: bold 12px/22px sans-serif;
+display: inline-flex;
+position: relative;
+padding: 15px 11px;
+cursor: pointer;
+background-image: url("/suzuki-images/news1.png");}
+
 </style>
 
 <div id="container">
