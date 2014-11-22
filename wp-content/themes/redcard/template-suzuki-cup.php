@@ -41,12 +41,15 @@
 
  <div id="header">
 <div class="baba">
-#RedCardConnect #AFFSuzukiCup #LionKings
+	<a href="">#RedCardConnect</a>
+	<a href="">#AFFSuzukiCup</a>
+	<a href="">#LionKings</a>  
 </div>
 <div class="main">
-
-   <div id="menu" align="right">
-	    <div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="http://curveinfotech.16mb.com">NEWS</a></li>
+   <div align="right">
+	    <div class="menu-main-container">
+	    <ul id="menu-main" class="menu">
+	    	<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="http://curveinfotech.16mb.com">NEWS</a></li>
 <li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="http://curveinfotech.16mb.com/">FIXTURES</a></li>
 </ul></div> <ul class="serch2">
 
@@ -58,6 +61,11 @@
  
 </div>
 <style>
+.main{width: 654px;
+height: 40px;
+color: black;
+background: URL('/suzuki-images/Gray_Gradient-11.jpg'); }
+
 #header{ width: 950px;
 height: 290px;
 display: block;
@@ -76,9 +84,9 @@ width:50px;
 	overflow:hidden;
 	margin:0 auto;
 }
-.baba{
+.baba a{
 	font-size:20px;
-	color: white;
+	color: #fff;
 	margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 15px;
