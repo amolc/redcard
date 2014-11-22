@@ -40,20 +40,20 @@
 <body>
 
  <div id="header">
-<div class="baba">
-	<a href="">#RedCardConnect</a>
-	<a href="">#AFFSuzukiCup</a>
-	<a href="">#LionKings</a>  
-</div>
-<div class="main row">
-   	<div class="col-sm-8">
-   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
-   	</div>
-   	<div class="menu-main-container col-sm-4">
-	    <ul id="menu-main" class="menu">
-	    	<li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-14"><a href="#">NEWS</a></li>
-<li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-15"><a href="#">FIXTURES</a></li>
-</ul>
+	<div class="baba">
+		<a href="">#RedCardConnect</a>
+		<a href="">#AFFSuzukiCup</a>
+		<a href="">#LionKings</a>  
+	</div>
+	<div class="main row">
+	   	<div class="col-sm-7">
+	   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
+	   	</div>
+	   	<div class="menu-main-container col-sm-5">
+		    <ul class="menu">
+		    	<li class="menu-item active"><a href="#">NEWS</a></li>
+				<li class="menu-item "><a href="#">FIXTURES</a></li>
+			</ul>
 		</div> 
 	</div>
 	<img src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
@@ -65,7 +65,7 @@
 </div>
 <style>
 .main{height: 28px; color: black; background: URL('/suzuki-images/slice.png'); margin-top: 10px; width: 669px;}
-
+.menu{ float: right;}
 #header{ width: 950px;
 height: 290px;
 display: block;
@@ -87,10 +87,10 @@ margin-left: 0px;
 position: relative;
 padding: 13px 11px;
 cursor: pointer;
-background: url("/suzuki-images/news.png") no-repeat;}
-.menu > li:hover {
+background: url("/suzuki-images/fixture.png") no-repeat -3px -1px transparent;}
+.menu > li:hover, .menu > li.active {
 color: #fff;
-background-image: URL('/suzuki-images/fixture.png'); }
+background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
 
 </style>
 
