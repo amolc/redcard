@@ -50,7 +50,7 @@
 	   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
 	   	</div>
 	   	<div class="menu-main-container col-sm-5">
-		    <ul class="menu">
+		    <ul class="suzuki-menu">
 		    	<li class="menu-item active"><a href="#">NEWS</a></li>
 				<li class="menu-item "><a href="#">FIXTURES</a></li>
 			</ul>
@@ -65,7 +65,7 @@
 </div>
 <style>
 .main{height: 28px; color: black; background: URL('/suzuki-images/slice.png'); margin-top: 10px; width: 669px;}
-.menu{ float: right;}
+.suzuki-menu{ float: right;}
 #header{ width: 950px;
 height: 290px;
 display: block;
@@ -77,8 +77,8 @@ background: URL('/suzuki-images/r1.jpg'); }
 .dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
 .baba a{font-size:20px; color: #fff; margin-top: 10px; margin-bottom: 10px; margin-right: 15px; margin-left: 30px; }
 .raj{background:URL('/suzuki-images/r.jpg'); }
-.menu > li a{ color: #fff;}
-.menu > li{ width: 96px;
+.suzuki-menu > li a{ color: #fff;}
+.suzuki-menu > li{ width: 96px;
 	top: -5px;
 	list-style: none;
 	text-align: center;
@@ -88,7 +88,7 @@ position: relative;
 padding: 13px 11px;
 cursor: pointer;
 background: url("/suzuki-images/fixture.png") no-repeat -3px -1px transparent;}
-.menu > li:hover, .menu > li.active {
+.suzuki-menu > li:hover, .suzuki-menu > li.active {
 color: #fff;
 background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
 
