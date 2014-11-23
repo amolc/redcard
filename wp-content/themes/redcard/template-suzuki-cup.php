@@ -19,7 +19,7 @@ get_header(); ?>
 		   	<div class="col-sm-5">
 			    <ul class="suzuki-menu">
 			    	<li class="menu-item active"><a href="#">NEWS</a></li>
-					<li class="menu-item "><a href="#">FIXTURES</a></li>
+					<li class="menu-item "><a href="/suzuki-fixtures">FIXTURES</a></li>
 				</ul>
 			</div>					
 		</div>	
