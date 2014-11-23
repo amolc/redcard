@@ -76,7 +76,7 @@ $m_table=$wpdb->prefix."adverts";
 
 ?>
 <div class="left">
-  <h2>Football > <?php echo $wp_query->queried_object->name; ?> </h2>
+  <h2>Football > <span style="color:#028f44;"><?php echo $wp_query->queried_object->name; ?></span> </h2>
   <?php
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
@@ -207,7 +207,7 @@ $ad =1;
 		}
 	}
 		?>
-  <h2>Popular Posts</h2>
+  <h2>&nbsp;</h2>
   <div class="popular">
     <ul>
       <?php /* For Popular Posts*/ 
