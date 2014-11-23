@@ -42,7 +42,7 @@ get_header(); ?>
 
 .news{ width: 50; display:block; background: URL('/suzuki-images/news.png'); }
 .dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
-.baba a{font-size:20px; color: #fff; margin-top: 10px; margin-bottom: 10px; margin-right: 15px; margin-left: 30px; }
+.baba a{ font-size:18px; color: #fff; margin:15px 0 0 10px; }
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .suzuki-menu > li a{ color: #fff;}
 .suzuki-menu > li{ width: 96px;
