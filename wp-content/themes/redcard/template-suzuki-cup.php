@@ -101,7 +101,7 @@ background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
   <h2>&nbsp;</h2>
   <div class="popular">
     <ul>
-      <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
+      <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar-fixture') ) ?>
      
     </ul>
   </div>
