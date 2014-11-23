@@ -328,14 +328,14 @@ function twentyfourteen_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Suzuki Sidebar Fixture', 'twentyfourteen' ),
-		'id'            => 'suzuki-sidebar',
+		'id'            => 'suzuki-sidebar-fixture',
 		'description'   => __( '' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
 		) );
-	
+
 
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
