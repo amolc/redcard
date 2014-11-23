@@ -18,8 +18,8 @@ get_header(); ?>
 		   	</div>
 		   	<div class="col-sm-5">
 			    <ul class="suzuki-menu">
-			    	<li class="menu-item active"><a href="http://redcardconnect.com/footballtags/aff-suzuki-cup/">NEWS</a></li>
-					<li class="menu-item "><a href="/suzuki-fixtures">FIXTURES</a></li>
+			    	<li class="menu-item "><a href="http://redcardconnect.com/footballtags/aff-suzuki-cup/">NEWS</a></li>
+					<li class="menu-item active"><a href="/suzuki-fixtures">FIXTURES</a></li>
 				</ul>
 			</div>					
 		</div>	
@@ -58,15 +58,9 @@ background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
 
 </style>
 
-<div class="container">
-	<div class="breadcrumbs">
-    <?php if(function_exists('bcn_display'))
-    {
-        bcn_display();
-    }?>
-    </div>
-</div>
+
 <div class="left">
+	<h2>Football &gt; <span style="color:#028f44;">AFF Suzuki Cup</span> </h2>
 	<?php
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
