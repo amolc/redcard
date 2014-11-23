@@ -42,14 +42,14 @@ function be_initialize_cmb_meta_boxes()
 	}
 }
 
-require_once locate_template('/inc/theme_option.php');            // Theme Options 
-require_once locate_template('/inc/social_option.php');            // Social Theme Options 
+require_once locate_template('/inc/theme_option.php');            // Theme Options
+require_once locate_template('/inc/social_option.php');            // Social Theme Options
 require_once locate_template('/inc/radio_artciles.php');
 
 
 require_once locate_template('/inc/radio_shows.php');            // Utility functions
-require_once locate_template('/inc/tvvideo_shows.php'); 
-require_once locate_template('/inc/other-sports.php'); 
+require_once locate_template('/inc/tvvideo_shows.php');
+require_once locate_template('/inc/other-sports.php');
 require_once locate_template('/inc/featured.php');
 //require_once locate_template('/inc/tv-show-list.php');
 require_once locate_template('/inc/radio-shows-articles.php');
@@ -189,7 +189,7 @@ function twentyfourteen_widgets_init() {
 	require get_template_directory() . '/inc/widgets.php';
 	register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
-	
+
 	register_sidebar( array(
 		'name'          => __( 'Header Social', 'twentyfourteen' ),
 		'id'            => 'header-social',
@@ -280,7 +280,7 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => __( 'Popular posts for TV', 'twentyfourteen' ),
 		'id'            => 'po-po-tv',
@@ -326,8 +326,17 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Suzuki Sidebar Fixture', 'twentyfourteen' ),
+		'id'            => 'suzuki-sidebar',
+		'description'   => __( '' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+		) );
 	
-	
+
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
@@ -652,8 +661,8 @@ function pr($array,$isDie = 0)
  echo "<pre>";
  print_r($array);
  echo "</pre>";
- 
- if($isDie > 0 ) 
+
+ if($isDie > 0 )
  { die(); }
 }
 /* */
@@ -742,7 +751,7 @@ register_taxonomy( 'footballtags', 'footballs', $args );
 
 add_action( 'init', 'register_taxonomy_footballregions' );
 function register_taxonomy_footballregions() {
-    $labels = array( 
+    $labels = array(
         'name' => _x( 'Regions', 'footballregions' ),
         'singular_name' => _x( 'Regions', 'footballregions' ),
         'search_items' => _x( 'Search Regions', 'footballregions' ),
@@ -759,7 +768,7 @@ function register_taxonomy_footballregions() {
         'choose_from_most_used' => _x( 'Choose from the most used Region', 'footballregions' ),
         'menu_name' => _x( 'Regions', 'footballregions' ),
     );
-    $args = array( 
+    $args = array(
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
@@ -776,7 +785,7 @@ function register_taxonomy_footballregions() {
 
 add_action( 'init', 'register_taxonomy_footballexclusive' );
 function register_taxonomy_footballexclusive() {
-    $labels = array( 
+    $labels = array(
         'name' => _x( 'Exclusive', 'footballexclusive' ),
         'singular_name' => _x( 'Exclusive', 'footballexclusive' ),
         'search_items' => _x( 'Search Exclusive', 'footballexclusive' ),
@@ -793,7 +802,7 @@ function register_taxonomy_footballexclusive() {
         'choose_from_most_used' => _x( 'Choose from the most used Exclusive', 'footballexclusive' ),
         'menu_name' => _x( 'Exclusive', 'footballexclusive' ),
     );
-    $args = array( 
+    $args = array(
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
@@ -808,7 +817,7 @@ function register_taxonomy_footballexclusive() {
 
 add_action( 'init', 'register_taxonomy_footballopinion' );
 function register_taxonomy_footballopinion() {
-    $labels = array( 
+    $labels = array(
         'name' => _x( 'Opinion', 'footballopinion' ),
         'singular_name' => _x( 'Opinion', 'footballopinion' ),
         'search_items' => _x( 'Search Opinion', 'footballopinion' ),
@@ -825,7 +834,7 @@ function register_taxonomy_footballopinion() {
         'choose_from_most_used' => _x( 'Choose from the most used Opinion', 'footballopinion' ),
         'menu_name' => _x( 'Opinion', 'footballopinion' ),
     );
-    $args = array( 
+    $args = array(
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
@@ -840,7 +849,7 @@ function register_taxonomy_footballopinion() {
 
 add_action( 'init', 'register_taxonomy_football_intheweek' );
 function register_taxonomy_football_intheweek() {
-    $labels = array( 
+    $labels = array(
         'name' => _x( 'In The Week', 'footballintheweek' ),
         'singular_name' => _x( 'In The Week', 'footballintheweek' ),
         'search_items' => _x( 'Search In The Week', 'footballintheweek' ),
@@ -857,7 +866,7 @@ function register_taxonomy_football_intheweek() {
         'choose_from_most_used' => _x( 'Choose from the most used In The Week', 'footballintheweek' ),
         'menu_name' => _x( 'In The Week', 'footballintheweek' ),
     );
-    $args = array( 
+    $args = array(
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
@@ -913,7 +922,7 @@ function tvideo_init() {
 add_action( 'init', 'register_taxonomy_tvcategory' );
 
 function register_taxonomy_tvcategory() {
-    $labels = array( 
+    $labels = array(
         'name' => _x( 'Category', 'tvcategory' ),
         'singular_name' => _x( 'Category', 'tvcategory' ),
         'search_items' => _x( 'Search Category', 'tvcategory' ),
@@ -931,7 +940,7 @@ function register_taxonomy_tvcategory() {
         'menu_name' => _x( 'Category', 'tvcategory' ),
     );
 
-    $args = array( 
+    $args = array(
         'labels' => $labels,
         'public' => true,
         'show_in_nav_menus' => true,
@@ -941,7 +950,7 @@ function register_taxonomy_tvcategory() {
         'rewrite' => true,
         'query_var' => true
     );
-    
+
 
    register_taxonomy( 'tvcategory', array('tvideo'), $args );
 }
@@ -971,7 +980,7 @@ $labels = array(
 		'show_ui'               => true,
 		'show_admin_column'     => true,
 		'query_var'             => true,
-		
+
 	);
 
 	register_taxonomy( 'tvTags', 'tvideo', $args );
@@ -988,7 +997,7 @@ function be_tvideo_metaboxes_strength( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-			
+
 			  array(
 				'name' => 'Tag Line',
 				//'desc' => 'field description (optional)',
@@ -1009,12 +1018,12 @@ function be_tvideo_metaboxes_strength( $meta_boxes ) {
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
 			),
-               
-                    
+
+
 		),
 	);
-	
-	
+
+
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_tvideo_metaboxes_strength' );
@@ -1061,27 +1070,27 @@ function be_radioarticles_metaboxes_strength( $meta_boxes ) {
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 		'fields' => array(
-			
+
 			  array(
 				'name' => 'Tag Line',
 				//'desc' => 'field description (optional)',
 				'id'   => $prefix . 'tagline_text',
 				'type' => 'text',
 			),
-                   
+
 			array(
 				'name' => __( 'Featured', 'cmb' ),
 				'desc' => __( 'Check it if you want this post featured (optional)', 'cmb' ),
 				'id'   => $prefix . 'featured_checkbox',
 				'type' => 'checkbox',
 			),
-			
-               
-                    
+
+
+
 		),
 	);
-	
-	
+
+
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'be_radioarticles_metaboxes_strength' );
@@ -1104,13 +1113,13 @@ function GetVideoIdFromUrl($url) {
 function getVideoID($url)
 {
     $videoid = GetVideoIdFromUrl($url);
- 
+
  if($videoid=="")
  {
  preg_match('/youtube\.com\/v\/([\w\-]+)/', $url, $match);
  $videoid = $match[1];
  }
- 
+
  return $videoid;
 
 }
@@ -1223,7 +1232,7 @@ add_filter( 'manage_posts_columns', 'view_modify_post_table' );
 
 
 function views_modify_user_table_row($column_name, $post_id  ) {
-	
+
 //	echo $post_id ;
 
 	echo getPostViews($post_id);
