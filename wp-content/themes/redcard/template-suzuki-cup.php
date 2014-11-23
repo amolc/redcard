@@ -66,12 +66,47 @@ background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
     }?>
     </div>
 </div>
+<div class="left">
 	<?php
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 			the_content();
 		endwhile;
 	?>
-<?php
-get_sidebar();
-get_footer();?>
+
+</div>
+
+<div class="right">
+ 
+  <?php
+  $m_table=$wpdb->prefix."adverts";
+	$advertQuery="select * from $m_table where page='football-opinions' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql=$wpdb->get_results($advertQuery);
+	
+	if(sizeof($advertSql)>0)
+	{
+		foreach($advertSql as $adsql)
+		{
+			?>
+			 <h2>&nbsp;</h2>
+			  <div class="ad_right" align="center">
+              <a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+              <label style="font-size:10px;">ADVERTISEMENT</label>
+              </div>
+			<?php
+		}
+	}
+		?>
+  
+  
+  <h2>&nbsp;</h2>
+  <div class="popular">
+    <ul>
+      <?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
+     
+    </ul>
+  </div>
+ 
+</div>
+
+<?php get_footer();?>

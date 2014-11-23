@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: Football Opinion template Page
- 
+ * Template Name: Football Opinion template Page 
  */
 get_header(); 
 
