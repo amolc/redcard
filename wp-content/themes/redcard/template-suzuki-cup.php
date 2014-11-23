@@ -8,10 +8,10 @@ get_header(); ?>
  <div id="suzuki-header">
 	<div class="main">
 		<div class="row" >
-		   	<div class="col-sm-7">
-		   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
+		   	<div class="col-sm-6">
+		   		<h4 style="padding:8px 0 0 10px;margin:0px;color:#028f44; ">TOURNAMENT COVERAGE</h4>
 		   	</div>
-		   	<div class="col-sm-5">
+		   	<div class="col-sm-6">
 			    <ul class="suzuki-menu">
 			    	<li class="menu-item "><a href="http://redcardconnect.com/footballtags/aff-suzuki-cup/">NEWS</a></li>
 					<li class="menu-item active"><a href="/suzuki-fixtures">FIXTURES</a></li>
@@ -44,6 +44,7 @@ get_header(); ?>
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .suzuki-menu > li a{ color: #fff;}
 .suzuki-menu > li{ width: 96px;
+	margin: 0 10px;
 	top: -5px;
 	list-style: none;
 	text-align: center;
