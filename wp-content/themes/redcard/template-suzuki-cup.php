@@ -7,9 +7,9 @@ get_header(); ?>
 
  <div id="suzuki-header">
 	<div class="baba">
-		<a href="">#RedCardConnect</a>
-		<a href="">#AFFSuzukiCup</a>
-		<a href="">#LionKings</a>  
+		<a >#RedCardConnect</a>
+		<a >#AFFSuzukiCup</a>
+		<a >#LionKings</a>  
 	</div>
 	<div class="main">
 		<div class="row" >
