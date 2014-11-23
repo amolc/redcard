@@ -52,7 +52,7 @@
 <div id="menu">
   <div class="menu_center">
     <?php  wp_nav_menu( array('menu' => 'Header2' )); ?>
-    <ul class="serch2">
+    <!-- <ul class="serch2">
       <li class="seacrh-li">
         <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
           <label> <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
@@ -61,7 +61,7 @@
           <button type="submit" class="search-submit" style="width:30px;background: #000;border: medium none;" ><i class="fa fa-search" style="color: #fff;"></i></button>
         </form>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </div>
 <div id="container">
