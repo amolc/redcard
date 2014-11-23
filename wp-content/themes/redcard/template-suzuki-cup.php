@@ -11,28 +11,31 @@ get_header(); ?>
 		<a href="">#AFFSuzukiCup</a>
 		<a href="">#LionKings</a>  
 	</div>
-	<div class="main row">
-	   	<div class="col-sm-7">
-	   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
-	   	</div>
-	   	<div class="menu-main-container col-sm-5">
-		    <ul class="suzuki-menu">
-		    	<li class="menu-item active"><a href="#">NEWS</a></li>
-				<li class="menu-item "><a href="#">FIXTURES</a></li>
-			</ul>
-		</div> 
+	<div class="main">
+		<div class="row" >
+		   	<div class="col-sm-7">
+		   		<h4 style="padding:8px 0 0 10px;margin:0px;">TOURNAMENT COVERAGE</h4>
+		   	</div>
+		   	<div class="col-sm-5">
+			    <ul class="suzuki-menu">
+			    	<li class="menu-item active"><a href="#">NEWS</a></li>
+					<li class="menu-item "><a href="#">FIXTURES</a></li>
+				</ul>
+			</div>					
+		</div>	
+		<div class="row">
+			<img class="col-sm-12" src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px"> 
+		</div>
+		<div style="clear:both;"></div>
 	</div>
-	<img src="/suzuki-images/SuzukiCupiframe-900pxlwidth.jpg" style="width:600px;height:150px;margin:20px 30px">
+	
+	
 </div>
 
 <style>
-.main{height: 28px; color: black; background: URL('/suzuki-images/slice.png'); margin-top: 10px; width: 669px;}
+.main{ color: black; background: URL('/suzuki-images/slice.png') repeat-x; margin-top: 10px; width: 620px;}
 .suzuki-menu{ float: right;}
-#suzuki-header{ 
-background-size: 100%;
-overflow: hidden;
-margin: 0 auto;
-background: URL('/suzuki-images/r1.jpg') 0 0; }
+#suzuki-header{background: URL('/suzuki-images/r1.jpg') 0 0; background-size: 100%; margin-top: 15px; }
 
 .news{ width: 50; display:block; background: URL('/suzuki-images/news.png'); }
 .dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
@@ -61,6 +64,7 @@ background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
     {
         bcn_display();
     }?>
+    </div>
 </div>
 	<?php
 		// Start the Loop.
