@@ -58,7 +58,7 @@ background: URL('/suzuki-images/news.png') no-repeat 0 0 transparent;  }
 
 </style>
 
-<div id="container">
+<div class="container">
 	<div class="breadcrumbs">
     <?php if(function_exists('bcn_display'))
     {

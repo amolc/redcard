@@ -25,6 +25,16 @@
                 &nbsp;&nbsp;
             </div>
             <div class="col_300">
+                <ul class="serch2">
+                  <li class="seacrh-li">
+                    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+                      <label> <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+                        <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+                      </label>
+                      <button type="submit" class="search-submit" style="width:30px;background: #000;border: medium none;" ><i class="fa fa-search" style="color: #fff;"></i></button>
+                    </form>
+                  </li>
+                </ul>
                 <?php dynamic_sidebar( 'footer-right' ); ?>
                 <div id="social" class="social-bottom"><?php dynamic_sidebar( 'header-social' ); ?></div>
             </div>
