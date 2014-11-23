@@ -317,6 +317,15 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Suzuki Sidebar', 'twentyfourteen' ),
+		'id'            => 'suzuki-sidebar',
+		'description'   => __( '' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 	
 	
 }
