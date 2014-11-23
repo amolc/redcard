@@ -40,7 +40,7 @@ get_header(); ?>
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .suzuki-menu > li a{ color: #fff;}
 .suzuki-menu > li{ width: 96px;
-  margin: 0 10px;
+  margin: 0 20px;
   top: -5px;
   list-style: none;
   text-align: center;
