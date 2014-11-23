@@ -88,7 +88,7 @@
     </div>
     <?php $postID = get_the_ID(); 
 		  $youtubtagline_value = get_post_meta( $postID, '_cmb_footballs_tagline_text', true );  ?>
-    <span style="font-weight: bold;  background: none repeat scroll 0 0 yellow; font-size: 16px;"><?php echo $youtubtagline_value; ?></span>
+    <span class="subtitle"><?php echo $youtubtagline_value; ?></span>
     <div style="clear:both; margin-bottom: 10px;"></div>
     <span class="bywriter" style=" margin-left:0;">By
     <?php the_author_meta('display_name'); ?>
