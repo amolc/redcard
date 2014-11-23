@@ -16,7 +16,7 @@ get_header(); ?>
         </div>
         <div class="col-sm-5">
           <ul class="suzuki-menu">
-            <li class="menu-item active"><a href="#">NEWS</a></li>
+            <li class="menu-item active"><a href="http://redcardconnect.com/footballtags/aff-suzuki-cup/">NEWS</a></li>
           <li class="menu-item "><a href="/suzuki-fixtures">FIXTURES</a></li>
         </ul>
       </div>          
