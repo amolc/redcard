@@ -23,7 +23,7 @@ get_header(); ?>
     </div>  
       <div class="row">
       <a class="col-sm-12" href="http://redcardconnect.com/suzuki-fixtures/">
-      <img src="<?php echo z_taxonomy_image_url($wp_query->queried_object->term_id, NULL, TRUE); ?>" style="width:600px;height:150px;margin:20px 30px" />  
+      <img src="<?php echo z_taxonomy_image_url($wp_query->queried_object->term_id, NULL, TRUE); ?>" style="height:150px;margin:20px 30px" />  
       </a>
       </div>
       
