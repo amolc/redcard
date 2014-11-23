@@ -7,9 +7,9 @@ get_header(); ?>
 
  <div id="suzuki-header">
 	<div class="baba">
-		<a >#RedCardConnect</a>
-		<a >#AFFSuzukiCup</a>
-		<a >#LionKings</a>  
+		<span >#RedCardConnect</span>
+		<span >#AFFSuzukiCup</span>
+		<span >#LionKings</span>  
 	</div>
 	<div class="main">
 		<div class="row" >
@@ -42,7 +42,7 @@ get_header(); ?>
 
 .news{ width: 50; display:block; background: URL('/suzuki-images/news.png'); }
 .dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
-.baba a{ font-size:18px; color: #fff; margin:15px 0 0 10px; }
+.baba span{ font-size:18px; color: #fff; margin:15px 0 0 10px; }
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .suzuki-menu > li a{ color: #fff;}
 .suzuki-menu > li{ width: 96px;
