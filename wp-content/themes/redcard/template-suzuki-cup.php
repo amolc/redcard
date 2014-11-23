@@ -26,7 +26,9 @@ get_header(); ?>
 		<?php if (has_post_thumbnail( $post->ID ) ): ?>
       <div class="row">
       <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>      
-      <img class="col-sm-12" src="<?php echo $image[0]; ?>" style="height:150px;margin:20px 30px"> 
+      <a class="col-sm-12" >
+      <img src="<?php echo $image[0]; ?>" style="height:150px;margin:20px 30px"> 
+      </a>
       </div>
       <?php endif; ?>
 		<div style="clear:both;"></div>
