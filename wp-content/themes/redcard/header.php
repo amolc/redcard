@@ -244,6 +244,8 @@ if(is_front_page()){
       </div>
         <?php $trimcontent = get_the_content();
 		  $youtubtagline_value = get_post_meta( $post->ID, '_cmb_footballs_tagline_text', true ); 
+      $youtubtagline_value .= get_post_meta( $post->ID, '_cmb_othersports_tagline_text', true ); 
+
 		//  $shortcontent = wp_trim_words( $youtubtagline_value, $num_words = 10, $more = '…' ); ?>
           <p style="height:90px; margin-bottom:0;overflow:hidden;"><?php echo $youtubtagline_value; ?></p>
         <div class="date" id="date2"> <span>
