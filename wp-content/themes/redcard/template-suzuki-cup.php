@@ -6,11 +6,6 @@ get_header(); ?>
 
 
  <div id="suzuki-header">
-	<div class="baba">
-		<span >#RedCardConnect</span>
-		<span >#AFFSuzukiCup</span>
-		<span >#LionKings</span>  
-	</div>
 	<div class="main">
 		<div class="row" >
 		   	<div class="col-sm-7">
@@ -40,11 +35,12 @@ get_header(); ?>
 <style>
 .main{ color: black; background: URL('/suzuki-images/slice.png') repeat-x; margin-top: 10px; width: 620px;}
 .suzuki-menu{ float: right;}
-#suzuki-header{background: URL('/suzuki-images/r1.jpg') 0 0; background-size: 100%; margin-top: 15px; font-family: 'FF DIN'; }
+#suzuki-header{ padding: 10px 0;
+	background: URL('/suzuki-images/r1.jpg') 0 0; background-size: 100%; margin-top: 15px; font-family: 'FF DIN'; }
 
 .news{ width: 50; display:block; background: URL('/suzuki-images/news.png'); }
 .dada{width:50px; height:30px; display:block; overflow:hidden; margin:0 auto; }
-.baba span{ font-size:18px; color: #fff; margin:15px 0 0 10px; }
+
 .raj{background:URL('/suzuki-images/r.jpg'); }
 .suzuki-menu > li a{ color: #fff;}
 .suzuki-menu > li{ width: 96px;
