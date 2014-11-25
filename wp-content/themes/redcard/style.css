@@ -1220,6 +1220,5 @@ filter: grayscale(0%);
 .aboutustitle{color: #333333;font-family: "FF DIN";font-size: 22px;text-transform: uppercase;margin: 20px 0;}
 .column-views{ width:70px !important;}
 .social-bar{ background:url('img/bar.JPG'); }
-
-.subtitle{ font-weight: bold;  background: none repeat scroll 0 0 yellow; font-size: 16px;  font-family: 'FF DIN'; }
+.subtitle{ font-weight: bold;  background: none repeat scroll 0 0 yellow; font-size: 16px;  font-family: 'Rockwell Condense'; }
 .textwidget img{ max-width: 100%; }
