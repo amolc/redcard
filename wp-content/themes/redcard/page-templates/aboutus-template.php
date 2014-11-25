@@ -2,6 +2,10 @@
 get_header();
 
 
+while ( have_posts() ) : the_post();
+			the_content();
+endwhile;
+
 the_block('Our Services');
 
 the_block('Advertise With Us');
