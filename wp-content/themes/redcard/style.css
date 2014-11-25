@@ -72,13 +72,13 @@ p{
 }
 
 @font-face {
-    font-family: 'FF SINGLE PAGE';
+    font-family: 'Rockwell Condense';
 	font-style: normal;
 	font-weight: normal;
-    src: url('fonts/ffsp__.eot') format('eot');
-	src: url('fonts/ffsp__.svg') format('svg');
-	src: url('fonts/ffsp__.ttf') format('ttf');
-	src: url('fonts/ffsp__.woff') format('woff');
+    src: url('fonts/rc__.eot') format('eot');
+	src: url('fonts/rc__.svg') format('svg');
+	src: url('fonts/rc__.ttf') format('ttf');
+	src: url('fonts/rc__.woff') format('woff');
 }
 
 .right {
