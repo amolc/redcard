@@ -112,7 +112,7 @@
         <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo wp_get_shortlink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a> 
         </div>
         <div>
-        <span style="float:left;font-family:DD FIN;font-size:21px;"><a style="color:rgb(246, 112, 51) !important;" href="<?php echo get_permalink( $article->ID);?>#disqus_thread"></a></span>
+        <?php /*?><span style="float:left;font-family:DD FIN;font-size:21px;"><a style="color:rgb(246, 112, 51) !important;" href="<?php echo get_permalink( $article->ID);?>#disqus_thread"></a></span><?php */?>
         <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
         </div>
        </div>
