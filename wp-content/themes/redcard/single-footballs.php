@@ -1,5 +1,8 @@
-<?php
-	get_header(); 
+<?php 
+	get_header();
+	
+	
+	
 	$m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='football-articles' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
@@ -16,6 +19,9 @@
 	}
 ?>
 <?php 	$postID = get_the_ID();
+
+		  fb_comment_count();
+	
 		  $mytermArray = array();
 		  $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
 		  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
@@ -101,8 +107,7 @@
         </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
         <div class="message"></div>
         </a>
-        <a href="<?php comments_link(); ?>"><?php comments_number();?></a>
-        </div>
+       </div>
     </div>
     <div class="post">
       <div class="single-post-image">
