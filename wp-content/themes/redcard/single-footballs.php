@@ -90,7 +90,7 @@
     <div class="sigle-football-title" style="margin-bottom: 13px;">
       <h1 style="margin-bottom: 0px ! important;margin-top: 7px !important;">
         <?php the_title();
-		bfan();
+		
 		 ?>
       </h1>
     </div>
@@ -102,7 +102,7 @@
     <?php the_author_meta('display_name'); ?>
     <a href="<?php the_author_meta('twitter');?>" target="_blank"><?php /*?>(@<?php the_author_meta('facebook'); ?>)<?php */?> <div class="fa fa-twitter"></div></a></span>
     <div class="date social-bar" style="margin-top: 10px;" >
-      <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" >
+      <div id="social_3"> <?php bfan(); ?><a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" >
         <div class="facebook" ></div>
         </a> <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo wp_get_shortlink( $article->ID);?> via @RedCardConnect"  >
         <div class="twitter"></div>

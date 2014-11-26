@@ -1273,6 +1273,8 @@ function bfan() {
 global $post;
 $pageID = get_permalink($post->ID);
 $info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
-echo $info->shares;
+
+ update_post_meta($post->ID, 'facebook_scripter_share_count',$info->shares);
+ echo $info->shares;
 }
 ?>
