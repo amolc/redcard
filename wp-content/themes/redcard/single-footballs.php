@@ -20,7 +20,7 @@
 ?>
 <?php 	$postID = get_the_ID();
 
-		  fb_comment_count();
+		 // fb_comment_count();
 	
 		  $mytermArray = array();
 		  $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
