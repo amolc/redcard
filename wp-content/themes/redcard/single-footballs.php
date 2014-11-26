@@ -112,7 +112,7 @@
         <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo wp_get_shortlink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a> 
         </div>
         <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
-        
+        <a href="<?php echo get_permalink( $article->ID);?>#disqus_thread"></a>
        </div>
     </div>
     <div class="post">
