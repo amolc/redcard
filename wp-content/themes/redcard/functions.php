@@ -53,7 +53,6 @@ require_once locate_template('/inc/other-sports.php');
 require_once locate_template('/inc/featured.php');
 //require_once locate_template('/inc/tv-show-list.php');
 require_once locate_template('/inc/radio-shows-articles.php');
-require_once locate_template('/sdk/facebook.php');
 
 
 if ( ! isset( $content_width ) ) {
@@ -1261,6 +1260,7 @@ function fb_comment_count() {
     'callback'  => ''
  );
  $fqlResult   =   $facebook->api($param);
+print_r($fqlResult); die();
  $fbcommenteCount = $fqlResult['0']['like_count'];
  update_post_meta($post->ID, 'facebook_comments_count', $fbcommenteCount);
 }

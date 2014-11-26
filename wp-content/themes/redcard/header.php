@@ -42,6 +42,8 @@
 </head>
 
 <body>
+<?php include('sdk/facebook.php'); ?>
+
 <div id="header">
   <div class="logo"> <a href="<?php echo site_url(); ?>" title="Redcard"> <img alt="Redcard" src="<?php echo get_option('site_logo'); ?>" /> </a> </div>
   <div id="social" class="right top">
