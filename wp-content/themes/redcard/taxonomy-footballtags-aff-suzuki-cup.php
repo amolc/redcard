@@ -213,7 +213,7 @@ $ad =1;
       <?php /* For Popular Posts*/ 
       if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
     </ul>
-  </div>
+ 
  <?php  $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='home' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
