@@ -233,6 +233,6 @@ $ad =1;
 			}
 		}
 	} ?>
-    <div style="margin:0px;padding:0px ;"><img src="http://redcardconnect.com/wp-content/uploads/2014/11/R1_Fixtures.jpg" >
+    <div style="margin:0px;padding:0px ;"><img src="http://redcardconnect.com/wp-content/uploads/2014/11/R1_Fixtures.jpg" ></div>
 </div>
 <?php get_footer();?>
