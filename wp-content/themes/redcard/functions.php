@@ -1264,4 +1264,15 @@ print_r($fqlResult); die();
  $fbcommenteCount = $fqlResult['0']['like_count'];
  update_post_meta($post->ID, 'facebook_comments_count', $fbcommenteCount);
 }
+
+
+/**/
+
+function bfan() {
+
+global $post;
+$pageID = get_permalink($post->ID);
+$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
+echo $info->likes;
+}
 ?>

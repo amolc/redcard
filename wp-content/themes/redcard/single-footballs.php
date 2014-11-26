@@ -89,7 +89,9 @@
     </span>
     <div class="sigle-football-title" style="margin-bottom: 13px;">
       <h1 style="margin-bottom: 0px ! important;margin-top: 7px !important;">
-        <?php the_title(); ?>
+        <?php the_title();
+		bfan();
+		 ?>
       </h1>
     </div>
     <?php $postID = get_the_ID(); 
