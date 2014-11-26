@@ -214,19 +214,15 @@ $ad =1;
       if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
     </ul>
  
- <?php  $m_table=$wpdb->prefix."adverts";
-	$advertQuery="select * from $m_table where page='home' and isactive='1' order by adId DESC LIMIT 0,1";
-	$advertSql=$wpdb->get_results($advertQuery);
-	
-	if(sizeof($advertSql)>0)
+        <?php if(sizeof($advertSql)>0)
 	{
 		foreach($advertSql as $adsql)
 		{
-			if($adsql->adimage1){
+			if($adsql->adimage2){
 		?>
 		
-<div class="ad_1" align="center" style=" margin-bottom: 15px;margin-top: 20px;"><a href="<?php echo urldecode($adsql->adlink1);?>" target="_blank"><img width="731" height="93" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage1;?>" /></a>
-<label style="font-size:9px;">ADVERTISEMENT</label>
+<div class="a d_1" align="center" style="margin-top: 20px; margin-bottom:15px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<label style="font-size:10px;">ADVERTISEMENT</label>
 </div>
 
 		<?php
