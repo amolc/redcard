@@ -1271,7 +1271,7 @@ print_r($fqlResult); die();
 function bfan() {
 
 global $post;
-$pageID = get_permalink($post->ID);
+echo $pageID = get_permalink($post->ID);
 $info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
 echo $info->likes;
 }
