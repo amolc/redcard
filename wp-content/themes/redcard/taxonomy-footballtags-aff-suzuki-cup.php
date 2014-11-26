@@ -190,7 +190,7 @@ $ad =1;
 </div>
 <div class="right">
   <?php
-    $m_table=$wpdb->prefix."adverts";
+  /*  $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='football-regions' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
@@ -198,15 +198,15 @@ $ad =1;
 	{
 		foreach($advertSql as $adsql)
 		{
-			?>
+		?>
   <h2>&nbsp;</h2>
   <div class="ad_right" align="center"> <a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
     <label style="font-size:10px;">ADVERTISEMENT</label>
   </div>
   <?php
-		}
+	/*	}
 	}
-		?>
+	*/	?>
   <h2>&nbsp;</h2>
   <div class="popular">
     <ul>
@@ -216,12 +216,12 @@ $ad =1;
  
         <?php 
 	$m_table=$wpdb->prefix."adverts";
-	$advertQuery11="select * from $m_table where page='footballtags' and isactive='1' order by adId DESC LIMIT 0,1";
-	$advertSql11=$wpdb->get_results($advertQuery11);
+	$advertQuery="select * from $m_table where page='home' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql=$wpdb->get_results($advertQuery);
 		
-		if(sizeof($advertSql11)>0)
+		if(sizeof($advertSql)>0)
 	{
-		foreach($advertSql11 as $adsql)
+		foreach($advertSql as $adsql)
 		{
 			if($adsql->adimage2){
 		?>
