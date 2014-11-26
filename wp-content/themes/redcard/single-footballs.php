@@ -100,7 +100,9 @@
         <div class="twitter"></div>
         </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
         <div class="message"></div>
-        </a> </div>
+        </a>
+        <a href="PostLiveUrl#disqus_thread"></a>
+        </div>
     </div>
     <div class="post">
       <div class="single-post-image">
