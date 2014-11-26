@@ -1246,9 +1246,8 @@ add_action('manage_posts_custom_column', 'views_modify_user_table_row',10,2);
 function bfan() {
 global $post;
 $pageID = get_permalink($post->ID);
-/*$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));*/
-$info = json_decode(file_get_contents('http://api.facebook.com/restserver.php?method=links.getStats&urls=' . $pageID));
-print_r($info); die();
+$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
+
  update_post_meta($post->ID, 'facebook_scripter_share_count',$info->shares);
  echo $info->shares;
 }
