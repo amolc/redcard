@@ -190,7 +190,7 @@ $ad =1;
 </div>
 <div class="right">
   <?php
-  $m_table=$wpdb->prefix."adverts";
+    $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='football-regions' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
@@ -214,9 +214,14 @@ $ad =1;
       if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
     </ul>
  
-        <?php if(sizeof($advertSql)>0)
+        <?php 
+	$m_table11=$wpdb->prefix."adverts";
+	$advertQuery11="select * from $m_table11 where page='footballtags' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql11=$wpdb->get_results($advertQuery11);
+		
+		if(sizeof($advertSql11)>0)
 	{
-		foreach($advertSql as $adsql)
+		foreach($advertSql11 as $adsql)
 		{
 			if($adsql->adimage2){
 		?>
