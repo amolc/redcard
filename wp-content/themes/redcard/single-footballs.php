@@ -101,7 +101,7 @@
         </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
         <div class="message"></div>
         </a>
-        <a href="http://redcardconnect.com/#disqus_thread">Count</a>
+        <a href="<?php comments_link(); ?>"><?php comments_number();?></a>
         </div>
     </div>
     <div class="post">
