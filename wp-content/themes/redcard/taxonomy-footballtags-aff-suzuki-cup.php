@@ -215,8 +215,8 @@ $ad =1;
     </ul>
  
         <?php 
-	$m_table11=$wpdb->prefix."adverts";
-	$advertQuery11="select * from $m_table11 where page='footballtags' and isactive='1' order by adId DESC LIMIT 0,1";
+	$m_table=$wpdb->prefix."adverts";
+	$advertQuery11="select * from $m_table where page='footballtags' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql11=$wpdb->get_results($advertQuery11);
 		
 		if(sizeof($advertSql11)>0)
