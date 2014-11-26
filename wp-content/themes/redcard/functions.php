@@ -1242,38 +1242,13 @@ add_action('manage_posts_custom_column', 'views_modify_user_table_row',10,2);
 
 
 
-/* facebook comment count */
-function fb_comment_count() {
- global $post;
- $config = array(
-    'appId' => '369113456583040',
-    'secret' => '167b8f86916897203e5430a859bed930',
-    'cookie' => true
-  );
- $facebook=new Facebook($config);
- //echo $post->ID;
- $url = get_permalink($post->ID);
- $fql = "SELECT url, normalized_url, share_count, like_count, comment_count, total_count, commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url = '".$url."' ";
- $param  =   array(
-    'method'    => 'fql.query',
-    'query'     => $fql,
-    'callback'  => ''
- );
- $fqlResult   =   $facebook->api($param);
-print_r($fqlResult); die();
- $fbcommenteCount = $fqlResult['0']['like_count'];
- update_post_meta($post->ID, 'facebook_comments_count', $fbcommenteCount);
-}
-
-
-/**/
-
+/* facebook share count */
 function bfan() {
-
 global $post;
 $pageID = get_permalink($post->ID);
-$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
-
+/*$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));*/
+$info = json_decode(file_get_contents('http://api.facebook.com/restserver.php?method=links.getStats&urls=' . $pageID));
+print_r($info); die();
  update_post_meta($post->ID, 'facebook_scripter_share_count',$info->shares);
  echo $info->shares;
 }
