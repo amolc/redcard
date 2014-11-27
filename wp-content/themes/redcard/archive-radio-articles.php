@@ -6,7 +6,7 @@ The template for displaying Archive pages
 get_header(); 
 
 ?>
-<?php dynamic_sidebar( 'radiobanner' );
+<?php 
 
 $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='radio-articles' and isactive='1' order by adId DESC LIMIT 0,1";
@@ -30,6 +30,8 @@ $m_table=$wpdb->prefix."adverts";
 		{
 			$param_1=$_GET['param'];
 		}
+		
+		dynamic_sidebar( 'radiobanner' );
 	?>
 <div class="box">
 	<h1>Latest Radio Shows 
