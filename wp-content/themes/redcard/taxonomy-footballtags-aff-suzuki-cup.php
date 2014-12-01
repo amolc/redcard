@@ -80,7 +80,7 @@ $m_table=$wpdb->prefix."adverts";
   <?php
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	
-$ad =1;
+	$ad =1;
 	global $wp_query;
 
 	if(have_posts())
