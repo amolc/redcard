@@ -78,10 +78,15 @@ $m_table=$wpdb->prefix."adverts";
 <div class="left">
   <h2>Football > <span style="color:#028f44;"><?php echo $wp_query->queried_object->name; ?></span> </h2>
   <?php
+    global $wp_query;
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array(
+						'posts_per_page'   => 5,
+						'paged' 			=>  $current_page,
+					);
+	query_posts( $args );
+    $ad =1;
 	
-$ad =1;
-	global $wp_query;
 
 	if(have_posts())
 	{
@@ -168,7 +173,7 @@ $ad =1;
           </p>
         </div>
       </li>
-      <?php } $ad++; endwhile; ?>
+      <?php } $ad++; endwhile; wp_reset_query(); ?>
     </ul>
   </div>
 <?php
