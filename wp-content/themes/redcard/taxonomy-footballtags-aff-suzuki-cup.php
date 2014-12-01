@@ -79,9 +79,9 @@ $m_table=$wpdb->prefix."adverts";
   <h2>Football > <span style="color:#028f44;"><?php echo $wp_query->queried_object->name; ?></span> </h2>
   <?php
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
 	$ad =1;
 	global $wp_query;
+	$wp_query->set('posts_per_page', 5);
 
 	if(have_posts())
 	{
