@@ -84,13 +84,13 @@ $m_table=$wpdb->prefix."adverts";
 						'posts_per_page'   => 5,
 						'paged' 			=>  $current_page,
 					);
-	query_posts( $args );
+	$loop = new WP_Query( $args );
     $ad =1;
 	
 
 	if(have_posts())
 	{
- 		while ( have_posts() ) : the_post();
+ 		while ($loop->have_posts() ) : $loop->the_post();
 
 	if($ad == 1){?>
   <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
@@ -173,7 +173,7 @@ $m_table=$wpdb->prefix."adverts";
           </p>
         </div>
       </li>
-      <?php } $ad++; endwhile; wp_reset_query(); ?>
+      <?php } $ad++; endwhile; ?>
     </ul>
   </div>
 <?php
