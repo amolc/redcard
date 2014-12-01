@@ -81,7 +81,7 @@ $m_table=$wpdb->prefix."adverts";
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$ad =1;
 	global $wp_query;
-	$wp_query->set('posts_per_page', 5);
+	$wp_query->set('showposts', 5);
     $wp_query->query($wp_query->query_vars);
 
 	if(have_posts())
