@@ -78,19 +78,14 @@ $m_table=$wpdb->prefix."adverts";
 <div class="left">
   <h2>Football > <span style="color:#028f44;"><?php echo $wp_query->queried_object->name; ?></span> </h2>
   <?php
-    global $wp_query;
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	$args = array(
-						'posts_per_page'   => 5,
-						'paged' 			=>  $current_page,
-					);
-	$loop = new WP_Query( $args );
-    $ad =1;
 	
+$ad =1;
+	global $wp_query;
 
 	if(have_posts())
 	{
- 		while ($loop->have_posts() ) : $loop->the_post();
+ 		while ( have_posts() ) : the_post();
 
 	if($ad == 1){?>
   <div class="sigle-football-title"> <a href="<?php the_permalink() ?>">
