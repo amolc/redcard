@@ -16,15 +16,17 @@
                 <h1>Radio Shows</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Left' )); ?>
             </div>
+            <div class="col_150">
+                 <h1>Radio Categories</h1>
+                <?php wp_nav_menu( array('menu' => 'Footer Categories' )); ?>
+            </div>
+
             <div class="col_150" ><?php dynamic_sidebar( 'footer-left-2' ); ?></div>
             <div class="col_150">
                 <h1>About</h1>
                 <?php wp_nav_menu( array('menu' => 'Footer Mid' )); ?>
             </div>
-            <div class="col_150">
-                &nbsp;&nbsp;
-            </div>
-            <div class="col_300">
+                        <div class="col_300">
                 <ul class="serch2">
                   <li class="seacrh-li">
                     <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
