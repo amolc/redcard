@@ -79,9 +79,10 @@ $m_table=$wpdb->prefix."adverts";
   <h2>Football > <span style="color:#028f44;"><?php echo $wp_query->queried_object->name; ?></span> </h2>
   <?php
 	$current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
-$ad =1;
+	$ad =1;
 	global $wp_query;
+	$wp_query->set('showposts', 5);
+    $wp_query->query($wp_query->query_vars);
 
 	if(have_posts())
 	{
@@ -190,7 +191,7 @@ $ad =1;
 </div>
 <div class="right">
   <?php
-  $m_table=$wpdb->prefix."adverts";
+  /*  $m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='football-regions' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
 	
@@ -198,21 +199,42 @@ $ad =1;
 	{
 		foreach($advertSql as $adsql)
 		{
-			?>
+		?>
   <h2>&nbsp;</h2>
   <div class="ad_right" align="center"> <a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
     <label style="font-size:10px;">ADVERTISEMENT</label>
   </div>
   <?php
-		}
+	/*	}
 	}
-		?>
+	*/	?>
   <h2>&nbsp;</h2>
   <div class="popular">
     <ul>
       <?php /* For Popular Posts*/ 
       if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('suzuki-sidebar') ) ?>
     </ul>
-  </div>
+ 
+        <?php 
+	$m_table=$wpdb->prefix."adverts";
+	$advertQuery="select * from $m_table where page='home' and isactive='1' order by adId DESC LIMIT 0,1";
+	$advertSql=$wpdb->get_results($advertQuery);
+		
+		if(sizeof($advertSql)>0)
+	{
+		foreach($advertSql as $adsql)
+		{
+			if($adsql->adimage2){
+		?>
+		
+<div class="a d_1" align="center" style="margin-top: 20px; margin-bottom:15px;"><a href="<?php echo urldecode($adsql->adlink2);?>" target="_blank"><img width="302" height="252" alt="" class="attachment-full" style="max-width: 100%;" src="<?php echo plugins_url();?>/advertisement/<?php echo $adsql->adimage2;?>" /></a>
+<label style="font-size:10px;">ADVERTISEMENT</label>
+</div>
+
+		<?php
+			}
+		}
+	} ?>
+    <div style="margin:0px;padding:0px ;"><img src="http://redcardconnect.com/wp-content/uploads/2014/11/R1_Fixtures.jpg" ></div>
 </div>
 <?php get_footer();?>

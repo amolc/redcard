@@ -1,5 +1,8 @@
-<?php
-	get_header(); 
+<?php 
+	get_header();
+	
+	
+	
 	$m_table=$wpdb->prefix."adverts";
 	$advertQuery="select * from $m_table where page='football-articles' and isactive='1' order by adId DESC LIMIT 0,1";
 	$advertSql=$wpdb->get_results($advertQuery);
@@ -16,6 +19,9 @@
 	}
 ?>
 <?php 	$postID = get_the_ID();
+
+		 // fb_comment_count();
+	
 		  $mytermArray = array();
 		  $term_list_reg = wp_get_post_terms($postID, 'footballregions');  
 		  $term_list_exc = wp_get_post_terms($postID, 'footballexclusive'); 
@@ -83,7 +89,9 @@
     </span>
     <div class="sigle-football-title" style="margin-bottom: 13px;">
       <h1 style="margin-bottom: 0px ! important;margin-top: 7px !important;">
-        <?php the_title(); ?>
+        <?php the_title();
+		
+		 ?>
       </h1>
     </div>
     <?php $postID = get_the_ID(); 
@@ -93,14 +101,21 @@
     <span class="bywriter" style=" margin-left:0;">By
     <?php the_author_meta('display_name'); ?>
     <a href="<?php the_author_meta('twitter');?>" target="_blank"><?php /*?>(@<?php the_author_meta('facebook'); ?>)<?php */?> <div class="fa fa-twitter"></div></a></span>
-    <div class="date social-bar" >
-      <div id="social_3"> <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" >
-        <div class="facebook" ></div>
-        </a> <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo get_permalink( $article->ID);?> via @RedCardConnect"  >
-        <div class="twitter"></div>
-        </a> <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment">
-        <div class="message"></div>
-        </a> </div>
+    <div class="date social-bar" style="margin-top: 10px;" >
+      <div id="social_3"> 
+	  	<div>
+            <span style="float: left; color: rgb(246, 112, 51); font-family: DD FIN; font-size: 21px;"><?php bfan(); ?></span>
+            <a onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=400');return false;" href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink( $article->ID));?>&description=<?php echo the_title();?>"  title="Share on Facebook" ><div class="facebook" ></div></a>
+        </div>
+        <div>
+         <span style="float: left; color: rgb(246, 112, 51); font-family: DD FIN; font-size: 21px;"><?php count_tweet(); ?></span>
+        <a href="http://twitter.com/intent/tweet?text=<?php the_title();?> <?php echo wp_get_shortlink( $article->ID);?> via @RedCardConnect"  ><div class="twitter"></div></a> 
+        </div>
+        <div>
+        <span style="float:left;font-family:DD FIN;font-size:21px;"><a style="color:rgb(246, 112, 51) !important;" href="<?php echo get_permalink( $article->ID);?>#disqus_thread"></a></span>
+        <a  href="<?php echo get_permalink( $article->ID);?>#dis_comment"><div class="message"></div></a>
+        </div>
+       </div>
     </div>
     <div class="post">
       <div class="single-post-image">

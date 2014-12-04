@@ -137,7 +137,7 @@ if(sizeof($advertSql)>0)
 	?>
   <h2>Popular Posts</h2>
   <div class="popular">
-    <ul><?php /* For Popular Posts*/ if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') ) ?></ul>
+    <ul><?php /* For Popular Posts if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Sidebar 1') )*/dynamic_sidebar(' po-po-other-sports'); ?></ul>
   </div>
 </div>
 <?php get_footer();?>

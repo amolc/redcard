@@ -54,6 +54,7 @@ require_once locate_template('/inc/featured.php');
 //require_once locate_template('/inc/tv-show-list.php');
 require_once locate_template('/inc/radio-shows-articles.php');
 
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
@@ -1238,5 +1239,26 @@ function views_modify_user_table_row($column_name, $post_id  ) {
 	echo getPostViews($post_id);
 }
 add_action('manage_posts_custom_column', 'views_modify_user_table_row',10,2);
+
+
+
+/* facebook share count */
+function bfan() {
+global $post;
+$pageID = get_permalink($post->ID);
+$info = json_decode(file_get_contents('http://graph.facebook.com/' . $pageID));
+update_post_meta($post->ID, 'facebook_scripter_share_count',$info->shares);
+echo $info->shares;
+}
+
+function count_tweet()
+{
+global $post;
+$pageID = get_permalink($post->ID);
+$info = json_decode(file_get_contents('http://cdn.api.twitter.com/1/urls/count.json?url=' . $pageID));
+
+update_post_meta($post->ID, 'tweet_scripter_share_count',$info->count);
+echo $info->count;
+}
 
 ?>
