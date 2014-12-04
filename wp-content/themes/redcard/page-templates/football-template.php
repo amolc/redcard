@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: Football template Page
- 
+ * Template Name: Football template Page 
  */
 get_header(); 
   $m_table=$wpdb->prefix."adverts";
@@ -168,8 +167,8 @@ get_header();
 ?>
 </div>
 <div class="right">
- <h2 class="homeRighth1" style=" margin: 22px 0 13px;">Connect With us</h2>
-    <div id="connect"> Subscribe to our mailing list <?php echo do_shortcode('[gsom-optin]'); ?> </div>
+<!--  <h2 class="homeRighth1" style=" margin: 22px 0 13px;">Connect With us</h2>
+    <div id="connect"> Subscribe to our mailing list <?php echo do_shortcode('[gsom-optin]'); ?> </div> -->
     <!-- subscribe on football page -->
  
   <?php
