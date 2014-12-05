@@ -227,7 +227,12 @@ if(is_front_page()){
 	  $loop = new WP_Query( $args ); $as =1;?>
     <?php	while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div id="l_n" class="home-latest-image" style="height:370px;">
-	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
+	<?php if( $post->post_type == 'other_sports' )
+		 	$term_list_reg = wp_get_post_terms($post->ID, 'categories');
+		 else 
+		  	$term_list_reg = wp_get_post_terms($post->ID, 'footballregions');
+		  
+		   ?>
       <div class="img"><a href="<?php the_permalink() ?>"><?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?></a>
         <?php
 		if( $term_list_reg ){
