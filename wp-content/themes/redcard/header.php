@@ -229,16 +229,18 @@ if(is_front_page()){
     <div id="l_n" class="home-latest-image" style="height:370px;">
 	<?php  $term_list_reg = wp_get_post_terms($post->ID, 'footballregions'); ?>
       <div class="img"><a href="<?php the_permalink() ?>"><?php twentyfourteen_post_thumbnail( 'thumbnail', array( 'class' => 'home-latest-feature-image' ) );?></a>
-        <span><?php
-		$g=0;
-		foreach($term_list_reg as $mterm)
-		{
-			$m_array[$g]=$mterm->name;
-			$g++;
+        <?php
+		if( $term_list_reg ){
+			$g=0;
+			foreach($term_list_reg as $mterm)
+			{
+				$m_array[$g]=$mterm->name;
+				$g++;
+			}
+			$m_str=implode(",",$m_array);
+			echo '<span>'.$m_str.'</span>';
 		}
-		$m_str=implode(",",$m_array);
-		echo $m_str;
-		 ?></span> </div>
+		 ?> </div>
       <div class="text">
       <div style="height:65px; overflow:hidden;">
       <a href="<?php the_permalink() ?>"  style="text-decoration:none;"><?php echo get_the_title(); ?></a>
