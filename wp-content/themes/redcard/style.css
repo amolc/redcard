@@ -941,7 +941,8 @@ color: #333333;
 }
 /*home page css*/
 
-#container .right #connect {
+#container .right #connect, .widget_ns_mailchimp form
+ {
 	 background: url("img/280x157.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
     color: #fff;
     font-size: 14px;
@@ -952,7 +953,8 @@ color: #333333;
     padding: 20px;
 }
 
-#container .right #connect input[type='text'] {
+#container .right #connect input[type='text'],
+.widget_ns_mailchimp input[type='text']{ 
 	width:100%;
 	padding:5px 10px;
 	outline:none;
@@ -960,7 +962,8 @@ color: #333333;
 	color: #333;
 }
 
-#container .right #connect input[type='submit'] {
+#container .right #connect input[type='submit'],
+.widget_ns_mailchimp input[type='submit']{
 	float:right;
 	background:#626262;
 	padding:10px 20px;
