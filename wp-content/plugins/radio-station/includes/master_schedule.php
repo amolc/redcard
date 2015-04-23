@@ -613,8 +613,7 @@ function master_schedule($atts) {
 			$output .= '</tr>';
 		}
 		$output .= '</table>';
-	}
-	
+
 	return $output;
 	
 }
