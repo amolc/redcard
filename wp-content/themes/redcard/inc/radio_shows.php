@@ -37,7 +37,7 @@ function radio_shows_init() {
 	register_post_type( 'radio_schedule', $args );
 }
 
-add_action( 'init', 'register_taxonomy_radioshowscategory' );
+//add_action( 'init', 'register_taxonomy_radioshowscategory' );
 
 function register_taxonomy_radioshowscategory() {
     $labels = array( 
